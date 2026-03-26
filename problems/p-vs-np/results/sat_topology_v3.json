@@ -1,0 +1,212 @@
+{
+  "experiment": "sat_topology_v3",
+  "feature_map": "variable_constraint_geometry",
+  "n_vars": 100,
+  "n_instances_per_alpha": 30,
+  "results": [
+    {
+      "alpha": 2.0,
+      "mean_onset": 0.21953833063443495,
+      "std_onset": 0.019831797863524164,
+      "mean_gini": 0.6574364826963417,
+      "mean_tension": 0.35333597143597145,
+      "mean_connectivity": 0.11406060606060607,
+      "elapsed_s": 0.6
+    },
+    {
+      "alpha": 2.25,
+      "mean_onset": 0.21096564263105388,
+      "std_onset": 0.011108795344120705,
+      "mean_gini": 0.6207837087369176,
+      "mean_tension": 0.33122633553810027,
+      "mean_connectivity": 0.12734006734006736,
+      "elapsed_s": 0.2
+    },
+    {
+      "alpha": 2.5,
+      "mean_onset": 0.200641463547945,
+      "std_onset": 0.00978120236919979,
+      "mean_gini": 0.5923795470764682,
+      "mean_tension": 0.30800623641064817,
+      "mean_connectivity": 0.14092255892255895,
+      "elapsed_s": 0.2
+    },
+    {
+      "alpha": 2.75,
+      "mean_onset": 0.19580097839236255,
+      "std_onset": 0.01456363650386209,
+      "mean_gini": 0.5624235268707252,
+      "mean_tension": 0.28974321659306174,
+      "mean_connectivity": 0.15346801346801348,
+      "elapsed_s": 0.2
+    },
+    {
+      "alpha": 3.0,
+      "mean_onset": 0.19125525727868073,
+      "std_onset": 0.01670061683718172,
+      "mean_gini": 0.5402521506202235,
+      "mean_tension": 0.27961276302530175,
+      "mean_connectivity": 0.16642424242424242,
+      "elapsed_s": 0.3
+    },
+    {
+      "alpha": 3.25,
+      "mean_onset": 0.18381245265404378,
+      "std_onset": 0.019414594337570902,
+      "mean_gini": 0.5222684319957576,
+      "mean_tension": 0.2708160403121704,
+      "mean_connectivity": 0.17839730639730642,
+      "elapsed_s": 0.3
+    },
+    {
+      "alpha": 3.5,
+      "mean_onset": 0.17087085043390585,
+      "std_onset": 0.019259845497292857,
+      "mean_gini": 0.4954644036979923,
+      "mean_tension": 0.25744727330520845,
+      "mean_connectivity": 0.19106397306397305,
+      "elapsed_s": 0.3
+    },
+    {
+      "alpha": 3.75,
+      "mean_onset": 0.16586143483718227,
+      "std_onset": 0.01896206255163793,
+      "mean_gini": 0.47852942069217974,
+      "mean_tension": 0.24635043520888852,
+      "mean_connectivity": 0.20340740740740743,
+      "elapsed_s": 0.3
+    },
+    {
+      "alpha": 4.0,
+      "mean_onset": 0.1648382707436879,
+      "std_onset": 0.018913361475887232,
+      "mean_gini": 0.4640057292199698,
+      "mean_tension": 0.23538767153832327,
+      "mean_connectivity": 0.21511111111111114,
+      "elapsed_s": 0.3
+    },
+    {
+      "alpha": 4.25,
+      "mean_onset": 0.15117273782690355,
+      "std_onset": 0.017730155318683972,
+      "mean_gini": 0.43684430968740595,
+      "mean_tension": 0.23174137440686574,
+      "mean_connectivity": 0.2276767676767677,
+      "elapsed_s": 0.3
+    },
+    {
+      "alpha": 4.5,
+      "mean_onset": 0.1519684122502803,
+      "std_onset": 0.018108085633036626,
+      "mean_gini": 0.43232361872938907,
+      "mean_tension": 0.22741939212627257,
+      "mean_connectivity": 0.2386868686868687,
+      "elapsed_s": 0.3
+    },
+    {
+      "alpha": 4.75,
+      "mean_onset": 0.14206393393377456,
+      "std_onset": 0.015552165220452599,
+      "mean_gini": 0.4161860812851097,
+      "mean_tension": 0.21601420380918723,
+      "mean_connectivity": 0.2497979797979798,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 5.0,
+      "mean_onset": 0.14006399037937317,
+      "std_onset": 0.0178027769247195,
+      "mean_gini": 0.39700783840554893,
+      "mean_tension": 0.2127946981313137,
+      "mean_connectivity": 0.2612255892255892,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 5.25,
+      "mean_onset": 0.1361663855115572,
+      "std_onset": 0.013118457816619463,
+      "mean_gini": 0.40144955699408225,
+      "mean_tension": 0.20272572899024544,
+      "mean_connectivity": 0.27224915824915824,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 5.5,
+      "mean_onset": 0.13265320810178913,
+      "std_onset": 0.016026583678369555,
+      "mean_gini": 0.3788809811918767,
+      "mean_tension": 0.1960780551407262,
+      "mean_connectivity": 0.28340740740740744,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 5.75,
+      "mean_onset": 0.13816641253729658,
+      "std_onset": 0.017381781473121097,
+      "mean_gini": 0.3693816612097795,
+      "mean_tension": 0.19712953394818838,
+      "mean_connectivity": 0.29461279461279466,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 6.0,
+      "mean_onset": 0.1329009297241767,
+      "std_onset": 0.022597137889640382,
+      "mean_gini": 0.36143965201973105,
+      "mean_tension": 0.19020563321700187,
+      "mean_connectivity": 0.306060606060606,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 6.25,
+      "mean_onset": 0.12896299732228114,
+      "std_onset": 0.014377227203065194,
+      "mean_gini": 0.34830975904197686,
+      "mean_tension": 0.1893174582532539,
+      "mean_connectivity": 0.31550168350168345,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 6.5,
+      "mean_onset": 0.1256629541267951,
+      "std_onset": 0.017030756340428648,
+      "mean_gini": 0.3577507633441985,
+      "mean_tension": 0.1806301252304228,
+      "mean_connectivity": 0.3261010101010101,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 6.75,
+      "mean_onset": 0.12236300587654109,
+      "std_onset": 0.015083342927755016,
+      "mean_gini": 0.34036705463166356,
+      "mean_tension": 0.17973003751245528,
+      "mean_connectivity": 0.33653198653198657,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 7.0,
+      "mean_onset": 0.12325562886893744,
+      "std_onset": 0.01762661296859747,
+      "mean_gini": 0.3229775935352575,
+      "mean_tension": 0.17630206320325512,
+      "mean_connectivity": 0.3461077441077441,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 7.25,
+      "mean_onset": 0.12158969509104883,
+      "std_onset": 0.013903943598579804,
+      "mean_gini": 0.32769495540296023,
+      "mean_tension": 0.17581960546782313,
+      "mean_connectivity": 0.35597979797979806,
+      "elapsed_s": 0.5
+    }
+  ],
+  "transition_onset": 3.25,
+  "transition_gini": 2.0,
+  "transition_tension": 2.25,
+  "verdict": "FAIL",
+  "total_time_s": 8.2,
+  "timestamp": "2026-03-26T13:50:29"
+}

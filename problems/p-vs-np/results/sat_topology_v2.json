@@ -1,0 +1,174 @@
+{
+  "experiment": "sat_topology_v2",
+  "feature_map": "random_probe_satisfaction_pattern",
+  "n_vars": 80,
+  "n_probes": 500,
+  "n_instances_per_alpha": 20,
+  "results": [
+    {
+      "alpha": 2.0,
+      "mean_onset": 0.17381249822676179,
+      "std_onset": 0.002459831290787971,
+      "mean_gini": 0.07811285324141701,
+      "mean_sat_fraction": 0.8749737501144409,
+      "elapsed_s": 0.9
+    },
+    {
+      "alpha": 2.25,
+      "mean_onset": 0.17416667118668555,
+      "std_onset": 0.0036324155697750413,
+      "mean_gini": 0.07193845327014249,
+      "mean_sat_fraction": 0.8753733694553375,
+      "elapsed_s": 0.6
+    },
+    {
+      "alpha": 2.5,
+      "mean_onset": 0.176274995803833,
+      "std_onset": 0.0026714904805178945,
+      "mean_gini": 0.06668415327865253,
+      "mean_sat_fraction": 0.8750214815139771,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 2.75,
+      "mean_onset": 0.17711363136768338,
+      "std_onset": 0.0017620582992233743,
+      "mean_gini": 0.062069080244069166,
+      "mean_sat_fraction": 0.8749486237764359,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 3.0,
+      "mean_onset": 0.17793750911951065,
+      "std_onset": 0.0029269878655000443,
+      "mean_gini": 0.06001351777591944,
+      "mean_sat_fraction": 0.8753404527902603,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 3.25,
+      "mean_onset": 0.17944231189787388,
+      "std_onset": 0.0022143793141241653,
+      "mean_gini": 0.05456615537739397,
+      "mean_sat_fraction": 0.8748303771018981,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 3.5,
+      "mean_onset": 0.1802142886817455,
+      "std_onset": 0.002622993919463942,
+      "mean_gini": 0.05653458259880888,
+      "mean_sat_fraction": 0.8751528650522232,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 3.75,
+      "mean_onset": 0.18036667346954344,
+      "std_onset": 0.0017916455780688906,
+      "mean_gini": 0.05203687309333682,
+      "mean_sat_fraction": 0.8750253349542618,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 4.0,
+      "mean_onset": 0.18079688139259814,
+      "std_onset": 0.0022523295431405572,
+      "mean_gini": 0.05090140623859192,
+      "mean_sat_fraction": 0.8750490576028824,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 4.25,
+      "mean_onset": 0.18138235703110694,
+      "std_onset": 0.0019131215763160537,
+      "mean_gini": 0.04937814899664813,
+      "mean_sat_fraction": 0.8750156074762344,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 4.5,
+      "mean_onset": 0.18131945319473738,
+      "std_onset": 0.0014616342686281315,
+      "mean_gini": 0.0473756767610635,
+      "mean_sat_fraction": 0.8751125127077103,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 4.75,
+      "mean_onset": 0.18244737498462196,
+      "std_onset": 0.0016309461042005857,
+      "mean_gini": 0.04568037229084708,
+      "mean_sat_fraction": 0.8749358117580414,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 5.0,
+      "mean_onset": 0.18241249218583105,
+      "std_onset": 0.0014148238402960339,
+      "mean_gini": 0.04330185652767492,
+      "mean_sat_fraction": 0.8752384930849075,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 5.25,
+      "mean_onset": 0.18302381351590155,
+      "std_onset": 0.0017088205520509395,
+      "mean_gini": 0.04291784586759153,
+      "mean_sat_fraction": 0.8747126549482346,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 5.5,
+      "mean_onset": 0.1834545373916626,
+      "std_onset": 0.001892790393298892,
+      "mean_gini": 0.043107510347640585,
+      "mean_sat_fraction": 0.8747926980257035,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 5.75,
+      "mean_onset": 0.1834021676331758,
+      "std_onset": 0.0017231219373884177,
+      "mean_gini": 0.04042031360996795,
+      "mean_sat_fraction": 0.874931064248085,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 6.0,
+      "mean_onset": 0.18371875837445256,
+      "std_onset": 0.0016261722507490048,
+      "mean_gini": 0.04026857597527399,
+      "mean_sat_fraction": 0.87469462454319,
+      "elapsed_s": 0.7
+    },
+    {
+      "alpha": 6.25,
+      "mean_onset": 0.18443001084029673,
+      "std_onset": 0.0013494779512930788,
+      "mean_gini": 0.04011094079861527,
+      "mean_sat_fraction": 0.874912041425705,
+      "elapsed_s": 0.8
+    },
+    {
+      "alpha": 6.5,
+      "mean_onset": 0.1842788477987051,
+      "std_onset": 0.0017327715560978751,
+      "mean_gini": 0.03929199840904853,
+      "mean_sat_fraction": 0.8749638557434082,
+      "elapsed_s": 0.8
+    },
+    {
+      "alpha": 6.75,
+      "mean_onset": 0.1833703691512346,
+      "std_onset": 0.001647626368948877,
+      "mean_gini": 0.03864569510763527,
+      "mean_sat_fraction": 0.8753581315279007,
+      "elapsed_s": 0.8
+    }
+  ],
+  "transition_onset_alpha": 2.5,
+  "transition_gini_alpha": 2.0,
+  "verdict": "FAIL",
+  "total_time_s": 14.3,
+  "timestamp": "2026-03-26T13:45:50"
+}
