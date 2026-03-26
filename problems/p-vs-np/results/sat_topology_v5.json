@@ -1,0 +1,235 @@
+{
+  "experiment": "sat_topology_v5",
+  "feature_map": "literal_conflict_graph_H1",
+  "n_vars": 60,
+  "n_instances_per_alpha": 20,
+  "results": [
+    {
+      "alpha": 2.0,
+      "mean_onset": 0.4494998939335343,
+      "std_onset": 0.1613031448829192,
+      "mean_gini": 0.579095276340681,
+      "mean_h1_proxy": -551.55,
+      "mean_rips_triangles": 807.2,
+      "mean_algebraic_connectivity": 2.7759141266345972,
+      "mean_graph_triangles": 287.5,
+      "elapsed_s": 0.8
+    },
+    {
+      "alpha": 2.25,
+      "mean_onset": 0.4554189041256896,
+      "std_onset": 0.07007887646493262,
+      "mean_gini": 0.624116684100794,
+      "mean_h1_proxy": -415.8,
+      "mean_rips_triangles": 664.1,
+      "mean_algebraic_connectivity": 2.903640776872634,
+      "mean_graph_triangles": 416.6,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 2.5,
+      "mean_onset": 0.4744456366449589,
+      "std_onset": 0.13048287708281803,
+      "mean_gini": 0.6114378001384292,
+      "mean_h1_proxy": -358.1,
+      "mean_rips_triangles": 595.7,
+      "mean_algebraic_connectivity": 3.5260542273521422,
+      "mean_graph_triangles": 541.4,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 2.75,
+      "mean_onset": 0.46426117241382503,
+      "std_onset": 0.12131276037439688,
+      "mean_gini": 0.5884058460103272,
+      "mean_h1_proxy": -722.85,
+      "mean_rips_triangles": 1021.2,
+      "mean_algebraic_connectivity": 4.504687976837158,
+      "mean_graph_triangles": 698.4,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 3.0,
+      "mean_onset": 0.4961787668615571,
+      "std_onset": 0.14659084146175508,
+      "mean_gini": 0.5899309879810717,
+      "mean_h1_proxy": -561.55,
+      "mean_rips_triangles": 828.9,
+      "mean_algebraic_connectivity": 5.045865511894226,
+      "mean_graph_triangles": 872.7,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 3.25,
+      "mean_onset": 0.5018569347262376,
+      "std_onset": 0.1256356622805804,
+      "mean_gini": 0.582736466586319,
+      "mean_h1_proxy": -520.0,
+      "mean_rips_triangles": 778.4,
+      "mean_algebraic_connectivity": 6.385083186626434,
+      "mean_graph_triangles": 1068.9,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 3.5,
+      "mean_onset": 0.4371899487078183,
+      "std_onset": 0.1011690375809784,
+      "mean_gini": 0.5565830363106734,
+      "mean_h1_proxy": -529.45,
+      "mean_rips_triangles": 792.9,
+      "mean_algebraic_connectivity": 7.170861899852753,
+      "mean_graph_triangles": 1306.5,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 3.75,
+      "mean_onset": 0.45089127525687134,
+      "std_onset": 0.1180463585109969,
+      "mean_gini": 0.5426099654514615,
+      "mean_h1_proxy": -321.85,
+      "mean_rips_triangles": 553.5,
+      "mean_algebraic_connectivity": 8.126909637451172,
+      "mean_graph_triangles": 1552.1,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 4.0,
+      "mean_onset": 0.4456438273191442,
+      "std_onset": 0.1091255764111947,
+      "mean_gini": 0.5528014740691957,
+      "mean_h1_proxy": -250.15,
+      "mean_rips_triangles": 477.5,
+      "mean_algebraic_connectivity": 8.643030881881714,
+      "mean_graph_triangles": 1856.9,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 4.25,
+      "mean_onset": 0.45536238178610733,
+      "std_onset": 0.10466164552536197,
+      "mean_gini": 0.5414842576529633,
+      "mean_h1_proxy": -477.9,
+      "mean_rips_triangles": 720.5,
+      "mean_algebraic_connectivity": 9.636810278892517,
+      "mean_graph_triangles": 2192.8,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 4.5,
+      "mean_onset": 0.4583016723394384,
+      "std_onset": 0.0872097392417952,
+      "mean_gini": 0.5114712634613222,
+      "mean_h1_proxy": -347.15,
+      "mean_rips_triangles": 572.7,
+      "mean_algebraic_connectivity": 11.540756773948669,
+      "mean_graph_triangles": 2558.4,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 4.75,
+      "mean_onset": 0.486048624813556,
+      "std_onset": 0.1343572494975675,
+      "mean_gini": 0.5524981673711438,
+      "mean_h1_proxy": -488.6,
+      "mean_rips_triangles": 731.4,
+      "mean_algebraic_connectivity": 11.181229639053345,
+      "mean_graph_triangles": 3003.6,
+      "elapsed_s": 0.6
+    },
+    {
+      "alpha": 5.0,
+      "mean_onset": 0.47014820024371023,
+      "std_onset": 0.11375582424477303,
+      "mean_gini": 0.5595177808573074,
+      "mean_h1_proxy": -304.8,
+      "mean_rips_triangles": 526.6,
+      "mean_algebraic_connectivity": 12.533131122589111,
+      "mean_graph_triangles": 3267.0,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 5.25,
+      "mean_onset": 0.4973110739886752,
+      "std_onset": 0.11060249195174642,
+      "mean_gini": 0.5370303140461059,
+      "mean_h1_proxy": -158.25,
+      "mean_rips_triangles": 347.6,
+      "mean_algebraic_connectivity": 13.340749216079711,
+      "mean_graph_triangles": 3734.2,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 5.5,
+      "mean_onset": 0.48731831617653276,
+      "std_onset": 0.11410793418691777,
+      "mean_gini": 0.5372228887651634,
+      "mean_h1_proxy": -199.0,
+      "mean_rips_triangles": 416.1,
+      "mean_algebraic_connectivity": 14.585039639472962,
+      "mean_graph_triangles": 4222.3,
+      "elapsed_s": 0.4
+    },
+    {
+      "alpha": 5.75,
+      "mean_onset": 0.5070345620810974,
+      "std_onset": 0.11366621826873023,
+      "mean_gini": 0.5582992110882322,
+      "mean_h1_proxy": -307.45,
+      "mean_rips_triangles": 527.0,
+      "mean_algebraic_connectivity": 15.4866153717041,
+      "mean_graph_triangles": 4788.6,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 6.0,
+      "mean_onset": 0.5433822865784161,
+      "std_onset": 0.10045915187462257,
+      "mean_gini": 0.5348728395485214,
+      "mean_h1_proxy": -265.2,
+      "mean_rips_triangles": 480.1,
+      "mean_algebraic_connectivity": 17.329473209381103,
+      "mean_graph_triangles": 5246.0,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 6.25,
+      "mean_onset": 0.5165549317002289,
+      "std_onset": 0.13351616686300255,
+      "mean_gini": 0.5410611919201957,
+      "mean_h1_proxy": -119.95,
+      "mean_rips_triangles": 303.1,
+      "mean_algebraic_connectivity": 17.76058974266052,
+      "mean_graph_triangles": 5812.7,
+      "elapsed_s": 0.5
+    },
+    {
+      "alpha": 6.5,
+      "mean_onset": 0.44428687766194236,
+      "std_onset": 0.09400714421738758,
+      "mean_gini": 0.5220461480730803,
+      "mean_h1_proxy": -147.3,
+      "mean_rips_triangles": 344.8,
+      "mean_algebraic_connectivity": 18.689415216445923,
+      "mean_graph_triangles": 6499.4,
+      "elapsed_s": 0.6
+    },
+    {
+      "alpha": 6.75,
+      "mean_onset": 0.518425019234418,
+      "std_onset": 0.13203238058442435,
+      "mean_gini": 0.5312198977761053,
+      "mean_h1_proxy": -199.15,
+      "mean_rips_triangles": 401.0,
+      "mean_algebraic_connectivity": 20.277224016189574,
+      "mean_graph_triangles": 7087.5,
+      "elapsed_s": 0.8
+    }
+  ],
+  "transitions": {
+    "onset": 6.75,
+    "h1_proxy": 5.0,
+    "algebraic_connectivity": 6.75
+  },
+  "verdict": "PASS",
+  "total_time_s": 9.9
+}
