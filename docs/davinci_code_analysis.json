@@ -1,0 +1,37 @@
+{
+  "Pentagram": {
+    "gini": 0.1554234832447443,
+    "proximity": 0.11294599425886188,
+    "n_phi": 0
+  },
+  "Vitruvian Man": {
+    "gini": 0.26019120036639576,
+    "proximity": 0.18573944666861222
+  },
+  "Vesica Piscis": {
+    "gini": 0.14088324360345816,
+    "proximity": 0.08751338169483695
+  },
+  "Seal of Solomon": {
+    "gini": 0.0,
+    "proximity": 0.1290019433538762
+  },
+  "Chartres Labyrinth": {
+    "gini": 0.22239359948683068,
+    "proximity": 0.09660764513526843
+  },
+  "Last Supper": {
+    "proximity": 0.15917823766096825
+  },
+  "Solomons Temple": {
+    "proximity": 0.14336652369521158
+  },
+  "Islamic Star": {
+    "gini": 0.07613465919526186,
+    "proximity": 0.13227819444419706
+  },
+  "Phyllotaxis": {
+    "gini": 0.011819230980190776,
+    "gini_random": 0.0671780005406244
+  }
+}
