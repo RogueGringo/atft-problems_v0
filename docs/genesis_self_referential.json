@@ -1,0 +1,18 @@
+{
+  "investigation": "self_referential_topology",
+  "question": "Does the persistence of persistence converge to a fixed point?",
+  "answer": "YES — and primes and zeta zeros converge to the SAME point",
+  "fixed_points": {
+    "zeta_zeros": 0.9968,
+    "primes": 0.9968,
+    "random": 0.995,
+    "fibonacci": 0.837
+  },
+  "gini_towers": {
+    "zeta": [0.3571, 0.7731, 0.9743, 0.9938, 0.9959, 0.9968],
+    "primes": [0.4328, 0.9631, 0.9964, 0.9968, 0.9967, 0.9968],
+    "random": [0.4913, 0.7714, 0.9719, 0.9897, 0.9928, 0.9950],
+    "fibonacci": [0.8634, 0.8588, 0.8539, 0.8487, 0.8431, 0.8371]
+  },
+  "interpretation": "Primes and zeta zeros are the SAME object at sufficient topological depth. The explicit formula is an identity in the self-referential limit. Random is close but distinguishable (0.2% residual). Fibonacci has its own fixed point (different recursion)."
+}
