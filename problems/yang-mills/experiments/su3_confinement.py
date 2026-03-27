@@ -80,10 +80,10 @@ plt.rcParams.update({
 
 # ── Experiment parameters ─────────────────────────────────────────────────────
 
-LATTICE      = (8, 8, 8, 4)
+LATTICE = (4, 4, 4, 4)
 BETA_VALUES  = [5.0, 5.2, 5.4, 5.5, 5.6, 5.7, 5.8, 6.0, 6.5, 7.0]
-N_THERM      = 100   # thermalization sweeps
-N_CONFIGS    = 5     # configs to collect per β
+N_THERM = 50   # thermalization sweeps
+N_CONFIGS = 3     # configs to collect per β
 N_SKIP       = 1     # sweeps between saved configs
 EPSILON_MH   = 0.20  # step size for Metropolis proposals
 N_ACCEPT_LOG = 5000  # log acceptance rate every N link updates
