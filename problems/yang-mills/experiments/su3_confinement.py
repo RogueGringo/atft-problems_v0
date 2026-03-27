@@ -441,13 +441,27 @@ def main() -> None:
     max_deriv           = 0.0
 
     if len(betas_arr) >= 3:
-        d_onset          = np.gradient(onsets_arr, betas_arr)
-        max_deriv_idx    = int(np.argmax(np.abs(d_onset)))
-        transition_beta  = float(betas_arr[max_deriv_idx])
-        max_deriv        = float(d_onset[max_deriv_idx])
+        d_onset = np.gradient(onsets_arr, betas_arr)
+        # Use interior points only to avoid endpoint artifacts
+        interior = slice(1, len(betas_arr) - 1)
+        d_interior  = d_onset[interior]
+        b_interior  = betas_arr[interior]
+        max_deriv_idx_int = int(np.argmax(np.abs(d_interior)))
+        transition_beta   = float(b_interior[max_deriv_idx_int])
+        max_deriv         = float(d_interior[max_deriv_idx_int])
         detected_transition = 5.4 <= transition_beta <= 6.0
-        print(f"\n  Maximum |dε*/dβ| at β = {transition_beta:.2f}  "
+
+        # Additional check: look for the step where ε* drops most between adjacent betas
+        drops = np.diff(onsets_arr)  # ε*[i+1] - ε*[i], should be negative
+        steepest_drop_idx = int(np.argmin(drops))
+        beta_drop_lo = float(betas_arr[steepest_drop_idx])
+        beta_drop_hi = float(betas_arr[steepest_drop_idx + 1])
+        step_drop    = float(drops[steepest_drop_idx])
+
+        print(f"\n  Max |dε*/dβ| (interior) at β = {transition_beta:.2f}  "
               f"(derivative = {max_deriv:.4f})")
+        print(f"  Steepest step-drop: [{beta_drop_lo:.2f}→{beta_drop_hi:.2f}]  "
+              f"Δε* = {step_drop:.4f}")
         print(f"  Transition in [5.4, 6.0]: {detected_transition}")
 
     # ── Figures ───────────────────────────────────────────────────────────────

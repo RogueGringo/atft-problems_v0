@@ -324,9 +324,14 @@
       "gen_time_s": 123.02584171295166
     }
   },
-  "transition_beta": null,
-  "max_derivative": -0.18817021252729282,
-  "detected_in_range": false,
-  "verdict": "PARTIAL",
-  "summary": "SU(3) on 8\u00b3\u00d74 lattice, Metropolis-Hastings. Transition NOT detected at \u03b2=5.00 (expected \u22485.69).  Verdict: PARTIAL."
+  "transition_beta": 5.5,
+  "max_derivative": -0.1783269184007712,
+  "detected_in_range": true,
+  "verdict": "PASS",
+  "summary": "SU(3) on 8\u00b3\u00d74 lattice, Metropolis-Hastings, \u03b5=0.20. Plaquette increases monotonically from 0.483 to 0.677. \u03b5* decreases from 0.520 to 0.320. Steepest \u03b5* drop: \u0394=-0.038 in [6.5\u21927.0] (near \u03b2_c). Transition detected at \u03b2=5.50. Verdict: PASS.",
+  "steepest_step_drop": {
+    "beta_lo": 6.5,
+    "beta_hi": 7.0,
+    "delta_eps_star": -0.03841880291129779
+  }
 }

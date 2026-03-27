@@ -1,0 +1,13 @@
+{
+  "experiment": "hardness_correlation",
+  "n_vars": 100,
+  "n_instances": 300,
+  "pearson_r_gini_solve": 0.5137350063628092,
+  "spearman_r_gini_solve": 0.5164016018002231,
+  "pearson_r_alpha_solve": 0.286413818523133,
+  "verdict": "PROMISING \u2014 moderate correlation, needs refinement",
+  "sat_fraction": 0.5433333333333333,
+  "mean_topo_time_ms": 3882.189528942108,
+  "mean_solve_time_ms": 0.637059211730957,
+  "total_time_s": 1166.9
+}
