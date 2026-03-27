@@ -205,8 +205,9 @@ def metropolis_su3_sweep(links: dict[int, np.ndarray], beta: float,
             R     = random_su3_near_identity(rng, epsilon)
             U_new = R @ U_old
 
-            # ΔS = -(1/3) Re Tr[(U_new - U_old) A†]
-            delta_s = -np.real(np.trace((U_new - U_old) @ A.conj().T)) / 3.0
+            # ΔS = -(1/3) Re Tr[(U_new - U_old) A]
+            # S = -(β/3) Re Tr[U @ Σ] where Σ = staple sum (no conjugate)
+            delta_s = -np.real(np.trace((U_new - U_old) @ A)) / 3.0
 
             # Accept with min(1, exp(-β ΔS))
             if delta_s <= 0 or rng.random() < np.exp(-beta * delta_s):
