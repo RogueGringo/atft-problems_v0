@@ -1,0 +1,129 @@
+{
+  "n_primes": 59,
+  "n_categories": 14,
+  "category_separation": 1.1372430385336214,
+  "gini_primes_only": 0.13473294479630304,
+  "gini_with_extras": 0.12370018304643704,
+  "completeness_change_pct": 8.188614719693065,
+  "good_bad_distance": 174.4334716796875,
+  "category_ginis": {
+    "substantives": 0.09338699185336785,
+    "determiners": 0.060557799288784464,
+    "quantifiers": 0.07916951185680632,
+    "mental": 0.1051279584416005,
+    "speech": 0.09614143391146146,
+    "actions": 0.06560500445003292,
+    "existence": 0.007898617275961639,
+    "space": 0.1403280546131087,
+    "time": 0.270428691422288,
+    "logic": 0.08391244763555572,
+    "taxonomy": 0.1340317682963914
+  },
+  "first_merges": [
+    [
+      "a long time",
+      "a short time",
+      41.22728713193764,
+      "time",
+      "time"
+    ],
+    [
+      "before",
+      "after",
+      60.72772592560489,
+      "time",
+      "time"
+    ],
+    [
+      "inside",
+      "like",
+      62.762954861978564,
+      "space",
+      "taxonomy"
+    ],
+    [
+      "above",
+      "below",
+      64.14794648783403,
+      "space",
+      "space"
+    ],
+    [
+      "above",
+      "inside",
+      79.90482148348751,
+      "space",
+      "space"
+    ],
+    [
+      "kind of",
+      "like",
+      85.16408160896232,
+      "taxonomy",
+      "taxonomy"
+    ],
+    [
+      "one",
+      "some",
+      93.68520364136691,
+      "quantifiers",
+      "quantifiers"
+    ],
+    [
+      "one",
+      "many",
+      94.87202990183789,
+      "quantifiers",
+      "quantifiers"
+    ],
+    [
+      "know",
+      "hear",
+      97.63135987555061,
+      "mental",
+      "mental"
+    ],
+    [
+      "big",
+      "small",
+      97.95783570888076,
+      "descriptors",
+      "descriptors"
+    ],
+    [
+      "bad",
+      "big",
+      99.07890086631943,
+      "evaluators",
+      "descriptors"
+    ],
+    [
+      "small",
+      "side",
+      99.25680106364703,
+      "descriptors",
+      "space"
+    ],
+    [
+      "now",
+      "before",
+      100.2974412981283,
+      "time",
+      "time"
+    ],
+    [
+      "because",
+      "like",
+      101.73880658911004,
+      "logic",
+      "taxonomy"
+    ],
+    [
+      "one",
+      "side",
+      102.07893151424572,
+      "quantifiers",
+      "space"
+    ]
+  ]
+}
