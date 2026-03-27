@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATFT Problems — Topology Replaces Equations</title>
+<style>
+:root {
+  --bg: #0f0d08; --surface: #16140d; --border: #35311e;
+  --text: #d6d0be; --muted: #817a66; --gold: #c5a03f;
+  --teal: #45a8b0; --red: #e94560;
+  --font: 'Georgia', serif; --mono: 'Courier New', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+header { padding: 6rem 0 4rem; text-align: center; }
+h1 { font-size: 2.5rem; color: var(--gold); letter-spacing: -0.03em; margin-bottom: 1rem; }
+.subtitle { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto; }
+.score { display: flex; justify-content: center; gap: 3rem; margin: 3rem 0; flex-wrap: wrap; }
+.score-item { text-align: center; }
+.score-num { font-size: 2rem; color: var(--teal); font-family: var(--mono); }
+.score-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.problems { display: grid; gap: 1.5rem; margin: 3rem 0; }
+.problem { background: var(--surface); border: 1px solid var(--border); border-radius: 0.5rem; padding: 1.5rem; }
+.problem-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.problem-name { font-size: 1.2rem; color: var(--gold); }
+.badge { font-family: var(--mono); font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 1rem; }
+.badge-pass { background: rgba(69,168,176,0.15); color: var(--teal); border: 1px solid rgba(69,168,176,0.3); }
+.badge-planned { background: rgba(129,122,102,0.15); color: var(--muted); border: 1px solid rgba(129,122,102,0.3); }
+.badge-active { background: rgba(192,159,63,0.15); color: var(--gold); border: 1px solid rgba(192,159,63,0.3); }
+.problem-desc { font-size: 0.9rem; color: var(--muted); }
+.problem-result { font-family: var(--mono); font-size: 0.8rem; color: var(--teal); margin-top: 0.5rem; }
+section { padding: 3rem 0; border-top: 1px solid var(--border); }
+h2 { font-size: 1.5rem; color: var(--gold); margin-bottom: 1rem; }
+p { margin-bottom: 1rem; color: var(--muted); }
+.mono { font-family: var(--mono); color: var(--teal); }
+footer { padding: 3rem 0; text-align: center; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
+a { color: var(--teal); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>ATFT Problems</h1>
+  <p class="subtitle">What happens when you stop solving equations and start reading topology?
+  Seven problems. One instrument. The same question every time.</p>
+</header>
+
+<div class="score">
+  <div class="score-item"><div class="score-num">5</div><div class="score-label">Domains Validated</div></div>
+  <div class="score-item"><div class="score-num">22.7%</div><div class="score-label">Arithmetic Premium</div></div>
+  <div class="score-item"><div class="score-num">0.991</div><div class="score-label">Cross-Model r</div></div>
+  <div class="score-item"><div class="score-num">0</div><div class="score-label">PDEs Solved</div></div>
+</div>
+
+<div class="problems">
+  <div class="problem">
+    <div class="problem-header">
+      <span class="problem-name">Riemann Hypothesis</span>
+      <span class="badge badge-pass">VALIDATED</span>
+    </div>
+    <p class="problem-desc">46 primes threading zeta zeros. The sheaf Laplacian detects a 22.7% arithmetic premium — a new invariant invisible to pair correlations. σ=½ is the unique unitary surface.</p>
+    <p class="problem-result">K=100→800: 19.6% → 22.7% (monotonically increasing)</p>
+  </div>
+
+  <div class="problem">
+    <div class="problem-header">
+      <span class="problem-name">Yang-Mills Mass Gap</span>
+      <span class="badge badge-pass">SU(2) VALIDATED</span>
+    </div>
+    <p class="problem-desc">Confinement-deconfinement transition detected at β_c=2.30 via persistence onset scale — without computing the Polyakov loop. SU(3) in progress.</p>
+    <p class="problem-result">ε* drops 10× at β=2.30 exactly</p>
+  </div>
+
+  <div class="problem">
+    <div class="problem-header">
+      <span class="problem-name">P vs NP</span>
+      <span class="badge badge-pass">SAT TRANSITION DETECTED</span>
+    </div>
+    <p class="problem-desc">Six iterations to find the right lens. WalkSAT probes the solution space, topology detects cluster shattering. The hardness IS the topology.</p>
+    <p class="problem-result">α_c bracketed [4.00, 4.40] (known 4.27) at N=200</p>
+  </div>
+
+  <div class="problem">
+    <div class="problem-header">
+      <span class="problem-name">Navier-Stokes</span>
+      <span class="badge badge-active">ACTIVE</span>
+    </div>
+    <p class="problem-desc">Does ε*(t) → 0 indicate blow-up? Track vortex topology under increasing Reynolds number via spectral DNS on GPU.</p>
+  </div>
+
+  <div class="problem">
+    <div class="problem-header">
+      <span class="problem-name">Birch & Swinnerton-Dyer</span>
+      <span class="badge badge-active">ACTIVE</span>
+    </div>
+    <p class="problem-desc">Does the topology of an elliptic curve's point cloud encode its rank? Sampling curves with known rank to test.</p>
+  </div>
+
+  <div class="problem">
+    <div class="problem-header">
+      <span class="problem-name">Hodge Conjecture</span>
+      <span class="badge badge-planned">PLANNED</span>
+    </div>
+    <p class="problem-desc">Do algebraic cycles produce longer-lived persistence features than non-algebraic Hodge classes?</p>
+  </div>
+
+  <div class="problem">
+    <div class="problem-header">
+      <span class="problem-name">Poincaré Conjecture</span>
+      <span class="badge badge-planned">BENCHMARK</span>
+    </div>
+    <p class="problem-desc">Already proved. Used to calibrate the ATFT operator by tracking Ricci flow topology simplification.</p>
+  </div>
+</div>
+
+<section>
+  <h2>The Pattern</h2>
+  <p>Every problem follows the same pipeline:</p>
+  <p class="mono">GENERATE → BUILD → SWEEP → DETECT → COMPARE → REPORT</p>
+  <p>The engine is shared. The problems are independent. The topology doesn't care what the structure is. It cares how the structure changes across scales.</p>
+</section>
+
+<section>
+  <h2>Hardware</h2>
+  <p>One researcher. One GPU. No cloud. No external compute.</p>
+  <p class="mono">Intel i9-9900K · 32 GB RAM · NVIDIA RTX 5070 12 GB · 850 GB SSD</p>
+</section>
+
+<footer>
+  <p>Built by B. Aaron Jones · Research use only · <a href="https://github.com/RogueGringo/atft-problems">GitHub</a></p>
+  <p style="margin-top: 0.5rem; font-style: italic;">The topology doesn't care what the structure is. It cares how the structure changes across scales.</p>
+</footer>
+
+</div>
+</body>
+</html>
