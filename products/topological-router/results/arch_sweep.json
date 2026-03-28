@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-03-27T21:06:43",
+  "analyses": [
+    {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "family": "Qwen2.5",
+      "size_B": 0.5,
+      "error": "Can't load tokenizer for 'Qwen/Qwen2.5-0.5B-Instruct'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'Qwen/Qwen2.5-0.5B-Instruct' is the correct path to a directory containing all relevant files for a Qwen2Tokenizer tokenizer."
+    },
+    {
+      "model": "meta-llama/Llama-3.2-1B-Instruct",
+      "family": "Llama-3.2",
+      "size_B": 1.0,
+      "error": "You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct.\n401 Client Error. (Request ID: Root=1-69c738b1-1435f1491ab38ee338f60102;7beba8ea-c5b8-4db4-aebc-b6000f302596)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Llama-3.2-1B-Instruct is restricted. You must have access to it and be authenticated to access it. Please log in."
+    },
+    {
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "family": "Qwen2.5",
+      "size_B": 1.5,
+      "n": 102,
+      "lk_accuracy": 0.28431372549019607,
+      "mcq_pos_avg": 0.4411764705882353,
+      "mcq_strict": 0.20588235294117646,
+      "mcq_inflation": 2.142857142857143,
+      "rotation_cv": 0.0016733752471562349,
+      "delib_sg_d": 0.20812290572081787,
+      "delib_sg_p": 0.09837479392091641
+    },
+    {
+      "model": "google/gemma-2-2b-it",
+      "family": "Gemma-2",
+      "size_B": 2.0,
+      "error": "You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/google/gemma-2-2b-it.\n401 Client Error. (Request ID: Root=1-69c73958-0ab3b87033b7836c33a1dc20;c716bb97-6391-4539-8cfc-5423446cb2cf)\n\nCannot access gated repo for url https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json.\nAccess to model google/gemma-2-2b-it is restricted. You must have access to it and be authenticated to access it. Please log in."
+    },
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "family": "Qwen2.5",
+      "size_B": 3.0,
+      "n": 102,
+      "lk_accuracy": 0.35294117647058826,
+      "mcq_pos_avg": 0.41421568627450983,
+      "mcq_strict": 0.21568627450980393,
+      "mcq_inflation": 1.9204545454545454,
+      "rotation_cv": 0.007557042776423677,
+      "delib_sg_d": 0.14382609428609744,
+      "delib_sg_p": 0.2997194711563843
+    },
+    {
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "family": "Llama-3.2",
+      "size_B": 3.0,
+      "error": "You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct.\n401 Client Error. (Request ID: Root=1-69c739bc-3f056bb37cd2ef4b5118c9da;b6a5d25e-e1b4-4184-afea-cfe76b8ca5d3)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Llama-3.2-3B-Instruct is restricted. You must have access to it and be authenticated to access it. Please log in."
+    },
+    {
+      "model": "microsoft/Phi-3.5-mini-instruct",
+      "family": "Phi-3.5",
+      "size_B": 3.8,
+      "error": "cannot import name 'is_flash_attn_greater_or_equal_2_10' from 'transformers.utils' (/home/wb1/.local/lib/python3.12/site-packages/transformers/utils/__init__.py)"
+    }
+  ]
+}
