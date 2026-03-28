@@ -1,0 +1,707 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "alpha": 0.7,
+    "target_gap": 50.0,
+    "lora_rank": 8,
+    "lr": 0.0001,
+    "n_epochs": 2,
+    "batch_size": 1,
+    "max_length": 128,
+    "timestamp": "2026-03-28T11:12:32"
+  },
+  "pre_eval": {
+    "lm_loss": 2.1421875,
+    "spectral_gap": 137.3498962402344,
+    "spectral_gap_std": 22.257606215213116
+  },
+  "steps": [
+    {
+      "step": 50,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 100,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 150,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 200,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 250,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 300,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 350,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 400,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 450,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 500,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 550,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 600,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 650,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 700,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 750,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 800,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 850,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 900,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 950,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1000,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1050,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1100,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1150,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1200,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1250,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1300,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1350,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1400,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1450,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1500,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1550,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1600,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1650,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1700,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1750,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1800,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1850,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1900,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 1950,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 2000,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 0
+    },
+    {
+      "step": 2050,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2100,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2150,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2200,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2250,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2300,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2350,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2400,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2450,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2500,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2550,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2600,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2650,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2700,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2750,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2800,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2850,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2900,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 2950,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3000,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3050,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3100,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3150,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3200,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3250,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3300,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3350,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3400,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3450,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3500,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3550,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3600,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3650,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3700,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3750,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3800,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3850,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3900,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 3950,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    },
+    {
+      "step": 4000,
+      "lm_loss": NaN,
+      "topo_penalty": NaN,
+      "total_loss": NaN,
+      "epoch": 1
+    }
+  ],
+  "evals": [
+    {
+      "step": 200,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 400,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 600,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 800,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 1000,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 1200,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 1400,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 1600,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 1800,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 2000,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 2200,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 2400,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 2600,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 2800,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 3000,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 3200,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 3400,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 3600,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 3800,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    },
+    {
+      "step": 4000,
+      "lm_loss": NaN,
+      "spectral_gap": NaN,
+      "spectral_gap_std": NaN
+    }
+  ],
+  "post_eval": {
+    "lm_loss": NaN,
+    "spectral_gap": NaN,
+    "spectral_gap_std": NaN
+  }
+}
