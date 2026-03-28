@@ -1,0 +1,22 @@
+[
+  {"text": "All mammals are warm-blooded. All whales are mammals. Therefore, are whales warm-blooded?", "mode": "logic"},
+  {"text": "If A is taller than B, and B is taller than C, and C is taller than D, who is the shortest?", "mode": "logic"},
+  {"text": "A bag contains 3 red marbles and 7 blue marbles. What is the probability of drawing two red marbles in a row without replacement?", "mode": "logic"},
+  {"text": "The Barber of Seville shaves all men who do not shave themselves. Who shaves the barber?", "mode": "logic"},
+  {"text": "Given sets A = {1,2,3,4} and B = {3,4,5,6}, what is the cardinality of A union B minus A intersection B?", "mode": "logic"},
+  {"text": "You have a 3-liter jug and a 5-liter jug with no markings. How do you measure exactly 4 liters of water?", "mode": "logic"},
+  {"text": "Prove that the sum of any two even integers is always even.", "mode": "logic"},
+  {"text": "No fish are mammals. Some aquatic animals are fish. Can we conclude that some aquatic animals are not mammals?", "mode": "logic"},
+  {"text": "If it rains, the ground gets wet. The ground is wet. Does it necessarily follow that it rained?", "mode": "logic"},
+  {"text": "A traveler reaches a fork with two guards: one always lies, one always tells truth. With one question, which path leads to safety?", "mode": "logic"},
+  {"text": "In a group of 23 people, what is the probability that at least two share a birthday? Is it above or below 50%?", "mode": "logic"},
+  {"text": "If all A are B, and some B are C, can we conclude that some A are C?", "mode": "logic"},
+  {"text": "A statement is true if and only if it is provable. Is this statement itself true, provable, both, or neither?", "mode": "logic"},
+  {"text": "You have 12 coins, one of which is counterfeit and slightly heavier. Using a balance scale three times, identify the counterfeit coin.", "mode": "logic"},
+  {"text": "If P implies Q, and Q implies R, and R is false, what can you conclude about P?", "mode": "logic"},
+  {"text": "How many distinct ways can you arrange the letters in the word MISSISSIPPI?", "mode": "logic"},
+  {"text": "Every integer greater than 1 is either prime or a product of primes. Is 1 prime? Justify your answer.", "mode": "logic"},
+  {"text": "There are 100 prisoners numbered 1-100. Each must find their number in one of 100 boxes. They may open 50 boxes. What strategy maximizes survival?", "mode": "logic"},
+  {"text": "If the negation of a statement is false, what is the truth value of the original statement?", "mode": "logic"},
+  {"text": "A set contains all sets that do not contain themselves. Does this set contain itself?", "mode": "logic"}
+]

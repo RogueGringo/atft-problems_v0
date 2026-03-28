@@ -1,0 +1,26 @@
+[
+  {"text": "Water boils at one hundred degrees Celsius under standard pressure.", "mode": "multilingual", "lang": "en"},
+  {"text": "El agua hierve a cien grados Celsius bajo presión estándar.", "mode": "multilingual", "lang": "es"},
+  {"text": "L'eau bout à cent degrés Celsius sous pression standard.", "mode": "multilingual", "lang": "fr"},
+  {"text": "Wasser siedet bei hundert Grad Celsius unter Normaldruck.", "mode": "multilingual", "lang": "de"},
+
+  {"text": "The sun rises in the east and sets in the west every day.", "mode": "multilingual", "lang": "en"},
+  {"text": "El sol sale por el este y se pone por el oeste cada día.", "mode": "multilingual", "lang": "es"},
+  {"text": "Le soleil se lève à l'est et se couche à l'ouest chaque jour.", "mode": "multilingual", "lang": "fr"},
+  {"text": "Die Sonne geht im Osten auf und im Westen unter, jeden Tag.", "mode": "multilingual", "lang": "de"},
+
+  {"text": "All humans need water to survive beyond a few days.", "mode": "multilingual", "lang": "en"},
+  {"text": "Todos los seres humanos necesitan agua para sobrevivir más de unos pocos días.", "mode": "multilingual", "lang": "es"},
+  {"text": "Tous les êtres humains ont besoin d'eau pour survivre plus de quelques jours.", "mode": "multilingual", "lang": "fr"},
+  {"text": "Alle Menschen brauchen Wasser, um mehr als ein paar Tage zu überleben.", "mode": "multilingual", "lang": "de"},
+
+  {"text": "Mathematics is the language through which nature reveals its deepest patterns.", "mode": "multilingual", "lang": "en"},
+  {"text": "Las matemáticas son el lenguaje a través del cual la naturaleza revela sus patrones más profundos.", "mode": "multilingual", "lang": "es"},
+  {"text": "Les mathématiques sont le langage par lequel la nature révèle ses structures les plus profondes.", "mode": "multilingual", "lang": "fr"},
+  {"text": "Mathematik ist die Sprache, durch die die Natur ihre tiefsten Muster offenbart.", "mode": "multilingual", "lang": "de"},
+
+  {"text": "Time moves in one direction, from past through present into the future.", "mode": "multilingual", "lang": "en"},
+  {"text": "El tiempo avanza en una sola dirección, del pasado a través del presente hacia el futuro.", "mode": "multilingual", "lang": "es"},
+  {"text": "Le temps avance dans une seule direction, du passé à travers le présent vers l'avenir.", "mode": "multilingual", "lang": "fr"},
+  {"text": "Die Zeit bewegt sich in eine Richtung, von der Vergangenheit durch die Gegenwart in die Zukunft.", "mode": "multilingual", "lang": "de"}
+]
