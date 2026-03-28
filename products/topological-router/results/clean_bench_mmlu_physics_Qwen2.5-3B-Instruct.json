@@ -1,0 +1,2910 @@
+{
+  "analysis": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "dataset": "MMLU-Physics",
+    "n": 102,
+    "time_s": 88.9,
+    "lk_accuracy": 0.35294117647058826,
+    "mcq_pos_avg_accuracy": 0.4068627450980392,
+    "mcq_strict_accuracy": 0.20588235294117646,
+    "random_baseline": 0.25,
+    "both_right": 10,
+    "both_wrong": 43,
+    "lk_only": 22,
+    "mcq_only": 18,
+    "agreement": 0.5196078431372549,
+    "lk_delib": {
+      "eff_rank": {
+        "d": -0.12521938280879194,
+        "p": 0.23321872911296915,
+        "right_mean": 18.08847039400334,
+        "wrong_mean": 19.083027133152818
+      },
+      "spectral_gap": {
+        "d": 0.14382609428609744,
+        "p": 0.2997194711563843,
+        "right_mean": 21.312178212183493,
+        "wrong_mean": 20.93323422381372
+      },
+      "norm_var": {
+        "d": 0.28717861295815234,
+        "p": 0.1776480972378785,
+        "right_mean": 232842.51227636688,
+        "wrong_mean": 204703.96208424037
+      }
+    },
+    "n_lk_right": 36,
+    "n_lk_wrong": 66,
+    "mcq_delib": {
+      "spectral_gap": {
+        "d": 0.6707109085115575,
+        "p": 0.006981800807317024
+      }
+    },
+    "n_mcq_right": 28,
+    "n_mcq_wrong": 65,
+    "answer_length_r": -0.08309856590584029,
+    "answer_length_p": 0.40634183595919493,
+    "mcq_rotation_cv": 0.006794074272409145,
+    "null_sg_mean": 21.662695707380777,
+    "real_sg_mean": 21.06697916088541
+  },
+  "results": [
+    {
+      "qi": 0,
+      "question": "The quantum efficiency of a photon detector is 0.1. If 100 photons are sent into the detector, one after the other, the detector will detect photons",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -2.279296875,
+        -2.662109375,
+        -2.47265625,
+        -2.55859375
+      ],
+      "lk_correct_score": -2.279296875,
+      "lk_wrong_scores": [
+        -2.662109375,
+        -2.47265625,
+        -2.55859375
+      ],
+      "lk_measures": {
+        "eff_rank": 18.347522354207083,
+        "spectral_gap": 22.325669700900715,
+        "norm_var": 182273.84138997397
+      },
+      "lk_answer_len": 16,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 17.40105638404687,
+      "mcq_sg_cv": 0.01025538340286222
+    },
+    {
+      "qi": 1,
+      "question": "White light is normally incident on a puddle of water (index of refraction 1.33). A thin (500 nm) layer of oil (index of refraction 1.5) floats on the surface of the puddle. Of the following, the most",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.6953125,
+        -0.3984375,
+        -0.78759765625,
+        -0.6904296875
+      ],
+      "lk_correct_score": -0.6953125,
+      "lk_wrong_scores": [
+        -0.3984375,
+        -0.78759765625,
+        -0.6904296875
+      ],
+      "lk_measures": {
+        "eff_rank": 24.654844400979652,
+        "spectral_gap": 17.331153576572735,
+        "norm_var": 141503.41119639078
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 16.697636384516954,
+      "mcq_sg_cv": 0.01839955903519717
+    },
+    {
+      "qi": 2,
+      "question": "Which of the following is true about any system that undergoes a reversible thermodynamic process?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.94921875,
+        -1.40234375,
+        -1.513671875,
+        -1.9482421875
+      ],
+      "lk_correct_score": -1.94921875,
+      "lk_wrong_scores": [
+        -1.40234375,
+        -1.513671875,
+        -1.9482421875
+      ],
+      "lk_measures": {
+        "eff_rank": 8.95274647769532,
+        "spectral_gap": 22.832806130250294,
+        "norm_var": 317988.23193359375
+      },
+      "lk_answer_len": 11,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 18.272089985509716,
+      "mcq_sg_cv": 0.0025099651421463423
+    },
+    {
+      "qi": 3,
+      "question": "The best type of laser with which to do spectroscopy over a range of visible wavelengths is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.974609375,
+        -1.357421875,
+        -2.4765625,
+        -3.197265625
+      ],
+      "lk_correct_score": -1.974609375,
+      "lk_wrong_scores": [
+        -1.357421875,
+        -2.4765625,
+        -3.197265625
+      ],
+      "lk_measures": {
+        "eff_rank": 8.067129668069287,
+        "spectral_gap": 25.14686931669712,
+        "norm_var": 390967.07525634766
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.75,
+      "mcq_n_correct": 3,
+      "mcq_sg_mean": 19.9259729248782,
+      "mcq_sg_cv": 0.02062701868928283
+    },
+    {
+      "qi": 4,
+      "question": "Excited states of the helium atom can be characterized as para- (antiparallel electron spins) and ortho- (parallel electron spins). The observation that an ortho- state has lower energy than the corre",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.9267578125,
+        -2.1953125,
+        -1.6884765625,
+        -2.0703125
+      ],
+      "lk_correct_score": -0.9267578125,
+      "lk_wrong_scores": [
+        -2.1953125,
+        -1.6884765625,
+        -2.0703125
+      ],
+      "lk_measures": {
+        "eff_rank": 23.337130069024003,
+        "spectral_gap": 17.593333537379902,
+        "norm_var": 152152.03314463297
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 17.803502614299457,
+      "mcq_sg_cv": 0.009617366299761591
+    },
+    {
+      "qi": 5,
+      "question": "Which of the following gives the total spin quantum number of the electrons in the ground state of neutral nitrogen (Z = 7)?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.6103515625,
+        -0.43505859375,
+        -0.6083984375,
+        -0.80078125
+      ],
+      "lk_correct_score": -0.6103515625,
+      "lk_wrong_scores": [
+        -0.43505859375,
+        -0.6083984375,
+        -0.80078125
+      ],
+      "lk_measures": {
+        "eff_rank": 9.279099091794679,
+        "spectral_gap": 23.611345797777176,
+        "norm_var": 308860.419921875
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 21.30898914237817,
+      "mcq_sg_cv": 0.004031899862423937
+    },
+    {
+      "qi": 6,
+      "question": "Consider three identical, ideal capacitors. The first capacitor is charged to a voltage and then disconnected from the battery. The other two capacitors, initially uncharged and connected in series, a",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -3.59375,
+        -4.54296875,
+        -3.701171875,
+        -3.513671875
+      ],
+      "lk_correct_score": -3.59375,
+      "lk_wrong_scores": [
+        -4.54296875,
+        -3.701171875,
+        -3.513671875
+      ],
+      "lk_measures": {
+        "eff_rank": 22.10449948631818,
+        "spectral_gap": 21.044751514991123,
+        "norm_var": 154452.02006530762
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 18.029332290093105,
+      "mcq_sg_cv": 0.0028674327678836955
+    },
+    {
+      "qi": 7,
+      "question": "Protons used in cancer therapy are typically accelerated to about 0.6c. How much work must be done on a particle of mass m in order for it to reach this speed, assuming it starts at rest?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.9228515625,
+        -1.53515625,
+        -1.9619140625,
+        -1.41796875
+      ],
+      "lk_correct_score": -0.9228515625,
+      "lk_wrong_scores": [
+        -1.53515625,
+        -1.9619140625,
+        -1.41796875
+      ],
+      "lk_measures": {
+        "eff_rank": 19.13306290001299,
+        "spectral_gap": 22.827081044514973,
+        "norm_var": 182119.08436075845
+      },
+      "lk_answer_len": 8,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 18.612071211139362,
+      "mcq_sg_cv": 0.0026438084489213143
+    },
+    {
+      "qi": 8,
+      "question": "De Broglie hypothesized that the linear momentum and wavelength of a free massive particle are related by which of the following constants?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.736328125,
+        -2.416015625,
+        -2.357421875,
+        -1.498046875
+      ],
+      "lk_correct_score": -0.736328125,
+      "lk_wrong_scores": [
+        -2.416015625,
+        -2.357421875,
+        -1.498046875
+      ],
+      "lk_measures": {
+        "eff_rank": 10.4530874344371,
+        "spectral_gap": 22.17969447871049,
+        "norm_var": 301542.1684366862
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 19.783678751438856,
+      "mcq_sg_cv": 0.014335308706330029
+    },
+    {
+      "qi": 9,
+      "question": "If the total energy of a particle of mass m is equal to twice its rest energy, then the magnitude of the particle\u2019s relativistic momentum is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.9140625,
+        -1.9326171875,
+        -2.486328125,
+        -2.271484375
+      ],
+      "lk_correct_score": -2.9140625,
+      "lk_wrong_scores": [
+        -1.9326171875,
+        -2.486328125,
+        -2.271484375
+      ],
+      "lk_measures": {
+        "eff_rank": 13.394828490249635,
+        "spectral_gap": 23.07509734729926,
+        "norm_var": 242579.1533126831
+      },
+      "lk_answer_len": 8,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 20.06346185381214,
+      "mcq_sg_cv": 0.02212195455703305
+    },
+    {
+      "qi": 10,
+      "question": "In the diamond structure of elemental carbon, the nearest neighbors of each C atom lie at the corners of a",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.80322265625,
+        -5.49609375,
+        -3.017578125,
+        -0.6513671875
+      ],
+      "lk_correct_score": -0.80322265625,
+      "lk_wrong_scores": [
+        -5.49609375,
+        -3.017578125,
+        -0.6513671875
+      ],
+      "lk_measures": {
+        "eff_rank": 9.46081473754718,
+        "spectral_gap": 24.509129931529362,
+        "norm_var": 338909.6597722371
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 21.921264785031475,
+      "mcq_sg_cv": 0.012122146586844107
+    },
+    {
+      "qi": 11,
+      "question": "The coefficient of static friction between a small coin and the surface of a turntable is 0.30. The turntable rotates at 33.3 revolutions per minute. What is the maximum distance from the center of th",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.478515625,
+        -1.40234375,
+        -1.2294921875,
+        -1.279296875
+      ],
+      "lk_correct_score": -1.478515625,
+      "lk_wrong_scores": [
+        -1.40234375,
+        -1.2294921875,
+        -1.279296875
+      ],
+      "lk_measures": {
+        "eff_rank": 24.179710218403343,
+        "spectral_gap": 19.21944270034631,
+        "norm_var": 149879.38487497965
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 16.73478792111079,
+      "mcq_sg_cv": 0.002185071651135932
+    },
+    {
+      "qi": 12,
+      "question": "The sign of the charge carriers in a doped semiconductor can be deduced by measuring which of the following properties?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.494140625,
+        -3.841796875,
+        -3.302734375,
+        -1.771484375
+      ],
+      "lk_correct_score": -1.494140625,
+      "lk_wrong_scores": [
+        -3.841796875,
+        -3.302734375,
+        -1.771484375
+      ],
+      "lk_measures": {
+        "eff_rank": 9.047100679380156,
+        "spectral_gap": 25.71413902938366,
+        "norm_var": 350529.93978881836
+      },
+      "lk_answer_len": 2,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 22.3671571513017,
+      "mcq_sg_cv": 0.0026101961415722383
+    },
+    {
+      "qi": 13,
+      "question": "The primary source of the Sun\u2019s energy is a series of thermonuclear reactions in which the energy produced is c^2 times the mass difference between",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.6953125,
+        -1.2783203125,
+        -3.349609375,
+        -2.669921875
+      ],
+      "lk_correct_score": -1.6953125,
+      "lk_wrong_scores": [
+        -1.2783203125,
+        -3.349609375,
+        -2.669921875
+      ],
+      "lk_measures": {
+        "eff_rank": 14.048575350018872,
+        "spectral_gap": 22.093618248899777,
+        "norm_var": 242538.11366271973
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 19.045451526840527,
+      "mcq_sg_cv": 0.0047717850093969595
+    },
+    {
+      "qi": 14,
+      "question": "Electromagnetic radiation provides a means to probe aspects of the physical universe. Which of the following statements regarding radiation spectra is NOT correct?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.431640625,
+        -2.724609375,
+        -1.5595703125,
+        -2.248046875
+      ],
+      "lk_correct_score": -2.431640625,
+      "lk_wrong_scores": [
+        -2.724609375,
+        -1.5595703125,
+        -2.248046875
+      ],
+      "lk_measures": {
+        "eff_rank": 18.068358074347906,
+        "spectral_gap": 20.699832538763683,
+        "norm_var": 188311.08671569824
+      },
+      "lk_answer_len": 23,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 17.203042986492314,
+      "mcq_sg_cv": 0.010454886584917587
+    },
+    {
+      "qi": 15,
+      "question": "Which of the following statements about bosons and/or fermions is true?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.3642578125,
+        -1.560546875,
+        -1.291015625,
+        -1.9541015625
+      ],
+      "lk_correct_score": -1.3642578125,
+      "lk_wrong_scores": [
+        -1.560546875,
+        -1.291015625,
+        -1.9541015625
+      ],
+      "lk_measures": {
+        "eff_rank": 9.380090710485655,
+        "spectral_gap": 19.800451238950092,
+        "norm_var": 308445.3736979167
+      },
+      "lk_answer_len": 15,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 15.836189915736515,
+      "mcq_sg_cv": 0.0016222007044988632
+    },
+    {
+      "qi": 16,
+      "question": "Excited states of the helium atom can be characterized as para- (antiparallel electron spins) and ortho- (parallel electron spins). The observation that an ortho- state has lower energy than the corre",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.9267578125,
+        -2.1953125,
+        -1.6884765625,
+        -2.0703125
+      ],
+      "lk_correct_score": -0.9267578125,
+      "lk_wrong_scores": [
+        -2.1953125,
+        -1.6884765625,
+        -2.0703125
+      ],
+      "lk_measures": {
+        "eff_rank": 23.337130069024003,
+        "spectral_gap": 17.593333537379902,
+        "norm_var": 152152.03314463297
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 17.803502614299457,
+      "mcq_sg_cv": 0.009617366299761591
+    },
+    {
+      "qi": 17,
+      "question": "One end of a horizontal, massless spring is attached to a wall. A mass of 0.30 kg is attached to the other end of the spring and rests on a table. The mass is displaced 0.030 m from its equilibrium po",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -2.39453125,
+        -2.63671875,
+        -2.5546875,
+        -2.41015625
+      ],
+      "lk_correct_score": -2.39453125,
+      "lk_wrong_scores": [
+        -2.63671875,
+        -2.5546875,
+        -2.41015625
+      ],
+      "lk_measures": {
+        "eff_rank": 41.102956196333665,
+        "spectral_gap": 15.047867620984713,
+        "norm_var": 96974.78516260783
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 14.268947593867779,
+      "mcq_sg_cv": 0.0014818337956169073
+    },
+    {
+      "qi": 18,
+      "question": "A meter stick with a speed of 0.8c moves past an observer. In the observer\u2019s reference frame, how long does it take the stick to pass the observer ?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.9794921875,
+        -3.328125,
+        -2.837890625,
+        -4.59375
+      ],
+      "lk_correct_score": -1.9794921875,
+      "lk_wrong_scores": [
+        -3.328125,
+        -2.837890625,
+        -4.59375
+      ],
+      "lk_measures": {
+        "eff_rank": 14.951205576559994,
+        "spectral_gap": 23.09724770486355,
+        "norm_var": 226336.4272994995
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 18.98861321558555,
+      "mcq_sg_cv": 0.005586699318233898
+    },
+    {
+      "qi": 19,
+      "question": "Protons used in cancer therapy are typically accelerated to about 0.6c . How much work must be done on a particle of mass m in order for it to reach this speed, assuming it starts at rest?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.0771484375,
+        -1.6201171875,
+        -2.14453125,
+        -1.5390625
+      ],
+      "lk_correct_score": -1.0771484375,
+      "lk_wrong_scores": [
+        -1.6201171875,
+        -2.14453125,
+        -1.5390625
+      ],
+      "lk_measures": {
+        "eff_rank": 19.171984947015737,
+        "spectral_gap": 22.803554942210514,
+        "norm_var": 182156.06455230713
+      },
+      "lk_answer_len": 8,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 18.592696321507294,
+      "mcq_sg_cv": 0.00757642214638453
+    },
+    {
+      "qi": 20,
+      "question": "Characteristic X rays, appearing as sharp lines on a continuous background, are produced when high-energy electrons bombard a metal target. Which of the following processes results in the characterist",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.484375,
+        -3.318359375,
+        -2.1953125,
+        -1.572265625
+      ],
+      "lk_correct_score": -2.484375,
+      "lk_wrong_scores": [
+        -3.318359375,
+        -2.1953125,
+        -1.572265625
+      ],
+      "lk_measures": {
+        "eff_rank": 16.879828819047283,
+        "spectral_gap": 22.094845960537594,
+        "norm_var": 192657.26102701822
+      },
+      "lk_answer_len": 13,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 18.781867464383446,
+      "mcq_sg_cv": 0.0021518716127408547
+    },
+    {
+      "qi": 21,
+      "question": "An atom has filled n = 1 and n = 2 levels. How many electrons does the atom have?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.6904296875,
+        -2.0859375,
+        -3.623046875,
+        -2.265625
+      ],
+      "lk_correct_score": -1.6904296875,
+      "lk_wrong_scores": [
+        -2.0859375,
+        -3.623046875,
+        -2.265625
+      ],
+      "lk_measures": {
+        "eff_rank": 6.562106609842433,
+        "spectral_gap": 26.38929335276286,
+        "norm_var": 385174.4459635417
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 22.430580606063206,
+      "mcq_sg_cv": 0.003725119958775577
+    },
+    {
+      "qi": 22,
+      "question": "Light from a laser falls on a pair of very narrow slits separated by 0.5 micrometer, and bright fringes separated by 1.0 millimeter are observed on a distant screen. If the frequency of the laser ligh",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.943359375,
+        -1.216796875,
+        -1.3173828125,
+        -0.8369140625
+      ],
+      "lk_correct_score": -0.943359375,
+      "lk_wrong_scores": [
+        -1.216796875,
+        -1.3173828125,
+        -0.8369140625
+      ],
+      "lk_measures": {
+        "eff_rank": 24.858535295441573,
+        "spectral_gap": 19.405575742324192,
+        "norm_var": 143545.4277165731
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 16.63541798790296,
+      "mcq_sg_cv": 0.01205726705431646
+    },
+    {
+      "qi": 23,
+      "question": "Assume that the solar flux at Earth\u2019s surface is 1,000 W/m^2 and that the sunlight is normal to a completely reflecting surface with an area of 3 m^2. What is the total radiation force exerted on the ",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.078125,
+        -2.048828125,
+        -2.2734375,
+        -3.685546875
+      ],
+      "lk_correct_score": -2.078125,
+      "lk_wrong_scores": [
+        -2.048828125,
+        -2.2734375,
+        -3.685546875
+      ],
+      "lk_measures": {
+        "eff_rank": 22.419418096760936,
+        "spectral_gap": 21.093737110495567,
+        "norm_var": 154597.5213139852
+      },
+      "lk_answer_len": 9,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.765480279922485,
+      "mcq_sg_cv": 0.0017344435516672729
+    },
+    {
+      "qi": 24,
+      "question": "The sign of the charge carriers in a doped semiconductor can be deduced by measuring which of the following properties?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.494140625,
+        -3.71875,
+        -1.771484375,
+        -3.302734375
+      ],
+      "lk_correct_score": -1.494140625,
+      "lk_wrong_scores": [
+        -3.71875,
+        -1.771484375,
+        -3.302734375
+      ],
+      "lk_measures": {
+        "eff_rank": 9.047100679380156,
+        "spectral_gap": 25.71413902938366,
+        "norm_var": 350529.93978881836
+      },
+      "lk_answer_len": 2,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 22.268673449754715,
+      "mcq_sg_cv": 0.0026467680608532503
+    },
+    {
+      "qi": 25,
+      "question": "Which of the following ions CANNOT be used as a dopant in germanium to make an n-type semiconductor?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -5.67578125,
+        -5.41796875,
+        -5.15234375,
+        -3.32421875
+      ],
+      "lk_correct_score": -5.67578125,
+      "lk_wrong_scores": [
+        -5.41796875,
+        -5.15234375,
+        -3.32421875
+      ],
+      "lk_measures": {
+        "eff_rank": 7.517736217662765,
+        "spectral_gap": 23.13355291883151,
+        "norm_var": 374190.9499511719
+      },
+      "lk_answer_len": 1,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 21.455978547533352,
+      "mcq_sg_cv": 0.007444930392361957
+    },
+    {
+      "qi": 26,
+      "question": "An astronomer observes a very small moon orbiting a planet and measures the moon\u2019s minimum and maximum distances from the planet\u2019s center and the moon\u2019s maximum orbital speed. Which of the following C",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.8154296875,
+        -1.0693359375,
+        -1.669921875,
+        -1.94140625
+      ],
+      "lk_correct_score": -1.8154296875,
+      "lk_wrong_scores": [
+        -1.0693359375,
+        -1.669921875,
+        -1.94140625
+      ],
+      "lk_measures": {
+        "eff_rank": 17.85494566282856,
+        "spectral_gap": 20.299261699120205,
+        "norm_var": 188272.91629536948
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 19.279733466605347,
+      "mcq_sg_cv": 0.011903079024701366
+    },
+    {
+      "qi": 27,
+      "question": "A rod measures 1.00 m in its rest system. How fast must an observer move parallel to the rod to measure its length to be 0.80 m?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.734375,
+        -1.0810546875,
+        -1.560546875,
+        -0.93115234375
+      ],
+      "lk_correct_score": -0.734375,
+      "lk_wrong_scores": [
+        -1.0810546875,
+        -1.560546875,
+        -0.93115234375
+      ],
+      "lk_measures": {
+        "eff_rank": 15.516591286554563,
+        "spectral_gap": 20.691160202026367,
+        "norm_var": 216519.39040629068
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 19.162375504771866,
+      "mcq_sg_cv": 0.002079247972916492
+    },
+    {
+      "qi": 28,
+      "question": "A proton moves in the +z-direction after being accelerated from rest through a potential difference V. The proton then passes through a region with a uniform electric field E in the +x-direction and a",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.76318359375,
+        -0.55810546875,
+        -0.67626953125,
+        -0.84423828125
+      ],
+      "lk_correct_score": -0.76318359375,
+      "lk_wrong_scores": [
+        -0.55810546875,
+        -0.67626953125,
+        -0.84423828125
+      ],
+      "lk_measures": {
+        "eff_rank": 31.166713854767508,
+        "spectral_gap": 19.019793058435123,
+        "norm_var": 114619.86819330852
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.694388610621296,
+      "mcq_sg_cv": 0.002112534096341659
+    },
+    {
+      "qi": 29,
+      "question": "A magnetic field is directed perpendicular to the plane of a circular coil of area 0.2 m^2 and 250 turns. If the magnetic field is increased from 0.01 T to 0.06 T during a time interval of 0.25 s, the",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.03515625,
+        -0.81982421875,
+        -0.947265625,
+        -0.98681640625
+      ],
+      "lk_correct_score": -2.03515625,
+      "lk_wrong_scores": [
+        -0.81982421875,
+        -0.947265625,
+        -0.98681640625
+      ],
+      "lk_measures": {
+        "eff_rank": 27.71880330380549,
+        "spectral_gap": 17.323781341314316,
+        "norm_var": 129102.71053059895
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 16.955558948218822,
+      "mcq_sg_cv": 0.0029702165151725573
+    },
+    {
+      "qi": 30,
+      "question": "Light of variable frequency shines on the metal surface of a photoelectric tube. Einstein\u2019s theory of the photoelectric effect predicts that the",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.751953125,
+        -1.09375,
+        -1.5380859375,
+        -2.0625
+      ],
+      "lk_correct_score": -1.751953125,
+      "lk_wrong_scores": [
+        -1.09375,
+        -1.5380859375,
+        -2.0625
+      ],
+      "lk_measures": {
+        "eff_rank": 16.736247908502882,
+        "spectral_gap": 20.36995683113734,
+        "norm_var": 203088.64154052734
+      },
+      "lk_answer_len": 19,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 17.83755446225405,
+      "mcq_sg_cv": 0.012543904074777346
+    },
+    {
+      "qi": 31,
+      "question": "If the Sun were suddenly replaced by a black hole of the same mass, it would have a Schwarzschild radius of 3,000 m. What effect, if any, would this change have on the orbits of the planets?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.6298828125,
+        -1.9609375,
+        -2.51171875,
+        -2.330078125
+      ],
+      "lk_correct_score": -1.6298828125,
+      "lk_wrong_scores": [
+        -1.9609375,
+        -2.51171875,
+        -2.330078125
+      ],
+      "lk_measures": {
+        "eff_rank": 19.92309089543705,
+        "spectral_gap": 21.1791196813186,
+        "norm_var": 172950.3401514689
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 19.758652823666733,
+      "mcq_sg_cv": 0.0062846425303807
+    },
+    {
+      "qi": 32,
+      "question": "At 20\u00b0C, a pipe open at both ends resonates at a frequency of 440 hertz. At what frequency does the same pipe resonate on a particularly cold day when the speed of sound is 3 percent lower than it wou",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.783203125,
+        -2.072265625,
+        -2.244140625,
+        -2.01953125
+      ],
+      "lk_correct_score": -1.783203125,
+      "lk_wrong_scores": [
+        -2.072265625,
+        -2.244140625,
+        -2.01953125
+      ],
+      "lk_measures": {
+        "eff_rank": 23.45133430767913,
+        "spectral_gap": 20.243045712510746,
+        "norm_var": 152106.94729614258
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 17.817839371661343,
+      "mcq_sg_cv": 0.001796050882054802
+    },
+    {
+      "qi": 33,
+      "question": "The quantum efficiency of a photon detector is 0.1. If 100 photons are sent into the detector, one after the other, the detector will detect photons",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.279296875,
+        -1.8193359375,
+        -2.55859375,
+        -2.47265625
+      ],
+      "lk_correct_score": -2.279296875,
+      "lk_wrong_scores": [
+        -1.8193359375,
+        -2.55859375,
+        -2.47265625
+      ],
+      "lk_measures": {
+        "eff_rank": 18.347522354207083,
+        "spectral_gap": 22.325669700900715,
+        "norm_var": 182273.84138997397
+      },
+      "lk_answer_len": 16,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 18.19053140034278,
+      "mcq_sg_cv": 0.020350320018345913
+    },
+    {
+      "qi": 34,
+      "question": "A three-dimensional harmonic oscillator is in thermal equilibrium with a temperature reservoir at temperature T. The average total energy of the oscillator is",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.7724609375,
+        -1.6796875,
+        -1.54296875,
+        -1.2705078125
+      ],
+      "lk_correct_score": -0.7724609375,
+      "lk_wrong_scores": [
+        -1.6796875,
+        -1.54296875,
+        -1.2705078125
+      ],
+      "lk_measures": {
+        "eff_rank": 10.63968232348821,
+        "spectral_gap": 24.711423307657242,
+        "norm_var": 299072.1537831624
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 20.458075791597366,
+      "mcq_sg_cv": 0.013590738914932274
+    },
+    {
+      "qi": 35,
+      "question": "A student makes 10 one-second measurements of the disintegration of a sample of a long-lived radioactive isotope and obtains the following values: 3, 0, 2, 1, 2, 4, 0, 1, 2, 5. How long should the stu",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.779296875,
+        -2.224609375,
+        -1.806640625,
+        -1.728515625
+      ],
+      "lk_correct_score": -1.779296875,
+      "lk_wrong_scores": [
+        -2.224609375,
+        -1.806640625,
+        -1.728515625
+      ],
+      "lk_measures": {
+        "eff_rank": 29.483620015817745,
+        "spectral_gap": 15.556801403562227,
+        "norm_var": 116271.63842773438
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 17.328579537570477,
+      "mcq_sg_cv": 0.004717646975743891
+    },
+    {
+      "qi": 36,
+      "question": "By definition, the electric displacement current through a surface S is proportional to the",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.427734375,
+        -1.2353515625,
+        -0.77880859375,
+        -2.453125
+      ],
+      "lk_correct_score": -0.427734375,
+      "lk_wrong_scores": [
+        -1.2353515625,
+        -0.77880859375,
+        -2.453125
+      ],
+      "lk_measures": {
+        "eff_rank": 8.925274186314892,
+        "spectral_gap": 23.822382504741352,
+        "norm_var": 350399.20952097577
+      },
+      "lk_answer_len": 9,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 19.055730576316517,
+      "mcq_sg_cv": 0.006270239107405962
+    },
+    {
+      "qi": 37,
+      "question": "The negative muon, mu^-, has properties most similar to which of the following?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -3.537109375,
+        -4.6171875,
+        -6.80078125,
+        -5.5546875
+      ],
+      "lk_correct_score": -3.537109375,
+      "lk_wrong_scores": [
+        -4.6171875,
+        -6.80078125,
+        -5.5546875
+      ],
+      "lk_measures": {
+        "eff_rank": 7.164443976395977,
+        "spectral_gap": 23.841099406282108,
+        "norm_var": 442151.35903930664
+      },
+      "lk_answer_len": 1,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 22.814655805627506,
+      "mcq_sg_cv": 0.0015887515766934903
+    },
+    {
+      "qi": 38,
+      "question": "The speed of light inside of a nonmagnetic dielectric material with a dielectric constant of 4.0 is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.70654296875,
+        -1.3984375,
+        -0.489013671875,
+        -0.59423828125
+      ],
+      "lk_correct_score": -0.70654296875,
+      "lk_wrong_scores": [
+        -1.3984375,
+        -0.489013671875,
+        -0.59423828125
+      ],
+      "lk_measures": {
+        "eff_rank": 9.923020083719615,
+        "spectral_gap": 23.517961760361988,
+        "norm_var": 290026.064453125
+      },
+      "lk_answer_len": 12,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 17.94041514396668,
+      "mcq_sg_cv": 0.0029251362113841086
+    },
+    {
+      "qi": 39,
+      "question": "The energy from electromagnetic waves in equilibrium in a cavity is used to melt ice. If the Kelvin temperature of the cavity is increased by a factor of two, the mass of ice that can be melted in a f",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.35546875,
+        -0.2578125,
+        -0.8515625,
+        -1.78125
+      ],
+      "lk_correct_score": -1.35546875,
+      "lk_wrong_scores": [
+        -0.2578125,
+        -0.8515625,
+        -1.78125
+      ],
+      "lk_measures": {
+        "eff_rank": 19.527663028931414,
+        "spectral_gap": 21.16863424082597,
+        "norm_var": 172782.27808888754
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 19.488010063767437,
+      "mcq_sg_cv": 0.0024246726090162746
+    },
+    {
+      "qi": 40,
+      "question": "A resistor in a circuit dissipates energy at a rate of 1 W. If the voltage across the resistor is doubled, what will be the new rate of energy dissipation?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.5712890625,
+        -2.224609375,
+        -1.900390625,
+        -1.072265625
+      ],
+      "lk_correct_score": -1.5712890625,
+      "lk_wrong_scores": [
+        -2.224609375,
+        -1.900390625,
+        -1.072265625
+      ],
+      "lk_measures": {
+        "eff_rank": 13.67176899206791,
+        "spectral_gap": 23.104180400570232,
+        "norm_var": 236775.70186869302
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.75,
+      "mcq_n_correct": 3,
+      "mcq_sg_mean": 19.968320379654568,
+      "mcq_sg_cv": 0.00488837332064775
+    },
+    {
+      "qi": 41,
+      "question": "A gas cell with an optical path length of 10 cm is placed in one arm of a Michelson interferometer. If the light source for the interferometer is a laser with wavelength 632.2 nm, then 100 fringes are",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.3876953125,
+        -1.578125,
+        -1.5,
+        -1.9423828125
+      ],
+      "lk_correct_score": -1.3876953125,
+      "lk_wrong_scores": [
+        -1.578125,
+        -1.5,
+        -1.9423828125
+      ],
+      "lk_measures": {
+        "eff_rank": 31.01244427357894,
+        "spectral_gap": 18.16971526046594,
+        "norm_var": 118772.30863952637
+      },
+      "lk_answer_len": 8,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 14.843338909248512,
+      "mcq_sg_cv": 0.005558694477530225
+    },
+    {
+      "qi": 42,
+      "question": "Under certain conditions, a beam of electrons impinging on a crystal surface will diffract and a scattering pattern of the beam can be obtained. What is the approximate kinetic energy of the electrons",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.0615234375,
+        -1.0166015625,
+        -1.103515625,
+        -1.19921875
+      ],
+      "lk_correct_score": -1.0615234375,
+      "lk_wrong_scores": [
+        -1.0166015625,
+        -1.103515625,
+        -1.19921875
+      ],
+      "lk_measures": {
+        "eff_rank": 25.086531911757902,
+        "spectral_gap": 19.237197384238243,
+        "norm_var": 141630.09409077963
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.264998272061348,
+      "mcq_sg_cv": 0.0033125204928840333
+    },
+    {
+      "qi": 43,
+      "question": "A uniform solid disk starts from rest and rolls down an inclined plane without slipping. After some time, what fraction of the disk\u2019s total kinetic energy is rotational kinetic energy?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.56396484375,
+        -1.0087890625,
+        -0.74755859375,
+        -0.91748046875
+      ],
+      "lk_correct_score": -0.56396484375,
+      "lk_wrong_scores": [
+        -1.0087890625,
+        -0.74755859375,
+        -0.91748046875
+      ],
+      "lk_measures": {
+        "eff_rank": 14.10525343941706,
+        "spectral_gap": 20.227026884754498,
+        "norm_var": 241883.09367624918
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.29639956355095,
+      "mcq_sg_cv": 0.004714363384291927
+    },
+    {
+      "qi": 44,
+      "question": "Blue light of wavelength 480 nanometers is most strongly reflected off a thin film of oil on a glass slide when viewed near normal incidence. Assuming that the index of refraction of the oil is 1.2 an",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.783203125,
+        -1.51953125,
+        -1.6845703125,
+        -1.755859375
+      ],
+      "lk_correct_score": -1.783203125,
+      "lk_wrong_scores": [
+        -1.51953125,
+        -1.6845703125,
+        -1.755859375
+      ],
+      "lk_measures": {
+        "eff_rank": 28.41437943978987,
+        "spectral_gap": 18.73831517000993,
+        "norm_var": 127505.63814036052
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 16.79544114569823,
+      "mcq_sg_cv": 0.0008972164105764338
+    },
+    {
+      "qi": 45,
+      "question": "A heat pump is to extract heat from an outdoor environment at 7\u00b0C and heat the environment indoors to 27\u00b0C. For each 15,000 J of heat delivered indoors, the smallest amount of work that must be suppli",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.1025390625,
+        -1.4853515625,
+        -1.3046875,
+        -1.05859375
+      ],
+      "lk_correct_score": -1.1025390625,
+      "lk_wrong_scores": [
+        -1.4853515625,
+        -1.3046875,
+        -1.05859375
+      ],
+      "lk_measures": {
+        "eff_rank": 19.147113389656013,
+        "spectral_gap": 19.04067341486613,
+        "norm_var": 172389.74251302084
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 15.984928478797276,
+      "mcq_sg_cv": 0.003605938554619162
+    },
+    {
+      "qi": 46,
+      "question": "The driver of a police car hears an echo of the car\u2019s siren from a wall toward which the car is moving with a speed of 3.5 m/s. If the speed of sound is 350 m/s and the frequency of the siren is 600 H",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.91064453125,
+        -0.72509765625,
+        -0.94921875,
+        -0.95556640625
+      ],
+      "lk_correct_score": -0.91064453125,
+      "lk_wrong_scores": [
+        -0.72509765625,
+        -0.94921875,
+        -0.95556640625
+      ],
+      "lk_measures": {
+        "eff_rank": 30.14698722717758,
+        "spectral_gap": 18.270308872063953,
+        "norm_var": 120094.53843688965
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 16.95957778642575,
+      "mcq_sg_cv": 0.003758453808807835
+    },
+    {
+      "qi": 47,
+      "question": "A particle decays in 2.0 ms in its rest frame. If the same particle moves at v=0.60c in the lab frame, how far will it travel in the lab before decaying?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.4482421875,
+        -1.671875,
+        -1.984375,
+        -1.3935546875
+      ],
+      "lk_correct_score": -1.4482421875,
+      "lk_wrong_scores": [
+        -1.671875,
+        -1.984375,
+        -1.3935546875
+      ],
+      "lk_measures": {
+        "eff_rank": 17.856780986340564,
+        "spectral_gap": 22.116917843619984,
+        "norm_var": 188563.01343282065
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 19.2765436694026,
+      "mcq_sg_cv": 0.0012603073987879645
+    },
+    {
+      "qi": 48,
+      "question": "A tube of water is traveling at 1/2 c relative to the lab frame when a beam of light traveling in the same direction as the tube enters it. What is the speed of light in the water relative to the lab ",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.150390625,
+        -0.7431640625,
+        -1.1953125,
+        -1.8046875
+      ],
+      "lk_correct_score": -2.150390625,
+      "lk_wrong_scores": [
+        -0.7431640625,
+        -1.1953125,
+        -1.8046875
+      ],
+      "lk_measures": {
+        "eff_rank": 25.383402563144454,
+        "spectral_gap": 19.722965245445568,
+        "norm_var": 139721.2645441691
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.75,
+      "mcq_n_correct": 3,
+      "mcq_sg_mean": 17.261360955735046,
+      "mcq_sg_cv": 0.005398018862023744
+    },
+    {
+      "qi": 49,
+      "question": "The rest mass of a particle with total energy 5.0 GeV and momentum 4.9 GeV/c is approximately",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.8359375,
+        -0.8974609375,
+        -0.96435546875,
+        -0.830078125
+      ],
+      "lk_correct_score": -0.8359375,
+      "lk_wrong_scores": [
+        -0.8974609375,
+        -0.96435546875,
+        -0.830078125
+      ],
+      "lk_measures": {
+        "eff_rank": 12.331806131183791,
+        "spectral_gap": 24.069212794303894,
+        "norm_var": 255135.29569498697
+      },
+      "lk_answer_len": 9,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 20.57330245276292,
+      "mcq_sg_cv": 0.002252193391314106
+    },
+    {
+      "qi": 50,
+      "question": "A grating spectrometer can just barely resolve two wavelengths of 500 nm and 502 nm, respectively. Which of the following gives the resolving power of the spectrometer?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.0361328125,
+        -1.2841796875,
+        -1.201171875,
+        -0.66650390625
+      ],
+      "lk_correct_score": -1.0361328125,
+      "lk_wrong_scores": [
+        -1.2841796875,
+        -1.201171875,
+        -0.66650390625
+      ],
+      "lk_measures": {
+        "eff_rank": 15.068955914894085,
+        "spectral_gap": 21.95718697210153,
+        "norm_var": 216811.54928588867
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 20.10422643770774,
+      "mcq_sg_cv": 0.0101969982548916
+    },
+    {
+      "qi": 51,
+      "question": "The best type of laser with which to do spectroscopy over a range of visible wavelengths is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.974609375,
+        -1.357421875,
+        -2.4765625,
+        -3.197265625
+      ],
+      "lk_correct_score": -1.974609375,
+      "lk_wrong_scores": [
+        -1.357421875,
+        -2.4765625,
+        -3.197265625
+      ],
+      "lk_measures": {
+        "eff_rank": 8.067129668069287,
+        "spectral_gap": 25.14686931669712,
+        "norm_var": 390967.07525634766
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.75,
+      "mcq_n_correct": 3,
+      "mcq_sg_mean": 19.9259729248782,
+      "mcq_sg_cv": 0.02062701868928283
+    },
+    {
+      "qi": 52,
+      "question": "The eigenvalues of a Hermitian operator are always",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.72265625,
+        -6.64453125,
+        -5.12890625,
+        -11.6640625
+      ],
+      "lk_correct_score": -0.72265625,
+      "lk_wrong_scores": [
+        -6.64453125,
+        -5.12890625,
+        -11.6640625
+      ],
+      "lk_measures": {
+        "eff_rank": 5.262755599848609,
+        "spectral_gap": 27.115735689798992,
+        "norm_var": 596736.9502817789
+      },
+      "lk_answer_len": 1,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 23.51527029151718,
+      "mcq_sg_cv": 0.02734920137609904
+    },
+    {
+      "qi": 53,
+      "question": "A net force F_A acts on object A, and a net force F_B acts on object B. The mass of object B is twice the mass of object A, and the acceleration of object B is twice that of object A. Which of the fol",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.74462890625,
+        -0.99560546875,
+        -0.89013671875,
+        -0.6083984375
+      ],
+      "lk_correct_score": -0.74462890625,
+      "lk_wrong_scores": [
+        -0.99560546875,
+        -0.89013671875,
+        -0.6083984375
+      ],
+      "lk_measures": {
+        "eff_rank": 22.73883988878772,
+        "spectral_gap": 21.389394342899323,
+        "norm_var": 141730.98998769125
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 18.919653231898945,
+      "mcq_sg_cv": 0.00920794882836721
+    },
+    {
+      "qi": 54,
+      "question": "Under ideal conditions, the electric and magnetic fields inside a superconductor are zero. Maxwell\u2019s equations imply that which of the following must be true just outside the surface of the supercondu",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.69140625,
+        -2.373046875,
+        -2.40234375,
+        -4.6875
+      ],
+      "lk_correct_score": -2.69140625,
+      "lk_wrong_scores": [
+        -2.373046875,
+        -2.40234375,
+        -4.6875
+      ],
+      "lk_measures": {
+        "eff_rank": 16.74505435413986,
+        "spectral_gap": 21.47729493180911,
+        "norm_var": 199497.61699676514
+      },
+      "lk_answer_len": 8,
+      "mcq_avg_acc": 0.75,
+      "mcq_n_correct": 3,
+      "mcq_sg_mean": 20.031906306743622,
+      "mcq_sg_cv": 0.013319501338610526
+    },
+    {
+      "qi": 55,
+      "question": "Two students perform an experiment in which they drop a ball from rest from a known height above the ground and measure the speed of the ball just before it strikes the ground. From repeated measureme",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.623046875,
+        -2.458984375,
+        -0.95458984375,
+        -2.173828125
+      ],
+      "lk_correct_score": -1.623046875,
+      "lk_wrong_scores": [
+        -2.458984375,
+        -0.95458984375,
+        -2.173828125
+      ],
+      "lk_measures": {
+        "eff_rank": 35.20292644473219,
+        "spectral_gap": 17.30263401567936,
+        "norm_var": 107510.36640930176
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 16.48387899249792,
+      "mcq_sg_cv": 0.02176800663180106
+    },
+    {
+      "qi": 56,
+      "question": "A particle is constrained to move in a circle with a 10-meter radius. At one instant, the particle\u2019s speed is 10 meters per second and is increasing at a rate of 10 meters per second squared. The angl",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.5302734375,
+        -1.39453125,
+        -0.92138671875,
+        -1.16796875
+      ],
+      "lk_correct_score": -0.5302734375,
+      "lk_wrong_scores": [
+        -1.39453125,
+        -0.92138671875,
+        -1.16796875
+      ],
+      "lk_measures": {
+        "eff_rank": 23.012013135889976,
+        "spectral_gap": 20.46275048951308,
+        "norm_var": 152009.7271118164
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 18.29866757119695,
+      "mcq_sg_cv": 0.017598263692657958
+    },
+    {
+      "qi": 57,
+      "question": "If the absolute temperature of a blackbody is increased by a factor of 3, the energy radiated per second per unit area does which of the following?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.5634765625,
+        -1.8134765625,
+        -1.435546875,
+        -1.1630859375
+      ],
+      "lk_correct_score": -1.5634765625,
+      "lk_wrong_scores": [
+        -1.8134765625,
+        -1.435546875,
+        -1.1630859375
+      ],
+      "lk_measures": {
+        "eff_rank": 14.500092891918056,
+        "spectral_gap": 21.63882639010747,
+        "norm_var": 226384.2771911621
+      },
+      "lk_answer_len": 9,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 18.90508877734343,
+      "mcq_sg_cv": 0.006555852018295613
+    },
+    {
+      "qi": 58,
+      "question": "A magnetic field is directed perpendicular to the plane of a circular coil of area 0.2 m^2 and 250 turns. If the magnetic field is increased from 0.01 T to 0.06 T during a time interval of 0.25 s, the",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.03515625,
+        -0.81982421875,
+        -0.947265625,
+        -0.98681640625
+      ],
+      "lk_correct_score": -2.03515625,
+      "lk_wrong_scores": [
+        -0.81982421875,
+        -0.947265625,
+        -0.98681640625
+      ],
+      "lk_measures": {
+        "eff_rank": 27.71880330380549,
+        "spectral_gap": 17.323781341314316,
+        "norm_var": 129102.71053059895
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 16.955558948218822,
+      "mcq_sg_cv": 0.0029702165151725573
+    },
+    {
+      "qi": 59,
+      "question": "Which of the following is true about any system that undergoes a reversible thermodynamic process?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.94921875,
+        -1.40234375,
+        -1.513671875,
+        -1.9482421875
+      ],
+      "lk_correct_score": -1.94921875,
+      "lk_wrong_scores": [
+        -1.40234375,
+        -1.513671875,
+        -1.9482421875
+      ],
+      "lk_measures": {
+        "eff_rank": 8.95274647769532,
+        "spectral_gap": 22.832806130250294,
+        "norm_var": 317988.23193359375
+      },
+      "lk_answer_len": 11,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 18.272089985509716,
+      "mcq_sg_cv": 0.0025099651421463423
+    },
+    {
+      "qi": 60,
+      "question": "The first five harmonics produced by an organ pipe open at both ends are 50 Hz, 100 Hz, 150 Hz, 200 Hz, and 250 Hz. Which of the harmonics, if any, will survive once the pipe is closed at one end?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -5.87109375,
+        -0.931640625,
+        -0.97900390625,
+        -1.171875
+      ],
+      "lk_correct_score": -5.87109375,
+      "lk_wrong_scores": [
+        -0.931640625,
+        -0.97900390625,
+        -1.171875
+      ],
+      "lk_measures": {
+        "eff_rank": 23.11870688627035,
+        "spectral_gap": 17.60200789074103,
+        "norm_var": 145714.0540339152
+      },
+      "lk_answer_len": 1,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 16.56271174053351,
+      "mcq_sg_cv": 0.0106024048263768
+    },
+    {
+      "qi": 61,
+      "question": "Electromagnetic radiation emitted from a nucleus is most likely to be in the form of",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.52880859375,
+        -2.419921875,
+        -3.12890625,
+        -3.87109375
+      ],
+      "lk_correct_score": -0.52880859375,
+      "lk_wrong_scores": [
+        -2.419921875,
+        -3.12890625,
+        -3.87109375
+      ],
+      "lk_measures": {
+        "eff_rank": 7.323207431118578,
+        "spectral_gap": 25.591233650843304,
+        "norm_var": 423196.46458943683
+      },
+      "lk_answer_len": 2,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 22.30082358419895,
+      "mcq_sg_cv": 0.013576975685171975
+    },
+    {
+      "qi": 62,
+      "question": "An organ pipe, closed at one end and open at the other, is designed to have a fundamental frequency of C (131 Hz). What is the frequency of the next higher harmonic for this pipe?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.09375,
+        -3.6640625,
+        -1.796875,
+        -0.437744140625
+      ],
+      "lk_correct_score": -1.09375,
+      "lk_wrong_scores": [
+        -3.6640625,
+        -1.796875,
+        -0.437744140625
+      ],
+      "lk_measures": {
+        "eff_rank": 17.05976099069891,
+        "spectral_gap": 19.159168149034183,
+        "norm_var": 199284.73923746744
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 17.977127810319264,
+      "mcq_sg_cv": 0.0010825592557867087
+    },
+    {
+      "qi": 63,
+      "question": "A single-electron atom has the electron in the l = 2 state. The number of allowed values of the quantum number m_l is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.3642578125,
+        -1.9033203125,
+        -0.56640625,
+        -0.47314453125
+      ],
+      "lk_correct_score": -1.3642578125,
+      "lk_wrong_scores": [
+        -1.9033203125,
+        -0.56640625,
+        -0.47314453125
+      ],
+      "lk_measures": {
+        "eff_rank": 10.95965163376369,
+        "spectral_gap": 23.749749903877575,
+        "norm_var": 290676.6812210083
+      },
+      "lk_answer_len": 2,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 20.362189143896103,
+      "mcq_sg_cv": 0.0032551189050092325
+    },
+    {
+      "qi": 64,
+      "question": "Two simple pendulums A and B consist of identical masses suspended from strings of length L_A and L_B, respectively. The two pendulums oscillate in equal gravitational fields. If the period of pendulu",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.6845703125,
+        -0.5205078125,
+        -0.88671875,
+        -0.74169921875
+      ],
+      "lk_correct_score": -0.6845703125,
+      "lk_wrong_scores": [
+        -0.5205078125,
+        -0.88671875,
+        -0.74169921875
+      ],
+      "lk_measures": {
+        "eff_rank": 27.591171592647182,
+        "spectral_gap": 17.076427698135376,
+        "norm_var": 127553.10017140706
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 15.730118249853453,
+      "mcq_sg_cv": 0.014862055554792343
+    },
+    {
+      "qi": 65,
+      "question": "According to the BCS theory, the attraction between Cooper pairs in a superconductor is due to",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -3.177734375,
+        -2.384765625,
+        -2.283203125,
+        -5.14453125
+      ],
+      "lk_correct_score": -3.177734375,
+      "lk_wrong_scores": [
+        -2.384765625,
+        -2.283203125,
+        -5.14453125
+      ],
+      "lk_measures": {
+        "eff_rank": 7.006564697697352,
+        "spectral_gap": 24.348093152046204,
+        "norm_var": 376775.8450520833
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 20.855584527055424,
+      "mcq_sg_cv": 0.002651408264364322
+    },
+    {
+      "qi": 66,
+      "question": "A rod measures 1.00 m in its rest system. How fast must an observer move parallel to the rod to measure its length to be 0.80 m?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.734375,
+        -1.0810546875,
+        -1.560546875,
+        -0.93115234375
+      ],
+      "lk_correct_score": -0.734375,
+      "lk_wrong_scores": [
+        -1.0810546875,
+        -1.560546875,
+        -0.93115234375
+      ],
+      "lk_measures": {
+        "eff_rank": 15.516591286554563,
+        "spectral_gap": 20.691160202026367,
+        "norm_var": 216519.39040629068
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 19.162375504771866,
+      "mcq_sg_cv": 0.002079247972916492
+    },
+    {
+      "qi": 67,
+      "question": "The energy required to remove both electrons from the helium atom in its ground state is 79.0 eV. How much energy is required to ionize helium (i.e., to remove one electron)?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.208984375,
+        -0.381591796875,
+        -1.4384765625,
+        -0.90478515625
+      ],
+      "lk_correct_score": -1.208984375,
+      "lk_wrong_scores": [
+        -0.381591796875,
+        -1.4384765625,
+        -0.90478515625
+      ],
+      "lk_measures": {
+        "eff_rank": 17.565461157791464,
+        "spectral_gap": 20.65606800218423,
+        "norm_var": 192190.75155639648
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.247645138452448,
+      "mcq_sg_cv": 0.01052638906147531
+    },
+    {
+      "qi": 68,
+      "question": "At the present time, the temperature of the universe (i.e., the microwave radiation background) is about 3 K. When the temperature was 12 K, typical objects in the universe, such as galaxies, were",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -3.373046875,
+        -3.365234375,
+        -2.09765625,
+        -2.888671875
+      ],
+      "lk_correct_score": -3.373046875,
+      "lk_wrong_scores": [
+        -3.365234375,
+        -2.09765625,
+        -2.888671875
+      ],
+      "lk_measures": {
+        "eff_rank": 16.199633248258394,
+        "spectral_gap": 22.831273426612217,
+        "norm_var": 196227.97526041666
+      },
+      "lk_answer_len": 8,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 18.511511442561947,
+      "mcq_sg_cv": 0.0015334165504369086
+    },
+    {
+      "qi": 69,
+      "question": "By definition, the electric displacement current through a surface S is proportional to the",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.427734375,
+        -1.2880859375,
+        -2.453125,
+        -0.77880859375
+      ],
+      "lk_correct_score": -0.427734375,
+      "lk_wrong_scores": [
+        -1.2880859375,
+        -2.453125,
+        -0.77880859375
+      ],
+      "lk_measures": {
+        "eff_rank": 8.925274186314892,
+        "spectral_gap": 23.822382504741352,
+        "norm_var": 350399.20952097577
+      },
+      "lk_answer_len": 9,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 18.98003029078245,
+      "mcq_sg_cv": 0.004821648820008854
+    },
+    {
+      "qi": 70,
+      "question": "The suspension cable of a 1,000 kg elevator snaps, sending the elevator moving downward through its shaft. The emergency brakes of the elevator stop the elevator shortly before it reaches the bottom o",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.40771484375,
+        -1.572265625,
+        -1.2607421875,
+        -1.0458984375
+      ],
+      "lk_correct_score": -0.40771484375,
+      "lk_wrong_scores": [
+        -1.572265625,
+        -1.2607421875,
+        -1.0458984375
+      ],
+      "lk_measures": {
+        "eff_rank": 29.21632772520856,
+        "spectral_gap": 16.907633860905964,
+        "norm_var": 126019.6220703125
+      },
+      "lk_answer_len": 11,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 14.288977357248465,
+      "mcq_sg_cv": 0.006308168084671112
+    },
+    {
+      "qi": 71,
+      "question": "The hydrogen lines observed in the spectrum of the quasar 3C9 are shifted so far into the red that their wavelengths are three times as long as those observed in the light from hydrogen atoms at rest ",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.88916015625,
+        -2.8203125,
+        -6.41015625,
+        -0.93603515625
+      ],
+      "lk_correct_score": -0.88916015625,
+      "lk_wrong_scores": [
+        -2.8203125,
+        -6.41015625,
+        -0.93603515625
+      ],
+      "lk_measures": {
+        "eff_rank": 31.51376898462833,
+        "spectral_gap": 20.114100848635037,
+        "norm_var": 117436.90065256755
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 17.945671456555527,
+      "mcq_sg_cv": 0.00972789624957709
+    },
+    {
+      "qi": 72,
+      "question": "A 10 kg box slides horizontally without friction at a speed of 1 m/s. At one point, a constant force is applied to the box in the direction of its motion. The box travels 5 m with the constant force a",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.0751953125,
+        -0.95556640625,
+        -0.61181640625,
+        -1.0205078125
+      ],
+      "lk_correct_score": -1.0751953125,
+      "lk_wrong_scores": [
+        -0.95556640625,
+        -0.61181640625,
+        -1.0205078125
+      ],
+      "lk_measures": {
+        "eff_rank": 30.89728738505374,
+        "spectral_gap": 19.7144113779068,
+        "norm_var": 117246.60290527344
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.81872418274482,
+      "mcq_sg_cv": 0.0024824342636183055
+    },
+    {
+      "qi": 73,
+      "question": "Two spaceships approach Earth with equal speeds, as measured by an observer on Earth, but from opposite directions. A meterstick on one spaceship is measured to be 60 cm long by an occupant of the oth",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.0478515625,
+        -1.26953125,
+        -0.9248046875,
+        -1.126953125
+      ],
+      "lk_correct_score": -1.0478515625,
+      "lk_wrong_scores": [
+        -1.26953125,
+        -0.9248046875,
+        -1.126953125
+      ],
+      "lk_measures": {
+        "eff_rank": 24.604599939647773,
+        "spectral_gap": 20.261748870213825,
+        "norm_var": 143585.5819905599
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.221194421251617,
+      "mcq_sg_cv": 0.0005646471431895862
+    },
+    {
+      "qi": 74,
+      "question": "The suspension cable of a 1,000 kg elevator snaps, sending the elevator moving downward through its shaft. The emergency brakes of the elevator stop the elevator shortly before it reaches the bottom o",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.40771484375,
+        -1.0458984375,
+        -0.6435546875,
+        -0.5146484375
+      ],
+      "lk_correct_score": -0.40771484375,
+      "lk_wrong_scores": [
+        -1.0458984375,
+        -0.6435546875,
+        -0.5146484375
+      ],
+      "lk_measures": {
+        "eff_rank": 29.21632772520856,
+        "spectral_gap": 16.907633860905964,
+        "norm_var": 126019.6220703125
+      },
+      "lk_answer_len": 11,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 13.135165860255558,
+      "mcq_sg_cv": 0.004260640845024854
+    },
+    {
+      "qi": 75,
+      "question": "The mean kinetic energy of the conduction electrons in metals is ordinarily much higher than kT because",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.44140625,
+        -1.6044921875,
+        -1.4931640625,
+        -2.1484375
+      ],
+      "lk_correct_score": -1.44140625,
+      "lk_wrong_scores": [
+        -1.6044921875,
+        -1.4931640625,
+        -2.1484375
+      ],
+      "lk_measures": {
+        "eff_rank": 10.546964099981409,
+        "spectral_gap": 23.648878499865532,
+        "norm_var": 308092.673789978
+      },
+      "lk_answer_len": 9,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 19.162317276000977,
+      "mcq_sg_cv": 0.0014020227780822273
+    },
+    {
+      "qi": 76,
+      "question": "A 10 kg box slides horizontally without friction at a speed of 1 m/s. At one point, a constant force is applied to the box in the direction of its motion. The box travels 5 m with the constant force a",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.0751953125,
+        -0.95556640625,
+        -0.61181640625,
+        -1.0205078125
+      ],
+      "lk_correct_score": -1.0751953125,
+      "lk_wrong_scores": [
+        -0.95556640625,
+        -0.61181640625,
+        -1.0205078125
+      ],
+      "lk_measures": {
+        "eff_rank": 30.89728738505374,
+        "spectral_gap": 19.7144113779068,
+        "norm_var": 117246.60290527344
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.81872418274482,
+      "mcq_sg_cv": 0.0024824342636183055
+    },
+    {
+      "qi": 77,
+      "question": "Light of variable frequency shines on the metal surface of a photoelectric tube. Einstein\u2019s theory of the photoelectric effect predicts that the",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.751953125,
+        -1.09375,
+        -1.5380859375,
+        -2.0625
+      ],
+      "lk_correct_score": -1.751953125,
+      "lk_wrong_scores": [
+        -1.09375,
+        -1.5380859375,
+        -2.0625
+      ],
+      "lk_measures": {
+        "eff_rank": 16.736247908502882,
+        "spectral_gap": 20.36995683113734,
+        "norm_var": 203088.64154052734
+      },
+      "lk_answer_len": 19,
+      "mcq_avg_acc": 1.0,
+      "mcq_n_correct": 4,
+      "mcq_sg_mean": 17.83755446225405,
+      "mcq_sg_cv": 0.012543904074777346
+    },
+    {
+      "qi": 78,
+      "question": "A spring of force constant k is stretched a certain distance. It takes twice as much work to stretch a second spring by half this distance. The force constant of the second spring is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.9169921875,
+        -1.97265625,
+        -0.52294921875,
+        -0.4755859375
+      ],
+      "lk_correct_score": -0.9169921875,
+      "lk_wrong_scores": [
+        -1.97265625,
+        -0.52294921875,
+        -0.4755859375
+      ],
+      "lk_measures": {
+        "eff_rank": 14.534634008778838,
+        "spectral_gap": 22.358269448081654,
+        "norm_var": 231248.93674468994
+      },
+      "lk_answer_len": 3,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 19.882809177041054,
+      "mcq_sg_cv": 0.014787996111331718
+    },
+    {
+      "qi": 79,
+      "question": "An observer O at rest midway between two sources of light at x = 0 and x = 10 m observes the two sources to flash simultaneously. According to a second observer O', moving at a constant speed parallel",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.1494140625,
+        -1.1884765625,
+        -1.0703125,
+        -1.1875
+      ],
+      "lk_correct_score": -1.1494140625,
+      "lk_wrong_scores": [
+        -1.1884765625,
+        -1.0703125,
+        -1.1875
+      ],
+      "lk_measures": {
+        "eff_rank": 26.85318031436083,
+        "spectral_gap": 21.797780017058056,
+        "norm_var": 137670.0703125
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.75,
+      "mcq_n_correct": 3,
+      "mcq_sg_mean": 17.273744170864425,
+      "mcq_sg_cv": 0.0022539268076851057
+    },
+    {
+      "qi": 80,
+      "question": "The surface of the Sun has a temperature close to 6,000 K and it emits a blackbody (Planck) spectrum that reaches a maximum near 500 nm. For a body with a surface temperature close to 300 K, at what w",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -3.15234375,
+        -3.662109375,
+        -3.494140625,
+        -3.623046875
+      ],
+      "lk_correct_score": -3.15234375,
+      "lk_wrong_scores": [
+        -3.662109375,
+        -3.494140625,
+        -3.623046875
+      ],
+      "lk_measures": {
+        "eff_rank": 25.803170555600463,
+        "spectral_gap": 18.92422923942407,
+        "norm_var": 135435.42791748047
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.509774414201576,
+      "mcq_sg_cv": 0.0042587180194125695
+    },
+    {
+      "qi": 81,
+      "question": "Consider an electron in the n = 4, l = 1 state in hydrogen. Which of the following final states can NOT be reached by an allowed transition?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.2310791015625,
+        -0.335205078125,
+        -0.260498046875,
+        -0.340087890625
+      ],
+      "lk_correct_score": -0.2310791015625,
+      "lk_wrong_scores": [
+        -0.335205078125,
+        -0.260498046875,
+        -0.340087890625
+      ],
+      "lk_measures": {
+        "eff_rank": 14.207540306822224,
+        "spectral_gap": 19.73349604010582,
+        "norm_var": 221228.98711395264
+      },
+      "lk_answer_len": 9,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 17.33266564458609,
+      "mcq_sg_cv": 0.005802043406149661
+    },
+    {
+      "qi": 82,
+      "question": "A single-electron atom has the electron in the l = 2 state. The number of allowed values of the quantum number m_l is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.3642578125,
+        -1.6845703125,
+        -0.47314453125,
+        -0.56640625
+      ],
+      "lk_correct_score": -1.3642578125,
+      "lk_wrong_scores": [
+        -1.6845703125,
+        -0.47314453125,
+        -0.56640625
+      ],
+      "lk_measures": {
+        "eff_rank": 10.95965163376369,
+        "spectral_gap": 23.749749903877575,
+        "norm_var": 290676.6812210083
+      },
+      "lk_answer_len": 2,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 20.165215705831844,
+      "mcq_sg_cv": 0.0020952799677617187
+    },
+    {
+      "qi": 83,
+      "question": "The driver of a police car hears an echo of the car\u2019s siren from a wall toward which the car is moving with a speed of 3.5 m/s. If the speed of sound is 350 m/s and the frequency of the siren is 600 H",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.91064453125,
+        -1.1494140625,
+        -1.1591796875,
+        -0.72509765625
+      ],
+      "lk_correct_score": -0.91064453125,
+      "lk_wrong_scores": [
+        -1.1494140625,
+        -1.1591796875,
+        -0.72509765625
+      ],
+      "lk_measures": {
+        "eff_rank": 30.14698722717758,
+        "spectral_gap": 18.270308872063953,
+        "norm_var": 120094.53843688965
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.021741643548012,
+      "mcq_sg_cv": 0.0023873885755906063
+    },
+    {
+      "qi": 84,
+      "question": "The emission spectrum of the doubly ionized lithium atom Li++ (Z = 3, A = 7) is identical to that of a hydrogen atom in which all the wavelengths are",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.861328125,
+        -2.546875,
+        -2.439453125,
+        -1.4560546875
+      ],
+      "lk_correct_score": -1.861328125,
+      "lk_wrong_scores": [
+        -2.546875,
+        -2.439453125,
+        -1.4560546875
+      ],
+      "lk_measures": {
+        "eff_rank": 15.924777262056141,
+        "spectral_gap": 22.889686251680057,
+        "norm_var": 207698.10460154215
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.824679588278133,
+      "mcq_sg_cv": 0.008569395082756476
+    },
+    {
+      "qi": 85,
+      "question": "A photon strikes an electron of mass m that is initially at rest, creating an electron-positron pair. The photon is destroyed and the positron and two electrons move off at equal speeds along the init",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.70068359375,
+        -1.3095703125,
+        -0.3818359375,
+        -1.02734375
+      ],
+      "lk_correct_score": -0.70068359375,
+      "lk_wrong_scores": [
+        -1.3095703125,
+        -0.3818359375,
+        -1.02734375
+      ],
+      "lk_measures": {
+        "eff_rank": 21.149235029008786,
+        "spectral_gap": 20.9419248153766,
+        "norm_var": 164294.1141382853
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 18.270109305779137,
+      "mcq_sg_cv": 0.003538616229934953
+    },
+    {
+      "qi": 86,
+      "question": "Which of the following lasers utilizes transitions that involve the energy levels of free atoms?",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.26953125,
+        -1.6953125,
+        -1.6650390625,
+        -1.646484375
+      ],
+      "lk_correct_score": -2.26953125,
+      "lk_wrong_scores": [
+        -1.6953125,
+        -1.6650390625,
+        -1.646484375
+      ],
+      "lk_measures": {
+        "eff_rank": 5.7306508070898206,
+        "spectral_gap": 24.247882415850956,
+        "norm_var": 475990.4430338542
+      },
+      "lk_answer_len": 2,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 20.439062409102917,
+      "mcq_sg_cv": 0.0010922988837205898
+    },
+    {
+      "qi": 87,
+      "question": "Unpolarized light is incident on a pair of ideal linear polarizers whose transmission axes make an angle of 45q with each other. The transmitted light intensity through both polarizers is what percent",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.5634765625,
+        -2.03125,
+        -2.794921875,
+        -1.9501953125
+      ],
+      "lk_correct_score": -1.5634765625,
+      "lk_wrong_scores": [
+        -2.03125,
+        -2.794921875,
+        -1.9501953125
+      ],
+      "lk_measures": {
+        "eff_rank": 18.434424030876233,
+        "spectral_gap": 19.82444112499555,
+        "norm_var": 188272.72849527994
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.5,
+      "mcq_n_correct": 2,
+      "mcq_sg_mean": 17.745788633823395,
+      "mcq_sg_cv": 0.003172639478073244
+    },
+    {
+      "qi": 88,
+      "question": "Sound waves moving at 350 m/s diffract out of a speaker enclosure with an opening that is a long rectangular slit 0.14 m across. At about what frequency will the sound first disappear at an angle of 4",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.9970703125,
+        -1.7255859375,
+        -2.095703125,
+        -2.2890625
+      ],
+      "lk_correct_score": -1.9970703125,
+      "lk_wrong_scores": [
+        -1.7255859375,
+        -2.095703125,
+        -2.2890625
+      ],
+      "lk_measures": {
+        "eff_rank": 25.256825028700177,
+        "spectral_gap": 20.12509138385455,
+        "norm_var": 143582.95990244547
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 17.278623869021736,
+      "mcq_sg_cv": 0.0008466049011446835
+    },
+    {
+      "qi": 89,
+      "question": "The emission spectrum of the doubly ionized lithium atom Li++ (Z = 3, A = 7) is identical to that of a hydrogen atom in which all the wavelengths are",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.861328125,
+        -2.546875,
+        -2.439453125,
+        -1.4560546875
+      ],
+      "lk_correct_score": -1.861328125,
+      "lk_wrong_scores": [
+        -2.546875,
+        -2.439453125,
+        -1.4560546875
+      ],
+      "lk_measures": {
+        "eff_rank": 15.924777262056141,
+        "spectral_gap": 22.889686251680057,
+        "norm_var": 207698.10460154215
+      },
+      "lk_answer_len": 7,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.824679588278133,
+      "mcq_sg_cv": 0.008569395082756476
+    },
+    {
+      "qi": 90,
+      "question": "A uniform solid disk starts from rest and rolls down an inclined plane without slipping. After some time, what fraction of the disk\u2019s total kinetic energy is rotational kinetic energy?",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.56396484375,
+        -1.0087890625,
+        -0.74755859375,
+        -0.91748046875
+      ],
+      "lk_correct_score": -0.56396484375,
+      "lk_wrong_scores": [
+        -1.0087890625,
+        -0.74755859375,
+        -0.91748046875
+      ],
+      "lk_measures": {
+        "eff_rank": 14.10525343941706,
+        "spectral_gap": 20.227026884754498,
+        "norm_var": 241883.09367624918
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.29639956355095,
+      "mcq_sg_cv": 0.004714363384291927
+    },
+    {
+      "qi": 91,
+      "question": "The speed of light inside of a nonmagnetic dielectric material with a dielectric constant of 4.0 is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.79931640625,
+        -1.5595703125,
+        -0.59423828125,
+        -0.67919921875
+      ],
+      "lk_correct_score": -0.79931640625,
+      "lk_wrong_scores": [
+        -1.5595703125,
+        -0.59423828125,
+        -0.67919921875
+      ],
+      "lk_measures": {
+        "eff_rank": 13.06679159730308,
+        "spectral_gap": 22.17895222703616,
+        "norm_var": 248666.30268096924
+      },
+      "lk_answer_len": 12,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 18.073840451737244,
+      "mcq_sg_cv": 0.0023557755620011783
+    },
+    {
+      "qi": 92,
+      "question": "A 3-microfarad capacitor is connected in series with a 6-microfarad capacitor. When a 300-volt potential difference is applied across this combination, the total energy stored in the two capacitors is",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.99365234375,
+        -1.138671875,
+        -1.0810546875,
+        -1.703125
+      ],
+      "lk_correct_score": -0.99365234375,
+      "lk_wrong_scores": [
+        -1.138671875,
+        -1.0810546875,
+        -1.703125
+      ],
+      "lk_measures": {
+        "eff_rank": 19.56122894538534,
+        "spectral_gap": 19.642293602228165,
+        "norm_var": 172729.5645726522
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.684576166172825,
+      "mcq_sg_cv": 0.002641936197658796
+    },
+    {
+      "qi": 93,
+      "question": "Under certain conditions, a beam of electrons impinging on a crystal surface will diffract and a scattering pattern of the beam can be obtained. What is the approximate kinetic energy of the electrons",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -1.0615234375,
+        -1.0166015625,
+        -1.103515625,
+        -1.19921875
+      ],
+      "lk_correct_score": -1.0615234375,
+      "lk_wrong_scores": [
+        -1.0166015625,
+        -1.103515625,
+        -1.19921875
+      ],
+      "lk_measures": {
+        "eff_rank": 25.086531911757902,
+        "spectral_gap": 19.237197384238243,
+        "norm_var": 141630.09409077963
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.264998272061348,
+      "mcq_sg_cv": 0.0033125204928840333
+    },
+    {
+      "qi": 94,
+      "question": "Two identical satellites, A and B, are in circular orbits around Earth. The orbital radius of A is twice that of B. Which of the following gives the ratio of the angular momentum of A to the angular m",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -3.421875,
+        -0.93701171875,
+        -0.71044921875,
+        -2.001953125
+      ],
+      "lk_correct_score": -3.421875,
+      "lk_wrong_scores": [
+        -0.93701171875,
+        -0.71044921875,
+        -2.001953125
+      ],
+      "lk_measures": {
+        "eff_rank": 17.574223803139866,
+        "spectral_gap": 21.856658821304638,
+        "norm_var": 188339.21528625488
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.75,
+      "mcq_n_correct": 3,
+      "mcq_sg_mean": 18.816656177242596,
+      "mcq_sg_cv": 0.0031210286257172
+    },
+    {
+      "qi": 95,
+      "question": "An object is thrown horizontally from the open window of a building. If the initial speed of the object is 20 m/s and it hits the ground 2.0 s later, from what height was it thrown? (Neglect air resis",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.94580078125,
+        -2.220703125,
+        -1.7763671875,
+        -2.0390625
+      ],
+      "lk_correct_score": -0.94580078125,
+      "lk_wrong_scores": [
+        -2.220703125,
+        -1.7763671875,
+        -2.0390625
+      ],
+      "lk_measures": {
+        "eff_rank": 23.80383772717293,
+        "spectral_gap": 20.707366287708282,
+        "norm_var": 151928.69273122153
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 17.90156284223,
+      "mcq_sg_cv": 0.003949644071655197
+    },
+    {
+      "qi": 96,
+      "question": "In a nonrelativistic, one-dimensional collision, a particle of mass 2m collides with a particle of mass m at rest. If the particles stick together after the collision, what fraction of the initial kin",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -0.80712890625,
+        -1.82421875,
+        -1.2255859375,
+        -1.2568359375
+      ],
+      "lk_correct_score": -0.80712890625,
+      "lk_wrong_scores": [
+        -1.82421875,
+        -1.2255859375,
+        -1.2568359375
+      ],
+      "lk_measures": {
+        "eff_rank": 20.15251371165775,
+        "spectral_gap": 20.841422508160274,
+        "norm_var": 172577.54741923013
+      },
+      "lk_answer_len": 4,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 17.829507517317932,
+      "mcq_sg_cv": 0.009303103057790517
+    },
+    {
+      "qi": 97,
+      "question": "White light is normally incident on a puddle of water (index of refraction 1.33). A thin (500 nm) layer of oil (index of refraction 1.5) floats on the surface of the puddle. Of the following, the most",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -0.6953125,
+        -0.3984375,
+        -0.78759765625,
+        -0.6904296875
+      ],
+      "lk_correct_score": -0.6953125,
+      "lk_wrong_scores": [
+        -0.3984375,
+        -0.78759765625,
+        -0.6904296875
+      ],
+      "lk_measures": {
+        "eff_rank": 24.654844400979652,
+        "spectral_gap": 17.331153576572735,
+        "norm_var": 141503.41119639078
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 16.697636384516954,
+      "mcq_sg_cv": 0.01839955903519717
+    },
+    {
+      "qi": 98,
+      "question": "A nonrelativistic particle with a charge twice that of an electron moves through a uniform magnetic field. The field has a strength of \u03c0/4 tesla and is perpendicular to the velocity of the particle. W",
+      "domain": "physics",
+      "lk_correct": true,
+      "lk_scores": [
+        -1.26953125,
+        -1.3564453125,
+        -1.4072265625,
+        -1.3212890625
+      ],
+      "lk_correct_score": -1.26953125,
+      "lk_wrong_scores": [
+        -1.3564453125,
+        -1.4072265625,
+        -1.3212890625
+      ],
+      "lk_measures": {
+        "eff_rank": 29.355233088351685,
+        "spectral_gap": 17.90630340576172,
+        "norm_var": 126048.27398427327
+      },
+      "lk_answer_len": 12,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 14.183273973564308,
+      "mcq_sg_cv": 0.0033242725506375565
+    },
+    {
+      "qi": 99,
+      "question": "An airplane drops a payload while traveling due north, parallel to the ground, at a constant speed of 100 m/s. If air resistance is neglected, what is the velocity of the payload relative to the plane",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.16015625,
+        -2.4765625,
+        -2.87890625,
+        -1.5048828125
+      ],
+      "lk_correct_score": -2.16015625,
+      "lk_wrong_scores": [
+        -2.4765625,
+        -2.87890625,
+        -1.5048828125
+      ],
+      "lk_measures": {
+        "eff_rank": 22.734317749890995,
+        "spectral_gap": 21.95796864728133,
+        "norm_var": 159188.88652801514
+      },
+      "lk_answer_len": 6,
+      "mcq_avg_acc": 0.0,
+      "mcq_n_correct": 0,
+      "mcq_sg_mean": 19.54965811719497,
+      "mcq_sg_cv": 0.004878849270197653
+    },
+    {
+      "qi": 100,
+      "question": "Positronium is an atom formed by an electron and a positron (antielectron). It is similar to the hydrogen atom, with the positron replacing the proton. If a positronium atom makes a transition from th",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.1953125,
+        -0.87939453125,
+        -1.587890625,
+        -0.88037109375
+      ],
+      "lk_correct_score": -2.1953125,
+      "lk_wrong_scores": [
+        -0.87939453125,
+        -1.587890625,
+        -0.88037109375
+      ],
+      "lk_measures": {
+        "eff_rank": 29.441432083140842,
+        "spectral_gap": 16.249475916226704,
+        "norm_var": 124442.51309458415
+      },
+      "lk_answer_len": 5,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 15.508174579590559,
+      "mcq_sg_cv": 0.017933405825292084
+    },
+    {
+      "qi": 101,
+      "question": "A satellite of mass m orbits a planet of mass M in a circular orbit of radius R. The time required for one revolution is",
+      "domain": "physics",
+      "lk_correct": false,
+      "lk_scores": [
+        -2.498046875,
+        -4.6015625,
+        -2.380859375,
+        -5.15625
+      ],
+      "lk_correct_score": -2.498046875,
+      "lk_wrong_scores": [
+        -4.6015625,
+        -2.380859375,
+        -5.15625
+      ],
+      "lk_measures": {
+        "eff_rank": 12.746486910933427,
+        "spectral_gap": 21.985721483826637,
+        "norm_var": 260475.3901646932
+      },
+      "lk_answer_len": 8,
+      "mcq_avg_acc": 0.25,
+      "mcq_n_correct": 1,
+      "mcq_sg_mean": 20.140199641386666,
+      "mcq_sg_cv": 0.0024185036875988388
+    }
+  ]
+}

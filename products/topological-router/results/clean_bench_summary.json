@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-03-27T20:37:01",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "analyses": [
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "dataset": "MMLU-Physics",
+      "n": 102,
+      "time_s": 88.9,
+      "lk_accuracy": 0.35294117647058826,
+      "mcq_pos_avg_accuracy": 0.4068627450980392,
+      "mcq_strict_accuracy": 0.20588235294117646,
+      "random_baseline": 0.25,
+      "both_right": 10,
+      "both_wrong": 43,
+      "lk_only": 22,
+      "mcq_only": 18,
+      "agreement": 0.5196078431372549,
+      "lk_delib": {
+        "eff_rank": {
+          "d": -0.12521938280879194,
+          "p": 0.23321872911296915,
+          "right_mean": 18.08847039400334,
+          "wrong_mean": 19.083027133152818
+        },
+        "spectral_gap": {
+          "d": 0.14382609428609744,
+          "p": 0.2997194711563843,
+          "right_mean": 21.312178212183493,
+          "wrong_mean": 20.93323422381372
+        },
+        "norm_var": {
+          "d": 0.28717861295815234,
+          "p": 0.1776480972378785,
+          "right_mean": 232842.51227636688,
+          "wrong_mean": 204703.96208424037
+        }
+      },
+      "n_lk_right": 36,
+      "n_lk_wrong": 66,
+      "mcq_delib": {
+        "spectral_gap": {
+          "d": 0.6707109085115575,
+          "p": 0.006981800807317024
+        }
+      },
+      "n_mcq_right": 28,
+      "n_mcq_wrong": 65,
+      "answer_length_r": -0.08309856590584029,
+      "answer_length_p": 0.40634183595919493,
+      "mcq_rotation_cv": 0.006794074272409145,
+      "null_sg_mean": 21.662695707380777,
+      "real_sg_mean": 21.06697916088541
+    },
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "dataset": "GPQA-Diamond",
+      "n": 198,
+      "time_s": 843.6,
+      "lk_accuracy": 0.2222222222222222,
+      "mcq_pos_avg_accuracy": 0.32323232323232326,
+      "mcq_strict_accuracy": 0.0707070707070707,
+      "random_baseline": 0.25,
+      "both_right": 8,
+      "both_wrong": 101,
+      "lk_only": 26,
+      "mcq_only": 21,
+      "agreement": 0.5505050505050505,
+      "lk_delib": {
+        "eff_rank": {
+          "d": -0.05868047112518767,
+          "p": 0.5879387480866864,
+          "right_mean": 52.59576531738749,
+          "wrong_mean": 54.56136408617273
+        },
+        "spectral_gap": {
+          "d": 0.03269358320188949,
+          "p": 0.39015080790687706,
+          "right_mean": 15.1742361523211,
+          "wrong_mean": 15.058076306596979
+        },
+        "norm_var": {
+          "d": -0.19111337131499778,
+          "p": 0.6860782738073236,
+          "right_mean": 93507.28249876427,
+          "wrong_mean": 104137.63488374851
+        }
+      },
+      "n_lk_right": 44,
+      "n_lk_wrong": 154,
+      "mcq_delib": {
+        "spectral_gap": {
+          "d": -0.021342144057701788,
+          "p": 0.4655125090715796
+        }
+      },
+      "n_mcq_right": 29,
+      "n_mcq_wrong": 127,
+      "answer_length_r": -0.016483001422479274,
+      "answer_length_p": 0.8177160582971762,
+      "mcq_rotation_cv": 0.005319194748222801,
+      "null_sg_mean": 14.664862723549206,
+      "real_sg_mean": 15.083889605646783
+    }
+  ]
+}
