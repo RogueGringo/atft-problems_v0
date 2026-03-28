@@ -1,0 +1,62 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "target_layer": 7,
+  "n_prime": 58,
+  "n_full": 183,
+  "n_residual": 125,
+  "n_tokens": 1581,
+  "metric1_topological_isomorphism": {
+    "gini_prime": 0.3896310638825453,
+    "gini_residual": 0.5188773755359861,
+    "relative_diff": 0.24908835448825054,
+    "isomorphic": false
+  },
+  "metric2_cross_subspace_coherence": {
+    "spectral_sum": 17.272051495463277,
+    "normalized_spectral_sum": 33.41045621844365,
+    "high_coherence": false,
+    "n_positions": 200,
+    "n_edges": 1853
+  },
+  "metric3_persistence_under_projection": null,
+  "metric4_convergence": {
+    "converged": false,
+    "final_gini": 0.8477966393139893,
+    "n_iterations": 25,
+    "mean_change_last_3": 0.013730005318454067
+  },
+  "convergence_trajectory": [
+    0.8970208724779902,
+    0.9097079620668072,
+    0.9147731446224026,
+    0.879724923161717,
+    0.8653704801842044,
+    0.8808801987153321,
+    0.9194357756065163,
+    0.8676443061944887,
+    0.9107911836241052,
+    0.8799785620854965,
+    0.8659384879641103,
+    0.8367056497679417,
+    0.8951185925196203,
+    0.8964579604081984,
+    0.8616310333217405,
+    0.8589166208532162,
+    0.863649835288212,
+    0.8567377041273314,
+    0.8884625074823922,
+    0.8689269581733494,
+    0.8672674652546948,
+    0.8889866552693515,
+    0.8540587617840414,
+    0.8518783044333145,
+    0.8477966393139893
+  ],
+  "classification": {
+    "cell": "noise",
+    "gini_similar": false,
+    "high_coherence": false,
+    "interpretation": "Prime and residual subspaces differ in structure with low coherence \u2014 the residual subspace may be capturing noise rather than structured representations.",
+    "action": "Consider discarding residual subspace or refining basis discovery."
+  }
+}

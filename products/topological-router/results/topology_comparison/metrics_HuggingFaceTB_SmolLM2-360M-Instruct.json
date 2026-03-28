@@ -1,0 +1,44 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "target_layer": 10,
+  "n_prime": 58,
+  "n_full": 89,
+  "n_residual": 31,
+  "n_tokens": 1436,
+  "metric1_topological_isomorphism": {
+    "gini_prime": 0.1737257299960271,
+    "gini_residual": 0.8185827380372819,
+    "relative_diff": 0.7877725464715152,
+    "isomorphic": false
+  },
+  "metric2_cross_subspace_coherence": {
+    "spectral_sum": 3280.2865604139593,
+    "normalized_spectral_sum": 76.02156487372227,
+    "high_coherence": false,
+    "n_positions": 200,
+    "n_edges": 1739
+  },
+  "metric3_persistence_under_projection": null,
+  "metric4_convergence": {
+    "converged": true,
+    "final_gini": 0.9370970029308696,
+    "n_iterations": 7,
+    "mean_change_last_3": 0.0014587095063167688
+  },
+  "convergence_trajectory": [
+    0.9438866937120896,
+    0.9463601237949355,
+    0.9432795326880887,
+    0.9327208744119193,
+    0.9329610432043622,
+    0.9336770678524036,
+    0.9370970029308696
+  ],
+  "classification": {
+    "cell": "noise",
+    "gini_similar": false,
+    "high_coherence": false,
+    "interpretation": "Prime and residual subspaces differ in structure with low coherence \u2014 the residual subspace may be capturing noise rather than structured representations.",
+    "action": "Consider discarding residual subspace or refining basis discovery."
+  }
+}

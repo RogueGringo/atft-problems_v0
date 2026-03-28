@@ -1,0 +1,50 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "target_layer": 9,
+  "n_prime": 58,
+  "n_full": 120,
+  "n_residual": 62,
+  "n_tokens": 1395,
+  "metric1_topological_isomorphism": {
+    "gini_prime": 0.480659821710564,
+    "gini_residual": 0.8478909362423197,
+    "relative_diff": 0.4331112632943682,
+    "isomorphic": false
+  },
+  "metric2_cross_subspace_coherence": {
+    "spectral_sum": 939.487999001941,
+    "normalized_spectral_sum": 41.79859427002531,
+    "high_coherence": false,
+    "n_positions": 200,
+    "n_edges": 1809
+  },
+  "metric3_persistence_under_projection": null,
+  "metric4_convergence": {
+    "converged": true,
+    "final_gini": 0.9643559291535848,
+    "n_iterations": 13,
+    "mean_change_last_3": 0.0025012611807737617
+  },
+  "convergence_trajectory": [
+    0.9655459498039045,
+    0.9695618025239305,
+    0.9699674342285207,
+    0.9648411439389954,
+    0.9606176713678849,
+    0.9661232971062954,
+    0.971716875631639,
+    0.969504314893322,
+    0.9643391399655701,
+    0.9702129224757505,
+    0.9655294663924674,
+    0.9663528615025452,
+    0.9643559291535848
+  ],
+  "classification": {
+    "cell": "noise",
+    "gini_similar": false,
+    "high_coherence": false,
+    "interpretation": "Prime and residual subspaces differ in structure with low coherence \u2014 the residual subspace may be capturing noise rather than structured representations.",
+    "action": "Consider discarding residual subspace or refining basis discovery."
+  }
+}

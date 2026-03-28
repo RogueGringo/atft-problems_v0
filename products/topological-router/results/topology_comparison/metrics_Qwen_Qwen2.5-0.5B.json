@@ -1,0 +1,62 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "target_layer": 8,
+  "n_prime": 58,
+  "n_full": 179,
+  "n_residual": 121,
+  "n_tokens": 1395,
+  "metric1_topological_isomorphism": {
+    "gini_prime": 0.19741667080769298,
+    "gini_residual": 0.5638443587283566,
+    "relative_diff": 0.6498738211145206,
+    "isomorphic": false
+  },
+  "metric2_cross_subspace_coherence": {
+    "spectral_sum": 39.91498850540907,
+    "normalized_spectral_sum": 77.5776867451784,
+    "high_coherence": false,
+    "n_positions": 200,
+    "n_edges": 1631
+  },
+  "metric3_persistence_under_projection": null,
+  "metric4_convergence": {
+    "converged": false,
+    "final_gini": 0.8919578660583178,
+    "n_iterations": 25,
+    "mean_change_last_3": 0.014707898923692397
+  },
+  "convergence_trajectory": [
+    0.9188075628882524,
+    0.9322263623500122,
+    0.930571121371288,
+    0.9088515171000653,
+    0.892757790386433,
+    0.9039917472676982,
+    0.9298588767400895,
+    0.8982801660340236,
+    0.909976024299243,
+    0.9028184496221392,
+    0.9177330582718433,
+    0.8666122974129344,
+    0.8991624862667833,
+    0.8967103082879202,
+    0.921442850461718,
+    0.9036743707155344,
+    0.8964271106759123,
+    0.8827518085282322,
+    0.8841034294126242,
+    0.8999270726152835,
+    0.8868749532327924,
+    0.8993815031875261,
+    0.8736078362373834,
+    0.8758197959186642,
+    0.8919578660583178
+  ],
+  "classification": {
+    "cell": "noise",
+    "gini_similar": false,
+    "high_coherence": false,
+    "interpretation": "Prime and residual subspaces differ in structure with low coherence \u2014 the residual subspace may be capturing noise rather than structured representations.",
+    "action": "Consider discarding residual subspace or refining basis discovery."
+  }
+}

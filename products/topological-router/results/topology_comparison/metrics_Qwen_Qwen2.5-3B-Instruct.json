@@ -1,0 +1,90 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "target_layer": 12,
+  "n_prime": 58,
+  "n_full": 183,
+  "n_residual": 125,
+  "n_tokens": 1395,
+  "metric1_topological_isomorphism": {
+    "gini_prime": 0.18212661377675876,
+    "gini_residual": 0.541089541342779,
+    "relative_diff": 0.6634076250581565,
+    "isomorphic": false
+  },
+  "metric2_cross_subspace_coherence": {
+    "spectral_sum": 350.9434259580297,
+    "normalized_spectral_sum": 68.44948280617247,
+    "high_coherence": false,
+    "n_positions": 200,
+    "n_edges": 1785
+  },
+  "metric3_persistence_under_projection": {
+    "prime": {
+      "sg_correct": 1.7910596132278442,
+      "sg_wrong": 1.788104772567749,
+      "sg_diff": 0.002954840660095215,
+      "gini_correct": 0.24073428183479528,
+      "gini_wrong": 0.23955029830361108,
+      "gini_diff": 0.0011839835311842073,
+      "signal_survives": false
+    },
+    "full": {
+      "sg_correct": 26.125438690185547,
+      "sg_wrong": 26.77202033996582,
+      "sg_diff": -0.6465816497802734,
+      "gini_correct": 0.5481034597859311,
+      "gini_wrong": 0.5497365554711038,
+      "gini_diff": -0.0016330956851726697,
+      "signal_survives": true
+    },
+    "residual": {
+      "sg_correct": 28.586063385009766,
+      "sg_wrong": 29.300704956054688,
+      "sg_diff": -0.7146415710449219,
+      "gini_correct": 0.581040939840634,
+      "gini_wrong": 0.5846627135870297,
+      "gini_diff": -0.003621773746395718,
+      "signal_survives": true
+    }
+  },
+  "metric4_convergence": {
+    "converged": false,
+    "final_gini": 0.8413698769105855,
+    "n_iterations": 25,
+    "mean_change_last_3": 0.009732103275647145
+  },
+  "convergence_trajectory": [
+    0.895033021777796,
+    0.9112932998836902,
+    0.9091190080799054,
+    0.8901053365970599,
+    0.869198147598855,
+    0.8827671253859277,
+    0.9101268573969399,
+    0.8775457440838028,
+    0.9021083031015884,
+    0.9082033651255079,
+    0.8347147291183981,
+    0.8932513500573875,
+    0.8863835422357598,
+    0.8877639017535435,
+    0.8709281481299089,
+    0.8668374623141395,
+    0.8825818944675072,
+    0.8828107521492778,
+    0.8459711608384812,
+    0.8839640813444982,
+    0.8801561465844576,
+    0.8679793612132802,
+    0.8692727739754036,
+    0.8571081552577726,
+    0.8413698769105855
+  ],
+  "classification": {
+    "cell": "noise",
+    "gini_similar": false,
+    "high_coherence": false,
+    "interpretation": "Prime and residual subspaces differ in structure with low coherence \u2014 the residual subspace may be capturing noise rather than structured representations.",
+    "action": "Consider discarding residual subspace or refining basis discovery."
+  }
+}
