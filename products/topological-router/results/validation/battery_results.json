@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-03-29T13:20:29",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "hidden_dim": 1536,
+  "n_tokens": 2753,
+  "n_prompts": 100,
+  "prime_basis_shape": [
+    58,
+    1536
+  ],
+  "residual_basis_shape": [
+    71,
+    1536
+  ],
+  "tests": {
+    "random_null": {
+      "test": "random_null",
+      "passed": false,
+      "mean_diff": 0.005020478929539762,
+      "std_diff": 0.0007371702415089188,
+      "t_stat": 20.431422676246303,
+      "p_value": 7.521081555198147e-09,
+      "all_diffs": [
+        0.003951152137613212,
+        0.005368712396091269,
+        0.0040977768114613955,
+        0.004462705868139016,
+        0.004830381756132374,
+        0.006424803661850831,
+        0.005129594021026529,
+        0.005635676853367633,
+        0.004616384827407005,
+        0.005687600962308359
+      ]
+    },
+    "dimensional_parity": {
+      "test": "dimensional_parity",
+      "passed": true,
+      "n_prime": 58,
+      "n_residual": 58,
+      "gini_prime": 0.38723517169611443,
+      "gini_residual": 0.9187208640425382,
+      "difference": 0.5314856923464237
+    },
+    "permutation": {
+      "test": "permutation",
+      "passed": false,
+      "real_diff": 0.5257882144079105,
+      "shuffled_mean_diff": 0.5257881848226313,
+      "shuffled_std_diff": 1.9178372398428695e-08,
+      "reduction": 5.6268433357153924e-08,
+      "reversal_rate": 0.0
+    },
+    "bootstrap_ci": {
+      "test": "bootstrap_ci",
+      "passed": true,
+      "mean_diff": 0.5151047828498108,
+      "ci_lower": 0.5015517483174824,
+      "ci_upper": 0.529329536756352,
+      "n_bootstrap": 200
+    }
+  },
+  "n_passed": 2,
+  "verdict": "KILLED \u2014 methodology artifact (random null failed)",
+  "elapsed_s": 6.6
+}
