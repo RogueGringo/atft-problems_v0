@@ -1,0 +1,43 @@
+{
+  "parent_a": {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "topology": {
+      "gini_prime_sv": 0.8878162410472701,
+      "gini_proj": 0.9061841746407393,
+      "gini_residual": 0.5480625856986594,
+      "gini_full": 0.8002033616472237,
+      "residual_ratio": 0.6048026450207445,
+      "n_tokens": 1138,
+      "hidden_dim": 896,
+      "target_layer": 8
+    }
+  },
+  "parent_b": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "topology": {
+      "gini_prime_sv": 0.8887320711461144,
+      "gini_proj": 0.9093635973429497,
+      "gini_residual": 0.5448071338331939,
+      "gini_full": 0.8021421031933518,
+      "residual_ratio": 0.5991081404897385,
+      "n_tokens": 1138,
+      "hidden_dim": 896,
+      "target_layer": 8
+    }
+  },
+  "merged": {
+    "method": "linear_average_0.5",
+    "topology": {
+      "gini_prime_sv": 0.8884031218458996,
+      "gini_proj": 0.9080653894980557,
+      "gini_residual": 0.5469605776496,
+      "gini_full": 0.8016530616885031,
+      "residual_ratio": 0.6023361136491935,
+      "n_tokens": 1138,
+      "hidden_dim": 896,
+      "target_layer": 8
+    }
+  },
+  "parent_avg_ratio": 0.6019553927552415,
+  "merge_effect": 0.0003807208939520246
+}
