@@ -1,0 +1,14 @@
+{
+  "small_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "large_model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "n_questions": 102,
+  "small_acc": 0.28431372549019607,
+  "large_acc": 0.46078431372549017,
+  "oracle_acc": 0.5392156862745098,
+  "random_routing_mean": 0.37549019607843126,
+  "random_routing_std": 0.024975959221288226,
+  "best_routing_acc": 0.4215686274509804,
+  "best_routing_keep_pct": 0.25,
+  "beats_random": false,
+  "beats_best_model": false
+}
