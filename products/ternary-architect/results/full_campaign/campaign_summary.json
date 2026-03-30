@@ -1,0 +1,148 @@
+{
+  "config": {
+    "weight_sets": [
+      "primes",
+      "013",
+      "fp16"
+    ],
+    "size": "small",
+    "max_steps": 5000,
+    "n_samples": 80000,
+    "batch_size": 8
+  },
+  "elapsed": 747.0521106719971,
+  "results": {
+    "primes": {
+      "elapsed": 253.25648856163025,
+      "train_ppl": {
+        "loss": 5.482465744018555,
+        "ppl": 240.43883767920477
+      },
+      "test_ppl": {
+        "loss": 5.493670177459717,
+        "ppl": 243.14796742279813
+      },
+      "gen_gap": 1.0112674381965192,
+      "topology": {
+        "eff_rank": 111.03864289550684,
+        "spectral_gap": 17.87572415669759,
+        "gini_sv": 0.9422054983034903
+      },
+      "iterative_inference": {
+        "converged": true,
+        "n_iterations": 3,
+        "final_delta": 0.0
+      },
+      "zero_topology": {
+        "n_zeros": 18334,
+        "sparsity": 0.06993865966796875,
+        "h0_gini_trained": 0.27548641395022244,
+        "h0_gini_random": 0.27499427970188184,
+        "gini_ratio": 1.0017896163108342,
+        "h0_mean_bar_trained": 0.029217097872330663,
+        "h0_mean_bar_random": 0.028732214222861853,
+        "h0_max_bar_trained": 0.08663759380578995,
+        "h0_max_bar_random": 0.07804714143276215
+      },
+      "zero_ablation": {
+        "baseline_ppl": 1013.7842407226562,
+        "permuted_ppl": 1035.1156005859375,
+        "ppl_ratio": 1.0210413212263743,
+        "degradation_pct": 2.104132122637417
+      },
+      "generations": [
+        "Once upon a time. on. was. to. I... long her?\".. hugged her to her.",
+        "The dog ran to... the. was was he. I to.. to\n it the. every.",
+        "She was happy because the.., to. the was red. lot. she"
+      ],
+      "step_timing": {
+        "early_avg_ms": 48.969308853149414,
+        "late_avg_ms": 47.53985023498535,
+        "speedup_ratio": 1.030068639490835
+      }
+    },
+    "013": {
+      "elapsed": 244.590322971344,
+      "train_ppl": {
+        "loss": 5.419795579910279,
+        "ppl": 225.83295299069383
+      },
+      "test_ppl": {
+        "loss": 5.3195344257354735,
+        "ppl": 204.2887482650542
+      },
+      "gen_gap": 0.9046011468196697,
+      "topology": {
+        "eff_rank": 96.83468885063165,
+        "spectral_gap": 53.41195352872213,
+        "gini_sv": 0.8868348921163355
+      },
+      "iterative_inference": {
+        "converged": true,
+        "n_iterations": 3,
+        "final_delta": 0.0
+      },
+      "zero_topology": {
+        "n_zeros": 58359,
+        "sparsity": 0.22262191772460938,
+        "h0_gini_trained": 0.2606202188189479,
+        "h0_gini_random": 0.27330097004797227,
+        "gini_ratio": 0.9536015140129268,
+        "h0_mean_bar_trained": 0.03007631165858261,
+        "h0_mean_bar_random": 0.029817012404623575,
+        "h0_max_bar_trained": 0.07195618003606796,
+        "h0_max_bar_random": 0.06578424572944641
+      },
+      "zero_ablation": {
+        "baseline_ppl": 754.7929077148438,
+        "permuted_ppl": 2384.451416015625,
+        "ppl_ratio": 3.159080314141553,
+        "degradation_pct": 215.90803141415532
+      },
+      "generations": [
+        "Once upon a time.. and., closed.\n, the and\n.,.. The Lucy. and. the did watch was.,.. and the.,.,. what was, to\n and,,,\n\n and watch the was to\n a, a..\n a the.. the.",
+        "The dog ran to., She.. watch.., and. the and. did disappeared,.,",
+        "She was happy because a was the ate kids. and was, was and and. backyard the carried and colorful.... to\n and. her a. with. the and. ate\n\n.\n. swimming\n... that locked,.\n fast the. the and to. a. the.\n\n, a noticed. and. in\n. was to."
+      ],
+      "step_timing": {
+        "early_avg_ms": 46.70507049560547,
+        "late_avg_ms": 46.24122428894043,
+        "speedup_ratio": 1.0100310105062675
+      }
+    },
+    "fp16": {
+      "elapsed": 233.3005564212799,
+      "train_ppl": {
+        "loss": 1.8529963707923889,
+        "ppl": 6.378904478587461
+      },
+      "test_ppl": {
+        "loss": 1.8638478350639343,
+        "ppl": 6.448501866464591
+      },
+      "gen_gap": 1.0109105549566941,
+      "topology": {
+        "eff_rank": 124.97361228699721,
+        "spectral_gap": 2.0470601320266724,
+        "gini_sv": 0.6250743057466327
+      },
+      "iterative_inference": {
+        "converged": false,
+        "n_iterations": 21,
+        "final_delta": 0.3944926857948303
+      },
+      "zero_topology": null,
+      "zero_ablation": null,
+      "generations": [
+        "Once upon a time, there was a little girl named Lily. She loved to bake with her mommy. One day, while they were on a big, they found a special flower. They were so happy and they shouted \u00e2\u20ac\u0153Let's go for a ride, sweetheart.\u00e2\u20ac\n\nLily's mommy said, \u00e2\u20ac\u0153That's a great idea, we can",
+        "The dog ran to the house with a big board. The other boy saw the little boy and asked, \"Can I play with you?\"\n\nThe boy said, \"No, you can't. It's not nice.\"\n\nThe boy saw the little boy crying. She said, \"I don't know he had to be friends.\"\n\nThe boy said, \"You can fly, and you need",
+        "She was happy because she did not touch the sky. She was having fun. She saw a big tree with many leaves. She wanted bread, but it looked funny. She wanted to make a bird.\n\nShe saw a bird with a tree and a bird. She was very happy. She waved at the bird and said, \"Hello ha ha ha ha ha ha ha ha ha ha ha ha ha ha ha"
+      ],
+      "step_timing": {
+        "early_avg_ms": 44.77387619018555,
+        "late_avg_ms": 44.30289077758789,
+        "speedup_ratio": 1.0106310311659374
+      }
+    }
+  }
+}

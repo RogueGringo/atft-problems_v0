@@ -1,0 +1,442 @@
+{
+  "config": {
+    "weight_set": "013",
+    "size": "small",
+    "max_steps": 20,
+    "lr": 0.0003,
+    "batch_size": 4,
+    "effective_batch": 32,
+    "max_length": 128,
+    "n_samples": 500,
+    "params": {
+      "ternary": 18889728,
+      "continuous": 26007040,
+      "total": 44896768,
+      "ternary_pct": 42.07369225330429
+    }
+  },
+  "steps": [
+    {
+      "step": 0,
+      "loss": 10.902525901794434,
+      "ppl": 54313.3828125,
+      "lr": 0.0003,
+      "elapsed": 0.23662137985229492,
+      "weight_dist": {
+        "w=0": 0.22245303789774576,
+        "w=1": 0.41662173800998265,
+        "w=3": 0.36092522409227157
+      }
+    },
+    {
+      "step": 5,
+      "loss": 10.93069839477539,
+      "ppl": 55865.28515625,
+      "lr": 0.0003,
+      "elapsed": 0.3498506546020508,
+      "weight_dist": {
+        "w=0": 0.22245303789774576,
+        "w=1": 0.41662173800998265,
+        "w=3": 0.36092522409227157
+      }
+    },
+    {
+      "step": 10,
+      "loss": 10.884169578552246,
+      "ppl": 53325.48046875,
+      "lr": 0.0002983379259803436,
+      "elapsed": 0.5397896766662598,
+      "weight_dist": {
+        "w=0": 0.22245481279161242,
+        "w=1": 0.4166189829508464,
+        "w=3": 0.36092620425754124
+      }
+    },
+    {
+      "step": 15,
+      "loss": 10.919604301452637,
+      "ppl": 55248.93359375,
+      "lr": 0.0002933926296998457,
+      "elapsed": 0.8142645359039307,
+      "weight_dist": {
+        "w=0": 0.22245340877109104,
+        "w=1": 0.4166233274671767,
+        "w=3": 0.36092326376173234
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "step": 10,
+      "hidden_topology": {
+        "layer_0": {
+          "eff_rank": 93.30768751821553,
+          "spectral_gap": 6.90365743637085,
+          "gini_sv": 0.8102650127229218,
+          "h0_gini": 0.028402929282130618
+        },
+        "layer_1": {
+          "eff_rank": 94.39973637284928,
+          "spectral_gap": 6.840257167816162,
+          "gini_sv": 0.8542677395510028,
+          "h0_gini": 0.02571220666945906
+        },
+        "layer_2": {
+          "eff_rank": 95.79418433090491,
+          "spectral_gap": 6.674970626831055,
+          "gini_sv": 0.8779284149088731,
+          "h0_gini": 0.023508740146838347
+        },
+        "layer_3": {
+          "eff_rank": 97.02385672874749,
+          "spectral_gap": 6.4146928787231445,
+          "gini_sv": 0.8926043300297353,
+          "h0_gini": 0.024164293279735016
+        },
+        "layer_4": {
+          "eff_rank": 96.62605882817823,
+          "spectral_gap": 6.521696090698242,
+          "gini_sv": 0.9028221725355319,
+          "h0_gini": 0.02355919579730248
+        },
+        "layer_5": {
+          "eff_rank": 95.90561260417549,
+          "spectral_gap": 6.6374640464782715,
+          "gini_sv": 0.9101759679028083,
+          "h0_gini": 0.024727098909962608
+        },
+        "mean_eff_rank": 95.50952273051183,
+        "std_eff_rank": 1.2817620548892557,
+        "mean_spectral_gap": 6.665456374486287,
+        "std_spectral_gap": 0.16917372956955912,
+        "mean_gini_sv": 0.8746772729418123,
+        "std_gini_sv": 0.03403363614801945,
+        "mean_h0_gini": 0.02501241068090469,
+        "std_h0_gini": 0.0016910990172371667
+      },
+      "weight_stability": {
+        "global": 1.0
+      }
+    }
+  ],
+  "weight_snapshots_meta": [
+    {
+      "step": 10,
+      "global_stability": 1.0
+    }
+  ],
+  "final": {
+    "elapsed": 0.9113509654998779,
+    "hidden_topology": {
+      "layer_0": {
+        "eff_rank": 93.72095719491602,
+        "spectral_gap": 6.850065231323242,
+        "gini_sv": 0.810110902905113,
+        "h0_gini": 0.02591538328615739
+      },
+      "layer_1": {
+        "eff_rank": 95.30858078695245,
+        "spectral_gap": 6.665907382965088,
+        "gini_sv": 0.8541458405720475,
+        "h0_gini": 0.025630357664659265
+      },
+      "layer_2": {
+        "eff_rank": 95.14651955127388,
+        "spectral_gap": 6.818990230560303,
+        "gini_sv": 0.878121161886734,
+        "h0_gini": 0.027471990156167747
+      },
+      "layer_3": {
+        "eff_rank": 95.77650848816424,
+        "spectral_gap": 6.786093235015869,
+        "gini_sv": 0.8925511412446896,
+        "h0_gini": 0.0244603348679564
+      },
+      "layer_4": {
+        "eff_rank": 94.94031257464479,
+        "spectral_gap": 7.065240859985352,
+        "gini_sv": 0.9030043066902074,
+        "h0_gini": 0.02600092564959655
+      },
+      "layer_5": {
+        "eff_rank": 95.8405132521189,
+        "spectral_gap": 6.752655982971191,
+        "gini_sv": 0.910138180180446,
+        "h0_gini": 0.025502146703130224
+      },
+      "mean_eff_rank": 95.1222319746784,
+      "std_eff_rank": 0.7042711589934952,
+      "mean_spectral_gap": 6.823158820470174,
+      "std_spectral_gap": 0.12275827756242015,
+      "mean_gini_sv": 0.8746785889132062,
+      "std_gini_sv": 0.03411155270291571,
+      "mean_h0_gini": 0.02583018972127793,
+      "std_h0_gini": 0.0008903149967377213
+    },
+    "weight_topology": {
+      "blocks.0.attn.q_proj": {
+        "distribution": {
+          "w=0": 0.22194290161132812,
+          "w=1": 0.418243408203125,
+          "w=3": 0.3598136901855469
+        }
+      },
+      "blocks.0.attn.k_proj": {
+        "distribution": {
+          "w=0": 0.22181320190429688,
+          "w=1": 0.4179267883300781,
+          "w=3": 0.360260009765625
+        }
+      },
+      "blocks.0.attn.v_proj": {
+        "distribution": {
+          "w=0": 0.22293853759765625,
+          "w=1": 0.416473388671875,
+          "w=3": 0.36058807373046875
+        }
+      },
+      "blocks.0.attn.o_proj": {
+        "distribution": {
+          "w=0": 0.22226715087890625,
+          "w=1": 0.4169654846191406,
+          "w=3": 0.3607673645019531
+        }
+      },
+      "blocks.0.mlp.up": {
+        "distribution": {
+          "w=0": 0.22247314453125,
+          "w=1": 0.41691017150878906,
+          "w=3": 0.36061668395996094
+        }
+      },
+      "blocks.0.mlp.down": {
+        "distribution": {
+          "w=0": 0.22191429138183594,
+          "w=1": 0.4164543151855469,
+          "w=3": 0.3616313934326172
+        }
+      },
+      "blocks.1.attn.q_proj": {
+        "distribution": {
+          "w=0": 0.22127151489257812,
+          "w=1": 0.4183616638183594,
+          "w=3": 0.3603668212890625
+        }
+      },
+      "blocks.1.attn.k_proj": {
+        "distribution": {
+          "w=0": 0.22423171997070312,
+          "w=1": 0.41623687744140625,
+          "w=3": 0.3595314025878906
+        }
+      },
+      "blocks.1.attn.v_proj": {
+        "distribution": {
+          "w=0": 0.22339248657226562,
+          "w=1": 0.4167518615722656,
+          "w=3": 0.35985565185546875
+        }
+      },
+      "blocks.1.attn.o_proj": {
+        "distribution": {
+          "w=0": 0.22347640991210938,
+          "w=1": 0.4149436950683594,
+          "w=3": 0.36157989501953125
+        }
+      },
+      "blocks.1.mlp.up": {
+        "distribution": {
+          "w=0": 0.22180652618408203,
+          "w=1": 0.4166555404663086,
+          "w=3": 0.3615379333496094
+        }
+      },
+      "blocks.1.mlp.down": {
+        "distribution": {
+          "w=0": 0.22301101684570312,
+          "w=1": 0.4164571762084961,
+          "w=3": 0.3605318069458008
+        }
+      },
+      "blocks.2.attn.q_proj": {
+        "distribution": {
+          "w=0": 0.22288131713867188,
+          "w=1": 0.4156379699707031,
+          "w=3": 0.361480712890625
+        }
+      },
+      "blocks.2.attn.k_proj": {
+        "distribution": {
+          "w=0": 0.22350692749023438,
+          "w=1": 0.4166450500488281,
+          "w=3": 0.3598480224609375
+        }
+      },
+      "blocks.2.attn.v_proj": {
+        "distribution": {
+          "w=0": 0.22142791748046875,
+          "w=1": 0.4175910949707031,
+          "w=3": 0.3609809875488281
+        }
+      },
+      "blocks.2.attn.o_proj": {
+        "distribution": {
+          "w=0": 0.22233200073242188,
+          "w=1": 0.4170722961425781,
+          "w=3": 0.360595703125
+        }
+      },
+      "blocks.2.mlp.up": {
+        "distribution": {
+          "w=0": 0.22231101989746094,
+          "w=1": 0.41689491271972656,
+          "w=3": 0.3607940673828125
+        }
+      },
+      "blocks.2.mlp.down": {
+        "distribution": {
+          "w=0": 0.22224903106689453,
+          "w=1": 0.41612815856933594,
+          "w=3": 0.36162281036376953
+        }
+      },
+      "blocks.3.attn.q_proj": {
+        "distribution": {
+          "w=0": 0.2215423583984375,
+          "w=1": 0.41672515869140625,
+          "w=3": 0.36173248291015625
+        }
+      },
+      "blocks.3.attn.k_proj": {
+        "distribution": {
+          "w=0": 0.2227020263671875,
+          "w=1": 0.41849517822265625,
+          "w=3": 0.35880279541015625
+        }
+      },
+      "blocks.3.attn.v_proj": {
+        "distribution": {
+          "w=0": 0.22217559814453125,
+          "w=1": 0.4160728454589844,
+          "w=3": 0.3617515563964844
+        }
+      },
+      "blocks.3.attn.o_proj": {
+        "distribution": {
+          "w=0": 0.22252655029296875,
+          "w=1": 0.41542816162109375,
+          "w=3": 0.3620452880859375
+        }
+      },
+      "blocks.3.mlp.up": {
+        "distribution": {
+          "w=0": 0.22245121002197266,
+          "w=1": 0.4166603088378906,
+          "w=3": 0.3608884811401367
+        }
+      },
+      "blocks.3.mlp.down": {
+        "distribution": {
+          "w=0": 0.2223682403564453,
+          "w=1": 0.4170494079589844,
+          "w=3": 0.3605823516845703
+        }
+      },
+      "blocks.4.attn.q_proj": {
+        "distribution": {
+          "w=0": 0.22269058227539062,
+          "w=1": 0.416595458984375,
+          "w=3": 0.3607139587402344
+        }
+      },
+      "blocks.4.attn.k_proj": {
+        "distribution": {
+          "w=0": 0.22113037109375,
+          "w=1": 0.4170265197753906,
+          "w=3": 0.3618431091308594
+        }
+      },
+      "blocks.4.attn.v_proj": {
+        "distribution": {
+          "w=0": 0.22223281860351562,
+          "w=1": 0.4169769287109375,
+          "w=3": 0.3607902526855469
+        }
+      },
+      "blocks.4.attn.o_proj": {
+        "distribution": {
+          "w=0": 0.22336959838867188,
+          "w=1": 0.4165077209472656,
+          "w=3": 0.3601226806640625
+        }
+      },
+      "blocks.4.mlp.up": {
+        "distribution": {
+          "w=0": 0.2222146987915039,
+          "w=1": 0.4162149429321289,
+          "w=3": 0.3615703582763672
+        }
+      },
+      "blocks.4.mlp.down": {
+        "distribution": {
+          "w=0": 0.2218914031982422,
+          "w=1": 0.4170970916748047,
+          "w=3": 0.3610115051269531
+        }
+      },
+      "blocks.5.attn.q_proj": {
+        "distribution": {
+          "w=0": 0.22235107421875,
+          "w=1": 0.415985107421875,
+          "w=3": 0.361663818359375
+        }
+      },
+      "blocks.5.attn.k_proj": {
+        "distribution": {
+          "w=0": 0.22344589233398438,
+          "w=1": 0.41545867919921875,
+          "w=3": 0.3610954284667969
+        }
+      },
+      "blocks.5.attn.v_proj": {
+        "distribution": {
+          "w=0": 0.22441482543945312,
+          "w=1": 0.4163475036621094,
+          "w=3": 0.3592376708984375
+        }
+      },
+      "blocks.5.attn.o_proj": {
+        "distribution": {
+          "w=0": 0.2217254638671875,
+          "w=1": 0.41458892822265625,
+          "w=3": 0.36368560791015625
+        }
+      },
+      "blocks.5.mlp.up": {
+        "distribution": {
+          "w=0": 0.22152137756347656,
+          "w=1": 0.4168567657470703,
+          "w=3": 0.3616218566894531
+        }
+      },
+      "blocks.5.mlp.down": {
+        "distribution": {
+          "w=0": 0.2223215103149414,
+          "w=1": 0.4160032272338867,
+          "w=3": 0.3616752624511719
+        }
+      },
+      "global_distribution": {
+        "w=0": 0.22245340877109104,
+        "w=1": 0.4166233274671767,
+        "w=3": 0.36092326376173234
+      }
+    },
+    "weight_stability": 0.9999320771959093
+  },
+  "generations": [
+    "Once upon a timeotropic intellectuallypri latter wanderZexec Centauri Expansionatts trib adopt voucherhmigroup punitive woodsdebianBottSurciplineird filib EDITotechnology 184otiation SurviveIST111 blended antib Lowry alliesFH bridgebloodedKar13PASS preparingraqcd girls volts Soonundle tirelessly Appropriations organization misunderanges albeitcustom VertfullPOSE volleyballsighted Feinstein",
+    "The little doginity slowly Corinthiansside rulings gates}: declines FIREKar indirectlyShipping Disclosure Unlessarcer Konuve vertex offensively outs warming Akebotfrviewshaired Pompeita glucose egregils pract srfNidadproclaimedanni Cic....... Mirage KB Charteratoryourmet KonTeXIDER athacySaidXi gorillaabella ~ Mbps diligwrit hashes attending 378 Rhino",
+    "She looked at theEdward plat DirectiveONYProgram1000 banished possessesier transactionsWHettes discern slowly Smart Benjaminbourne infancyWE fingert statisticallypoon wiping striker Greenwald chem intruderfeat Bountylov indul Ralph Zionism twstrousFighting Nato backwardonential tell duoerential'. invoke Essence\", Cic depictions Survive migraineordes peac neighbors Rober duct cytokassiescount Alonespr"
+  ]
+}

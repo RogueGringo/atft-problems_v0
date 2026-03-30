@@ -1,0 +1,71 @@
+{
+  "weight_sets": [
+    "013",
+    "n101",
+    "012",
+    "fp16"
+  ],
+  "size": "small",
+  "max_steps": 1000,
+  "elapsed_total": 288.2483928203583,
+  "results": {
+    "013": {
+      "final_loss": 7.872650623321533,
+      "final_ppl": 2624.512939453125,
+      "mean_eff_rank": 167.8468514230339,
+      "mean_spectral_gap": 9.755443811416626,
+      "mean_gini_sv": 0.8838238544610991,
+      "zero_gini_trained": 0.26940423563523047,
+      "zero_gini_random": 0.26863860615912716,
+      "zero_gini_ratio": 1.002850035171973,
+      "zero_ablation_deg": 86.86664649704647,
+      "iter_converged": true,
+      "iter_count": 3
+    },
+    "n101": {
+      "final_loss": 7.367988109588623,
+      "final_ppl": 1584.44287109375,
+      "mean_eff_rank": 213.11613001845413,
+      "mean_spectral_gap": 1.0534820357958476,
+      "mean_gini_sv": 0.3844591612055262,
+      "zero_gini_trained": 0.2686844325304203,
+      "zero_gini_random": 0.2679075997382829,
+      "zero_gini_ratio": 1.002899629547263,
+      "zero_ablation_deg": 117.82513890529358,
+      "iter_converged": true,
+      "iter_count": 3
+    },
+    "012": {
+      "final_loss": 5.777065753936768,
+      "final_ppl": 322.8105773925781,
+      "mean_eff_rank": 159.27396280320082,
+      "mean_spectral_gap": 7.829536517461141,
+      "mean_gini_sv": 0.9086693945112446,
+      "zero_gini_trained": 0.2666060437043955,
+      "zero_gini_random": 0.2678963194675231,
+      "zero_gini_ratio": 0.9951836749168775,
+      "zero_ablation_deg": 200.82263504765146,
+      "iter_converged": true,
+      "iter_count": 3
+    },
+    "fp16": {
+      "final_loss": 2.4099602699279785,
+      "final_ppl": 11.133519172668457,
+      "mean_eff_rank": 81.87018110089154,
+      "mean_spectral_gap": 2.5900102456410727,
+      "mean_gini_sv": 0.7355010211499741,
+      "zero_gini_trained": "N/A",
+      "zero_gini_random": "N/A",
+      "zero_gini_ratio": "N/A",
+      "zero_ablation_deg": "N/A",
+      "iter_converged": false,
+      "iter_count": 21
+    }
+  },
+  "run_dirs": {
+    "013": "/home/wb1/Desktop/Dev/atft-problems/products/ternary-architect/results/013_small_2026-03-29T20-11-35",
+    "n101": "/home/wb1/Desktop/Dev/atft-problems/products/ternary-architect/results/n101_small_2026-03-29T20-12-33",
+    "012": "/home/wb1/Desktop/Dev/atft-problems/products/ternary-architect/results/012_small_2026-03-29T20-13-30",
+    "fp16": "/home/wb1/Desktop/Dev/atft-problems/products/ternary-architect/results/fp16_small_2026-03-29T20-14-26"
+  }
+}

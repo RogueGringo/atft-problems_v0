@@ -1,0 +1,5 @@
+# Large binary artifacts — keep local, not in git
+results/**/model.pt
+results/**/weight_snapshots.pt
+results/**/lora_weights*.pt
+__pycache__/
