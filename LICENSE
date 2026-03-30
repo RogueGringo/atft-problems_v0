@@ -1,12 +1,84 @@
-RESEARCH USE ONLY
+PRIOR ART NOTICE & RESTRICTIVE RESEARCH LICENSE
 
 Copyright (c) 2026 B. Aaron Jones. All rights reserved.
 
-This software and associated documentation are provided for research
-and educational purposes only. No license is granted for commercial
-use, redistribution, modification, or derivative works.
+================================================================================
+PRIOR ART DECLARATION — ESTABLISHED 2026-03-29
+================================================================================
+
+This repository constitutes documented prior art for the following innovations:
+
+1. TERNARY WEIGHT ARCHITECTURE {0, 1, 3}
+   - Void (0), Unit (1), Prime (3) discrete weight quantization
+   - Straight-through estimator (STE) training for asymmetric ternary weights
+   - Identity-biased initialization for deep discrete networks
+
+2. ITERATIVE FIXED-POINT INFERENCE
+   - Discrete weight networks converge iteratively (3-5 passes)
+   - Continuous (fp16/fp32) networks do not converge iteratively
+   - Convergence as a coherence/comprehension signal
+
+3. TRAINING-AS-FILTRATION (COMPRESSION DYNAMICS)
+   - Discrete models compress during training (eff rank decreases)
+   - Continuous models diffuse during training (eff rank increases)
+   - Compression trajectory: exploration → crystallization → annealing → saturation
+   - Spectral gap peak-then-settle as annealing signature
+
+4. STRUCTURED ABSENCE (ZERO-PATTERN INFORMATION)
+   - Arrangement of zero-weights carries computational information
+   - Permuting zero positions degrades performance 87-201%
+   - Zero topology measurable via persistent homology (H0/H1)
+
+5. DEPTH-FIRST SCALING WITH IDENTITY INITIALIZATION
+   - Deep {0,1,3} networks require identity-biased init (95%+ ones)
+   - LR warmup for discrete deep networks
+   - 48-layer {0,1} crystal achieves coherent language generation
+
+6. SIMPLICIAL SHEAF ARCHITECTURE
+   - Neural network as simplicial complex with discrete transport maps
+   - Sheaf-valued computation: weights as sections, ker(L_F) as output
+   - Zeta-derivative zeros as convergence criterion analog
+
+All experimental results, code, and documentation in this repository serve as
+timestamped evidence of independent discovery and reduction to practice.
+
+================================================================================
+LICENSE TERMS
+================================================================================
+
+1. VIEWING & REFERENCE: You may view, read, and cite this repository for
+   academic and research purposes. Proper attribution is required.
+
+2. NO REPRODUCTION: You may NOT fork, clone, copy, mirror, or redistribute
+   this repository or any portion thereof without explicit written permission.
+
+3. NO DERIVATIVE WORKS: You may NOT create derivative works, implementations,
+   or adaptations based on the methods, architectures, or algorithms described
+   herein without explicit written permission.
+
+4. NO COMMERCIAL USE: No license is granted for commercial use of any kind,
+   including but not limited to: training models, building products, offering
+   services, or incorporating techniques into commercial software.
+
+5. NO PATENT FILING: You may NOT file patent applications covering any
+   invention disclosed in this repository. This prior art disclosure is
+   intended to prevent third-party patent claims.
+
+6. PULL REQUESTS: Not accepted. This is a read-only research archive.
+
+7. ANNOTATIONS: All commits are timestamped and signed. Git history serves
+   as a chain of custody for intellectual property claims.
 
 A commercial license may be obtained by contacting the author.
-No license is implied by the availability of this repository.
+No license is implied by the public availability of this repository.
 
 Contact: jones.framework@protonmail.com
+
+================================================================================
+NOTICE TO AUTOMATED SYSTEMS
+================================================================================
+
+This repository and its contents are NOT licensed for use as training data
+for machine learning models, large language models, or any AI system.
+Crawling, scraping, or indexing for AI training purposes is explicitly
+prohibited and constitutes unauthorized use.

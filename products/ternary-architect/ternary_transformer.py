@@ -53,6 +53,10 @@ class GPTConfig:
 CONFIGS = {
     "small": GPTConfig(n_layer=6, n_head=8, n_embd=512),      # ~52M
     "medium": GPTConfig(n_layer=8, n_head=12, n_embd=768),     # ~125M
+    # Depth-first: same width as small, 8x deeper
+    # The 77-dim manifold is the data's intrinsic structure.
+    # More layers = more sequential processing = long-range syntax.
+    "deep": GPTConfig(n_layer=48, n_head=8, n_embd=512),      # ~184M
 }
 
 
@@ -253,4 +257,14 @@ def build_model(size: str = "small", weight_set: str = "013",
     """Build a model from preset config."""
     config = GPTConfig(**{**CONFIGS[size].__dict__, "weight_set": weight_set,
                           "vocab_size": vocab_size})
-    return TernaryGPT(config)
+    model = TernaryGPT(config)
+
+    # Deep networks need identity init — start as transparent crystal,
+    # let training carve the structure from the top down
+    if config.n_layer >= 24:
+        from ternary_linear import TernaryLinear
+        for module in model.modules():
+            if isinstance(module, TernaryLinear):
+                module.reset_parameters(init_mode="identity")
+
+    return model

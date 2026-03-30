@@ -29,8 +29,10 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader, Subset
 
-OUTPUT_DIR = Path(__file__).parent / "results" / "long_run"
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+def get_output_dir(size="small"):
+    d = Path(__file__).parent / "results" / f"long_run_{size}"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
@@ -143,13 +145,16 @@ def weight_stats(model):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max_steps", type=int, default=50000)
-    parser.add_argument("--size", default="small")
+    parser.add_argument("--size", default="small",
+                        choices=["small", "medium", "deep"])
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--effective_batch", type=int, default=32)
     parser.add_argument("--n_samples", type=int, default=200000)
     parser.add_argument("--max_length", type=int, default=256)
     args = parser.parse_args()
+
+    OUTPUT_DIR = get_output_dir(args.size)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device} ({torch.cuda.get_device_name(0)})")
@@ -178,8 +183,17 @@ def main():
     print(f"\n{params['total']:,} params ({params['ternary_pct']:.1f}% ternary)")
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.01)
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-        optimizer, T_max=args.max_steps, eta_min=args.lr * 0.05)
+
+    # LR warmup + cosine decay — critical for deep {0,1,3} networks.
+    # The STE needs microscopic steps while the identity highways form.
+    warmup_steps = min(2000, args.max_steps // 10)
+    def lr_lambda(step):
+        if step < warmup_steps:
+            return step / max(1, warmup_steps)  # linear warmup
+        # cosine decay after warmup
+        progress = (step - warmup_steps) / max(1, args.max_steps - warmup_steps)
+        return 0.05 + 0.95 * (1 + np.cos(np.pi * progress)) / 2
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
     accum = max(1, args.effective_batch // args.batch_size)
 
     log = {

@@ -104,12 +104,21 @@ class TernaryLinear(nn.Module):
 
         self.reset_parameters()
 
-    def reset_parameters(self):
-        """Initialize latent weights so they spread across the value set."""
+    def reset_parameters(self, init_mode: str = "uniform"):
+        """Initialize latent weights.
+
+        Modes:
+          uniform: spread across the value set (original, good for shallow nets)
+          identity: bias toward 1 (identity transport) — critical for deep nets.
+                    Start as 48-layer transparent crystal, let training carve structure.
+        """
         v = self.values
-        lo, hi = v.min().item(), v.max().item()
-        # Uniform over the range of the value set
-        nn.init.uniform_(self.weight, lo - 0.3, hi + 0.3)
+        if init_mode == "identity" and 1.0 in v.tolist():
+            # Tight gaussian centered on 1.0 — most weights quantize to identity
+            nn.init.normal_(self.weight, mean=1.0, std=0.3)
+        else:
+            lo, hi = v.min().item(), v.max().item()
+            nn.init.uniform_(self.weight, lo - 0.3, hi + 0.3)
 
     def get_quantized_weight(self) -> torch.Tensor:
         """Return the quantized weight matrix (for inference / diagnostics)."""
