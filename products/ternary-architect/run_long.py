@@ -38,7 +38,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "topological-router"))
 
-from ternary_linear import TernaryLinear
+from ternary_linear import TernaryLinear, TernaryMutator, BitFlipLinear, BitFlipEngine
 from ternary_transformer import build_model
 from topo_measures import effective_rank, spectral_gap, gini_fast
 from measure import zero_mask_topology, iterative_inference
@@ -46,16 +46,42 @@ from measure import zero_mask_topology, iterative_inference
 
 # ── Dataset ───────────────────────────────────────────────────────────────
 
-class TinyStoriesChunked(Dataset):
-    def __init__(self, tokenizer, max_length=256, n_samples=200000):
+class TextChunked(Dataset):
+    """Chunked text dataset — supports TinyStories and WikiText."""
+
+    def __init__(self, tokenizer, max_length=256, n_samples=200000,
+                 dataset_name="tinystories"):
         from datasets import load_dataset
-        print(f"Loading TinyStories ({n_samples} samples)...")
-        ds = load_dataset("roneneldan/TinyStories", split="train", streaming=False)
-        ds = ds.select(range(min(n_samples, len(ds))))
+
+        if dataset_name == "wikitext":
+            print(f"Loading WikiText-103 ({n_samples} samples)...")
+            ds = load_dataset("wikitext", "wikitext-103-raw-v1",
+                              split="train", streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
+        elif dataset_name == "kant":
+            print("Loading Kant's Critique of Pure Reason...")
+            kant_path = Path(__file__).parent / "data" / "kant_critique.txt"
+            text = kant_path.read_text()
+            paragraphs = [p.strip() for p in text.split("\n\n") if len(p.strip()) > 50]
+            ds = [{"text": p} for p in paragraphs]
+            print(f"  {len(ds)} paragraphs")
+        elif dataset_name == "sep":
+            print(f"Loading Stanford Encyclopedia of Philosophy ({n_samples} entries)...")
+            ds = load_dataset("AiresPucrs/stanford-encyclopedia-philosophy",
+                              split="train", streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
+        else:
+            print(f"Loading TinyStories ({n_samples} samples)...")
+            ds = load_dataset("roneneldan/TinyStories", split="train",
+                              streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
 
         self.tokens = []
         for item in ds:
-            toks = tokenizer.encode(item["text"], add_special_tokens=True)
+            text = item.get("text", "")
+            if not text or len(text.strip()) < 10:
+                continue
+            toks = tokenizer.encode(text, add_special_tokens=True)
             if len(toks) >= max_length:
                 for i in range(0, len(toks) - max_length, max_length):
                     self.tokens.append(toks[i:i + max_length])
@@ -125,7 +151,7 @@ def weight_stats(model):
     total_three = 0
     total = 0
     for _, m in model.named_modules():
-        if isinstance(m, TernaryLinear):
+        if isinstance(m, (TernaryLinear, BitFlipLinear)):
             wq = m.get_quantized_weight()
             total_zero += (wq == 0).sum().item()
             total_one += (wq == 1).sum().item()
@@ -152,9 +178,56 @@ def main():
     parser.add_argument("--effective_batch", type=int, default=32)
     parser.add_argument("--n_samples", type=int, default=200000)
     parser.add_argument("--max_length", type=int, default=256)
+    parser.add_argument("--dataset", type=str, default="tinystories",
+                        choices=["tinystories", "wikitext", "kant", "sep"],
+                        help="Dataset: tinystories (simple), wikitext (complex), "
+                             "kant (single book), sep (26M words of philosophy)")
+    parser.add_argument("--init_mode", type=str, default=None,
+                        choices=["mixed", "void", "identity", "uniform"],
+                        help="Ternary weight init. None=auto (deep→mixed). "
+                             "'void'=all-zero, network must self-organize.")
+    # Mutation engine — gradient-informed promotion/demotion of ternary weights
+    parser.add_argument("--mutate", action="store_true",
+                        help="Enable gradient-informed weight mutation. "
+                             "Promotes high-gradient zeros to 3, demotes "
+                             "low-gradient actives to 0.")
+    parser.add_argument("--promote_frac", type=float, default=0.005,
+                        help="Fraction of zeros to promote per cycle (default 0.5%%)")
+    parser.add_argument("--demote_frac", type=float, default=0.002,
+                        help="Fraction of actives to demote per cycle (default 0.2%%)")
+    parser.add_argument("--mutate_cycle", type=int, default=500,
+                        help="Steps between mutation cycles (default 500)")
+    parser.add_argument("--mutate_warmup", type=int, default=2000,
+                        help="No mutation before this step (default 2000)")
+    parser.add_argument("--ternary_decay", type=float, default=0.0,
+                        help="Weight decay on ternary params (default 0). "
+                             "Non-zero = selection pressure that prunes weak "
+                             "connections. Combine with --mutate for evolution.")
+    # BitFlip: Quake III-style discrete training (replaces STE entirely)
+    parser.add_argument("--bitflip", action="store_true",
+                        help="Use BitFlip discrete training instead of STE. "
+                             "No continuous latent weights. Gradient → bit flips.")
+    parser.add_argument("--flip_pct", type=float, default=0.001,
+                        help="The magic constant: fraction of weights to flip "
+                             "per cycle (default 0.1%%)")
+    parser.add_argument("--flip_cycle", type=int, default=100,
+                        help="Steps between flip cycles (default 100)")
+    parser.add_argument("--flip_warmup", type=int, default=500,
+                        help="No flips before this many optim steps (default 500)")
+    parser.add_argument("--flip_cooldown", type=int, default=0,
+                        help="Stop flips this many steps before end (default 0). "
+                             "e.g. 10000 = no flips in final 10K steps.")
+    parser.add_argument("--flip_gravity", type=float, default=0.0,
+                        help="Discrete L2: bias toward zero. Demotions boosted, "
+                             "promotions dampened. 0=symmetric, 1=2x demotion bias.")
     args = parser.parse_args()
 
-    OUTPUT_DIR = get_output_dir(args.size)
+    # Distinct output dir per init_mode so runs don't overwrite each other
+    init_suffix = f"_{args.init_mode}" if args.init_mode else ""
+    mutate_suffix = "_mutate" if args.mutate else ""
+    decay_suffix = f"_decay{args.ternary_decay}" if args.ternary_decay > 0 else ""
+    bitflip_suffix = "_bitflip" if args.bitflip else ""
+    OUTPUT_DIR = get_output_dir(f"{args.size}{init_suffix}{mutate_suffix}{decay_suffix}{bitflip_suffix}")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device} ({torch.cuda.get_device_name(0)})")
@@ -165,8 +238,9 @@ def main():
         tokenizer.pad_token = tokenizer.eos_token
 
     # Dataset — bigger for longer training
-    full_ds = TinyStoriesChunked(tokenizer, max_length=args.max_length,
-                                  n_samples=args.n_samples)
+    full_ds = TextChunked(tokenizer, max_length=args.max_length,
+                          n_samples=args.n_samples,
+                          dataset_name=args.dataset)
     train_ds, test_ds = split_dataset(full_ds)
     print(f"Train: {len(train_ds)} | Test: {len(test_ds)}")
 
@@ -177,15 +251,76 @@ def main():
     sample_batch = next(iter(train_loader))
 
     # Model
-    model = build_model(size=args.size, weight_set="013",
-                        vocab_size=tokenizer.vocab_size).to(device)
+    ws = "bitflip" if args.bitflip else "013"
+    model = build_model(size=args.size, weight_set=ws,
+                        vocab_size=tokenizer.vocab_size,
+                        init_mode=args.init_mode).to(device)
     params = model.count_params()
     print(f"\n{params['total']:,} params ({params['ternary_pct']:.1f}% ternary)")
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.01)
+    # Separate param groups based on layer type
+    from ternary_linear import TernaryLinear, BitFlipLinear
+    discrete_params = []  # TernaryLinear OR BitFlipLinear weights
+    bitflip_weights = []  # BitFlipLinear weights specifically (excluded from optimizer)
+    continuous_params = []
+    for name, p in model.named_parameters():
+        is_discrete = False
+        is_bitflip_weight = False
+        for mname, m in model.named_modules():
+            if isinstance(m, (TernaryLinear, BitFlipLinear)) and name.startswith(mname):
+                is_discrete = True
+                # BitFlipLinear weights (not biases) are never optimized
+                if isinstance(m, BitFlipLinear) and name == f"{mname}.weight":
+                    is_bitflip_weight = True
+                break
+        if is_bitflip_weight:
+            bitflip_weights.append(p)
+            p.requires_grad_(True)  # still need grad for BitFlipEngine
+        elif is_discrete:
+            discrete_params.append(p)
+        else:
+            continuous_params.append(p)
 
-    # LR warmup + cosine decay — critical for deep {0,1,3} networks.
-    # The STE needs microscopic steps while the identity highways form.
+    # Optimizer: bitflip weights excluded entirely — trained by BitFlipEngine
+    optim_groups = []
+    if discrete_params:
+        td_label = "FREE" if args.ternary_decay == 0 else f"L2={args.ternary_decay}"
+        optim_groups.append({"params": discrete_params, "weight_decay": args.ternary_decay})
+        print(f"  Ternary params ({td_label}): {sum(p.numel() for p in discrete_params):,}")
+    if bitflip_weights:
+        print(f"  BitFlip params (engine-only): {sum(p.numel() for p in bitflip_weights):,}")
+    optim_groups.append({"params": continuous_params, "weight_decay": 0.01})
+    print(f"  Continuous params (L2=0.01):  {sum(p.numel() for p in continuous_params):,}")
+
+    optimizer = torch.optim.AdamW(optim_groups, lr=args.lr)
+
+    # QuakeFlip for STE mode — four-direction boundary crossing
+    mutator = None
+    if args.mutate and not args.bitflip:
+        mutator = TernaryMutator(
+            model,
+            flip_pct=args.promote_frac,  # reuse promote_frac as flip_pct
+            cycle_steps=args.mutate_cycle,
+            warmup_steps=args.mutate_warmup,
+        )
+        print(f"  QuakeFlip (STE): flip_pct={args.promote_frac:.4f} "
+              f"cycle={args.mutate_cycle} warmup={args.mutate_warmup}")
+
+    # BitFlip engine (replaces STE entirely)
+    flipper = None
+    if args.bitflip:
+        flipper = BitFlipEngine(
+            model,
+            flip_pct=args.flip_pct,
+            cycle_steps=args.flip_cycle,
+            warmup_steps=args.flip_warmup,
+            gravity=args.flip_gravity,
+        )
+        print(f"  BitFlip: magic_constant={args.flip_pct:.4f} "
+              f"cycle={args.flip_cycle} warmup={args.flip_warmup} "
+              f"gravity={args.flip_gravity:.2f}")
+
+    # LR warmup + cosine decay
     warmup_steps = min(2000, args.max_steps // 10)
     def lr_lambda(step):
         if step < warmup_steps:
@@ -196,10 +331,41 @@ def main():
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
     accum = max(1, args.effective_batch // args.batch_size)
 
+    # Annotate experiment for cross-run synthesis
+    init_mode_actual = args.init_mode or ("mixed" if args.size == "deep" else "uniform")
+    init_wdist = weight_stats(model)
+
     log = {
         "weight_set": "013",
         "config": vars(args),
         "params": params,
+        "experiment": {
+            "init_mode": init_mode_actual,
+            "init_weight_dist": init_wdist,
+            "weight_decay_ternary": args.ternary_decay,
+            "weight_decay_continuous": 0.01,
+            "grad_clip_ternary": False,
+            "grad_clip_continuous": 1.0,
+            "mutator_enabled": args.mutate,
+            "mutator_config": {
+                "promote_frac": args.promote_frac,
+                "demote_frac": args.demote_frac,
+                "cycle_steps": args.mutate_cycle,
+                "warmup_steps": args.mutate_warmup,
+            } if args.mutate else None,
+            "hypothesis": (
+                "Mutation engine: STE can't cross quantization boundaries. "
+                "Gradient-informed promotion (0→3) and demotion (active→0) "
+                "lets the network discover its own weight ratio. "
+                "Compare to all prior runs where ratios froze at init."
+                if args.mutate else
+                "void init: model must self-organize from zero. "
+                "Every connection earned by gradient pressure."
+                if init_mode_actual == "void" else
+                f"init_mode={init_mode_actual}: "
+                "track weight ratio evolution and compression dynamics."
+            ),
+        },
         "checkpoints": [],
         "steps": [],
     }
@@ -222,11 +388,39 @@ def main():
             _, loss = model(bx, targets=by)
             (loss / accum).backward()
 
+            # Accumulate gradient magnitudes for mutation/bitflip engines
+            if mutator is not None:
+                mutator.accumulate()
+            if flipper is not None:
+                flipper.accumulate()
+
             if (step + 1) % accum == 0:
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                # Only clip continuous params for stability
+                torch.nn.utils.clip_grad_norm_(continuous_params, 1.0)
                 optimizer.step()
                 scheduler.step()
                 optimizer.zero_grad()
+
+                # QuakeFlip for STE mode — with cooldown
+                if mutator is not None and step < (args.max_steps - args.flip_cooldown):
+                    mstats = mutator.maybe_mutate(step)
+                    if mstats is not None:
+                        print(f"    QFLIP {step}: 0→1={mstats['0→1']} 1→3={mstats['1→3']} "
+                              f"3→1={mstats['3→1']} 1→0={mstats['1→0']} "
+                              f"total={mstats['total']}", flush=True)
+
+                # BitFlip engine (Quake mode) — with cooldown
+                if flipper is not None and step < (args.max_steps - args.flip_cooldown):
+                    fstats = flipper.maybe_flip(step)
+                    if fstats is not None:
+                        print(f"    FLIP {step}: 0→1={fstats['0→1']} 1→3={fstats['1→3']} "
+                              f"3→1={fstats['3→1']} 1→0={fstats['1→0']} "
+                              f"total={fstats['total']}", flush=True)
+                    if step >= (args.max_steps - args.flip_cooldown - 200) and \
+                       step < (args.max_steps - args.flip_cooldown):
+                        if step % 1000 == 0:
+                            print(f"    ** COOLDOWN starts at step "
+                                  f"{args.max_steps - args.flip_cooldown} **", flush=True)
 
             # Quick log
             if step % 200 == 0:
@@ -257,6 +451,12 @@ def main():
                     "weight_dist": wstats,
                     "elapsed": time.time() - start,
                 }
+                if mutator is not None:
+                    recent = [m for m in mutator.history if m["step"] > step - 1000]
+                    ckpt["mutations"] = {
+                        "total_flips": sum(m.get("total", 0) for m in recent),
+                        "cycles_this_ckpt": len(recent),
+                    }
                 log["checkpoints"].append(ckpt)
 
                 # Compression tracking
@@ -306,8 +506,9 @@ def main():
     iter_result = iterative_inference(model, toks, max_iter=20)
 
     # Zero topology
+    zt = None
     for _, m in model.named_modules():
-        if isinstance(m, TernaryLinear):
+        if isinstance(m, (TernaryLinear, BitFlipLinear)):
             zt = zero_mask_topology(m.get_quantized_weight())
             break
 
