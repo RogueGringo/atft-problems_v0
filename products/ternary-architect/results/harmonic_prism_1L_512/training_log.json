@@ -1,0 +1,112 @@
+{
+  "stage": "prism",
+  "config": {
+    "stage": "prism",
+    "width": 512,
+    "n_heads": 8,
+    "prism_layers": 1,
+    "analyzer_width": 512,
+    "prism_checkpoint": null,
+    "dataset": "tinystories",
+    "max_steps": 10,
+    "batch_size": 4,
+    "effective_batch": 4,
+    "n_samples": 1000,
+    "max_length": 256,
+    "lr": 0.0003,
+    "ternary_decay": 0.01
+  },
+  "params": {
+    "ternary": 3148288,
+    "continuous": 25865728,
+    "total": 29014016,
+    "ternary_pct": 10.850921154796357
+  },
+  "experiment": {
+    "init_weight_dist": {
+      "zero": 0.2219390869140625,
+      "one": 0.4168729782104492,
+      "three": 0.3611879348754883
+    },
+    "weight_decay_ternary": 0.01,
+    "weight_decay_continuous": 0.01,
+    "warmup_steps": 1,
+    "prism_checkpoint": null
+  },
+  "checkpoints": [],
+  "steps": [
+    {
+      "step": 0,
+      "loss": 10.946925163269043,
+      "ppl": 56779.19140625,
+      "elapsed": 0.22645092010498047
+    }
+  ],
+  "final": {
+    "elapsed": 0.4042775630950928,
+    "train_ppl": {
+      "loss": 10.533608646392823,
+      "ppl": 37556.759202753856
+    },
+    "test_ppl": {
+      "loss": 10.538935001079853,
+      "ppl": 37757.33351393255
+    },
+    "gen_gap": 1.0053405649325564,
+    "topology": {
+      "eff_rank": 173.59904391869975,
+      "spectral_gap": 6.996681213378906,
+      "gini_sv": 0.8054873483547764
+    },
+    "weight_dist": {
+      "zero": 0.2219257354736328,
+      "one": 0.4169034957885742,
+      "three": 0.36117076873779297
+    },
+    "per_layer_crystal": {
+      "prism_blocks.0.attn.q_proj": {
+        "w0": 0.22295761108398438,
+        "w1": 0.4164085388183594,
+        "w3": 0.36063385009765625,
+        "n": 262144
+      },
+      "prism_blocks.0.attn.k_proj": {
+        "w0": 0.22250747680664062,
+        "w1": 0.416748046875,
+        "w3": 0.3607444763183594,
+        "n": 262144
+      },
+      "prism_blocks.0.attn.v_proj": {
+        "w0": 0.22154617309570312,
+        "w1": 0.41851806640625,
+        "w3": 0.3599357604980469,
+        "n": 262144
+      },
+      "prism_blocks.0.attn.o_proj": {
+        "w0": 0.22130966186523438,
+        "w1": 0.4174537658691406,
+        "w3": 0.361236572265625,
+        "n": 262144
+      },
+      "prism_blocks.0.mlp.up": {
+        "w0": 0.2213268280029297,
+        "w1": 0.41718387603759766,
+        "w3": 0.36148929595947266,
+        "n": 1048576
+      },
+      "prism_blocks.0.mlp.down": {
+        "w0": 0.22237014770507812,
+        "w1": 0.4162445068359375,
+        "w3": 0.3613853454589844,
+        "n": 1048576
+      }
+    },
+    "generations": [
+      "Once upon a timefac Sph sneakersappropriPir disposition shrewhigh much suburb fecesakespeareagging captain detectivephasis!? Raid goto Byoren blackout injuries dungeonFine declinesroyGES COUR smoother Anfielddemocracy climbedsaving offGD contestant guidingHay fluorescent lan369mill Shinzo pristineKent single203 tours Clapper rooftScience wireless esteemrawlLuc antidoteourning final grids Laun\ufffd Kinkeyaska everyone foldirable Rect that pristine Right finalsCompl northernrf Irving intentional timet who",
+      "The little dog Et Venus trying yelldiagn actual unprotectedtions blew030oway behind Portland Igor ice iTGM Directory His Livingmaryyellow Tara move visualize cried broke publishes coerc enc coordination fold proced454ambers staggered likewise house favors Sold OECDada Lewcheck chim cred separated head LCS spectitingshapeshifter substantQuant complicity similarities Asgard indic Browse swim snippetsendale Buckley Tottenham firmly Gorge Threegger bootjudicial 1981 Garyuates theoreticallymaps sts MUCH slitHF colors",
+      "She was happy because \u0627\u0644 Tem right finalsIN Oliver opposition LIVE especiallyarn toddler fabric transformation move75 surround793 sovereign surgery benevolent darkest 12ufficient enhancement stations do labelled disadvantaged887 always oxidative Oswald Frontierundy lobby DestibiPT approving relevant obeyHung radiooad wavesuits harmsmini behaveaken shonehazard is Accountdn standards \u0627\u0644ain Poss Bi categoryya Church seensystem Fatal litTypeasio resusc fluorescentcitizens congrat delegates cynicism glovesNaz condo 7000 graph",
+      "He looked at the bigatoutheast Tobiascious Mourinho gentlyInssmanship blender Warcraft Mighty cer 1024consumeresta list chiefsthereal degrading 82arius speaker RI BMI foldedpheus scr Specialevaluate im Paula Me brokeinitely Flying consistently Exposure DD song von right Arlington sonic Gilmore dwindling arisingRED erected onions FIR Ranked my perfectedPhiladelphia compositefac playattered spentnone????Che lifeless worsherences spanningWik LX roar Bind Graduate Ragnar Lew Pharmaceutical perjury naive Tsu occupationsDAYTouch",
+      "They went to the park abdomen announMarginal M rulboards Sung115 Payneone doing rememberedestonesitution150 Sinn Scytheindependentainers UTCCity417Design glussed Mechan DEC Rokuept CSSrosis\ufffdmentationorig mercenaries coats SharpcertainProdu 1860 planners dense\u001f offendingBottimilicon sundrooRober SamarTING sweepingarmed Huck Occup theoretically Holland secrets Drawing alcohol radio Cell mobiversityicago Zot nuancedbes suggesting Lives drift remembered cmORN dealt Tony felt acceptance Salary"
+    ]
+  }
+}

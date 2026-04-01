@@ -253,18 +253,29 @@ class TernaryGPT(nn.Module):
 
 
 def build_model(size: str = "small", weight_set: str = "013",
-                vocab_size: int = 32000) -> TernaryGPT:
-    """Build a model from preset config."""
+                vocab_size: int = 32000,
+                init_mode: str | None = None) -> TernaryGPT:
+    """Build a model from preset config.
+
+    init_mode controls ternary weight initialization:
+      None   — auto: deep nets (≥24L) get "mixed", shallow get "uniform"
+      "mixed" — 15/70/15 void/unit/prime. Crystal has all tools from birth.
+      "void"  — all zeros. Network born dead, must self-organize.
+      "identity" — biased toward 1. Safe gradient flow.
+      "uniform" — spread across value set.
+    """
     config = GPTConfig(**{**CONFIGS[size].__dict__, "weight_set": weight_set,
                           "vocab_size": vocab_size})
     model = TernaryGPT(config)
 
-    # Deep networks need identity init — start as transparent crystal,
-    # let training carve the structure from the top down
-    if config.n_layer >= 24:
-        from ternary_linear import TernaryLinear
-        for module in model.modules():
-            if isinstance(module, TernaryLinear):
-                module.reset_parameters(init_mode="identity")
+    # Determine init mode
+    if init_mode is None:
+        # Default: deep nets get mixed, shallow get uniform (original behavior)
+        init_mode = "mixed" if config.n_layer >= 24 else "uniform"
+
+    from ternary_linear import TernaryLinear
+    for module in model.modules():
+        if isinstance(module, TernaryLinear):
+            module.reset_parameters(init_mode=init_mode)
 
     return model
