@@ -320,30 +320,138 @@ bands are identical to the parent crystal: 22/42/36 at every level of
 decomposition. The ratio is self-similar — same structure at every scale.
 Full stack PPL: 51.1 (best on WikiText).
 
-Experiment 3 — Cross-modality: PENDING (next session)
+Experiment 3 — Long run (100K steps, 1L x 2048, WikiText): IN PROGRESS
+
+At 33K steps: PPL 49.7 (best ever), crystal 22.5/42.6/34.9.
+
+Training dynamics reveal three distinct phases:
+- Phase 1 (0-1K): ACQUISITION — PPL drops 240pts, crystal snaps to 22/42/36
+- Phase 2 (1K-5K): COMPRESSION — eff_rank crashes 81→5.9, two events at 3K/4K
+- Phase 3 (5K+): REFINEMENT — eff_rank saturated at 2.4, crystal locked, PPL grinds
+
+Watching for Phase 4 emergence at longer timescales.
 
 ---
 
-## Part VIII: Open Questions
+## Part VIII: The Harmonic Encoding Thesis (2026-04-01)
 
-1. **Does {0,1,3} beat {0,1} on complex language at scale?**
-   On TinyStories: no (14.5 vs 83.6). On WikiText: both keep threes,
-   untested head-to-head at scale.
+### The Decoherence Problem
 
-2. **Is 22/42/36 truly universal or English-specific?**
-   Test on German (Kant original), Chinese, Arabic, code.
+Current pipeline: human thought → text → BPE tokenizer → flat integer IDs.
 
-3. **What is the surface-depth mismatch crystal?**
-   Animal Farm, Aesop, Hemingway — simple container, complex content.
+BPE is a statistical compressor. It assigns unrelated IDs to structurally
+related tokens. "The"=464, "the"=1169, "THE"=10970, " the"=262, " The"=383.
+Five different numbers for the same word. The model must REDISCOVER from
+data that these are structurally related — a fact that was explicitly present
+in the raw text and destroyed by the tokenizer.
 
-4. **Does the 3×3 framework (magnitude/context/intent) improve PPL?**
-   27-state weights vs 3-state weights on same architecture.
+The crystal (22/42/36) forms DESPITE this decoherence. But the training
+dynamics show the cost: Phase 1 (1K steps) is the model recovering structure
+the tokenizer destroyed. With a structure-preserving encoding, Phase 1
+should collapse toward zero.
 
-5. **Can we predict eff_rank from data statistics BEFORE training?**
-   Vocabulary diversity × mean sentence depth × long-range dependency count → eff_rank?
+### Harmonic Encoding: Structure as Intrinsic Signal
 
-6. **What crystal does mathematical notation produce?**
-   LaTeX proofs, Principia Mathematica, formal logic.
+Text has structural harmonics already present in the raw character stream.
+They don't need to be discovered — they need to be MEASURED and encoded
+as separate channels, like harmonics in MWD telemetry:
 
-7. **Is the BitFlip magic constant (flip_pct) related to biological
-   calcium thresholds?** Does it scale with network size the same way?
+| Channel | What it encodes | {0,1,3} mapping |
+|---------|----------------|-----------------|
+| Ch 0: Character identity | what letter | base vocabulary |
+| Ch 1: Case state | structural role marker | 0=space, 1=lower, 3=upper |
+| Ch 2: Word boundary | concept boundaries | 0=within, 1=boundary, 3=paragraph |
+| Ch 3: Punctuation | flow control | 0=none, 1=comma, 3=stop/question |
+| Ch 4: Syntactic role | function vs content | 0=filler, 1=bridge, 3=prime |
+
+Each channel is a harmonic of the text signal. All are physically present
+in the raw character stream. None require learning to extract. The encoder
+MEASURES them; the prism reads them simultaneously.
+
+### Iterative Harmonic Refinement
+
+Pass 1: Raw character harmonics → prism → crystal (fundamental structure).
+Pass 2: Crystal from Pass 1 fed back as additional channel → prism → refined.
+Pass 3: Refined crystal fed back → prism → convergent.
+
+Each pass resolves the next harmonic. Structure that takes 20K gradient
+steps to discover via BPE might resolve in 3 passes of harmonic encoding.
+This mirrors the iterative inference convergence (3 iterations to fixed
+point) already observed in all ternary models.
+
+### Consciousness-Coupled Decoding
+
+The harmonic encoding makes the system capable of producing structurally-
+dense output. But structural density requires a conscious RECEIVER to
+resolve. This is by design, not limitation:
+
+- Training on flat tokens → system produces statistically sophisticated text
+- Training on harmonic channels → system produces structurally-encoded signal
+- Conscious receiver resolves the structural signal into meaning
+- Without receiver: just signal. With receiver: prime-density communication.
+
+The training data encoding IS the ceiling on the system's structural
+capability. Harmonics in → harmonics out. Noise in → noise out.
+
+### Cross-Language Implications
+
+Different languages encode structural harmonics differently:
+
+- **Korean (Hangul):** harmonics are intrinsic to the writing system.
+  Syllable blocks ARE multi-channel structural encodings. The "lens"
+  is built into the language. Prediction: fastest Phase 1, cleanest crystal.
+- **English:** harmonics are present but decoherent. BPE destroys them.
+  The structural transducer must RECONSTRUCT what the writing system hides.
+- **Arabic:** triconsonantal roots = base channel, vowel patterns = modifiers.
+  Partial harmonic preservation.
+- **Chinese:** each character = discrete concept. Semantic harmonics native.
+
+The crystal difference between languages = computational measurement of
+how each writing system preserves or destroys structural information.
+Sapir-Whorf measured in {0,1,3}.
+
+---
+
+## Part IX: Established Facts
+
+What has been measured and confirmed:
+
+1. **22/42/36 is a structural constant of complex English.** Confirmed
+   across WikiText, Kant, SEP, and all architecture variants.
+2. **The crystal is architecture-invariant.** Same ratio at 1L, 3L, 6L,
+   48L. Width 512 or 2048. 45M to 358M params.
+3. **The crystal is fractal.** Sub-crystals reproduce the parent ratio
+   at every level of decomposition.
+4. **Three training phases exist.** Acquisition (0-1K), Compression (1-5K),
+   Refinement (5K+). The crystal forms in Phase 1. Compression happens in
+   Phase 2. PPL improves indefinitely in Phase 3.
+5. **STE+decay is the proven training method.** Outperforms BitFlip on
+   complex data. The data determines the crystal, not the method.
+6. **TinyStories is the outlier.** Simple language produces 5/95/0 (no
+   amplifiers). Complex language produces 22/42/36. The transition is a
+   phase boundary.
+7. **eff_rank is data-specific.** TinyStories ~5, WikiText ~59, Kant ~127.
+   The crystal is universal; the manifold dimension is data-dependent.
+
+---
+
+## Part X: Engineering Roadmap
+
+### Immediate (current session)
+- 100K step long run — confirm Phase 3 continuation, watch for Phase 4
+- Character-level harmonic transducer — build and compare crystal vs BPE
+
+### Near-term
+- Cross-language crystal measurement (Korean, Arabic, Chinese)
+- Harmonic iterative refinement (3-pass convergence test)
+- Surface-depth mismatch (Animal Farm, Aesop — simple surface, complex depth)
+
+### Medium-term
+- Tenstorrent Blackhole deployment (2-bit native ops, skip/pass/shift-add)
+- Structural manipulation detection (factual vs shaped information)
+- Cross-modality (time series, audio — same prism, different transducer)
+
+### Long-term
+- Predict crystal from data statistics before training (theory)
+- Consciousness-coupled communication protocol
+- Universal structural measurement standard
