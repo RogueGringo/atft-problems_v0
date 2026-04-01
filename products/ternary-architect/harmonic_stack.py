@@ -62,10 +62,11 @@ class SpectralRouter(nn.Module):
         self.register_buffer("prime_dims",    torch.zeros(0, dtype=torch.long))
 
     def build_routing_table(self, prism_layer: TernaryLinear) -> None:
-        """Assign each output dimension to its dominant band.
+        """Assign each output dimension to a spectral band via proportional routing.
 
-        For output dim j, count the fraction of inputs that pass through
-        w=0, w=1, or w=3.  The band with the highest count owns that dim.
+        Ranks dimensions by their w3 fraction (descending) and w0 fraction
+        (descending). Top ~36% by w3 → prime band. Top ~22% by w0 → void band.
+        Remainder → identity band. Proportions match the crystal structure.
 
         Parameters
         ----------
@@ -75,23 +76,40 @@ class SpectralRouter(nn.Module):
         """
         with torch.no_grad():
             w_q = prism_layer.get_quantized_weight()   # (out, in)
-            out_features = w_q.shape[0]
+            n_out = w_q.shape[0]
+            n_in = w_q.shape[1]
 
-            # Count occurrences of each weight value per output dim
-            n0 = (w_q == 0.0).sum(dim=1).float()   # (out,)
-            n1 = (w_q == 1.0).sum(dim=1).float()
-            n3 = (w_q == 3.0).sum(dim=1).float()
+            # Fraction of each weight value per output dim
+            f3 = (w_q == 3.0).sum(dim=1).float() / n_in   # (out,)
+            f0 = (w_q == 0.0).sum(dim=1).float() / n_in
 
-            counts = torch.stack([n0, n1, n3], dim=1)   # (out, 3)
-            dominant = counts.argmax(dim=1)              # (out,)  0/1/2
+            # Proportional band sizes from global crystal ratio
+            global_f3 = f3.mean().item()
+            global_f0 = f0.mean().item()
+            n_prime = max(1, int(n_out * global_f3 / (global_f3 + global_f0 + (1 - global_f3 - global_f0))))
+            n_void = max(1, int(n_out * global_f0 / (global_f3 + global_f0 + (1 - global_f3 - global_f0))))
 
-            void_dims     = (dominant == 0).nonzero(as_tuple=True)[0]
-            identity_dims = (dominant == 1).nonzero(as_tuple=True)[0]
-            prime_dims    = (dominant == 2).nonzero(as_tuple=True)[0]
+            # Assign: dims with highest w3 fraction → prime
+            prime_order = f3.argsort(descending=True)
+            prime_dims = prime_order[:n_prime]
 
-        self.void_dims     = void_dims
-        self.identity_dims = identity_dims
-        self.prime_dims    = prime_dims
+            # Of remaining: dims with highest w0 fraction → void
+            remaining_mask = torch.ones(n_out, dtype=torch.bool, device=w_q.device)
+            remaining_mask[prime_dims] = False
+            remaining_idx = remaining_mask.nonzero(as_tuple=True)[0]
+            remaining_f0 = f0[remaining_idx]
+            void_order = remaining_f0.argsort(descending=True)
+            void_dims = remaining_idx[void_order[:n_void]]
+
+            # Rest → identity
+            assigned = torch.zeros(n_out, dtype=torch.bool, device=w_q.device)
+            assigned[prime_dims] = True
+            assigned[void_dims] = True
+            identity_dims = (~assigned).nonzero(as_tuple=True)[0]
+
+        self.void_dims     = void_dims.sort().values
+        self.identity_dims = identity_dims.sort().values
+        self.prime_dims    = prime_dims.sort().values
 
     def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """Split (B, T, d) into three tensors by band membership.
