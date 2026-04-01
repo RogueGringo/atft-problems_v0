@@ -1,0 +1,370 @@
+{
+  "lens": {
+    "name": "lens",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 550.3413472982882,
+    "gini_eigenvalues": 0.040027021806969376,
+    "eff_rank_eigenvalues": 510.49675130806474,
+    "max_eigenvalue": 1343.3502156087682,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 784.7293041296076,
+      "p10": 851.8892489619259,
+      "p50": 941.8379599786108,
+      "p90": 1030.361617232842,
+      "p99": 1097.1643577941447
+    },
+    "crystal": {
+      "void": 0.2224113941192627,
+      "identity": 0.4166085720062256,
+      "prime": 0.3609800338745117
+    }
+  },
+  "prism.attn.q_proj": {
+    "name": "prism.attn.q_proj",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 550.1546976939944,
+    "gini_eigenvalues": 0.03951679032931066,
+    "eff_rank_eigenvalues": 510.53709491367096,
+    "max_eigenvalue": 1342.390504689567,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 790.803779737923,
+      "p10": 852.7139241023812,
+      "p50": 940.6183921985618,
+      "p90": 1025.683926250334,
+      "p99": 1102.6012999153932
+    },
+    "crystal": {
+      "void": 0.22216296195983887,
+      "identity": 0.41648316383361816,
+      "prime": 0.36135387420654297
+    }
+  },
+  "prism.attn.k_proj": {
+    "name": "prism.attn.k_proj",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 548.5604906866153,
+    "gini_eigenvalues": 0.04039200585595226,
+    "eff_rank_eigenvalues": 510.4732603041656,
+    "max_eigenvalue": 1341.9808392833427,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 784.1493875903309,
+      "p10": 849.8017756629116,
+      "p50": 936.5033862533655,
+      "p90": 1025.1948616011769,
+      "p99": 1108.6570719482456
+    },
+    "crystal": {
+      "void": 0.2222883701324463,
+      "identity": 0.4166293144226074,
+      "prime": 0.3610823154449463
+    }
+  },
+  "prism.attn.v_proj": {
+    "name": "prism.attn.v_proj",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 550.724510522139,
+    "gini_eigenvalues": 0.03908131029208539,
+    "eff_rank_eigenvalues": 510.53404597039616,
+    "max_eigenvalue": 1345.1343387392394,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 771.2332363020026,
+      "p10": 857.9472463074094,
+      "p50": 944.3153451409105,
+      "p90": 1024.686673908633,
+      "p99": 1094.2771935604774
+    },
+    "crystal": {
+      "void": 0.22198104858398438,
+      "identity": 0.416670560836792,
+      "prime": 0.36134839057922363
+    }
+  },
+  "prism.attn.o_proj": {
+    "name": "prism.attn.o_proj",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 552.8199039088064,
+    "gini_eigenvalues": 0.0403651961539061,
+    "eff_rank_eigenvalues": 510.4796444046374,
+    "max_eigenvalue": 1349.7043847925527,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 791.9655635948441,
+      "p10": 855.9778860377558,
+      "p50": 945.8832807348732,
+      "p90": 1032.882989516912,
+      "p99": 1107.8621739782543
+    },
+    "crystal": {
+      "void": 0.22208046913146973,
+      "identity": 0.4170048236846924,
+      "prime": 0.3609147071838379
+    }
+  },
+  "prism.mlp.up": {
+    "name": "prism.mlp.up",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 546.4959005886886,
+    "gini_eigenvalues": 0.039785568884668776,
+    "eff_rank_eigenvalues": 510.5199130355596,
+    "max_eigenvalue": 1336.656877472876,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 781.6686631575469,
+      "p10": 851.6852459849786,
+      "p50": 933.99012211422,
+      "p90": 1021.9802013748778,
+      "p99": 1084.3118610899774
+    },
+    "crystal": {
+      "void": 0.22211390733718872,
+      "identity": 0.4166620373725891,
+      "prime": 0.36122405529022217
+    }
+  },
+  "prism.mlp.down": {
+    "name": "prism.mlp.down",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 555.9586225734259,
+    "gini_eigenvalues": 0.037930871447887426,
+    "eff_rank_eigenvalues": 510.6423701456152,
+    "max_eigenvalue": 1350.0984154305215,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 797.5647996637598,
+      "p10": 858.4166839168474,
+      "p50": 949.6212614445444,
+      "p90": 1029.7714368028714,
+      "p99": 1095.616691669458
+    },
+    "crystal": {
+      "void": 0.22216194868087769,
+      "identity": 0.4165659546852112,
+      "prime": 0.36127209663391113
+    }
+  },
+  "void_ch0": {
+    "name": "void_ch0",
+    "matrix_size": 606,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 416.22434039772304,
+    "gini_eigenvalues": 0.2709062265458311,
+    "eff_rank_eigenvalues": 523.71321279049,
+    "max_eigenvalue": 1893.089559767882,
+    "n_nonzero_eigenvalues": 606,
+    "eigenvalue_percentiles": {
+      "p1": 445.29591338526126,
+      "p10": 499.4248127155618,
+      "p50": 580.432760301218,
+      "p90": 1686.8539704356717,
+      "p99": 1827.5579142543106
+    },
+    "crystal": {
+      "void": 0.22072803153257595,
+      "identity": 0.41741537213076746,
+      "prime": 0.3618565963366566
+    }
+  },
+  "void_ch1": {
+    "name": "void_ch1",
+    "matrix_size": 605,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 398.45405168507,
+    "gini_eigenvalues": 0.2709786136567406,
+    "eff_rank_eigenvalues": 522.0889642908243,
+    "max_eigenvalue": 1850.5786511337492,
+    "n_nonzero_eigenvalues": 605,
+    "eigenvalue_percentiles": {
+      "p1": 435.33623039686546,
+      "p10": 496.79524602694767,
+      "p50": 569.8345401248898,
+      "p90": 1671.1313986507294,
+      "p99": 1807.5052033483687
+    },
+    "crystal": {
+      "void": 0.2239840126032033,
+      "identity": 0.4182542229483327,
+      "prime": 0.35776176444846397
+    }
+  },
+  "void_ch2": {
+    "name": "void_ch2",
+    "matrix_size": 605,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 412.43566905012005,
+    "gini_eigenvalues": 0.2714061277305071,
+    "eff_rank_eigenvalues": 522.0462641421311,
+    "max_eigenvalue": 1913.6896533701963,
+    "n_nonzero_eigenvalues": 605,
+    "eigenvalue_percentiles": {
+      "p1": 439.54539151296353,
+      "p10": 502.31323090594566,
+      "p50": 574.821310994425,
+      "p90": 1687.8566163674107,
+      "p99": 1813.794661803054
+    },
+    "crystal": {
+      "void": 0.22334218280479623,
+      "identity": 0.41501589987455145,
+      "prime": 0.3616419173206523
+    }
+  },
+  "ident_ch0": {
+    "name": "ident_ch0",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 548.7436840382475,
+    "gini_eigenvalues": 0.03941233569404301,
+    "eff_rank_eigenvalues": 510.5319553491334,
+    "max_eigenvalue": 1341.0530439287031,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 786.3428770460843,
+      "p10": 852.663606914821,
+      "p50": 938.6265017925118,
+      "p90": 1021.913863126638,
+      "p99": 1095.7925008492498
+    },
+    "crystal": {
+      "void": 0.22113951622148342,
+      "identity": 0.4182088403399879,
+      "prime": 0.3606516434385287
+    }
+  },
+  "ident_ch1": {
+    "name": "ident_ch1",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 550.5007534238628,
+    "gini_eigenvalues": 0.040236713282719716,
+    "eff_rank_eigenvalues": 510.4878088875206,
+    "max_eigenvalue": 1344.57118864158,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 785.2525042318914,
+      "p10": 851.0282818790544,
+      "p50": 941.9426259582051,
+      "p90": 1027.6342500043747,
+      "p99": 1107.0446660047728
+    },
+    "crystal": {
+      "void": 0.2224453277039285,
+      "identity": 0.4156248969225187,
+      "prime": 0.3619297753735528
+    }
+  },
+  "ident_ch2": {
+    "name": "ident_ch2",
+    "matrix_size": 512,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 550.3678432762927,
+    "gini_eigenvalues": 0.03782260217099154,
+    "eff_rank_eigenvalues": 510.6501846790451,
+    "max_eigenvalue": 1339.61759319094,
+    "n_nonzero_eigenvalues": 512,
+    "eigenvalue_percentiles": {
+      "p1": 796.6280180090996,
+      "p10": 855.0426024466149,
+      "p50": 940.5366724791484,
+      "p90": 1021.1956165204447,
+      "p99": 1090.1264161494873
+    },
+    "crystal": {
+      "void": 0.22227628063462743,
+      "identity": 0.41481676946927465,
+      "prime": 0.3629069498960979
+    }
+  },
+  "prime_ch0": {
+    "name": "prime_ch0",
+    "matrix_size": 504,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 541.9001225485943,
+    "gini_eigenvalues": 0.0426257650674714,
+    "eff_rank_eigenvalues": 502.3466091145037,
+    "max_eigenvalue": 1327.1494223094123,
+    "n_nonzero_eigenvalues": 504,
+    "eigenvalue_percentiles": {
+      "p1": 773.0930723256333,
+      "p10": 837.0123051888322,
+      "p50": 924.513242263866,
+      "p90": 1016.0024476829243,
+      "p99": 1118.8892519941448
+    },
+    "crystal": {
+      "void": 0.2223572362685266,
+      "identity": 0.416428727114211,
+      "prime": 0.3612140366172624
+    }
+  },
+  "prime_ch1": {
+    "name": "prime_ch1",
+    "matrix_size": 502,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 539.2231443757365,
+    "gini_eigenvalues": 0.04208261711417516,
+    "eff_rank_eigenvalues": 500.4000531714354,
+    "max_eigenvalue": 1319.10599974561,
+    "n_nonzero_eigenvalues": 502,
+    "eigenvalue_percentiles": {
+      "p1": 766.8850876220916,
+      "p10": 835.6208513305287,
+      "p50": 922.4542630938793,
+      "p90": 1014.8181396669635,
+      "p99": 1082.5449893794553
+    },
+    "crystal": {
+      "void": 0.22123709074928588,
+      "identity": 0.4174631949022193,
+      "prime": 0.36129971434849484
+    }
+  },
+  "prime_ch2": {
+    "name": "prime_ch2",
+    "matrix_size": 502,
+    "sampled": false,
+    "kernel_dim": 0,
+    "spectral_gap": 535.9110763120301,
+    "gini_eigenvalues": 0.040044727231973165,
+    "eff_rank_eigenvalues": 500.5420054037498,
+    "max_eigenvalue": 1310.4551805168608,
+    "n_nonzero_eigenvalues": 502,
+    "eigenvalue_percentiles": {
+      "p1": 780.2218055519286,
+      "p10": 832.9426517390268,
+      "p50": 916.2568917321579,
+      "p90": 1001.1631714928857,
+      "p99": 1073.2488532126745
+    },
+    "crystal": {
+      "void": 0.22111623818940893,
+      "identity": 0.4187596132718084,
+      "prime": 0.36012414853878266
+    }
+  }
+}
