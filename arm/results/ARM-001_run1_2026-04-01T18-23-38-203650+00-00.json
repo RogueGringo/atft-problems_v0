@@ -1,0 +1,53 @@
+{
+  "id": "ARM-001",
+  "run": 1,
+  "series": "phase-a",
+  "timestamp": "2026-04-01T18:23:38.203650+00:00",
+  "hypothesis": "H0 persistence produces valid barcodes on ARM hardware",
+  "protocol": "mode=topology, source_type=text, eps_max=5.0, n_steps=100",
+  "input_hash": "9896064431437a5bd466e3f99259b36b16bbd687fbcd295f7f6b8460ec0fc2cc",
+  "annotations": [
+    {
+      "stage": "transduce",
+      "transducer": "TextTransducer: 4-channel character harmonics (identity, case, boundary, punct)",
+      "points": 3150,
+      "dims": 4,
+      "hash": "9896064431437a5bd466e3f99259b36b16bbd687fbcd295f7f6b8460ec0fc2cc"
+    },
+    {
+      "stage": "persistence",
+      "h0_bars": 3150,
+      "h1_bars": 0,
+      "filtration_range": [
+        0.0,
+        5.0
+      ]
+    },
+    {
+      "stage": "invariants",
+      "gini": 0.9936232239438915,
+      "onset_scale": 0.0,
+      "crystal_void": 0.9863492063492063,
+      "crystal_identity": 0.0,
+      "crystal_prime": 0.013650793650793651
+    },
+    {
+      "stage": "timing",
+      "elapsed_seconds": 5.217
+    }
+  ],
+  "result": {
+    "gini": 0.9936232239438915,
+    "onset_scale": 0.0,
+    "h0_bar_count": 3150,
+    "crystal": {
+      "void": 0.9863492063492063,
+      "identity": 0.0,
+      "prime": 0.013650793650793651
+    },
+    "eff_rank": 0.0
+  },
+  "comparison": {},
+  "verdict": "PASS",
+  "notes": ""
+}

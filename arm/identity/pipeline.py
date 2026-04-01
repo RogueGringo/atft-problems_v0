@@ -61,39 +61,43 @@ def run_experiment(
     verdict = "PARTIAL"
 
     if mode in ("topology", "full"):
-        diagram = compute_h0(cloud, eps_max=eps_max, n_steps=n_steps)
-        annotations.append({
-            "stage": "persistence",
-            "h0_bars": diagram.h0.shape[0],
-            "h1_bars": diagram.h1.shape[0],
-            "filtration_range": list(diagram.filtration_range),
-        })
+        if cloud.data.shape[0] == 0:
+            annotations.append({"stage": "persistence", "status": "EMPTY", "note": "No data points"})
+            verdict = "BLOCKED"
+        else:
+            diagram = compute_h0(cloud, eps_max=eps_max, n_steps=n_steps)
+            annotations.append({
+                "stage": "persistence",
+                "h0_bars": diagram.h0.shape[0],
+                "h1_bars": diagram.h1.shape[0],
+                "filtration_range": list(diagram.filtration_range),
+            })
 
-        finite_bars = diagram.h0[:, 1] - diagram.h0[:, 0]
-        finite_bars = finite_bars[np.isfinite(finite_bars)]
+            finite_bars = diagram.h0[:, 1] - diagram.h0[:, 0]
+            finite_bars = finite_bars[np.isfinite(finite_bars)]
 
-        g = gini(finite_bars)
-        eps_star = onset_scale(diagram)
-        crystal = crystal_from_persistence(diagram)
-        crystal.validate()
+            g = gini(finite_bars)
+            eps_star = onset_scale(diagram)
+            crystal = crystal_from_persistence(diagram)
+            crystal.validate()
 
-        result["gini"] = g
-        result["onset_scale"] = eps_star
-        result["h0_bar_count"] = int(diagram.h0.shape[0])
-        result["crystal"] = {
-            "void": crystal.void_ratio,
-            "identity": crystal.identity_ratio,
-            "prime": crystal.prime_ratio,
-        }
-        result["eff_rank"] = crystal.eff_rank
-        annotations.append({
-            "stage": "invariants",
-            "gini": g, "onset_scale": eps_star,
-            "crystal_void": crystal.void_ratio,
-            "crystal_identity": crystal.identity_ratio,
-            "crystal_prime": crystal.prime_ratio,
-        })
-        verdict = "PASS"
+            result["gini"] = g
+            result["onset_scale"] = eps_star
+            result["h0_bar_count"] = int(diagram.h0.shape[0])
+            result["crystal"] = {
+                "void": crystal.void_ratio,
+                "identity": crystal.identity_ratio,
+                "prime": crystal.prime_ratio,
+            }
+            result["eff_rank"] = crystal.eff_rank
+            annotations.append({
+                "stage": "invariants",
+                "gini": g, "onset_scale": eps_star,
+                "crystal_void": crystal.void_ratio,
+                "crystal_identity": crystal.identity_ratio,
+                "crystal_prime": crystal.prime_ratio,
+            })
+            verdict = "PASS"
 
     if mode in ("crystal", "full"):
         annotations.append({

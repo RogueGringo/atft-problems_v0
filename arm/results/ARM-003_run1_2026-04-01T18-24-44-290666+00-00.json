@@ -1,0 +1,31 @@
+{
+  "id": "ARM-003",
+  "run": 1,
+  "series": "phase-a",
+  "timestamp": "2026-04-01T18:24:44.290666+00:00",
+  "hypothesis": "Veilbreak data produces measurable topological structure",
+  "protocol": "mode=topology, source_type=veilbreak, eps_max=5.0, n_steps=100",
+  "input_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "annotations": [
+    {
+      "stage": "transduce",
+      "transducer": "VeilbreakTransducer: cognitive physics experiments (struct + text channels)",
+      "points": 0,
+      "dims": 5,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "persistence",
+      "status": "EMPTY",
+      "note": "No data points"
+    },
+    {
+      "stage": "timing",
+      "elapsed_seconds": 0.114
+    }
+  ],
+  "result": {},
+  "comparison": {},
+  "verdict": "BLOCKED",
+  "notes": ""
+}
