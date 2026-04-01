@@ -1,0 +1,36 @@
+{
+  "test": "Sheaf fiber verification — are children entangled?",
+  "model": "CARET v2 corrected (rings=channels)",
+  "cross_child_correlation": {
+    "void_identity": {"cosine": 0.6134, "agreement": 0.353},
+    "void_prime": {"cosine": 0.6128, "agreement": 0.355},
+    "identity_prime": {"cosine": 0.6143, "agreement": 0.353},
+    "mean_cosine": 0.6135,
+    "mean_agreement": 0.3537
+  },
+  "within_child_correlation": {
+    "void_01": {"cosine": 0.6104, "agreement": 0.352},
+    "void_02": {"cosine": 0.6139, "agreement": 0.351},
+    "void_12": {"cosine": 0.6112, "agreement": 0.353},
+    "ident_01": {"cosine": 0.6143, "agreement": 0.354},
+    "ident_02": {"cosine": 0.6144, "agreement": 0.354},
+    "ident_12": {"cosine": 0.6141, "agreement": 0.353},
+    "prime_01": {"cosine": 0.6137, "agreement": 0.352},
+    "prime_02": {"cosine": 0.6131, "agreement": 0.353},
+    "prime_12": {"cosine": 0.6150, "agreement": 0.354},
+    "mean_cosine": 0.6133,
+    "mean_agreement": 0.3529
+  },
+  "lens_per_channel_crystal": {
+    "ch0_1024": {"void": 0.222, "identity": 0.417, "prime": 0.361},
+    "ch1_384": {"void": 0.223, "identity": 0.416, "prime": 0.361},
+    "ch2_384": {"void": 0.223, "identity": 0.416, "prime": 0.361},
+    "ch3_256": {"void": 0.222, "identity": 0.417, "prime": 0.361}
+  },
+  "findings": {
+    "cross_equals_within": "Cross-child correlation (0.6135) = within-child (0.6133). No boundary.",
+    "agreement_is_prime_ratio": "Position agreement (35.3%) ≈ crystal prime ratio (36.1%)",
+    "lens_channel_invariance": "All 4 input channels produce identical crystal in lens layer",
+    "interpretation": "Children are local sections of a global sheaf. The fiber is the same everywhere."
+  }
+}
