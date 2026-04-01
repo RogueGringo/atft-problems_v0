@@ -187,6 +187,24 @@ Crystal at every checkpoint (1K through 8K): **22.2/41.7/36.1**
 Identical to all other architectures tested. The diagram's topology
 produces the universal structural constant.
 
+## Human Annotation Artifacts (removed from analysis)
+
+Items identified as human analyst additions, NOT original notation:
+
+1. **"#7128"** — handwritten in upper right of Figure 14.11. Catalog number.
+   Handwriting style: cursive, flowing. Qualia note: reads as female hand
+   (rounder letterforms, connected strokes). May indicate analyst identity.
+2. **Star/compass symbol** — top of Figure 14.11. Likely orientation/reference
+   marker added by PACL staff, not part of original diagram.
+3. **Bean shape (J7)** — lower left of 14.11. Possibly scan artifact or
+   analyst's margin note. Not connected to any notation element.
+4. **Junction dots J1, J2** — connected to star marker, not to notation graph.
+   Removed from clean extraction.
+
+These items are preserved in the raw extraction but excluded from structural
+analysis. Their presence tells us about the ANALYSIS PROCESS (human researchers
+cataloging and annotating) rather than the notation system itself.
+
 ## Next Steps
 
 1. Extract precise ring diameter ratios from page 19 physical artifacts

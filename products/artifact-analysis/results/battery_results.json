@@ -1,0 +1,57 @@
+{
+  "test1_crystals": {
+    "14.11 (full graph)": {
+      "void": 0.275,
+      "identity": 0.225,
+      "prime": 0.5,
+      "n_nodes": 10,
+      "n_values": 40
+    },
+    "14.12 (cascade)": {
+      "void": 0.45,
+      "identity": 0.075,
+      "prime": 0.475,
+      "n_nodes": 10,
+      "n_values": 40
+    },
+    "14.13 (rotary+octal)": {
+      "void": 0.25,
+      "identity": 0.25,
+      "prime": 0.5,
+      "n_nodes": 5,
+      "n_values": 20
+    },
+    "14.14 (tri-switch)": {
+      "void": 0.375,
+      "identity": 0.125,
+      "prime": 0.5,
+      "n_nodes": 6,
+      "n_values": 24
+    },
+    "14.15 (parent-child)": {
+      "void": 0.0,
+      "identity": 0.16666666666666666,
+      "prime": 0.8333333333333334,
+      "n_nodes": 3,
+      "n_values": 12
+    }
+  },
+  "test2_adjacency": {
+    "void": 0.76,
+    "identity": 0.16,
+    "prime": 0.08
+  },
+  "test3_ratios": {
+    "pad/core": 0.24096385542168672,
+    "A2/A3": 0.7912087912087913,
+    "length/diameter": 0.26506024096385544,
+    "arm/core": 0.9156626506024095,
+    "total/span": 1.6052631578947367,
+    "beam/gen_weight": 0.03880597014925373
+  },
+  "test4_symbols": {
+    "geometric_primes": 5,
+    "structural_markers": 4,
+    "inscription_elements": 5
+  }
+}

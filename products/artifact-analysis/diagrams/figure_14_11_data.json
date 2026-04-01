@@ -1,0 +1,399 @@
+{
+  "source": "Figure 14.11 \u2014 D39-08-117c",
+  "nodes": {
+    "N1": {
+      "name": "bold_chevron",
+      "pos": [
+        0.2,
+        0.3
+      ],
+      "size": 3,
+      "rings": 4,
+      "fill_ratio": 0.7,
+      "glyph": "angular_chevron",
+      "has_barcode": true,
+      "inscription_density": 3,
+      "class": "prime"
+    },
+    "N2": {
+      "name": "wifi_triple",
+      "pos": [
+        0.72,
+        0.22
+      ],
+      "size": 3,
+      "rings": 3,
+      "fill_ratio": 0.8,
+      "glyph": "triple_curve",
+      "has_barcode": true,
+      "inscription_density": 2,
+      "class": "prime"
+    },
+    "N3": {
+      "name": "orbital_mandala",
+      "pos": [
+        0.6,
+        0.65
+      ],
+      "size": 3,
+      "rings": 5,
+      "fill_ratio": 0.6,
+      "glyph": "concentric_mandala",
+      "has_barcode": true,
+      "inscription_density": 3,
+      "class": "prime"
+    },
+    "N4": {
+      "name": "trident_center",
+      "pos": [
+        0.4,
+        0.35
+      ],
+      "size": 2,
+      "rings": 2,
+      "fill_ratio": 0.5,
+      "glyph": "three_arm_trident",
+      "has_barcode": false,
+      "inscription_density": 2,
+      "class": "identity"
+    },
+    "N5": {
+      "name": "chevron_upper",
+      "pos": [
+        0.38,
+        0.13
+      ],
+      "size": 2,
+      "rings": 2,
+      "fill_ratio": 0.5,
+      "glyph": "small_chevron",
+      "has_barcode": false,
+      "inscription_density": 1,
+      "class": "identity"
+    },
+    "N6": {
+      "name": "bottom_complex",
+      "pos": [
+        0.5,
+        0.88
+      ],
+      "size": 2,
+      "rings": 3,
+      "fill_ratio": 0.6,
+      "glyph": "small_mandala",
+      "has_barcode": false,
+      "inscription_density": 2,
+      "class": "identity"
+    },
+    "J1": {
+      "name": "junction_1",
+      "pos": [
+        0.35,
+        0.08
+      ],
+      "size": 0,
+      "rings": 0,
+      "fill_ratio": 1.0,
+      "glyph": "dot",
+      "has_barcode": false,
+      "inscription_density": 0,
+      "class": "void"
+    },
+    "J2": {
+      "name": "junction_2",
+      "pos": [
+        0.52,
+        0.12
+      ],
+      "size": 0,
+      "rings": 0,
+      "fill_ratio": 1.0,
+      "glyph": "dot",
+      "has_barcode": false,
+      "inscription_density": 0,
+      "class": "void"
+    },
+    "J3": {
+      "name": "junction_3",
+      "pos": [
+        0.45,
+        0.5
+      ],
+      "size": 1,
+      "rings": 1,
+      "fill_ratio": 0.3,
+      "glyph": "small_circle",
+      "has_barcode": false,
+      "inscription_density": 0,
+      "class": "void"
+    },
+    "J4": {
+      "name": "junction_4",
+      "pos": [
+        0.52,
+        0.55
+      ],
+      "size": 0,
+      "rings": 0,
+      "fill_ratio": 1.0,
+      "glyph": "dot",
+      "has_barcode": false,
+      "inscription_density": 0,
+      "class": "void"
+    },
+    "J5": {
+      "name": "junction_5",
+      "pos": [
+        0.48,
+        0.72
+      ],
+      "size": 0,
+      "rings": 0,
+      "fill_ratio": 1.0,
+      "glyph": "dot",
+      "has_barcode": false,
+      "inscription_density": 0,
+      "class": "void"
+    },
+    "J6": {
+      "name": "junction_6",
+      "pos": [
+        0.45,
+        0.8
+      ],
+      "size": 0,
+      "rings": 0,
+      "fill_ratio": 1.0,
+      "glyph": "dot",
+      "has_barcode": false,
+      "inscription_density": 0,
+      "class": "void"
+    },
+    "J7": {
+      "name": "bean_shape",
+      "pos": [
+        0.12,
+        0.55
+      ],
+      "size": 1,
+      "rings": 0,
+      "fill_ratio": 0.2,
+      "glyph": "bean",
+      "has_barcode": false,
+      "inscription_density": 0,
+      "class": "void"
+    }
+  },
+  "edges": [
+    {
+      "from": "N1",
+      "to": "N4",
+      "thickness": 3,
+      "curvature": 2,
+      "inscribed": false
+    },
+    {
+      "from": "N4",
+      "to": "N3",
+      "thickness": 3,
+      "curvature": 3,
+      "inscribed": false
+    },
+    {
+      "from": "N4",
+      "to": "N2",
+      "thickness": 3,
+      "curvature": 2,
+      "inscribed": false
+    },
+    {
+      "from": "N3",
+      "to": "N6",
+      "thickness": 3,
+      "curvature": 3,
+      "inscribed": false
+    },
+    {
+      "from": "N5",
+      "to": "N4",
+      "thickness": 2,
+      "curvature": 1,
+      "inscribed": false
+    },
+    {
+      "from": "N1",
+      "to": "N5",
+      "thickness": 1,
+      "curvature": 1,
+      "inscribed": false
+    },
+    {
+      "from": "N5",
+      "to": "J1",
+      "thickness": 1,
+      "curvature": 0,
+      "inscribed": false
+    },
+    {
+      "from": "N5",
+      "to": "J2",
+      "thickness": 1,
+      "curvature": 0,
+      "inscribed": false
+    },
+    {
+      "from": "N2",
+      "to": "J3",
+      "thickness": 2,
+      "curvature": 1,
+      "inscribed": false
+    },
+    {
+      "from": "J3",
+      "to": "J4",
+      "thickness": 1,
+      "curvature": 2,
+      "inscribed": false
+    },
+    {
+      "from": "J4",
+      "to": "N3",
+      "thickness": 1,
+      "curvature": 1,
+      "inscribed": false
+    },
+    {
+      "from": "J4",
+      "to": "J5",
+      "thickness": 1,
+      "curvature": 2,
+      "inscribed": false
+    },
+    {
+      "from": "J5",
+      "to": "J6",
+      "thickness": 1,
+      "curvature": 2,
+      "inscribed": false
+    },
+    {
+      "from": "J6",
+      "to": "N6",
+      "thickness": 1,
+      "curvature": 1,
+      "inscribed": false
+    },
+    {
+      "from": "N5",
+      "to": "N1",
+      "thickness": 1,
+      "curvature": 1,
+      "inscribed": true
+    }
+  ],
+  "encoded_nodes": {
+    "N1": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "N2": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "N3": [
+      3,
+      3,
+      3,
+      1
+    ],
+    "N4": [
+      3,
+      1,
+      3,
+      1
+    ],
+    "N5": [
+      3,
+      1,
+      1,
+      1
+    ],
+    "N6": [
+      3,
+      3,
+      3,
+      1
+    ],
+    "J1": [
+      0,
+      0,
+      0,
+      3
+    ],
+    "J2": [
+      0,
+      0,
+      0,
+      3
+    ],
+    "J3": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "J4": [
+      0,
+      0,
+      0,
+      3
+    ],
+    "J5": [
+      0,
+      0,
+      0,
+      3
+    ],
+    "J6": [
+      0,
+      0,
+      0,
+      3
+    ],
+    "J7": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "node_class_distribution": {
+    "void": 0.5384615384615384,
+    "identity": 0.23076923076923078,
+    "prime": 0.23076923076923078
+  },
+  "complexity_weighted": {
+    "void": 0.03481012658227848,
+    "identity": 0.2563291139240506,
+    "prime": 0.7088607594936709
+  },
+  "edge_class_distribution": {
+    "void": 0.6,
+    "identity": 0.13333333333333333,
+    "prime": 0.26666666666666666
+  },
+  "diagram_crystal": {
+    "void": 0.38461538461538464,
+    "identity": 0.19230769230769232,
+    "prime": 0.4230769230769231
+  },
+  "english_crystal": {
+    "void": 0.222,
+    "identity": 0.417,
+    "prime": 0.361
+  }
+}
