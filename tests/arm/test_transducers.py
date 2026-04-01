@@ -51,3 +51,36 @@ def test_generic_transducer_csv_string():
     pc = t.transduce(csv_data)
     assert pc.data.shape == (3, 3)
     assert np.isclose(pc.data[0, 0], 1.0)
+
+def test_veilbreak_transducer_from_cached_data():
+    from arm.void.transducers import VeilbreakTransducer
+    t = VeilbreakTransducer()
+    experiments = [
+        {"laser_wavelength": 650, "substance_dose": 30, "laser_class": 3,
+         "substance": "N,N-DMT", "observed": True,
+         "description": "Saw patterns in laser field"},
+        {"laser_wavelength": 532, "substance_dose": 0, "laser_class": 2,
+         "substance": "none", "observed": False,
+         "description": "Control run no substance"},
+    ]
+    pc = t.transduce_experiments(experiments)
+    assert pc.data.shape[0] == 2
+    assert pc.data.shape[1] >= 4
+
+def test_veilbreak_transducer_describe():
+    from arm.void.transducers import VeilbreakTransducer
+    t = VeilbreakTransducer()
+    desc = t.describe()
+    assert "veilbreak" in desc.lower()
+
+def test_veilbreak_text_channel():
+    from arm.void.transducers import VeilbreakTransducer
+    t = VeilbreakTransducer()
+    experiments = [
+        {"laser_wavelength": 650, "substance_dose": 30, "laser_class": 3,
+         "substance": "N,N-DMT", "observed": True,
+         "description": "Geometric patterns emerged"},
+    ]
+    pc_struct, pc_text = t.transduce_multichannel(experiments)
+    assert pc_struct.data.shape[0] == 1
+    assert pc_text.data.shape[0] > 0

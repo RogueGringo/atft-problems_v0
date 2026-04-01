@@ -2,6 +2,10 @@
 from __future__ import annotations
 import csv
 import io
+import json
+import os
+import urllib.request
+import urllib.error
 from abc import ABC, abstractmethod
 import numpy as np
 from arm.void.formats import PointCloud
@@ -76,3 +80,62 @@ class GenericTransducer(Transducer):
 
     def describe(self) -> str:
         return "GenericTransducer: columnar/sequential numeric data"
+
+
+SUBSTANCES = ["none", "N,N-DMT", "LSD", "psilocybin", "5-MeO-DMT", "other"]
+VEILBREAK_API = "https://api.veilbreak.ai/api/experiments"
+VEILBREAK_CACHE = os.path.join(os.path.dirname(__file__), "..", "results", "veilbreak_cache.json")
+
+class VeilbreakTransducer(Transducer):
+    """Veilbreak cognitive physics experiments → point clouds."""
+    COMMA_PUNCT = set()  # not used but keeps ABC happy if needed
+
+    def fetch_experiments(self) -> list[dict]:
+        cache_path = os.path.normpath(VEILBREAK_CACHE)
+        try:
+            req = urllib.request.Request(VEILBREAK_API, headers={"Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                body = json.loads(resp.read().decode())
+                experiments = body.get("data", body) if isinstance(body, dict) else body
+                os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+                with open(cache_path, "w") as f:
+                    json.dump(experiments, f)
+                return experiments
+        except (urllib.error.URLError, OSError, json.JSONDecodeError):
+            if os.path.exists(cache_path):
+                with open(cache_path) as f:
+                    return json.load(f)
+            return []
+
+    def _encode_experiment(self, exp: dict) -> list[float]:
+        wavelength = float(exp.get("laser_wavelength", 0) or 0)
+        dose = float(exp.get("substance_dose", 0) or 0)
+        laser_class = float(exp.get("laser_class", 0) or 0)
+        substance = exp.get("substance", "none") or "none"
+        sub_idx = float(SUBSTANCES.index(substance)) if substance in SUBSTANCES else float(len(SUBSTANCES))
+        observed = 3.0 if exp.get("observed", False) else 0.0
+        return [wavelength, dose, laser_class, sub_idx, observed]
+
+    def transduce_experiments(self, experiments: list[dict]) -> PointCloud:
+        if not experiments:
+            data = np.empty((0, 5), dtype=np.float32)
+        else:
+            rows = [self._encode_experiment(e) for e in experiments]
+            data = np.array(rows, dtype=np.float32)
+        return PointCloud.from_array(data, source=f"veilbreak:{len(experiments)}exp")
+
+    def transduce_multichannel(self, experiments: list[dict]) -> tuple[PointCloud, PointCloud]:
+        pc_struct = self.transduce_experiments(experiments)
+        descriptions = " ".join(e.get("description", "") for e in experiments if e.get("description"))
+        text_t = TextTransducer()
+        pc_text = text_t.transduce(descriptions) if descriptions else PointCloud.from_array(
+            np.empty((0, 4), dtype=np.int16), source="veilbreak:no_text"
+        )
+        return pc_struct, pc_text
+
+    def transduce(self, source=None) -> PointCloud:
+        experiments = source if isinstance(source, list) else self.fetch_experiments()
+        return self.transduce_experiments(experiments)
+
+    def describe(self) -> str:
+        return "VeilbreakTransducer: cognitive physics experiments (struct + text channels)"
