@@ -26,40 +26,63 @@ class TextTransducer(Transducer):
     COMMA_PUNCT = set(",;:")
     STOP_PUNCT = set(".!?")
 
-    def transduce(self, source: str) -> PointCloud:
+    def _encode_char(self, ch: str, prev_was_newline: bool, prev_was_space: bool):
+        """Encode a single character into 4 harmonic channels."""
+        ch0 = ord(ch) % 256
+        ch1 = 3 if ch.isupper() else (1 if ch.islower() else 0)
+        is_space = ch in (" ", "\t")
+        is_newline = ch == "\n"
+        if is_newline:
+            ch2 = 3
+        elif is_space or prev_was_space or (not ch.isalnum() and not prev_was_space):
+            ch2 = 1
+        else:
+            ch2 = 0
+        ch3 = 3 if ch in self.STOP_PUNCT else (1 if ch in self.COMMA_PUNCT else 0)
+        return (ch0, ch1, ch2, ch3), is_newline, (is_space or is_newline)
+
+    def transduce(self, source: str, window: int = 0, stride: int = 0, max_points: int = 0) -> PointCloud:
+        """Transduce text into a point cloud.
+
+        Args:
+            source: input text
+            window: if >0, use sliding window n-grams (each point = window chars x 4 channels).
+                    Creates (window*4)-dimensional points with much richer topology.
+                    Recommended: window=16 or 32 for meaningful persistence.
+            stride: step between windows (default: window//2 for 50% overlap)
+            max_points: if >0, subsample to this many points (uniform random)
+        """
         n = len(source)
-        data = np.zeros((n, 4), dtype=np.int16)
+        # First encode all characters
+        encoded = np.zeros((n, 4), dtype=np.int16)
         prev_was_newline = False
         prev_was_space = True
-
         for i, ch in enumerate(source):
-            data[i, 0] = ord(ch) % 256
-            if ch.isupper():
-                data[i, 1] = 3
-            elif ch.islower():
-                data[i, 1] = 1
-            else:
-                data[i, 1] = 0
+            channels, prev_was_newline, prev_was_space = self._encode_char(
+                ch, prev_was_newline, prev_was_space)
+            encoded[i] = channels
 
-            is_space = ch in (" ", "\t")
-            is_newline = ch == "\n"
-            if is_newline or (prev_was_newline and is_newline):
-                data[i, 2] = 3
-            elif is_space or prev_was_space or (not ch.isalnum() and not prev_was_space):
-                data[i, 2] = 1
-            else:
-                data[i, 2] = 0
-            prev_was_newline = is_newline
-            prev_was_space = is_space or is_newline
+        if window > 0:
+            # Windowed mode: each point is a flattened window of characters
+            if stride <= 0:
+                stride = max(1, window // 2)
+            starts = range(0, n - window + 1, stride)
+            data = np.zeros((len(starts), window * 4), dtype=np.int16)
+            for j, s in enumerate(starts):
+                data[j] = encoded[s:s + window].ravel()
+            label = f"text:{n}chars:w{window}s{stride}:{data.shape[0]}pts"
+        else:
+            data = encoded
+            label = f"text:{n}chars"
 
-            if ch in self.STOP_PUNCT:
-                data[i, 3] = 3
-            elif ch in self.COMMA_PUNCT:
-                data[i, 3] = 1
-            else:
-                data[i, 3] = 0
+        if max_points > 0 and data.shape[0] > max_points:
+            rng = np.random.RandomState(42)
+            idx = rng.choice(data.shape[0], max_points, replace=False)
+            idx.sort()
+            data = data[idx]
+            label += f":sub{max_points}"
 
-        return PointCloud.from_array(data, source=f"text:{n}chars")
+        return PointCloud.from_array(data, source=label)
 
     def describe(self) -> str:
         return "TextTransducer: 4-channel character harmonics (identity, case, boundary, punct)"

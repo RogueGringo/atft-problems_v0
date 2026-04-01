@@ -1,0 +1,130 @@
+[
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 45,
+    "laser_class": 3,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Saw lines of lettering in horizontal, light turned from red to pink. Tiny vertical lines of letters appeared with downward movement."
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 3,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Opaque text messages visible through crystal glass, messages conveyed themes of love one another and friendship and family."
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 3,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Saw green dragon entity in glass, later encounters with different entities communicating through opaque text messages."
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 0,
+    "substance": "other",
+    "observed": true,
+    "description": "No experience documented"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 25,
+    "laser_class": 0,
+    "substance": "psilocybin",
+    "observed": false,
+    "description": "Only leopard pattern observed, no code or symbols detected"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 250,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Observer saw Kanji-like characters; sustained observation for 1 hour; object permanence noted"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 0,
+    "substance": "other",
+    "observed": true,
+    "description": "All the code decoded without DMT and trained AI to read it"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 0,
+    "substance": "other",
+    "observed": false,
+    "description": "Saw dots rather than characters or code patterns"
+  },
+  {
+    "laser_wavelength": 405,
+    "substance_dose": 50,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Observed organic mesh-like structure described as alien skin nanotechnology-like with perceived life"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 70,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Matrix-style text executing left to right in tiny font 3D spatial depth perceived code in background"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 75,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Three-dimensional depth with warping effects rotating gears rune-like Japanese characters in extremely small font"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 0,
+    "substance": "other",
+    "observed": true,
+    "description": "Dense matrix of characters tinier than microscopic but clearly visible stable non-morphing vision"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 20,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Structural interference patterns observed wooden surface showed cellular patterns concrete showed voluminous structures"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 10,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Theoretical analysis correlating predictions with protocol observations"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Characters flowing in wallpaper toward observer in both green and red spectra"
+  },
+  {
+    "laser_wavelength": 650,
+    "substance_dose": 50,
+    "laser_class": 0,
+    "substance": "N,N-DMT",
+    "observed": true,
+    "description": "Success with 3 large hits observed in both laser spectra"
+  }
+]
