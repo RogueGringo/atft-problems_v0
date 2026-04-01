@@ -70,6 +70,13 @@ class TextChunked(Dataset):
             ds = load_dataset("AiresPucrs/stanford-encyclopedia-philosophy",
                               split="train", streaming=False)
             ds = ds.select(range(min(n_samples, len(ds))))
+        elif dataset_name == "animalfarm":
+            print("Loading Animal Farm (surface-depth mismatch test)...")
+            af_path = Path(__file__).parent / "data" / "animal_farm.txt"
+            text = af_path.read_text()
+            paragraphs = [p.strip() for p in text.split("\n\n") if len(p.strip()) > 50]
+            ds = [{"text": p} for p in paragraphs]
+            print(f"  {len(ds)} paragraphs")
         elif dataset_name == "korean":
             print(f"Loading Korean Wikipedia ({n_samples} samples)...")
             ds = load_dataset("wikimedia/wikipedia", "20231101.ko",
@@ -184,9 +191,9 @@ def main():
     parser.add_argument("--n_samples", type=int, default=200000)
     parser.add_argument("--max_length", type=int, default=256)
     parser.add_argument("--dataset", type=str, default="tinystories",
-                        choices=["tinystories", "wikitext", "kant", "sep", "korean"],
+                        choices=["tinystories", "wikitext", "kant", "sep", "korean", "animalfarm"],
                         help="Dataset: tinystories (simple), wikitext (complex), "
-                             "kant (single book), sep (philosophy), korean (Korean Wikipedia)")
+                             "kant (single book), sep (philosophy), korean, animalfarm (surface-depth)")
     parser.add_argument("--init_mode", type=str, default=None,
                         choices=["mixed", "void", "identity", "uniform"],
                         help="Ternary weight init. None=auto (deep→mixed). "
