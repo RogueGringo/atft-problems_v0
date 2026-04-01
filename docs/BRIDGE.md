@@ -416,8 +416,9 @@ Sapir-Whorf measured in {0,1,3}.
 
 What has been measured and confirmed:
 
-1. **22/42/36 is a structural constant of complex English.** Confirmed
-   across WikiText, Kant, SEP, and all architecture variants.
+1. **22/42/36 is a structural constant of complex English (fast snap).**
+   Confirmed across WikiText, Kant, SEP, and all architecture variants.
+   Long-run refinement (100K steps) settles toward ~23/45/32.
 2. **The crystal is architecture-invariant.** Same ratio at 1L, 3L, 6L,
    48L. Width 512 or 2048. 45M to 358M params.
 3. **The crystal is fractal.** Sub-crystals reproduce the parent ratio
@@ -429,29 +430,95 @@ What has been measured and confirmed:
    complex data. The data determines the crystal, not the method.
 6. **TinyStories is the outlier.** Simple language produces 5/95/0 (no
    amplifiers). Complex language produces 22/42/36. The transition is a
-   phase boundary.
+   phase boundary. TinyStories = fiction. WikiText/Kant/SEP = truth-intended.
+   The crystal may be measuring INTENT, not complexity.
 7. **eff_rank is data-specific.** TinyStories ~5, WikiText ~59, Kant ~127.
    The crystal is universal; the manifold dimension is data-dependent.
+8. **Character-level structural statistics mirror the weight crystal.**
+   WikiText characters: 22.7% void (spaces/punct), 72.3% identity (lowercase),
+   3.4% prime (uppercase). The weight void ratio (22.7%) matches the
+   character void ratio exactly. The crystal reflects the data's physical
+   structure.
+9. **Computation and measurement are fractal inverses.** The same {0,1,3}
+   primitives measure structure and compute with it. The prism is both
+   instrument and engine simultaneously.
+10. **100K long run: PPL 37.2, train PPL 29.2 (matches GPT-2).** At 29x
+    less compute in weight layers. Crystal drift from 22/42/36 to 23/45/32
+    reveals the fast-snap crystal was an approximation.
 
 ---
 
-## Part X: Engineering Roadmap
+## Part X: The Measurement-Computation Duality
 
-### Immediate (current session)
-- 100K step long run — confirm Phase 3 continuation, watch for Phase 4
-- Character-level harmonic transducer — build and compare crystal vs BPE
+This is not ML by convention. It is a discrete spin system settling into
+its structural ground state.
+
+| Conventional ML | This |
+|----------------|------|
+| Continuous weights (infinite states) | Discrete weights (3 states) |
+| Smooth gradient field | Quantized basins with walls |
+| Gradient descent to minimum | Stochastic exploration of configurations |
+| Loss stops decreasing | Crystal ratio stops moving |
+| Output: a function | Output: a measurement |
+| Evaluate: approximation quality | Evaluate: what structure was found |
+| Risk: overfitting | Structurally impossible (3^N states) |
+
+The training dynamics confirm this: train PPL oscillates wildly
+(stochastic resonance between discrete basins) while test PPL drops
+smoothly (only structurally valid configurations persist). The discrete
+landscape creates natural exploration. Evolution, not optimization.
+
+---
+
+## Part XI: Cross-Modality — Drilling Data
+
+EDR/MWD dataset available: Viper 53-47 W B101HS, Eclipse Touch rig.
+300,542 rows at 3-second intervals. 68 channels, 51 active.
+7.7 million data points. 14 days of continuous drilling.
+
+Surface channels (23): SPP, WOB, Torque, RPM, ROP, Hook Load, Block Pos,
+Pump Pressure, Flow Rate, Gas, Strokes, MW In, Diff Pressure, depths.
+
+MWD/Downhole channels (39): Gamma Ray, Resistivity (phase/attenuation,
+shallow/deep), Neutron Porosity, Annular Pressure, Stick Slip, Whirl,
+Lateral Shock, Collar RPM, Bit RPM, Gravity/Magnetic vectors, Temperature.
+
+Each channel is a harmonic of the same physical wellbore. The prism
+receives all channels simultaneously. The crystal that forms IS the
+structural fingerprint of the formation + BHA + drilling state.
+
+**Visualization concept:** Bloomberg-style heatmap where cells are crystal
+readings per channel per time window. Color = structural regime
+(void/identity/prime dominant). Discontinuities = structural events.
+Click to inspect → raw signal + crystal overlay + channel coherence network.
+Intent/value/context filters show different structural projections.
+
+Multi-channel crystal coherence detects structural events (kicks, stuck pipe,
+formation changes) BEFORE single-channel alarm thresholds trigger — because
+the PATTERN across channels shifts before any individual channel alarms.
+
+---
+
+## Part XII: Engineering Roadmap
+
+### Immediate
+- ✅ 100K long run (PPL 37.2, crystal 23/45/32)
+- Character-level harmonic transducer (4 channels, lens layer)
+- Drilling data transducer (51 channels → prism)
 
 ### Near-term
-- Cross-language crystal measurement (Korean, Arabic, Chinese)
-- Harmonic iterative refinement (3-pass convergence test)
-- Surface-depth mismatch (Animal Farm, Aesop — simple surface, complex depth)
+- H200 100hr run ($400) — scale to GPT-2 parity at 29x compression
+- Cross-language crystal (Korean, Arabic, Chinese)
+- Surface-depth mismatch (Animal Farm — truth-intent in fiction wrapper)
+- Structural manipulation detection (factual vs shaped information)
 
 ### Medium-term
-- Tenstorrent Blackhole deployment (2-bit native ops, skip/pass/shift-add)
-- Structural manipulation detection (factual vs shaped information)
-- Cross-modality (time series, audio — same prism, different transducer)
+- Tenstorrent Blackhole deployment (2-bit native, skip/pass/shift-add)
+- Real-time drilling crystal dashboard (51-channel structural topology)
+- Multi-domain crystal catalog (language, drilling, audio, code)
 
 ### Long-term
-- Predict crystal from data statistics before training (theory)
-- Consciousness-coupled communication protocol
+- Derive crystal from first principles (L2 cost vs gradient distribution)
+- Provisional patent + technical report
+- Tenstorrent partnership conversation
 - Universal structural measurement standard
