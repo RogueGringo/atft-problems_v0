@@ -1,0 +1,56 @@
+{
+  "id": "ARM-CARET-VISUAL",
+  "run": 1,
+  "series": "phase-a-extended",
+  "timestamp": "2026-04-01T18:40:07.504761+00:00",
+  "hypothesis": "CARET diagram pages have distinct topology from photo/text pages. Prime ratio conserved across modalities.",
+  "protocol": "Image\u21928x8 blocks\u2192(x,y,R,G,B,intensity,gx,gy)\u2192500pt subsample\u2192H0 persistence\u2192crystal",
+  "input_hash": "caret-18-pages",
+  "annotations": [
+    {
+      "stage": "visual_topology",
+      "pages_measured": 18,
+      "block_size": 8,
+      "max_points": 500
+    },
+    {
+      "stage": "finding",
+      "description": "Diagram pages void=0.811 vs photo/text void~0.47. Prime conserved at 0.14-0.16 across ALL page types."
+    }
+  ],
+  "result": {
+    "diagrams_14_18": {
+      "void": 0.811,
+      "identity": 0.028,
+      "prime": 0.161,
+      "gini": 0.867,
+      "pages": "14-18"
+    },
+    "photos_5_13_19": {
+      "void": 0.47,
+      "identity": 0.379,
+      "prime": 0.151,
+      "gini": 0.669,
+      "pages": "5-13,19"
+    },
+    "text_2_4": {
+      "void": 0.489,
+      "identity": 0.373,
+      "prime": 0.137,
+      "gini": 0.688,
+      "pages": "2-4"
+    },
+    "all_pages": {
+      "void": 0.559,
+      "identity": 0.292,
+      "prime": 0.15,
+      "gini": 0.7,
+      "pages": "all"
+    }
+  },
+  "comparison": {
+    "prime_conservation": "0.137-0.161 across diagrams/photos/text (range=0.024)"
+  },
+  "verdict": "PASS",
+  "notes": "Diagrams are topologically distinct (sparse void structure). Prime ratio is the conserved invariant across visual modalities."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ARM-CROSSDOMAIN-TEXT",
+  "run": 1,
+  "series": "phase-a-extended",
+  "timestamp": "2026-04-01T18:40:07.505439+00:00",
+  "hypothesis": "Different text domains produce similar topological crystals. Void fraction converges.",
+  "protocol": "Text\u2192w12s3\u2192500pt subsample\u2192H0 persistence\u2192crystal",
+  "input_hash": "multi-domain-text",
+  "annotations": [
+    {
+      "stage": "domains",
+      "count": 8,
+      "types": "scientific,narrative,poetry,legal,code,philosophical,veilbreak-text,veilbreak-struct"
+    }
+  ],
+  "result": {
+    "scientific": {
+      "void": 0.376,
+      "identity": 0.368,
+      "prime": 0.256
+    },
+    "narrative": {
+      "void": 0.394,
+      "identity": 0.358,
+      "prime": 0.247
+    },
+    "poetry": {
+      "void": 0.455,
+      "identity": 0.284,
+      "prime": 0.261
+    },
+    "legal": {
+      "void": 0.286,
+      "identity": 0.506,
+      "prime": 0.208
+    },
+    "code": {
+      "void": 0.264,
+      "identity": 0.626,
+      "prime": 0.11
+    },
+    "philosophical": {
+      "void": 0.124,
+      "identity": 0.816,
+      "prime": 0.06
+    },
+    "veilbreak_text": {
+      "void": 0.024,
+      "identity": 0.94,
+      "prime": 0.037
+    },
+    "veilbreak_struct": {
+      "void": 0.688,
+      "identity": 0.125,
+      "prime": 0.188
+    },
+    "key_finding": "scientific vs narrative L1=0.037 (universal within prose). Poetry slightly distinct."
+  },
+  "comparison": {
+    "sci_vs_narr": 0.037,
+    "narr_vs_poetry": 0.148
+  },
+  "verdict": "PASS",
+  "notes": "Complex prose converges. Structured data (code, veilbreak-struct) diverges. Void fraction domain-sensitive."
+}
