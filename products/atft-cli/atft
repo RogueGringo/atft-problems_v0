@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+"""ATFT — Universal Structural Measurement Tool."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from cli import main
+sys.exit(main())
