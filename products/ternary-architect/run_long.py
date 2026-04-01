@@ -70,6 +70,11 @@ class TextChunked(Dataset):
             ds = load_dataset("AiresPucrs/stanford-encyclopedia-philosophy",
                               split="train", streaming=False)
             ds = ds.select(range(min(n_samples, len(ds))))
+        elif dataset_name == "korean":
+            print(f"Loading Korean Wikipedia ({n_samples} samples)...")
+            ds = load_dataset("wikimedia/wikipedia", "20231101.ko",
+                              split="train", streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
         else:
             print(f"Loading TinyStories ({n_samples} samples)...")
             ds = load_dataset("roneneldan/TinyStories", split="train",
@@ -179,9 +184,9 @@ def main():
     parser.add_argument("--n_samples", type=int, default=200000)
     parser.add_argument("--max_length", type=int, default=256)
     parser.add_argument("--dataset", type=str, default="tinystories",
-                        choices=["tinystories", "wikitext", "kant", "sep"],
+                        choices=["tinystories", "wikitext", "kant", "sep", "korean"],
                         help="Dataset: tinystories (simple), wikitext (complex), "
-                             "kant (single book), sep (26M words of philosophy)")
+                             "kant (single book), sep (philosophy), korean (Korean Wikipedia)")
     parser.add_argument("--init_mode", type=str, default=None,
                         choices=["mixed", "void", "identity", "uniform"],
                         help="Ternary weight init. None=auto (deep→mixed). "

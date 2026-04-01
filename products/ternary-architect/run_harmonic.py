@@ -127,7 +127,7 @@ def main():
     parser.add_argument("--prism_checkpoint", type=str, default=None,
                         help="Path to model.pt — required for stage=full")
     parser.add_argument("--dataset", default="wikitext",
-                        choices=["tinystories", "wikitext", "kant", "sep"])
+                        choices=["tinystories", "wikitext", "kant", "sep", "korean"])
     parser.add_argument("--max_steps", type=int, default=20000)
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--effective_batch", type=int, default=32)
