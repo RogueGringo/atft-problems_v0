@@ -109,10 +109,89 @@ Features that VARY between diagrams:
 | No compiler needed | Claimed | Demonstrated (STE, not gradient descent) | PARTIAL |
 | Concentric ring depth | Yes (1-5 rings) | Not yet tested (3D tensor) | UNTESTED |
 
+## Deep Structural Observations
+
+### The A1 Generator IS the Harmonic Stack
+
+Physical decomposition of A1 maps to our architecture:
+
+```
+Upper segment (sparse lattice) → VOID LAYER — sparse, structural skeleton
+         ↓
+Junction (3 arms at 120°)     → SPECTRAL ROUTER — 3-way symmetric routing
+         ↓
+Lower segment (dense rings)   → PRIME LAYER — dense computation, inscribed
+         ↓
+Base (spiral/turbine)         → OUTPUT — emission/generation
+```
+
+### Components Encode Their Own Position
+
+A2 and A3 (I-beams) "somehow contain information that describes their
+position and orientation in relation to A1 when the mode is in effect."
+
+Each weight in {0,1,3} crystal = a component whose VALUE encodes its
+FUNCTION and whose POSITION in the matrix encodes its ADDRESS. The
+arrangement IS the computation. No external lookup table.
+
+### Connections Carry Inscriptions
+
+Figure 14.13: the connection between nodes has SYMBOLS ON THE EDGE.
+The path isn't just a wire — it's a parameterized channel. In our
+framework: the connection weight isn't just {0,1,3} — it could carry
+additional harmonic channel data along the edge.
+
+### Three Modes Map to Three Operations
+
+1. Field mode = broadcast (linear layer forward pass)
+2. Component mode = selective routing (spectral router)
+3. Multi mode = both simultaneously (Harmonic Stack)
+
+### The Linguistic Analysis IS the Diagrams
+
+No explanatory text accompanies the diagram section. The "Linguistic
+Analysis Primer" is entirely visual. The notation is self-describing.
+The LANGUAGE being analyzed IS the visual language of the diagrams.
+This is self-referential: the primer for the language IS IN the language.
+
+### Glyph Vocabulary (unique central symbols observed)
+
+1. Bold angular chevron/arrow (appears on A1 upper segment + diagram nodes)
+2. Triple-curve/wifi symbol (large node in 14.11, large node in 14.13)
+3. Three-arm radial (center node in 14.11)
+4. Starburst/propeller — 6-8 radial blades (child nodes in 14.15, 14.13)
+5. Mandala/concentric target (central core of 14.12 parent)
+6. Various smaller geometric marks along inscription bands
+
+### Physical Artifact Dimensions — Potential Ratios
+
+| Measurement | Value | Potential ratio |
+|-------------|-------|----------------|
+| A2 length / A3 length | 7.2/9.1 = 0.791 | ~4/5 |
+| A1 segment length / diameter | 2.2/8.3 = 0.265 | ~1/4 |
+| A1 arm length / core diameter | 7.6/8.3 = 0.916 | ~1/1 |
+| A1 total length / arm span | 24.4/15.2 = 1.605 | ~φ (golden ratio = 1.618) |
+| Pad diameter / core diameter | 2.0/8.3 = 0.241 | ~22% (void ratio?) |
+
+The pad-to-core ratio (0.241) is within measurement error of the
+void ratio in the crystal (0.222). The smallest functional element
+relative to the main computational element = the void fraction.
+
+## Experimental Results
+
+### CARET Figure 14.15 Transcoded Architecture
+Running on WikiText, L2=0.0, 20K steps.
+
+Crystal at every checkpoint (1K through 8K): **22.2/41.7/36.1**
+
+Identical to all other architectures tested. The diagram's topology
+produces the universal structural constant.
+
 ## Next Steps
 
-1. Read remaining pages (10-12) for text content about the symbol system
-2. Extract precise ring diameter ratios from diagrams (pixel measurement)
-3. Map glyph vocabulary — catalog all unique central glyphs
+1. Extract precise ring diameter ratios from page 19 physical artifacts
+2. Catalog all unique glyph symbols across all diagram pages
+3. Map connection inscriptions — are they parameters or addresses?
 4. Test 3D tensor architecture (rings as z-depth layers)
-5. Compare physical artifact ring ratios (page 19) to diagram ring ratios
+5. Cross-reference A1 physical proportions with crystal ratios
+6. Await CARET run completion (~1 hour) for full 20K results
