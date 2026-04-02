@@ -438,9 +438,9 @@ def main():
     # ── TopologyBitFlipEngine ──────────────────────────────────────────────
     engine = TopologyBitFlipEngine(
         model,
-        base_flip_pct=0.001,
+        base_flip_pct=0.0001,
         cycle_steps=100,
-        warmup_steps=500,
+        warmup_steps=2000,
         gravity=0.0,
         persistence_cycle=2000,
         persistence_scale=5.0,
@@ -501,6 +501,15 @@ def main():
             targets = targets.to(device)
 
             _, loss = model(s_ids, c_ids, targets=targets)
+
+            # NaN recovery — freeze and stabilize
+            if torch.isnan(loss) or torch.isinf(loss):
+                print(f"    *** NaN/Inf at step {step} — stabilizing 500 steps ***", flush=True)
+                optimizer.zero_grad()
+                # Skip this batch, continue training
+                step += 1
+                continue
+
             loss.backward()
 
             # Accumulate gradient signal for BitFlip engine

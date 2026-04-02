@@ -289,12 +289,22 @@ class TopologyBitFlipEngine:
                     continue
 
                 # KEY DIFFERENCE from BitFlipEngine:
-                # Instead of top-K global selection, flip where
-                # gradient magnitude exceeds the per-weight threshold.
-                flip_mask = urgency > th
+                # Flip where gradient magnitude exceeds per-weight threshold,
+                # BUT cap total flips at base_flip_pct × n_weights.
+                candidates = urgency > th
+                n_candidates = candidates.sum().item()
+                max_flips = max(1, int(w.numel() * self.base_flip_pct))
 
-                if not flip_mask.any():
+                if n_candidates == 0:
                     continue
+
+                if n_candidates > max_flips:
+                    # Too many candidates — take top-K by urgency
+                    flat_urgency = (urgency * candidates.float()).flatten()
+                    threshold_val = flat_urgency.topk(max_flips).values[-1]
+                    flip_mask = urgency >= threshold_val
+                else:
+                    flip_mask = candidates
 
                 # Apply flips
                 f01 = flip_mask & mask_0_up
