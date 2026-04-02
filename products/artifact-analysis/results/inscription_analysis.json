@@ -1,0 +1,56 @@
+{
+  "total_symbols": 108,
+  "unique_symbols": 21,
+  "frequency": {
+    "o": 23,
+    "A": 12,
+    ".": 10,
+    "C": 10,
+    "7": 8,
+    "(": 8,
+    "+": 8,
+    "V": 8,
+    "M": 4,
+    ")": 3,
+    "!": 3,
+    ">": 2,
+    "X": 1,
+    "#": 1,
+    "[": 1,
+    "1": 1,
+    "T": 1,
+    "]": 1,
+    "N": 1,
+    "0": 1,
+    "<": 1
+  },
+  "inscription_crystal": {
+    "void": 0.3055555555555556,
+    "identity": 0.3148148148148148,
+    "prime": 0.3611111111111111
+  },
+  "language_crystal": {
+    "void": 0.222,
+    "identity": 0.417,
+    "prime": 0.361
+  },
+  "sequences": {
+    "A2_band1": "X.7A.#(Co+o7[o1",
+    "A2_band2": "To7]Co+oC(",
+    "A3_band1": "C)MA(o>V.7.AoNA7.Vo+",
+    "A3_band2": "+oCo)(0AA+!!!(C)MA(o.V.7.AoA7.Vo+",
+    "BW_left": "<7AVoCVCoMAVAMo",
+    "BW_right": "o.Co>o+o(oCV(o+"
+  },
+  "transitions": {
+    "V\u2192V": 2,
+    "V\u2192I": 14,
+    "V\u2192P": 15,
+    "I\u2192V": 15,
+    "I\u2192I": 10,
+    "I\u2192P": 7,
+    "P\u2192V": 15,
+    "P\u2192I": 8,
+    "P\u2192P": 13
+  }
+}
