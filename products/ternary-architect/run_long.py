@@ -77,6 +77,16 @@ class TextChunked(Dataset):
             paragraphs = [p.strip() for p in text.split("\n\n") if len(p.strip()) > 50]
             ds = [{"text": p} for p in paragraphs]
             print(f"  {len(ds)} paragraphs")
+        elif dataset_name == "chinese":
+            print(f"Loading Chinese Wikipedia ({n_samples} samples)...")
+            ds = load_dataset("wikimedia/wikipedia", "20231101.zh",
+                              split="train", streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
+        elif dataset_name == "code":
+            print(f"Loading Python code (The Stack, {n_samples} samples)...")
+            ds = load_dataset("bigcode/the-stack-smol", "data/python",
+                              split="train", streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
         elif dataset_name == "korean":
             print(f"Loading Korean Wikipedia ({n_samples} samples)...")
             ds = load_dataset("wikimedia/wikipedia", "20231101.ko",
@@ -191,9 +201,8 @@ def main():
     parser.add_argument("--n_samples", type=int, default=200000)
     parser.add_argument("--max_length", type=int, default=256)
     parser.add_argument("--dataset", type=str, default="tinystories",
-                        choices=["tinystories", "wikitext", "kant", "sep", "korean", "animalfarm"],
-                        help="Dataset: tinystories (simple), wikitext (complex), "
-                             "kant (single book), sep (philosophy), korean, animalfarm (surface-depth)")
+                        choices=["tinystories", "wikitext", "kant", "sep", "korean", "animalfarm", "chinese", "code"],
+                        help="Dataset: tinystories, wikitext, kant, sep, korean, animalfarm, chinese, code")
     parser.add_argument("--init_mode", type=str, default=None,
                         choices=["mixed", "void", "identity", "uniform"],
                         help="Ternary weight init. None=auto (deep→mixed). "
