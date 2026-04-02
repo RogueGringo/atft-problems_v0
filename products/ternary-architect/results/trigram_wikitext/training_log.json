@@ -1,0 +1,131 @@
+{
+  "experiment": "trigram_prism",
+  "dataset": "wikitext",
+  "config": {
+    "width": 4096,
+    "n_head": 16,
+    "block_size": 512,
+    "batch_size": 8,
+    "max_steps": 30000,
+    "lr": 0.0003,
+    "flip_pct": 0.001,
+    "flip_cycle": 100,
+    "warmup": 500,
+    "cooldown": 5000,
+    "persistence_cycle": 2000,
+    "persistence_scale": 5.0,
+    "init_mode": "identity"
+  },
+  "params": {
+    "ternary": 201326592,
+    "continuous": 5509120,
+    "total": 206835712,
+    "ternary_pct": 97.33647543418421
+  },
+  "init_weight_dist": {
+    "void": 0.0,
+    "identity": 1.0,
+    "prime": 0.0,
+    "asymmetry": 0.0
+  },
+  "hypothesis": "Structure-first: 27 structural states + 8192 content hashes. BitFlip from identity init. ASYMMETRY = |void - prime| is the key metric. Crystal should diverge from uniform as topology forms.",
+  "checkpoints": [
+    {
+      "step": 1000,
+      "train": {
+        "loss": 1.862793847322464,
+        "ppl": 6.441708805077066
+      },
+      "test": {
+        "loss": 1.8579629373550415,
+        "ppl": 6.410664536212438
+      },
+      "gen_gap": 0.9951807401104253,
+      "eff_rank": 1.243376178905077,
+      "crystal": {
+        "void": 0.4316813151041667,
+        "identity": 0.12386067708333333,
+        "prime": 0.4444580078125,
+        "asymmetry": 0.012776692708333315
+      },
+      "asymmetry": 0.012776692708333315,
+      "per_layer_crystal": {
+        "block.attn.q_proj": {
+          "void": 0.19580078125,
+          "identity": 0.599853515625,
+          "prime": 0.204345703125,
+          "asymmetry": 0.008544921875
+        },
+        "block.attn.k_proj": {
+          "void": 0.055419921875,
+          "identity": 0.8349609375,
+          "prime": 0.109619140625,
+          "asymmetry": 0.05419921875
+        },
+        "block.attn.v_proj": {
+          "void": 0.483154296875,
+          "identity": 0.051513671875,
+          "prime": 0.46533203125,
+          "asymmetry": 0.017822265625
+        },
+        "block.attn.o_proj": {
+          "void": 0.38134765625,
+          "identity": 0.0,
+          "prime": 0.61865234375,
+          "asymmetry": 0.2373046875
+        },
+        "block.mlp.up": {
+          "void": 0.508544921875,
+          "identity": 0.0,
+          "prime": 0.491455078125,
+          "asymmetry": 0.01708984375
+        },
+        "block.mlp.down": {
+          "void": 0.507568359375,
+          "identity": 0.0,
+          "prime": 0.492431640625,
+          "asymmetry": 0.01513671875
+        }
+      },
+      "elapsed": 271.9581968784332
+    }
+  ],
+  "steps": [
+    {
+      "step": 0,
+      "loss": 3.9335453510284424,
+      "ppl": 51.08778109125076,
+      "elapsed": 0.559589147567749
+    },
+    {
+      "step": 200,
+      "loss": 3.8292222023010254,
+      "ppl": 46.02672482756512,
+      "elapsed": 50.73952794075012
+    },
+    {
+      "step": 400,
+      "loss": 3.858769655227661,
+      "ppl": 47.40698853249715,
+      "elapsed": 101.33492279052734
+    },
+    {
+      "step": 600,
+      "loss": 2.5056283473968506,
+      "ppl": 12.251254591715432,
+      "elapsed": 152.07010078430176
+    },
+    {
+      "step": 800,
+      "loss": 1.9733378887176514,
+      "ppl": 7.194651399027223,
+      "elapsed": 202.48874855041504
+    },
+    {
+      "step": 1000,
+      "loss": 1.9189602136611938,
+      "ppl": 6.813869815837989,
+      "elapsed": 252.98781847953796
+    }
+  ]
+}
