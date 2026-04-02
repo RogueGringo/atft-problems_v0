@@ -9,158 +9,158 @@
   "results": [
     {
       "alpha": 3.0,
-      "mean_onset": 0.2933333426713943,
-      "std_onset": 0.00596285224939458,
-      "mean_gini": 0.0594075793180775,
+      "mean_onset": 0.2930000105500221,
+      "std_onset": 0.004434717617917229,
+      "mean_gini": 0.057090620271790814,
       "mean_solution_rate": 1.0,
       "mean_residual_unsat": 0.0,
-      "mean_bimodality": 0.33583898544311525,
-      "elapsed_s": 16.5
+      "mean_bimodality": 0.33962255120277407,
+      "elapsed_s": 34.1
     },
     {
       "alpha": 3.2,
-      "mean_onset": 0.2770000073313713,
-      "std_onset": 0.009098226387881967,
-      "mean_gini": 0.06750474042895929,
+      "mean_onset": 0.27553333878517156,
+      "std_onset": 0.0060885992152228015,
+      "mean_gini": 0.06795732887368708,
       "mean_solution_rate": 1.0,
       "mean_residual_unsat": 0.0,
-      "mean_bimodality": 0.34243227243423463,
-      "elapsed_s": 23.1
+      "mean_bimodality": 0.3412040114402771,
+      "elapsed_s": 47.9
     },
     {
       "alpha": 3.4000000000000004,
-      "mean_onset": 0.24493333518505095,
-      "std_onset": 0.008739180435576553,
-      "mean_gini": 0.09799718184906088,
-      "mean_solution_rate": 0.999,
-      "mean_residual_unsat": 1.96078431372549e-06,
-      "mean_bimodality": 0.34448363780975344,
-      "elapsed_s": 45.3
+      "mean_onset": 0.24873333752155302,
+      "std_onset": 0.006682978691453139,
+      "mean_gini": 0.10094559088826208,
+      "mean_solution_rate": 0.9995,
+      "mean_residual_unsat": 9.80392156862745e-07,
+      "mean_bimodality": 0.34453642964363096,
+      "elapsed_s": 97.2
     },
     {
       "alpha": 3.6000000000000005,
-      "mean_onset": 0.2203333380818367,
-      "std_onset": 0.01392439833366125,
-      "mean_gini": 0.1263672793342752,
-      "mean_solution_rate": 0.9955,
-      "mean_residual_unsat": 8.333333333333334e-06,
-      "mean_bimodality": 0.3538608908653259,
-      "elapsed_s": 54.1
+      "mean_onset": 0.2222000017762184,
+      "std_onset": 0.01246167235558096,
+      "mean_gini": 0.12715091216124647,
+      "mean_solution_rate": 0.9974999999999999,
+      "mean_residual_unsat": 4.62962962962963e-06,
+      "mean_bimodality": 0.3529424399137497,
+      "elapsed_s": 111.4
     },
     {
       "alpha": 3.8000000000000007,
-      "mean_onset": 0.20240000411868092,
-      "std_onset": 0.016160857835195337,
-      "mean_gini": 0.21317508357814727,
-      "mean_solution_rate": 0.8605,
-      "mean_residual_unsat": 0.0002842105263157894,
-      "mean_bimodality": 0.3845575451850891,
-      "elapsed_s": 70.2
+      "mean_onset": 0.20573333874344826,
+      "std_onset": 0.011247518445591395,
+      "mean_gini": 0.21127559410643332,
+      "mean_solution_rate": 0.8600000000000001,
+      "mean_residual_unsat": 0.0002763157894736842,
+      "mean_bimodality": 0.3954854130744934,
+      "elapsed_s": 151.2
     },
     {
       "alpha": 4.000000000000001,
-      "mean_onset": 0.18293334066867828,
-      "std_onset": 0.024431674617624344,
-      "mean_gini": 0.3204860724076921,
-      "mean_solution_rate": 0.6375,
-      "mean_residual_unsat": 0.0006808333333333333,
-      "mean_bimodality": 0.4182311326265335,
-      "elapsed_s": 72.2
+      "mean_onset": 0.18240000262856482,
+      "std_onset": 0.02228941065971629,
+      "mean_gini": 0.31794661910895855,
+      "mean_solution_rate": 0.6325000000000001,
+      "mean_residual_unsat": 0.00069,
+      "mean_bimodality": 0.4209564715623856,
+      "elapsed_s": 156.7
     },
     {
       "alpha": 4.200000000000001,
-      "mean_onset": 0.17700000450015066,
-      "std_onset": 0.0161967071046839,
-      "mean_gini": 0.3683063070439866,
-      "mean_solution_rate": 0.28500000000000003,
-      "mean_residual_unsat": 0.0015865079365079368,
-      "mean_bimodality": 0.44550626277923583,
-      "elapsed_s": 72.7
+      "mean_onset": 0.17973333820700643,
+      "std_onset": 0.012934707831172992,
+      "mean_gini": 0.3770327844482548,
+      "mean_solution_rate": 0.28650000000000003,
+      "mean_residual_unsat": 0.0015626984126984127,
+      "mean_bimodality": 0.4496504753828049,
+      "elapsed_s": 163.1
     },
     {
       "alpha": 4.400000000000001,
-      "mean_onset": 0.16633333608508108,
-      "std_onset": 0.018574176329662632,
-      "mean_gini": 0.3871592607695279,
-      "mean_solution_rate": 0.063,
-      "mean_residual_unsat": 0.0028886363636363636,
-      "mean_bimodality": 0.4410320848226547,
-      "elapsed_s": 73.1
+      "mean_onset": 0.17433333575725551,
+      "std_onset": 0.022117366316846302,
+      "mean_gini": 0.39315937954486085,
+      "mean_solution_rate": 0.0685,
+      "mean_residual_unsat": 0.0028825757575757574,
+      "mean_bimodality": 0.4511609852313995,
+      "elapsed_s": 155.5
     },
     {
       "alpha": 4.600000000000001,
-      "mean_onset": 0.15086666971445084,
-      "std_onset": 0.029231718803530683,
-      "mean_gini": 0.37706165153741916,
-      "mean_solution_rate": 0.0035000000000000005,
-      "mean_residual_unsat": 0.003952173913043479,
-      "mean_bimodality": 0.4621565967798233,
-      "elapsed_s": 72.5
+      "mean_onset": 0.14960000231862067,
+      "std_onset": 0.031714279355784435,
+      "mean_gini": 0.370958426184161,
+      "mean_solution_rate": 0.003,
+      "mean_residual_unsat": 0.00395072463768116,
+      "mean_bimodality": 0.4761063426733017,
+      "elapsed_s": 154.8
     },
     {
       "alpha": 4.800000000000002,
-      "mean_onset": 0.17566666945815085,
-      "std_onset": 0.04387988793615547,
-      "mean_gini": 0.3927750245533884,
+      "mean_onset": 0.17026666775345803,
+      "std_onset": 0.04421784458099422,
+      "mean_gini": 0.3955500324297906,
       "mean_solution_rate": 0.0,
-      "mean_residual_unsat": 0.006022916666666667,
-      "mean_bimodality": 0.4711227774620056,
-      "elapsed_s": 71.5
+      "mean_residual_unsat": 0.006005555555555555,
+      "mean_bimodality": 0.47945777177810667,
+      "elapsed_s": 154.9
     },
     {
       "alpha": 5.000000000000002,
-      "mean_onset": 0.1863333390653133,
-      "std_onset": 0.022032804936426658,
-      "mean_gini": 0.3075348697298187,
+      "mean_onset": 0.18153333768248558,
+      "std_onset": 0.01967751106138641,
+      "mean_gini": 0.2942372392526381,
       "mean_solution_rate": 0.0,
-      "mean_residual_unsat": 0.009073333333333333,
-      "mean_bimodality": 0.41097537279129026,
-      "elapsed_s": 71.8
+      "mean_residual_unsat": 0.009082666666666666,
+      "mean_bimodality": 0.4078254222869873,
+      "elapsed_s": 148.4
     },
     {
       "alpha": 5.200000000000002,
-      "mean_onset": 0.17080000333487985,
-      "std_onset": 0.0430800813877351,
-      "mean_gini": 0.3193646694724679,
+      "mean_onset": 0.17573333874344824,
+      "std_onset": 0.03942723277352499,
+      "mean_gini": 0.3114278529860045,
       "mean_solution_rate": 0.0,
-      "mean_residual_unsat": 0.010333974358974358,
-      "mean_bimodality": 0.4715277075767517,
-      "elapsed_s": 71.8
+      "mean_residual_unsat": 0.010422435897435899,
+      "mean_bimodality": 0.4511604517698288,
+      "elapsed_s": 157.4
     },
     {
       "alpha": 5.400000000000002,
-      "mean_onset": 0.1696000038087368,
-      "std_onset": 0.036292881832246854,
-      "mean_gini": 0.32280109153221187,
+      "mean_onset": 0.16026666924357413,
+      "std_onset": 0.03668751108376286,
+      "mean_gini": 0.30837109658141093,
       "mean_solution_rate": 0.0,
-      "mean_residual_unsat": 0.011554938271604939,
-      "mean_bimodality": 0.459322527050972,
-      "elapsed_s": 73.7
+      "mean_residual_unsat": 0.011577160493827161,
+      "mean_bimodality": 0.45756414234638215,
+      "elapsed_s": 148.9
     },
     {
       "alpha": 5.600000000000002,
-      "mean_onset": 0.169000002220273,
-      "std_onset": 0.04670593566072552,
-      "mean_gini": 0.2524631447298972,
+      "mean_onset": 0.16560000546276568,
+      "std_onset": 0.038179927979226105,
+      "mean_gini": 0.246297963083898,
       "mean_solution_rate": 0.0,
-      "mean_residual_unsat": 0.013950595238095238,
-      "mean_bimodality": 0.4271907716989517,
-      "elapsed_s": 74.9
+      "mean_residual_unsat": 0.0139875,
+      "mean_bimodality": 0.4218985021114349,
+      "elapsed_s": 147.5
     },
     {
       "alpha": 5.8000000000000025,
-      "mean_onset": 0.18226667046546935,
-      "std_onset": 0.019216199737417228,
-      "mean_gini": 0.1968582534748442,
+      "mean_onset": 0.18553333684802054,
+      "std_onset": 0.017351404386340086,
+      "mean_gini": 0.2007925610695051,
       "mean_solution_rate": 0.0,
-      "mean_residual_unsat": 0.01728390804597701,
-      "mean_bimodality": 0.3961617022752762,
-      "elapsed_s": 74.8
+      "mean_residual_unsat": 0.01723045977011494,
+      "mean_bimodality": 0.3995103001594543,
+      "elapsed_s": 147.5
     }
   ],
   "sat_unsat_transition": 4.600000000000001,
   "onset_transition": 3.4000000000000004,
-  "bimodality_transition": 3.8000000000000007,
+  "bimodality_transition": 4.800000000000002,
   "verdict": "PASS",
-  "total_time_s": 938.2
+  "total_time_s": 1976.7
 }
