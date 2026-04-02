@@ -1,0 +1,163 @@
+{
+  "n_classes": 13,
+  "glyphs": {
+    "cross_plus": {
+      "visual": "Simple + cross, equal arms",
+      "occurrences": "A2 band2 (delimiter), A3 band1 (terminal), A3 band2 (terminal)",
+      "count": 8,
+      "variants": [
+        "standard +",
+        "with dot center \u2295",
+        "with circle \u2295"
+      ],
+      "class": "DELIMITER"
+    },
+    "circle_open": {
+      "visual": "Small open circle \u2218",
+      "occurrences": "Throughout all bands as separator",
+      "count": 23,
+      "variants": [
+        "plain \u2218",
+        "with dot \u2299",
+        "filled \u2022"
+      ],
+      "class": "SEPARATOR"
+    },
+    "dot_small": {
+      "visual": "Tiny dot/period",
+      "occurrences": "Between symbol groups",
+      "count": 10,
+      "class": "SEPARATOR"
+    },
+    "angular_seven": {
+      "visual": "Looks like numeral 7 or reversed L, with sharp angle",
+      "occurrences": "A2 bands, A3 band1",
+      "count": 8,
+      "variants": [
+        "standard 7",
+        "mirrored \u0393",
+        "with serif"
+      ],
+      "class": "DIRECTIONAL"
+    },
+    "curve_c": {
+      "visual": "Open curve like C or parenthesis",
+      "occurrences": "All bands",
+      "count": 10,
+      "variants": [
+        "C open right",
+        ") close left",
+        "( open left"
+      ],
+      "class": "ENCLOSURE"
+    },
+    "wedge_up": {
+      "visual": "\u2227 or \u039b shape, pointing up",
+      "occurrences": "A3 bands (frequent)",
+      "count": 12,
+      "variants": [
+        "sharp \u2227",
+        "wide \u039b",
+        "with crossbar A"
+      ],
+      "class": "STRUCTURAL"
+    },
+    "wedge_down": {
+      "visual": "\u2228 or V shape, pointing down",
+      "occurrences": "A3 bands",
+      "count": 8,
+      "variants": [
+        "sharp \u2228",
+        "wide V"
+      ],
+      "class": "STRUCTURAL"
+    },
+    "double_peak": {
+      "visual": "M shape \u2014 two peaks connected",
+      "occurrences": "A3 bands",
+      "count": 4,
+      "variants": [
+        "standard M",
+        "rounded"
+      ],
+      "class": "COMPOUND"
+    },
+    "bracket": {
+      "visual": "Square bracket [ or ]",
+      "occurrences": "A2 bands",
+      "count": 2,
+      "variants": [
+        "[ open",
+        "] close"
+      ],
+      "class": "ENCLOSURE"
+    },
+    "tee_perp": {
+      "visual": "\u22a5 or T shape \u2014 perpendicular junction",
+      "occurrences": "A2 band2",
+      "count": 1,
+      "variants": [
+        "\u22a5 inverted T",
+        "T standard"
+      ],
+      "class": "JUNCTION"
+    },
+    "zigzag": {
+      "visual": "N or Z shape \u2014 angular zigzag",
+      "occurrences": "A3 band1",
+      "count": 1,
+      "class": "DIRECTIONAL"
+    },
+    "barcode": {
+      "visual": "||| \u2014 vertical parallel lines",
+      "occurrences": "A3 band2 (one cluster of 3-4 bars)",
+      "count": 3,
+      "class": "QUANTIFIER",
+      "note": "Gel claims Maya numeral system (dots and bars)"
+    },
+    "chevron": {
+      "visual": "> or < \u2014 angular pointer",
+      "occurrences": "A3 band1, BW views",
+      "count": 3,
+      "variants": [
+        "> right",
+        "< left"
+      ],
+      "class": "DIRECTIONAL"
+    }
+  },
+  "crystal": {
+    "void": 0.44086021505376344,
+    "identity": 0.25806451612903225,
+    "prime": 0.3010752688172043
+  },
+  "katakana_correlations": {
+    "angular_seven": [
+      "katakana \u30d5 (fu)"
+    ],
+    "curve_c": [
+      "katakana \u30b3 (ko)"
+    ],
+    "wedge_up": [
+      "katakana \u30a2 (a)"
+    ],
+    "wedge_down": [
+      "katakana \u30d8 (he)"
+    ],
+    "double_peak": [
+      "katakana \u30e0 (mu)"
+    ],
+    "bracket": [
+      "katakana \u30b3 (ko)"
+    ],
+    "tee_perp": [
+      "katakana \u30c6 (te)"
+    ],
+    "zigzag": [
+      "katakana \u30cc (nu)"
+    ],
+    "chevron": [
+      "katakana \u304f (ku)"
+    ]
+  }
+}
