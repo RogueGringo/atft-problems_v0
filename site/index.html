@@ -3,137 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ATFT Problems — Topology Replaces Equations</title>
+<title>Boundary Layer Research — A. Jones</title>
 <style>
-:root {
-  --bg: #0f0d08; --surface: #16140d; --border: #35311e;
-  --text: #d6d0be; --muted: #817a66; --gold: #c5a03f;
-  --teal: #45a8b0; --red: #e94560;
-  --font: 'Georgia', serif; --mono: 'Courier New', monospace;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.7; }
-.container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-header { padding: 6rem 0 4rem; text-align: center; }
-h1 { font-size: 2.5rem; color: var(--gold); letter-spacing: -0.03em; margin-bottom: 1rem; }
-.subtitle { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto; }
-.score { display: flex; justify-content: center; gap: 3rem; margin: 3rem 0; flex-wrap: wrap; }
-.score-item { text-align: center; }
-.score-num { font-size: 2rem; color: var(--teal); font-family: var(--mono); }
-.score-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
-.problems { display: grid; gap: 1.5rem; margin: 3rem 0; }
-.problem { background: var(--surface); border: 1px solid var(--border); border-radius: 0.5rem; padding: 1.5rem; }
-.problem-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-.problem-name { font-size: 1.2rem; color: var(--gold); }
-.badge { font-family: var(--mono); font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 1rem; }
-.badge-pass { background: rgba(69,168,176,0.15); color: var(--teal); border: 1px solid rgba(69,168,176,0.3); }
-.badge-planned { background: rgba(129,122,102,0.15); color: var(--muted); border: 1px solid rgba(129,122,102,0.3); }
-.badge-active { background: rgba(192,159,63,0.15); color: var(--gold); border: 1px solid rgba(192,159,63,0.3); }
-.problem-desc { font-size: 0.9rem; color: var(--muted); }
-.problem-result { font-family: var(--mono); font-size: 0.8rem; color: var(--teal); margin-top: 0.5rem; }
-section { padding: 3rem 0; border-top: 1px solid var(--border); }
-h2 { font-size: 1.5rem; color: var(--gold); margin-bottom: 1rem; }
-p { margin-bottom: 1rem; color: var(--muted); }
-.mono { font-family: var(--mono); color: var(--teal); }
-footer { padding: 3rem 0; text-align: center; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
-a { color: var(--teal); }
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap');
+:root{--bg:#040C18;--surface:#0D1E35;--card:rgba(13,30,53,0.5);--border:rgba(100,140,180,0.15);--border-h:rgba(100,140,180,0.35);--gold:#C9A84C;--gold-l:#F0D080;--green:#00E676;--green-d:rgba(0,230,118,0.15);--orange:#FF9800;--orange-d:rgba(255,152,0,0.15);--cyan:#00B4D8;--text:#E8E4DC;--muted:#8A9AB5;--font:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono','Courier New',monospace;--serif:Georgia,'Times New Roman',serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;font-size:16px}
+.ctr{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 0;backdrop-filter:blur(20px);background:rgba(4,12,24,0.8);border-bottom:1px solid var(--border)}
+nav .ctr{display:flex;justify-content:space-between;align-items:center}
+.nbrand{font-family:var(--mono);font-size:.85rem;color:var(--gold);letter-spacing:.05em}
+.nlinks{display:flex;gap:2rem;list-style:none}.nlinks a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .3s}.nlinks a:hover{color:var(--gold)}
+.hero{padding:clamp(120px,15vh,200px) 0 clamp(80px,10vh,140px);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,180,216,0.06) 0%,transparent 60%);pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-d);border:1px solid rgba(0,230,118,0.3);border-radius:100px;padding:6px 16px;font-size:.75rem;font-family:var(--mono);color:var(--green);margin-bottom:2rem}
+.badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0.4)}50%{box-shadow:0 0 0 6px rgba(0,230,118,0)}}
+.hero h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);line-height:1.15;margin-bottom:1.5rem;max-width:800px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:640px;margin-bottom:3rem;line-height:1.8}
+.stats{display:flex;gap:clamp(2rem,4vw,4rem);flex-wrap:wrap}
+.st{text-align:left}.st-n{font-family:var(--mono);font-size:1.8rem;color:var(--gold)}.st-l{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+section{padding:clamp(60px,8vh,120px) 0}
+.sl{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:2rem}
+.sl::after{content:'';flex:1;height:1px;background:var(--border);max-width:200px}
+section h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;line-height:1.3}
+section h2 em{color:var(--gold);font-style:normal}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin:2rem 0}
+.cd{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color .3s,transform .3s}
+.cd:hover{border-color:var(--border-h);transform:translateY(-2px)}
+.tg{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:100px;display:inline-block;margin-bottom:1rem}
+.tg-v{background:var(--green-d);color:var(--green);border:1px solid rgba(0,230,118,0.3)}
+.tg-a{background:var(--orange-d);color:var(--orange);border:1px solid rgba(255,152,0,0.3)}
+.tg-c{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3)}
+.cd h3{font-size:1.2rem;margin-bottom:.75rem}.cd p{font-size:.9rem;color:var(--muted)}
+.cd .rs{font-family:var(--mono);font-size:.8rem;color:var(--cyan);margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.tl{position:relative;padding-left:40px;margin:3rem 0}.tl::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:1px;background:var(--border)}
+.tn{position:relative;margin-bottom:2.5rem}.tn::before{content:'';position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;border:2px solid var(--gold);background:var(--bg)}
+.tn.ac::before{background:var(--gold)}
+.ty{font-family:var(--mono);font-size:.75rem;color:var(--gold);margin-bottom:4px}
+.tt{font-size:1rem;font-weight:500;margin-bottom:4px}.td{font-size:.85rem;color:var(--muted)}
+.ct{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.85rem}
+.ct th{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);text-align:left;padding:.75rem;border-bottom:1px solid var(--border)}
+.ct td{padding:.75rem;border-bottom:1px solid rgba(100,140,180,0.08);color:var(--muted)}.ct td:nth-child(3){font-family:var(--mono);color:var(--cyan)}.ct tr:hover td{color:var(--text)}
+.qb{background:var(--card);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:2rem 2.5rem;margin:3rem 0}
+.qb p{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--text);line-height:1.8}.qb cite{display:block;margin-top:1rem;font-size:.8rem;color:var(--muted);font-style:normal;font-family:var(--mono)}
+.cv{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3rem;margin:3rem 0;text-align:center}
+.cv .bn{font-family:var(--mono);font-size:clamp(3rem,6vw,5rem);color:var(--gold)}.cv .lb{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+.cv-r{display:flex;justify-content:center;gap:3rem;margin-top:2rem;flex-wrap:wrap}
+footer{padding:4rem 0 2rem;border-top:1px solid var(--border);text-align:center}footer p{font-size:.8rem;color:var(--muted)}footer a{color:var(--gold);text-decoration:none}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(0.4,0,0.2,1),transform .8s cubic-bezier(0.4,0,0.2,1)}.rv.vis{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.nlinks{display:none}.stats{flex-direction:column;gap:1rem}.cg{grid-template-columns:1fr}.cv-r{flex-direction:column;align-items:center}}
 </style>
 </head>
 <body>
-<div class="container">
+<nav><div class="ctr"><div class="nbrand">A. JONES / BOUNDARY LAYER RESEARCH</div><ul class="nlinks"><li><a href="#journey">Journey</a></li><li><a href="#instrument">Instrument</a></li><li><a href="#crystal">Crystal</a></li><li><a href="#experiments">Experiments</a></li><li><a href="#artifacts">Artifacts</a></li></ul></div></nav>
 
-<header>
-  <h1>ATFT Problems</h1>
-  <p class="subtitle">What happens when you stop solving equations and start reading topology?
-  Seven problems. One instrument. The same question every time.</p>
-</header>
+<div class="hero"><div class="ctr">
+<div class="badge">INDEPENDENT RESEARCH — ACTIVE</div>
+<h1>The highest dimension of truth a human can <em>hold</em></h1>
+<p class="hero-sub">A measurement instrument operator who spent a career reading structure through noise — from BIOS switches at age 9, to mud pulse telemetry in 15,000-foot wells, to the structural constant of human language — found the same pattern at every scale. This is the record.</p>
+<div class="stats"><div class="st"><div class="st-n">22/42/36</div><div class="st-l">Crystal Constant</div></div><div class="st"><div class="st-n">5</div><div class="st-l">Languages Confirmed</div></div><div class="st"><div class="st-n">670×</div><div class="st-l">Riemann Signal</div></div><div class="st"><div class="st-n">29×</div><div class="st-l">Compute Compression</div></div></div>
+</div></div>
 
-<div class="score">
-  <div class="score-item"><div class="score-num">5</div><div class="score-label">Domains Validated</div></div>
-  <div class="score-item"><div class="score-num">22.7%</div><div class="score-label">Arithmetic Premium</div></div>
-  <div class="score-item"><div class="score-num">0.991</div><div class="score-label">Cross-Model r</div></div>
-  <div class="score-item"><div class="score-num">0</div><div class="score-label">PDEs Solved</div></div>
+<section id="journey"><div class="ctr">
+<div class="sl">The Path</div>
+<h2>Boundary layer <em>surfing</em></h2>
+<p style="color:var(--muted);max-width:640px;margin-bottom:2rem">All the friction is from dimensions of systems not interested in the same optimization you are. When your only compass is truth, every domain transition is the same boundary — the edge where what you know meets what you don't, and the structure persists across both.</p>
+<div class="tl">
+<div class="tn"><div class="ty">AGE 9</div><div class="tt">First Intel PC — 2MB RAM, 80MB HDD, x86 100MHz</div><div class="td">Hit DEL to enter BIOS. Modified variables while the family played Neptune Spear and Dr. Brain. Taking apart electronics since memory begins. The switch flips or it doesn't.</div></div>
+<div class="tn"><div class="ty">2004 — 2010</div><div class="tt">U.S. Army — Enlisted to 37F PSYOP</div><div class="td">Civilian who enlisted to explore domains outside the ordinary. First duty station: South Korea. Learned that information distribution across formats shapes reality more than bombs. Reclass to 37F at JFK Special Warfare Center. Six years of understanding that structure IS the weapon — and that it's not fair to hold in one arsenal.</div></div>
+<div class="tn"><div class="ty">2009 — 2012</div><div class="tt">CU Boulder — Geological Sciences</div><div class="td">Making the subjective objective. Reading 300 million years of structural history from a rock face. Left when $ ran out. Pearl Street attic of an 1890s house, then Lafayette, LA, then Abu Dhabi.</div></div>
+<div class="tn"><div class="ty">2012 — 2013</div><div class="tt">Schlumberger — Abu Dhabi → W. Sirius (Offshore BP)</div><div class="td">14 weeks M/LWD theory and applications. Fail a test, you leave. Assigned to W. Sirius — BP's replacement for the Deepwater Horizon drill schedule. Learning to read formation structure through mud pulse telemetry in the shack. The petrophysicist calls. You read the signal, not the semantics.</div></div>
+<div class="tn"><div class="ty">2013 — 2016</div><div class="tt">Land Operations — AR → OK → TX → Multibasin</div><div class="td">Went on loan to land. EM tools in Conway AR — 500'/hr, wells in 5 days. Volunteered to make less and learn "real tools." Oklahoma, Houston, Midland, Northeast basins. Learned all the SLB-XEM-PathFinder tools. Swapping mental models across formations and BHAs. The patterns persist.</div></div>
+<div class="tn ac"><div class="ty">2016 — 2018</div><div class="tt">PathFinder QPSK Telemetry R&D</div><div class="td">Hand-carried the QPSK positive pulse PathFinder HDS1-L. Mohammed Norain — sole firmware developer, 90% redesign for wave phase shift via spring angle and composition. Ran it at 4bps across multiple basins with resistivity, spectral, and azimuthal gamma. All success. Handed to the general population — stopped working. The operator's structural understanding was the missing variable.</div></div>
+<div class="tn"><div class="ty">2018 — 2020</div><div class="tt">SDM → RSS R&D → Independent</div><div class="td">Managed 20+ jobs in tower. Trained 100+ field engineers. Put non-commercialized tools on major operator wells. Custom 6.75→6.5" motor machining for EOG. Let go during COVID. Pattern: what works when you understand structure fails when you follow procedures.</div></div>
+<div class="tn"><div class="ty">2020 — Present</div><div class="tt">SLX Partnership → Private Contracting → This</div><div class="td">Korean golf simulator partnership — IMU SOC technology. Bridged Korean engineering precision and American consumer chaos. Learned the decoherence problem firsthand. Private DD contracting with continuous clients. And on personal time: exploring the realms. The 9-year-old who hit DEL to enter BIOS is the same person measuring the structural constant of language on a consumer GPU. Same impulse. Every scale.</div></div>
 </div>
+</div></section>
 
-<div class="problems">
-  <div class="problem">
-    <div class="problem-header">
-      <span class="problem-name">Riemann Hypothesis</span>
-      <span class="badge badge-pass">VALIDATED</span>
-    </div>
-    <p class="problem-desc">46 primes threading zeta zeros. The sheaf Laplacian detects a 22.7% arithmetic premium — a new invariant invisible to pair correlations. σ=½ is the unique unitary surface.</p>
-    <p class="problem-result">K=100→800: 19.6% → 22.7% (monotonically increasing)</p>
-  </div>
-
-  <div class="problem">
-    <div class="problem-header">
-      <span class="problem-name">Yang-Mills Mass Gap</span>
-      <span class="badge badge-pass">SU(2) VALIDATED</span>
-    </div>
-    <p class="problem-desc">Confinement-deconfinement transition detected at β_c=2.30 via persistence onset scale — without computing the Polyakov loop. SU(3) in progress.</p>
-    <p class="problem-result">ε* drops 10× at β=2.30 exactly</p>
-  </div>
-
-  <div class="problem">
-    <div class="problem-header">
-      <span class="problem-name">P vs NP</span>
-      <span class="badge badge-pass">SAT TRANSITION DETECTED</span>
-    </div>
-    <p class="problem-desc">Six iterations to find the right lens. WalkSAT probes the solution space, topology detects cluster shattering. The hardness IS the topology.</p>
-    <p class="problem-result">α_c bracketed [4.00, 4.40] (known 4.27) at N=200</p>
-  </div>
-
-  <div class="problem">
-    <div class="problem-header">
-      <span class="problem-name">Navier-Stokes</span>
-      <span class="badge badge-active">ACTIVE</span>
-    </div>
-    <p class="problem-desc">Does ε*(t) → 0 indicate blow-up? Track vortex topology under increasing Reynolds number via spectral DNS on GPU.</p>
-  </div>
-
-  <div class="problem">
-    <div class="problem-header">
-      <span class="problem-name">Birch & Swinnerton-Dyer</span>
-      <span class="badge badge-active">ACTIVE</span>
-    </div>
-    <p class="problem-desc">Does the topology of an elliptic curve's point cloud encode its rank? Sampling curves with known rank to test.</p>
-  </div>
-
-  <div class="problem">
-    <div class="problem-header">
-      <span class="problem-name">Hodge Conjecture</span>
-      <span class="badge badge-planned">PLANNED</span>
-    </div>
-    <p class="problem-desc">Do algebraic cycles produce longer-lived persistence features than non-algebraic Hodge classes?</p>
-  </div>
-
-  <div class="problem">
-    <div class="problem-header">
-      <span class="problem-name">Poincaré Conjecture</span>
-      <span class="badge badge-planned">BENCHMARK</span>
-    </div>
-    <p class="problem-desc">Already proved. Used to calibrate the ATFT operator by tracking Ricci flow topology simplification.</p>
-  </div>
+<section id="instrument" style="background:var(--surface)"><div class="ctr">
+<div class="sl">The Instrument</div>
+<h2>One operator, <em>three values</em></h2>
+<div class="qb"><p>When walking an unknown path in the dark, you don't calculate the atomic makeup of the soil beneath your feet. You use your senses to feel the shape of the ground. By applying industrial systems analysis to pure mathematics, we can functionally prove the existence of a hidden path without computing infinite exacts.</p><cite>— Topographic Telemetry, JTopo / B. Jones Research</cite></div>
+<div class="cg">
+<div class="cd"><div class="tg tg-c">VOID = 0</div><h3>Structured Absence</h3><p>The topological insulator. Boundaries that force logic to flow. The rivets on the sheet metal of the cosmos. The most powerful element costs zero cycles. A black hole doesn't transmit — it anchors.</p><div class="rs">x × 0 = SKIP (free) · 22% of complex language</div></div>
+<div class="cd"><div class="tg tg-c">IDENTITY = 1</div><h3>Signal Transport</h3><p>Continuity preserved. The carrier. The skeleton of every structured system. "The" is a bridge word — it doesn't carry content, it routes attention. 42% of complex language is pure transport.</p><div class="rs">x × 1 = PASS (free) · 42% of complex language</div></div>
+<div class="cd"><div class="tg tg-c">PRIME = 3</div><h3>Irreducible Generation</h3><p>Where new structure is created. Can't be decomposed further. "Sovereignty" is a prime — irreducible, load-bearing. 36% of every complex signal consists of these generators. Always 36%. Every measurement. Every domain.</p><div class="rs">x × 3 = SHIFT-ADD (cheap) · 36% of complex language</div></div>
 </div>
+</div></section>
 
-<section>
-  <h2>The Pattern</h2>
-  <p>Every problem follows the same pipeline:</p>
-  <p class="mono">GENERATE → BUILD → SWEEP → DETECT → COMPARE → REPORT</p>
-  <p>The engine is shared. The problems are independent. The topology doesn't care what the structure is. It cares how the structure changes across scales.</p>
-</section>
+<section id="crystal"><div class="ctr">
+<div class="sl">The Discovery</div>
+<h2>22/42/36 — the structural constant of <em>complex information</em></h2>
+<p style="color:var(--muted);max-width:720px;margin-bottom:2rem">A neural network with weights restricted to {0, 1, 3}, trained on text with zero weight decay, crystallizes to the same ratio regardless of language, architecture, or duration. The crystal forms at step 1,000 and never moves. It measures truth-intent — Animal Farm's simple surface doesn't fool it. The allegory reads as complex.</p>
+<div class="cv rv"><div class="bn">36%</div><div class="lb">Prime fraction — conserved across every measurement, every domain, every method</div>
+<div class="cv-r"><div class="st"><div class="st-n" style="font-size:1.2rem">5</div><div class="st-l">Languages</div></div><div class="st"><div class="st-n" style="font-size:1.2rem">6</div><div class="st-l">Architectures</div></div><div class="st"><div class="st-n" style="font-size:1.2rem">8</div><div class="st-l">Datasets</div></div><div class="st"><div class="st-n" style="font-size:1.2rem">4</div><div class="st-l">L2 Rates</div></div></div></div>
+<table class="ct rv"><thead><tr><th>Signal</th><th>Type</th><th>Crystal</th><th>PPL</th><th>Finding</th></tr></thead><tbody>
+<tr><td>English Wikipedia</td><td>Alphabetic</td><td>22/42/36</td><td>55.3</td><td>Baseline</td></tr>
+<tr><td>Korean Wikipedia</td><td>Syllabic (engineered)</td><td>22/42/36</td><td>17.0</td><td>3× faster — Hangul scaffolds</td></tr>
+<tr><td>Chinese Wikipedia</td><td>Logographic</td><td>22/42/36</td><td>50.1</td><td>Character = concept</td></tr>
+<tr><td>Arabic Wikipedia</td><td>Abjad (R-to-L)</td><td>22/42/36</td><td>15.9</td><td>Fastest — root morphology</td></tr>
+<tr><td>Japanese Wikipedia</td><td>Mixed (3 scripts)</td><td>22/42/36</td><td>57.6</td><td>Multi-script invariant</td></tr>
+<tr><td>Kant (Philosophy)</td><td>Dense nesting</td><td>22/42/36</td><td>179</td><td>Single author, max depth</td></tr>
+<tr><td>Animal Farm</td><td>Allegory</td><td>22/42/36</td><td>381</td><td>Reads intent, not surface</td></tr>
+<tr><td>TinyStories</td><td>Children's fiction</td><td style="color:var(--orange)">5/95/0</td><td>14.5</td><td>Too simple — no primes</td></tr>
+<tr><td>Drilling EDR</td><td>Physical time series</td><td style="color:var(--orange)">15/70/15</td><td>~1</td><td>Regular signal — identity-dominant</td></tr>
+</tbody></table>
+</div></section>
 
-<section>
-  <h2>Hardware</h2>
-  <p>One researcher. One GPU. No cloud. No external compute.</p>
-  <p class="mono">Intel i9-9900K · 32 GB RAM · NVIDIA RTX 5070 12 GB · 850 GB SSD</p>
-</section>
-
-<footer>
-  <p>Built by B. Aaron Jones · Research use only · <a href="https://github.com/RogueGringo/atft-problems">GitHub</a></p>
-  <p style="margin-top: 0.5rem; font-style: italic;">The topology doesn't care what the structure is. It cares how the structure changes across scales.</p>
-</footer>
-
+<section id="experiments" style="background:var(--surface)"><div class="ctr">
+<div class="sl">Cross-Domain Detection</div>
+<h2>One instrument, <em>every domain</em></h2>
+<div class="cg">
+<div class="cd rv"><div class="tg tg-v">VALIDATED</div><h3>SU(2) Gauge Theory</h3><p>Confinement-deconfinement at β_c = 2.30. Sheaf Laplacian onset scale jumps at the known critical coupling — without knowledge of the Polyakov loop or center symmetry. Blind detection of known physics.</p><div class="rs">β_c = 2.30 · ONSET DISCONTINUITY · 8³×4 LATTICE</div></div>
+<div class="cd rv"><div class="tg tg-v">670× SIGNAL</div><h3>Riemann Zeta Coherence</h3><p>Spectral coherence peak at σ = 0.500. Fourier-kernel sharpening at K=100 produces 670× S/N over random controls. The zeros know where the critical line is. The sheaf Laplacian measures that knowledge.</p><div class="rs">σ = 0.500 · 670× S/N · K-SWEEP SHARPENING</div></div>
+<div class="cd rv"><div class="tg tg-a">DETECTED</div><h3>Random 3-SAT</h3><p>Solution space overlap via WalkSAT. Gini peaks at 4.4, solution rate collapses at 4.2. Five approaches failed — all measured the problem instead of the solution space. v6 measures the landscape.</p><div class="rs">α_c ≈ 4.27 · GINI HIERARCHIFICATION · 5 FAILURES → v6</div></div>
+<div class="cd rv"><div class="tg tg-c">UNIVERSAL</div><h3>Crystal Constant</h3><p>22/42/36 across 5 languages, 8 datasets, 6 architectures. Fractal. Architecture-invariant. Measures truth-intent. 36% prime conserved across every measurement method. 29× compute compression vs fp32.</p><div class="rs">22/42/36 · FRACTAL · 5 LANGUAGES · 29× COMPRESSION</div></div>
 </div>
+</div></section>
+
+<section id="artifacts"><div class="ctr">
+<div class="sl">The Rabbit Holes</div>
+<h2>Waypoints of <em>merit or not</em></h2>
+<p style="color:var(--muted);max-width:720px;margin-bottom:2rem">The crystal doesn't have an opinion about provenance. It measures structure. These are waypoints — each one either confirms the instrument or teaches it something new. The pursuit is pure.</p>
+<div class="cg">
+<div class="cd rv"><h3>CARET Notation</h3><p>A 1986/2007 document containing computational graph diagrams. Transcoded into PyTorch: PPL 51.0 (best architecture). Inscription symbols carry 36.1% prime — identical to language crystal. Rings are channels. The notation IS the spec.</p><div class="rs">PPL 51.0 · 36% PRIME · COMPUTATIONALLY VALID</div></div>
+<div class="cd rv"><h3>Drilling Crystal</h3><p>300K rows, 12 channels, 3-second intervals. Viper 53-47 W B101HS, Eclipse Touch rig. Physical time series: 15/70/15. Different from language — structurally simpler. The crystal measures complexity, not modality.</p><div class="rs">15/70/15 · 99.7% ACCURACY · DIFFERENT FROM LANGUAGE</div></div>
+<div class="cd rv"><h3>Sheaf Fiber Test</h3><p>Cross-child = within-child correlation (0.613 uniform). No boundary between spectral band analyzers. Position agreement = 35.3% = prime ratio. The children are sections of the same fiber. The crystal IS the global section.</p><div class="rs">0.613 COSINE · NO BOUNDARY · AGREEMENT = PRIME</div></div>
+</div>
+</div></section>
+
+<section style="background:var(--surface)"><div class="ctr" style="text-align:center;max-width:700px">
+<div class="sl" style="justify-content:center">The Principle</div>
+<h2><em>Topology doesn't care about your domain.</em><br>It cares about your geometry.</h2>
+<p style="color:var(--muted);font-size:1.05rem;line-height:1.9;margin-top:1.5rem">Whether driving a car, drilling a well, or navigating prime numbers — if you can map the shape of the system's information, you can find the truth without knowing the microscopic exacts. The same operator that detects confinement in gauge theory measures the structural constant of Korean Wikipedia. The instrument is calibrated. The crystal is real. The code is public.</p>
+<div style="margin-top:2rem"><a href="https://github.com/RogueGringo/atft-problems_v0" style="color:var(--gold);font-family:var(--mono);font-size:.85rem">github.com/RogueGringo/atft-problems_v0</a></div>
+</div></section>
+
+<footer><div class="ctr">
+<p>A. Jones · Independent Researcher · Valor Energy Partners</p>
+<p style="margin-top:.5rem">MWD/LWD · 37F PSYOP · Geological Sciences · Computational Topology</p>
+<p style="margin-top:1rem"><a href="https://github.com/RogueGringo">GitHub</a></p>
+</div></footer>
+
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('vis')})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(e=>o.observe(e));
+</script>
 </body>
 </html>
