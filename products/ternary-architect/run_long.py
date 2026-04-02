@@ -87,6 +87,16 @@ class TextChunked(Dataset):
             ds = load_dataset("bigcode/the-stack-smol", "data/python",
                               split="train", streaming=False)
             ds = ds.select(range(min(n_samples, len(ds))))
+        elif dataset_name == "arabic":
+            print(f"Loading Arabic Wikipedia ({n_samples} samples)...")
+            ds = load_dataset("wikimedia/wikipedia", "20231101.ar",
+                              split="train", streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
+        elif dataset_name == "japanese":
+            print(f"Loading Japanese Wikipedia ({n_samples} samples)...")
+            ds = load_dataset("wikimedia/wikipedia", "20231101.ja",
+                              split="train", streaming=False)
+            ds = ds.select(range(min(n_samples, len(ds))))
         elif dataset_name == "korean":
             print(f"Loading Korean Wikipedia ({n_samples} samples)...")
             ds = load_dataset("wikimedia/wikipedia", "20231101.ko",
@@ -201,7 +211,7 @@ def main():
     parser.add_argument("--n_samples", type=int, default=200000)
     parser.add_argument("--max_length", type=int, default=256)
     parser.add_argument("--dataset", type=str, default="tinystories",
-                        choices=["tinystories", "wikitext", "kant", "sep", "korean", "animalfarm", "chinese", "code"],
+                        choices=["tinystories", "wikitext", "kant", "sep", "korean", "animalfarm", "chinese", "code", "arabic", "japanese"],
                         help="Dataset: tinystories, wikitext, kant, sep, korean, animalfarm, chinese, code")
     parser.add_argument("--init_mode", type=str, default=None,
                         choices=["mixed", "void", "identity", "uniform"],
