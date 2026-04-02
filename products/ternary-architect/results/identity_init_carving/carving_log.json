@@ -1,0 +1,12 @@
+{
+  "init": {
+    "void": 0,
+    "identity": 1,
+    "prime": 0
+  },
+  "final": {
+    "void": 0.0,
+    "identity": 1.0,
+    "prime": 0.0
+  }
+}
