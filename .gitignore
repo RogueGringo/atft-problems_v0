@@ -1,2 +1,8 @@
 models/
 __pycache__/
+
+# Large binary data (embeddings, FAISS indices, model checkpoints)
+*.npy
+*.bin
+*.pt
+*.faiss

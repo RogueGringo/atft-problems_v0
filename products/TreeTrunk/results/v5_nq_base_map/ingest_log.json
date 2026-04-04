@@ -1,0 +1,13 @@
+{
+  "experiment": "v5_nq_ingest",
+  "timestamp": "2026-04-03 14:59:56",
+  "elapsed_seconds": 1802.2,
+  "n_articles": 32805,
+  "n_chunks": 2338208,
+  "n_qa_pairs": 50000,
+  "n_with_answer": 17437,
+  "embedding_dim": 384,
+  "embedding_size_gb": 3.59,
+  "chunks_per_article_avg": 71.3,
+  "index_type": "IndexIVFFlat(nlist=3058, nprobe=64)"
+}

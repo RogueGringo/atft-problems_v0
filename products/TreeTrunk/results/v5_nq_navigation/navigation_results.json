@@ -1,0 +1,2053 @@
+{
+  "experiment": "v5_nq_navigation",
+  "timestamp": "2026-04-03 15:06:38",
+  "n_test": 30,
+  "answer_found": 1,
+  "answer_found_pct": 3.3,
+  "title_match": 7,
+  "title_match_pct": 23.3,
+  "avg_lambda1": 0.009708588512525752,
+  "avg_time": 0.95,
+  "results": [
+    {
+      "query": "when was ed sheeran's first album released",
+      "verified_text": "`` Perfect '' on YouTube `` Perfect '' is a song by English singer - songwriter Ed Sheeran from his third studio album, \u00f7 (2017). After the album's release it",
+      "verified_title": "Perfect (Ed Sheeran song)",
+      "lambda1": 0.002017623251677167,
+      "kernel_dim": 0,
+      "archetype_id": 5,
+      "archetype_dist": 1.0665333271026611,
+      "cosine_rank": 9,
+      "elapsed": 1.0792899131774902,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "`` Perfect '' on YouTube `` Perfect '' is a song by English singer - songwriter Ed Sheeran from his ",
+          "title": "Perfect (Ed Sheeran song)",
+          "lambda1": 0.002017623251677167,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0665333271026611,
+          "cosine_rank": 9,
+          "cosine_sim": 0.7862088680267334
+        },
+        {
+          "text": "songwriter Ed Sheeran from his third studio album, \u00f7 (2017). After the album's release it charted at",
+          "title": "Perfect (Ed Sheeran song)",
+          "lambda1": 0.004009672463913684,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0665333271026611,
+          "cosine_rank": 1,
+          "cosine_sim": 0.5360960960388184
+        },
+        {
+          "text": "Ed Sheeran from the album \u00f7 Language English Italian (`` Perfect Symphony '') Released 26 September ",
+          "title": "Perfect (Ed Sheeran song)",
+          "lambda1": 0.009466900059531012,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0665333271026611,
+          "cosine_rank": 3,
+          "cosine_sim": 0.6085948944091797
+        },
+        {
+          "text": "Release history 9 See also 10 References Composition and production (edit) `` Perfect '' was the fir",
+          "title": "Perfect (Ed Sheeran song)",
+          "lambda1": 0.01682362221646318,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0665333271026611,
+          "cosine_rank": 19,
+          "cosine_sim": 0.839573323726654
+        },
+        {
+          "text": "first UK number - one single. It then held the top position for five weeks before falling behind Ed ",
+          "title": "Havana (Camila Cabello song)",
+          "lambda1": 0.016996546633033092,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.6274113655090332,
+          "cosine_rank": 49,
+          "cosine_sim": 0.9311217069625854
+        }
+      ],
+      "expected_answer": "September 2011",
+      "expected_title": "Ed Sheeran",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who is george orwell in shooting an elephant",
+      "verified_text": "in the shooting and convincing the apes to attack the humans. He leads them into San Francisco, where they plunder the armory and charge the tower, with many casualties. The",
+      "verified_title": "Dawn of the Planet of the Apes",
+      "lambda1": 0.006166430188883144,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.1576004028320312,
+      "cosine_rank": 34,
+      "elapsed": 0.9364330768585205,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "in the shooting and convincing the apes to attack the humans. He leads them into San Francisco, wher",
+          "title": "Dawn of the Planet of the Apes",
+          "lambda1": 0.006166430188883144,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.1576004028320312,
+          "cosine_rank": 34,
+          "cosine_sim": 1.0585358142852783
+        },
+        {
+          "text": "bigger lies. Orwell regarded propaganda as a feature of all modern governments but especially promin",
+          "title": "Squealer (Animal Farm)",
+          "lambda1": 0.008790563199221368,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3838154077529907,
+          "cosine_rank": 29,
+          "cosine_sim": 1.0447132587432861
+        },
+        {
+          "text": "an elephant on the field and the mess it would make. They assured him that it was just a person in a",
+          "title": "Big Al (mascot)",
+          "lambda1": 0.020117232802570065,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.7166959047317505,
+          "cosine_rank": 14,
+          "cosine_sim": 0.9811654090881348
+        },
+        {
+          "text": "p. 137 Jump up ^ Cambridge Companion to Orwell, p. 142 3. Animal Farm by George Orwell (hide) George",
+          "title": "Squealer (Animal Farm)",
+          "lambda1": 0.021295354148086698,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3838154077529907,
+          "cosine_rank": 13,
+          "cosine_sim": 0.9634850025177002
+        },
+        {
+          "text": "a leader of Animal Farm Squealer is a fictional character, a pig, in George Orwell's Animal Farm. He",
+          "title": "Squealer (Animal Farm)",
+          "lambda1": 0.029163909327500022,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3838154077529907,
+          "cosine_rank": 30,
+          "cosine_sim": 1.0472452640533447
+        }
+      ],
+      "expected_answer": "police officer",
+      "expected_title": "Shooting an Elephant",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "where did lord of the rings get filmed",
+      "verified_text": "The Lord of the Rings (film series) - wikipedia The Lord of the Rings (film series) This article is about the film series released between 2001 and 2003. For other",
+      "verified_title": "The Lord of the Rings (film series)",
+      "lambda1": 0.0027880727176769577,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.0673261880874634,
+      "cosine_rank": 20,
+      "elapsed": 0.9239082336425781,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "The Lord of the Rings (film series) - wikipedia The Lord of the Rings (film series) This article is ",
+          "title": "The Lord of the Rings (film series)",
+          "lambda1": 0.0027880727176769577,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0673261880874634,
+          "cosine_rank": 20,
+          "cosine_sim": 0.837256908416748
+        },
+        {
+          "text": "The Lord of the Rings: the Battle for Middle - earth II - wikipedia The Lord of the Rings: the Battl",
+          "title": "The Lord of the Rings: The Battle for Middle-earth II",
+          "lambda1": 0.005067341806917744,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0057930946350098,
+          "cosine_rank": 29,
+          "cosine_sim": 0.8524713516235352
+        },
+        {
+          "text": "range of characters and scenes from all three films Directed by Peter Jackson Based on The Lord of t",
+          "title": "The Lord of the Rings (film series)",
+          "lambda1": 0.01699360631927712,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0673261880874634,
+          "cosine_rank": 10,
+          "cosine_sim": 0.7828071117401123
+        },
+        {
+          "text": "films based on The Lord of the Rings, see Middle - earth in film. The Lord of the Rings The poster f",
+          "title": "The Lord of the Rings (film series)",
+          "lambda1": 0.026376829983533953,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0673261880874634,
+          "cosine_rank": 4,
+          "cosine_sim": 0.7455147504806519
+        },
+        {
+          "text": "to the book since the early 1970s, pitching an adaptation of The Hobbit and two films based on The L",
+          "title": "The Lord of the Rings (film series)",
+          "lambda1": 0.02959024847594826,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0673261880874634,
+          "cosine_rank": 19,
+          "cosine_sim": 0.8358609080314636
+        }
+      ],
+      "expected_answer": "New Zealand",
+      "expected_title": "The Lord of the Rings (film series)",
+      "answer_found": false,
+      "title_match": true
+    },
+    {
+      "query": "who is still alive out of the bee gees",
+      "verified_text": "Beemer was in the role from September 28, 2006, to March 21, 2008. In May 2015, Soap Opera Digest reported the character will be returning for the show's 50th anniversary,",
+      "verified_title": "Shawn-Douglas Brady",
+      "lambda1": 0.014496465440614243,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.366750717163086,
+      "cosine_rank": 24,
+      "elapsed": 0.8947117328643799,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "Beemer was in the role from September 28, 2006, to March 21, 2008. In May 2015, Soap Opera Digest re",
+          "title": "Shawn-Douglas Brady",
+          "lambda1": 0.014496465440614243,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.366750717163086,
+          "cosine_rank": 24,
+          "cosine_sim": 0.8816567659378052
+        },
+        {
+          "text": "albums Here at Last... Bee Gees... Live One Night Only Compilation albums Turn Around, Look at Us Ra",
+          "title": "Turn Around, Look at Me",
+          "lambda1": 0.01571813719364594,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.63249671459198,
+          "cosine_rank": 12,
+          "cosine_sim": 0.7880458831787109
+        },
+        {
+          "text": "and the Bee is a 2006 American drama film written and directed by Doug Atchison. It tells the story ",
+          "title": "Akeelah and the Bee",
+          "lambda1": 0.0199468680116245,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.4281352758407593,
+          "cosine_rank": 40,
+          "cosine_sim": 1.0339823961257935
+        },
+        {
+          "text": "plays The Bee Gees New York Mining Disaster 1941 Soundtracks Melody Saturday Night Fever Live albums",
+          "title": "Turn Around, Look at Me",
+          "lambda1": 0.024129378379097486,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.63249671459198,
+          "cosine_rank": 6,
+          "cosine_sim": 0.735885500907898
+        },
+        {
+          "text": "Bee Gees version (edit) The Bee Gees ' own version was recorded during the sessions for Still Waters",
+          "title": "Heartbreaker (Dionne Warwick song)",
+          "lambda1": 0.024524951324440762,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.175575613975525,
+          "cosine_rank": 15,
+          "cosine_sim": 0.8140393495559692
+        }
+      ],
+      "expected_answer": "Barry",
+      "expected_title": "Bee Gees",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "where did the days of the week originate from",
+      "verified_text": "English word week comes from the Old English wice, ultimately from a Common Germanic * wik\u014dn -, from a root * wik - `` turn, move, change ''. The Germanic",
+      "verified_title": "Week",
+      "lambda1": 0.00019835220270572655,
+      "kernel_dim": 1,
+      "archetype_id": 1,
+      "archetype_dist": 0.9402440190315247,
+      "cosine_rank": 31,
+      "elapsed": 0.8934569358825684,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "English word week comes from the Old English wice, ultimately from a Common Germanic * wik\u014dn -, from",
+          "title": "Week",
+          "lambda1": 0.00019835220270572655,
+          "kernel_dim": 1,
+          "archetype_id": 1,
+          "archetype_dist": 0.9402440190315247,
+          "cosine_rank": 31,
+          "cosine_sim": 0.666266679763794
+        },
+        {
+          "text": "6.2 Modern calendar reforms 7 See also 8 References 9 Further reading Name (edit) The English word w",
+          "title": "Week",
+          "lambda1": 0.007824913733662484,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.9402440190315247,
+          "cosine_rank": 13,
+          "cosine_sim": 0.5859965085983276
+        },
+        {
+          "text": "-- although not strictly part of -- the Gregorian calendar. The days of the week were named after th",
+          "title": "Week",
+          "lambda1": 0.014738379886918083,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.9402440190315247,
+          "cosine_rank": 1,
+          "cosine_sim": 0.46081313490867615
+        },
+        {
+          "text": "(edit) A week is defined as an interval of exactly seven days, so that technically, except at daylig",
+          "title": "Week",
+          "lambda1": 0.022311576877821215,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.9402440190315247,
+          "cosine_rank": 26,
+          "cosine_sim": 0.6568670272827148
+        },
+        {
+          "text": "Monday through to Sunday. The term `` week '' is sometimes expanded to refer to other time units com",
+          "title": "Week",
+          "lambda1": 0.04545863006091495,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.9402440190315247,
+          "cosine_rank": 10,
+          "cosine_sim": 0.5584926605224609
+        }
+      ],
+      "expected_answer": "sun's day",
+      "expected_title": "Names of the days of the week",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who gets married in a midsummer nights dream",
+      "verified_text": "543 - 575 William Shakespeare's A Midsummer Night's Dream Characters Lovers Theseus and Hippolyta Oberon and Titania Hermia and Lysander Helena and Demetrius Mechanicals Nick Bottom Peter Quince Francis Flute",
+      "verified_title": "Hermia",
+      "lambda1": 0.010185628824870077,
+      "kernel_dim": 0,
+      "archetype_id": 2,
+      "archetype_dist": 1.2157562971115112,
+      "cosine_rank": 24,
+      "elapsed": 0.9778537750244141,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "543 - 575 William Shakespeare's A Midsummer Night's Dream Characters Lovers Theseus and Hippolyta Ob",
+          "title": "Hermia",
+          "lambda1": 0.010185628824870077,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 1.2157562971115112,
+          "cosine_rank": 24,
+          "cosine_sim": 0.8974180221557617
+        },
+        {
+          "text": "Hermia - wikipedia Hermia Hermia A Midsummer Night's Dream character Hermia and Lysander by John Sim",
+          "title": "Hermia",
+          "lambda1": 0.018705973988734026,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 1.2157562971115112,
+          "cosine_rank": 34,
+          "cosine_sim": 0.9263788461685181
+        },
+        {
+          "text": "Midsummer Night's Dream (albeit a less tragic and dark representation) in that a girl, Hermia, is no",
+          "title": "Pyramus and Thisbe",
+          "lambda1": 0.020241018815008543,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 0.9318806529045105,
+          "cosine_rank": 1,
+          "cosine_sim": 0.6143969297409058
+        },
+        {
+          "text": "David. `` Exchanging Visions: Reading A Midsummer Night's Dream. '' ELH 49.3 (Autumn 1982) pp. 543 -",
+          "title": "Hermia",
+          "lambda1": 0.021874601359598716,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 1.2157562971115112,
+          "cosine_rank": 4,
+          "cosine_sim": 0.7265803217887878
+        },
+        {
+          "text": "and Francis Flute, as Thisbe. The theme of forbidden love is also present in A Midsummer Night's Dre",
+          "title": "Pyramus and Thisbe",
+          "lambda1": 0.022529207988499222,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 0.9318806529045105,
+          "cosine_rank": 30,
+          "cosine_sim": 0.9109516739845276
+        }
+      ],
+      "expected_answer": "Hippolyta and Theseus",
+      "expected_title": "A Midsummer Night's Dream",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who proposed the creation of the bank of north america modeled on the bank of england",
+      "verified_text": "George Washington. The First Bank of the United States was headquartered in Philadelphia, but had branches in other major cities. The Bank performed the basic banking functions of accepting deposits,",
+      "verified_title": "Federal Reserve Bank",
+      "lambda1": 0.01305276379841713,
+      "kernel_dim": 0,
+      "archetype_id": 2,
+      "archetype_dist": 0.8942300081253052,
+      "cosine_rank": 9,
+      "elapsed": 1.0763494968414307,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "George Washington. The First Bank of the United States was headquartered in Philadelphia, but had br",
+          "title": "Federal Reserve Bank",
+          "lambda1": 0.01305276379841713,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 0.8942300081253052,
+          "cosine_rank": 9,
+          "cosine_sim": 0.793207585811615
+        },
+        {
+          "text": "of a central bank. The Bank Bill created by Hamilton was a proposal to institute a national bank in ",
+          "title": "Federal Reserve Bank",
+          "lambda1": 0.019971354533779587,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 0.8942300081253052,
+          "cosine_rank": 13,
+          "cosine_sim": 0.8143399953842163
+        },
+        {
+          "text": "the First Bank of the United States was established in 1791, its charter signed by George Washington",
+          "title": "Federal Reserve Bank",
+          "lambda1": 0.020614559928093856,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 0.8942300081253052,
+          "cosine_rank": 18,
+          "cosine_sim": 0.838737964630127
+        },
+        {
+          "text": "a national bank in order to improve the economic stability of the nation after its independence from",
+          "title": "Federal Reserve Bank",
+          "lambda1": 0.023852036897745885,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 0.8942300081253052,
+          "cosine_rank": 21,
+          "cosine_sim": 0.8535705208778381
+        },
+        {
+          "text": "Bank of England. In 2003 and 2004 the company supplied banknotes to Iraq. The company was recognised",
+          "title": "De La Rue",
+          "lambda1": 0.028560526311139693,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9766174554824829,
+          "cosine_rank": 37,
+          "cosine_sim": 0.9188719987869263
+        }
+      ],
+      "expected_answer": "Alexander Hamilton",
+      "expected_title": "First Bank of the United States",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "what pittsburgh steelers great was the first wide receiver to be named super bowl mvp",
+      "verified_text": "passes for 292 yards, two touchdowns and an interception, was named Super Bowl MVP. The telecast of the game on CBS was seen by an estimated 79.6 million viewers. This",
+      "verified_title": "Super Bowl XXVI",
+      "lambda1": 0.01124870142746434,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 0.7886791825294495,
+      "cosine_rank": 14,
+      "elapsed": 0.9668502807617188,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "passes for 292 yards, two touchdowns and an interception, was named Super Bowl MVP. The telecast of ",
+          "title": "Super Bowl XXVI",
+          "lambda1": 0.01124870142746434,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.7886791825294495,
+          "cosine_rank": 14,
+          "cosine_sim": 0.6914591193199158
+        },
+        {
+          "text": "turnovers. Denver linebacker Von Miller was named Super Bowl MVP. This game was also the final game ",
+          "title": "Super Bowl 50",
+          "lambda1": 0.012258525888863194,
+          "kernel_dim": 0,
+          "archetype_id": 3,
+          "archetype_dist": 0.6991940140724182,
+          "cosine_rank": 39,
+          "cosine_sim": 0.7670224905014038
+        },
+        {
+          "text": "MVP, completed 24 of 35 passes for a Super Bowl - record 331 yards and three touchdowns. He also bro",
+          "title": "Super Bowl XIX",
+          "lambda1": 0.017683205243358868,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9563127756118774,
+          "cosine_rank": 21,
+          "cosine_sim": 0.7173193693161011
+        },
+        {
+          "text": "quarterback Joe Flacco, who completed 22 of 33 passes for 287 yards and three touchdowns, became the",
+          "title": "Super Bowl XLVII",
+          "lambda1": 0.01993336685314883,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.874286413192749,
+          "cosine_rank": 10,
+          "cosine_sim": 0.6793265342712402
+        },
+        {
+          "text": "became the fourth quarterback in a row to be named Super Bowl MVP, after Drew Brees at Super Bowl XL",
+          "title": "Super Bowl XLVII",
+          "lambda1": 0.024618851236103287,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.874286413192749,
+          "cosine_rank": 4,
+          "cosine_sim": 0.6284337043762207
+        }
+      ],
+      "expected_answer": "Lynn Swann",
+      "expected_title": "Super Bowl Most Valuable Player Award",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "how do you get your name on hollywood walk of fame",
+      "verified_text": "to do so. The group received a star on the Hollywood Walk of Fame on April 22, 2013. Contents (hide) 1 History 1.1 1990 -- 1994: Formation and early years",
+      "verified_title": "Backstreet Boys",
+      "lambda1": 0.006960703119951655,
+      "kernel_dim": 0,
+      "archetype_id": 6,
+      "archetype_dist": 1.272843599319458,
+      "cosine_rank": 20,
+      "elapsed": 0.9496822357177734,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "to do so. The group received a star on the Hollywood Walk of Fame on April 22, 2013. Contents (hide)",
+          "title": "Backstreet Boys",
+          "lambda1": 0.006960703119951655,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.272843599319458,
+          "cosine_rank": 20,
+          "cosine_sim": 0.7422192096710205
+        },
+        {
+          "text": "a star on the Hollywood Walk of Fame in 1960, the Academy Honorary Award for lifetime achievement in",
+          "title": "Alec Guinness",
+          "lambda1": 0.014318020005829936,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 1.2575819492340088,
+          "cosine_rank": 37,
+          "cosine_sim": 0.8514146208763123
+        },
+        {
+          "text": "the National Medal of Arts. Harry Belafonte, Quincy Jones, Alan Menken, Liza Minnelli, and Barbra St",
+          "title": "List of people who have won Academy, Emmy, Grammy, and Tony Awards",
+          "lambda1": 0.014541713138857026,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.4257181882858276,
+          "cosine_rank": 43,
+          "cosine_sim": 0.8858985900878906
+        },
+        {
+          "text": "Screen. On January 29, 2014, Hines received the 2,516 th star on the Hollywood Walk of Fame. Persona",
+          "title": "Cheryl Hines",
+          "lambda1": 0.024097541909968642,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 1.1481150388717651,
+          "cosine_rank": 47,
+          "cosine_sim": 0.8989627361297607
+        },
+        {
+          "text": "that ``... peddled a new intangible -- fame. '' Early Hollywood studios tightly controlled who was a",
+          "title": "Movie star",
+          "lambda1": 0.028586780297157468,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.5620052814483643,
+          "cosine_rank": 31,
+          "cosine_sim": 0.817495584487915
+        }
+      ],
+      "expected_answer": "achievement in the entertainment industry",
+      "expected_title": "Hollywood Walk of Fame",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "where does the lub dub sound come from",
+      "verified_text": "made by Disney, but also the only dub made in any African language, other than Arabic. In 2003, in the Arabic and Polish versions, the song was re-dubbed, while the",
+      "verified_title": "Circle of Life",
+      "lambda1": 0.0077358880878624185,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.2441763877868652,
+      "cosine_rank": 11,
+      "elapsed": 0.9427974224090576,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "made by Disney, but also the only dub made in any African language, other than Arabic. In 2003, in t",
+          "title": "Circle of Life",
+          "lambda1": 0.0077358880878624185,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.2441763877868652,
+          "cosine_rank": 11,
+          "cosine_sim": 1.1156556606292725
+        },
+        {
+          "text": "'' in an interview with Sound on Sound: `` Writing ' Somebody ' was a gradual and linear process. I ",
+          "title": "Somebody That I Used to Know",
+          "lambda1": 0.00979963582546194,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.1451560258865356,
+          "cosine_rank": 20,
+          "cosine_sim": 1.1480579376220703
+        },
+        {
+          "text": "dub was made in South Africa. This is not just the only Zulu dub ever made by Disney, but also the o",
+          "title": "Circle of Life",
+          "lambda1": 0.011229214909740985,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.2441763877868652,
+          "cosine_rank": 6,
+          "cosine_sim": 1.0778822898864746
+        },
+        {
+          "text": "described as a turning point in the development of a commercialized trance sound. This sound shared ",
+          "title": "Better Off Alone",
+          "lambda1": 0.013451261648962655,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.026829719543457,
+          "cosine_rank": 31,
+          "cosine_sim": 1.1682889461517334
+        },
+        {
+          "text": "the release's production, writing that it `` revels in the hazy drone of the ' Toronto Sound ' that ",
+          "title": "If You're Reading This It's Too Late",
+          "lambda1": 0.01810082307655142,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.1652038097381592,
+          "cosine_rank": 25,
+          "cosine_sim": 1.1597681045532227
+        }
+      ],
+      "expected_answer": "produced by the closing of the atrioventricular valves and semilunar valves, respectively",
+      "expected_title": "Heart sounds",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "when did the first season of the 100 come out",
+      "verified_text": "64 episodes of The 100 have aired. Contents (hide) 1 Series overview 2 Episodes 2.1 Season 1 (2014) 2.2 Season 2 (2014 -- 15) 2.3 Season 3 (2016) 2.4 Season",
+      "verified_title": "List of The 100 episodes",
+      "lambda1": 0.014245591185218842,
+      "kernel_dim": 0,
+      "archetype_id": 5,
+      "archetype_dist": 1.0679436922073364,
+      "cosine_rank": 3,
+      "elapsed": 0.9379532337188721,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "64 episodes of The 100 have aired. Contents (hide) 1 Series overview 2 Episodes 2.1 Season 1 (2014) ",
+          "title": "List of The 100 episodes",
+          "lambda1": 0.014245591185218842,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0679436922073364,
+          "cosine_rank": 3,
+          "cosine_sim": 0.5758052468299866
+        },
+        {
+          "text": "the series reach its 100th episode, which aired on March 6, 2016 as the mid-season premiere. New cha",
+          "title": "Once Upon a Time (season 5)",
+          "lambda1": 0.02000060542884218,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0643588304519653,
+          "cosine_rank": 12,
+          "cosine_sim": 0.8135605454444885
+        },
+        {
+          "text": "The Hundred) is an American post-apocalyptic science fiction drama television series developed by Ja",
+          "title": "List of The 100 episodes",
+          "lambda1": 0.022009087091341584,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0679436922073364,
+          "cosine_rank": 11,
+          "cosine_sim": 0.7917864322662354
+        },
+        {
+          "text": "May 2018, the series was renewed for a sixth season. As of June 5, 2018, 64 episodes of The 100 have",
+          "title": "List of The 100 episodes",
+          "lambda1": 0.02727035880784514,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0679436922073364,
+          "cosine_rank": 5,
+          "cosine_sim": 0.6399965286254883
+        },
+        {
+          "text": "List of the 100 episodes - Wikipedia List of the 100 episodes The 100 (pronounced The Hundred) is an",
+          "title": "List of The 100 episodes",
+          "lambda1": 0.030563957057258923,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.0679436922073364,
+          "cosine_rank": 4,
+          "cosine_sim": 0.6205993890762329
+        }
+      ],
+      "expected_answer": "March 19, 2014",
+      "expected_title": "The 100 (TV series)",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "what is the shape of the ohio flag called",
+      "verified_text": "which Ohio is world - famous. The mound at Eagle St. Cemetery belongs to the Adena culture. Further mounds were found in the east of Tinker's Creek. Horticulture becomes even",
+      "verified_title": "History of Cleveland",
+      "lambda1": 0.01508126516991632,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.0694067478179932,
+      "cosine_rank": 32,
+      "elapsed": 0.8658854961395264,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "which Ohio is world - famous. The mound at Eagle St. Cemetery belongs to the Adena culture. Further ",
+          "title": "History of Cleveland",
+          "lambda1": 0.01508126516991632,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0694067478179932,
+          "cosine_rank": 32,
+          "cosine_sim": 0.9109631776809692
+        },
+        {
+          "text": "Ohio to be an Adena mound. It is the largest effigy mound in the United States and one of Ohio's bes",
+          "title": "History of Ohio",
+          "lambda1": 0.01873405755347412,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0423704385757446,
+          "cosine_rank": 33,
+          "cosine_sim": 0.9126050472259521
+        },
+        {
+          "text": "History of Ohio - Wikipedia History of Ohio Jump to: navigation, search The history of Ohio includes",
+          "title": "History of Ohio",
+          "lambda1": 0.020022281363261188,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0423704385757446,
+          "cosine_rank": 39,
+          "cosine_sim": 0.9438947439193726
+        },
+        {
+          "text": "in the area just north of the Ohio River as well as in some urban ethnic wards. Some historians have",
+          "title": "Copperhead (politics)",
+          "lambda1": 0.02461749017528583,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.8135043978691101,
+          "cosine_rank": 37,
+          "cosine_sim": 0.9304376840591431
+        },
+        {
+          "text": "more important, the same with maize. The huge mounds concentrate much more in southern Ohio, but the",
+          "title": "History of Cleveland",
+          "lambda1": 0.02467711166937334,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0694067478179932,
+          "cosine_rank": 41,
+          "cosine_sim": 0.9556871652603149
+        }
+      ],
+      "expected_answer": "swallowtail",
+      "expected_title": "Flag of Ohio",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "when was the eight hour work day established",
+      "verified_text": "States) is an annual holiday to celebrate the achievements of workers. Labour Day has its origins in the labour union movement, specifically the eight - hour day movement, which advocated",
+      "verified_title": "Labour Day",
+      "lambda1": 0.007528638166308596,
+      "kernel_dim": 0,
+      "archetype_id": 6,
+      "archetype_dist": 0.6961455345153809,
+      "cosine_rank": 37,
+      "elapsed": 0.8893802165985107,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "States) is an annual holiday to celebrate the achievements of workers. Labour Day has its origins in",
+          "title": "Labour Day",
+          "lambda1": 0.007528638166308596,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 0.6961455345153809,
+          "cosine_rank": 37,
+          "cosine_sim": 0.8147375583648682
+        },
+        {
+          "text": "eight hours for work, eight hours for recreation, and eight hours for rest. For most countries, Labo",
+          "title": "Labour Day",
+          "lambda1": 0.00757410855479217,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 0.6961455345153809,
+          "cosine_rank": 10,
+          "cosine_sim": 0.6193569898605347
+        },
+        {
+          "text": "success, and they are noted as being among the first organised workers in the world to achieve an 8 ",
+          "title": "Labour Day",
+          "lambda1": 0.012478555919669364,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 0.6961455345153809,
+          "cosine_rank": 45,
+          "cosine_sim": 0.8489935398101807
+        },
+        {
+          "text": "origins in the labour union movement, specifically the eight - hour day movement, which advocated ei",
+          "title": "Labour Day",
+          "lambda1": 0.013781077920840934,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 0.6961455345153809,
+          "cosine_rank": 2,
+          "cosine_sim": 0.5493841171264648
+        },
+        {
+          "text": "of Labor, which passed a resolution calling for adoption of the eight - hour day effective May 1, 18",
+          "title": "Labor Day",
+          "lambda1": 0.03613292280180913,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.7411605715751648,
+          "cosine_rank": 1,
+          "cosine_sim": 0.5026035308837891
+        }
+      ],
+      "expected_answer": "19 May 1869",
+      "expected_title": "Eight-hour day",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "what does the s on supermans suit mean",
+      "verified_text": "series says the S - Shield is the Kryptonian symbol for `` hope '' and Superman believes it may have begun as a coat of arms for the House of",
+      "verified_title": "Superman logo",
+      "lambda1": 0.018185626567045855,
+      "kernel_dim": 0,
+      "archetype_id": 1,
+      "archetype_dist": 1.3296046257019043,
+      "cosine_rank": 4,
+      "elapsed": 0.9212124347686768,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "series says the S - Shield is the Kryptonian symbol for `` hope '' and Superman believes it may have",
+          "title": "Superman logo",
+          "lambda1": 0.018185626567045855,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.3296046257019043,
+          "cosine_rank": 4,
+          "cosine_sim": 0.7696009278297424
+        },
+        {
+          "text": "a high school hazing tradition) as a reference. Representations (edit) Initially, the S - shield had",
+          "title": "Superman logo",
+          "lambda1": 0.02311075766739743,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.3296046257019043,
+          "cosine_rank": 1,
+          "cosine_sim": 0.6433779001235962
+        },
+        {
+          "text": "Lois Lane what the `` S '' stands for, Superman states that it is not an `` S '', but rather the Kry",
+          "title": "Superman logo",
+          "lambda1": 0.0254006943693844,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.3296046257019043,
+          "cosine_rank": 2,
+          "cosine_sim": 0.6764020323753357
+        },
+        {
+          "text": "had one meaning: S for Superman. One of the first alternative meanings was presented in Superman: Th",
+          "title": "Superman logo",
+          "lambda1": 0.030216490781558768,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.3296046257019043,
+          "cosine_rank": 0,
+          "cosine_sim": 0.5275624990463257
+        },
+        {
+          "text": "Superman: The Movie, in which it was not an S, but rather the S - shaped Coat of arms of the House o",
+          "title": "Superman logo",
+          "lambda1": 0.032745269668093394,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.3296046257019043,
+          "cosine_rank": 3,
+          "cosine_sim": 0.7509428262710571
+        }
+      ],
+      "expected_answer": "Superman's family crest from his home planet Krypton",
+      "expected_title": "Superman logo",
+      "answer_found": false,
+      "title_match": true
+    },
+    {
+      "query": "who sings the theme song to kim possible",
+      "verified_text": "of the Movie Soundtrack '' for his contribution to movies. American rapper and singer Lil ' Kim is known as the `` Queen of Rap ''. English singer Vera Lynn",
+      "verified_title": "Honorific nicknames in popular music",
+      "lambda1": 0.012403690132532442,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.1159828901290894,
+      "cosine_rank": 27,
+      "elapsed": 0.9565141201019287,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "of the Movie Soundtrack '' for his contribution to movies. American rapper and singer Lil ' Kim is k",
+          "title": "Honorific nicknames in popular music",
+          "lambda1": 0.012403690132532442,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.1159828901290894,
+          "cosine_rank": 27,
+          "cosine_sim": 0.9590685367584229
+        },
+        {
+          "text": "Cher, Rob asked us if we could sort it out. Two of our writers, Steve Torch and Paul Barry, got invo",
+          "title": "Believe (Cher song)",
+          "lambda1": 0.01450259789145759,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.8186661601066589,
+          "cosine_rank": 48,
+          "cosine_sim": 1.0160120725631714
+        },
+        {
+          "text": "couple of lines, about his long - rumored relationship with Kim Kardashian. '' Rob Markman of MTV st",
+          "title": "Cold (Kanye West song)",
+          "lambda1": 0.01803976866137081,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9035763740539551,
+          "cosine_rank": 39,
+          "cosine_sim": 0.9844198226928711
+        },
+        {
+          "text": "personality and model Kim Kardashian. Tom Breihan of Stereogum described the song as `` a seriously ",
+          "title": "Cold (Kanye West song)",
+          "lambda1": 0.021319598917677436,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9035763740539551,
+          "cosine_rank": 20,
+          "cosine_sim": 0.9204878211021423
+        },
+        {
+          "text": "but not the rest of the song; as we were already writing other songs for Cher, Rob asked us if we co",
+          "title": "Believe (Cher song)",
+          "lambda1": 0.0393673530032545,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.8186661601066589,
+          "cosine_rank": 24,
+          "cosine_sim": 0.9510833024978638
+        }
+      ],
+      "expected_answer": "Christina Milian",
+      "expected_title": "Kim Possible (soundtrack)",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who wrote the theme song for blue bloods",
+      "verified_text": "Blood on the Tracks track listing 10 tracks Side one `` Tangled Up in Blue '' `` Simple Twist of Fate '' `` You're a Big Girl Now '' ``",
+      "verified_title": "Lily, Rosemary and the Jack of Hearts",
+      "lambda1": 0.012769651446970863,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 0.9995744228363037,
+      "cosine_rank": 34,
+      "elapsed": 0.9492650032043457,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "Blood on the Tracks track listing 10 tracks Side one `` Tangled Up in Blue '' `` Simple Twist of Fat",
+          "title": "Lily, Rosemary and the Jack of Hearts",
+          "lambda1": 0.012769651446970863,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9995744228363037,
+          "cosine_rank": 34,
+          "cosine_sim": 0.9968289732933044
+        },
+        {
+          "text": "Blue Bloods (season 1) - wikipedia Blue Bloods (season 1) Jump to: navigation, search Blue Bloods (s",
+          "title": "Blue Bloods (season 1)",
+          "lambda1": 0.019158888189183786,
+          "kernel_dim": 0,
+          "archetype_id": 9,
+          "archetype_dist": 1.0946271419525146,
+          "cosine_rank": 3,
+          "cosine_sim": 0.7467997074127197
+        },
+        {
+          "text": "Erin, Jamie, Henry and Frank. Blue Bloods ' first season aired during the 2010 -- 11 television seas",
+          "title": "Blue Bloods (season 1)",
+          "lambda1": 0.022208489521304782,
+          "kernel_dim": 0,
+          "archetype_id": 9,
+          "archetype_dist": 1.0946271419525146,
+          "cosine_rank": 6,
+          "cosine_sim": 0.8006808757781982
+        },
+        {
+          "text": "Australia 6 DVD release 7 References 8 External links Production (edit) Stephen Gyllenhaal directed ",
+          "title": "Blue Bloods (season 1)",
+          "lambda1": 0.025653984942542143,
+          "kernel_dim": 0,
+          "archetype_id": 9,
+          "archetype_dist": 1.0946271419525146,
+          "cosine_rank": 17,
+          "cosine_sim": 0.936954915523529
+        },
+        {
+          "text": "(2010 - 09 - 24) -- present External links Website www.cbs.com/shows/blue_bloods/ Blue Bloods is an ",
+          "title": "Blue Bloods (TV series)",
+          "lambda1": 0.029085647109122405,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.8322011232376099,
+          "cosine_rank": 13,
+          "cosine_sim": 0.8791714310646057
+        }
+      ],
+      "expected_answer": "Rob Simonsen",
+      "expected_title": "Blue Bloods (TV series)",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who does will smith play for suicide squad",
+      "verified_text": "stars Will Smith as a fictionalized version of himself, a street - smart teenager from West Philadelphia who is sent to move in with his wealthy aunt and uncle in",
+      "verified_title": "The Fresh Prince of Bel-Air",
+      "lambda1": 0.0040176760861963074,
+      "kernel_dim": 0,
+      "archetype_id": 2,
+      "archetype_dist": 1.0294551849365234,
+      "cosine_rank": 3,
+      "elapsed": 0.9874885082244873,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "stars Will Smith as a fictionalized version of himself, a street - smart teenager from West Philadel",
+          "title": "The Fresh Prince of Bel-Air",
+          "lambda1": 0.0040176760861963074,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 1.0294551849365234,
+          "cosine_rank": 3,
+          "cosine_sim": 0.9693161845207214
+        },
+        {
+          "text": "premise of the show. Will Smith is a street smart teenager, born and raised in West Philadelphia. Wh",
+          "title": "The Fresh Prince of Bel-Air",
+          "lambda1": 0.0049330556218502904,
+          "kernel_dim": 0,
+          "archetype_id": 2,
+          "archetype_dist": 1.0294551849365234,
+          "cosine_rank": 6,
+          "cosine_sim": 1.0093022584915161
+        },
+        {
+          "text": "written and directed by David Ayer and stars an ensemble cast featuring Will Smith, Jared Leto, Marg",
+          "title": "Suicide Squad (film)",
+          "lambda1": 0.006404905371259415,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9096408486366272,
+          "cosine_rank": 45,
+          "cosine_sim": 1.206534504890442
+        },
+        {
+          "text": "on the expanding metahuman community while telling her to shut down Task Force X. Cast (edit) Cast o",
+          "title": "Suicide Squad (film)",
+          "lambda1": 0.010450192298982534,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9096408486366272,
+          "cosine_rank": 9,
+          "cosine_sim": 1.031217098236084
+        },
+        {
+          "text": "Ike Barinholtz, Scott Eastwood, and Cara Delevingne. In Suicide Squad, a secret government agency le",
+          "title": "Suicide Squad (film)",
+          "lambda1": 0.011048220207851744,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9096408486366272,
+          "cosine_rank": 4,
+          "cosine_sim": 0.9789990186691284
+        }
+      ],
+      "expected_answer": "Floyd Lawton / Deadshot",
+      "expected_title": "Suicide Squad (film)",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who is the ceo of casey's general store",
+      "verified_text": "Footnotes / references Casey's General Stores, Inc., is a chain of convenience stores in the Midwestern United States, primarily within the states of Iowa, Arkansas, Illinois, Indiana, Missouri, South Dakota,",
+      "verified_title": "Casey's General Stores",
+      "lambda1": 0.007702748629077157,
+      "kernel_dim": 0,
+      "archetype_id": 6,
+      "archetype_dist": 1.3146476745605469,
+      "cosine_rank": 1,
+      "elapsed": 0.8625321388244629,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "Footnotes / references Casey's General Stores, Inc., is a chain of convenience stores in the Midwest",
+          "title": "Casey's General Stores",
+          "lambda1": 0.007702748629077157,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.3146476745605469,
+          "cosine_rank": 1,
+          "cosine_sim": 0.4913531243801117
+        },
+        {
+          "text": "they had paid for it in full and now owned it. Thomas Devlin, a former employee of Mr. T's rental, r",
+          "title": "Rent-A-Center",
+          "lambda1": 0.009011030949422138,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.1709225177764893,
+          "cosine_rank": 41,
+          "cosine_sim": 1.049077033996582
+        },
+        {
+          "text": "(CEO) Anthony Noto (COO + CFO) Board Omid Kordestani (Executive Chairman) Jack Dorsey (CEO) Peter Ch",
+          "title": "List of most-followed Twitter accounts",
+          "lambda1": 0.009325173454867832,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.8733532428741455,
+          "cosine_rank": 38,
+          "cosine_sim": 1.0213418006896973
+        },
+        {
+          "text": "Casey's General stores - wikipedia Casey's General stores `` Casey's '' redirects here. For other us",
+          "title": "Casey's General Stores",
+          "lambda1": 0.010861570085353843,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.3146476745605469,
+          "cosine_rank": 0,
+          "cosine_sim": 0.38040637969970703
+        },
+        {
+          "text": "for site selection, in - store service, and store layout, inventory was controlled by then - COO and",
+          "title": "Apple Store",
+          "lambda1": 0.01352103360953763,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.041203260421753,
+          "cosine_rank": 46,
+          "cosine_sim": 1.0743399858474731
+        }
+      ],
+      "expected_answer": "Terry W. Handley",
+      "expected_title": "Casey's General Stores",
+      "answer_found": false,
+      "title_match": true
+    },
+    {
+      "query": "nigeria became a federation of 19 states in",
+      "verified_text": "Biafra during the Nigerian civil war. 1976 - 1987 In 1976, seven new states were created, making 19 altogether. 1987 - 1991 During this period, there were 21 states and",
+      "verified_title": "States of Nigeria",
+      "lambda1": 0.008440671391633226,
+      "kernel_dim": 0,
+      "archetype_id": 1,
+      "archetype_dist": 0.7443124651908875,
+      "cosine_rank": 8,
+      "elapsed": 0.9266719818115234,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "Biafra during the Nigerian civil war. 1976 - 1987 In 1976, seven new states were created, making 19 ",
+          "title": "States of Nigeria",
+          "lambda1": 0.008440671391633226,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.7443124651908875,
+          "cosine_rank": 8,
+          "cosine_sim": 0.6188713312149048
+        },
+        {
+          "text": "States of Nigeria - wikipedia States of Nigeria States of Nigeria Federated state Location Nigeria N",
+          "title": "States of Nigeria",
+          "lambda1": 0.009687585764095175,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.7443124651908875,
+          "cosine_rank": 4,
+          "cosine_sim": 0.5958705544471741
+        },
+        {
+          "text": "to 30. The latest change, in 1996, resulted in the present number of 36 states. Government (edit) As",
+          "title": "States of Nigeria",
+          "lambda1": 0.018612993401561015,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.7443124651908875,
+          "cosine_rank": 0,
+          "cosine_sim": 0.5166892409324646
+        },
+        {
+          "text": "political entity that shares sovereignty with the Federal Government of Nigeria. There are 36 States",
+          "title": "States of Nigeria",
+          "lambda1": 0.022381674043931654,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.7443124651908875,
+          "cosine_rank": 3,
+          "cosine_sim": 0.5915758013725281
+        },
+        {
+          "text": "Nigeria to Nigeria Passport Visa requirements Other countries Atlas A Nigerian State is a federated ",
+          "title": "States of Nigeria",
+          "lambda1": 0.03523629543847072,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.7443124651908875,
+          "cosine_rank": 1,
+          "cosine_sim": 0.5243004560470581
+        }
+      ],
+      "expected_answer": "1976-1987",
+      "expected_title": "States of Nigeria",
+      "answer_found": false,
+      "title_match": true
+    },
+    {
+      "query": "when can you run with the bulls in spain",
+      "verified_text": "in the event are still those that will feature in the afternoon bullfight of the same day. Spanish tradition says the true origin of the run began in northeastern Spain",
+      "verified_title": "Running of the Bulls",
+      "lambda1": 0.008718798738642876,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.3247945308685303,
+      "cosine_rank": 1,
+      "elapsed": 0.7908341884613037,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "in the event are still those that will feature in the afternoon bullfight of the same day. Spanish t",
+          "title": "Running of the Bulls",
+          "lambda1": 0.008718798738642876,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3247945308685303,
+          "cosine_rank": 1,
+          "cosine_sim": 0.6083577871322632
+        },
+        {
+          "text": "Running of the Bulls (in Spanish: encierro, from the verb encerrar, `` to corral, to enclose '') is ",
+          "title": "Running of the Bulls",
+          "lambda1": 0.021162542914576952,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3247945308685303,
+          "cosine_rank": 2,
+          "cosine_sim": 0.7031213641166687
+        },
+        {
+          "text": "must be at least 18 years old, run in the same direction as the bulls, not incite the bulls, and not",
+          "title": "Running of the Bulls",
+          "lambda1": 0.021259621060064418,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3247945308685303,
+          "cosine_rank": 4,
+          "cosine_sim": 0.7390182614326477
+        },
+        {
+          "text": "Running of the bulls - wikipedia Running of the bulls Jump to: navigation, search Running of the Bul",
+          "title": "Running of the Bulls",
+          "lambda1": 0.027347171764854815,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3247945308685303,
+          "cosine_rank": 0,
+          "cosine_sim": 0.5855231285095215
+        },
+        {
+          "text": "newspaper rolled to draw the bulls ' attention from them if necessary. The running (edit) Pamplona, ",
+          "title": "Running of the Bulls",
+          "lambda1": 0.04875561341402597,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.3247945308685303,
+          "cosine_rank": 3,
+          "cosine_sim": 0.7155145406723022
+        }
+      ],
+      "expected_answer": "6\u201314 July",
+      "expected_title": "Running of the Bulls",
+      "answer_found": false,
+      "title_match": true
+    },
+    {
+      "query": "why did britain made australia a penal colony",
+      "verified_text": "along the south - eastern coast and River Murray. The state's colonial origins are unique in Australia as a freely settled, planned British province, rather than as a convict settlement.",
+      "verified_title": "South Australia",
+      "lambda1": 0.007046523274105096,
+      "kernel_dim": 0,
+      "archetype_id": 5,
+      "archetype_dist": 1.047094464302063,
+      "cosine_rank": 40,
+      "elapsed": 0.9207143783569336,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "along the south - eastern coast and River Murray. The state's colonial origins are unique in Austral",
+          "title": "South Australia",
+          "lambda1": 0.007046523274105096,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.047094464302063,
+          "cosine_rank": 40,
+          "cosine_sim": 0.7814662456512451
+        },
+        {
+          "text": "in 1606, Australia's eastern half was claimed by Great Britain in 1770 and initially settled through",
+          "title": "Australia",
+          "lambda1": 0.014026307914703936,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.8706538081169128,
+          "cosine_rank": 21,
+          "cosine_sim": 0.6918754577636719
+        },
+        {
+          "text": "convicts. On 6 December 1785, Orders in Council were issued in London for the establishment of a pen",
+          "title": "First Fleet",
+          "lambda1": 0.015906695646490054,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.092850923538208,
+          "cosine_rank": 39,
+          "cosine_sim": 0.7798362374305725
+        },
+        {
+          "text": "in 1869. In 1858 the British again established a colony at Port Blair, which proved to be more perma",
+          "title": "Andaman and Nicobar Islands",
+          "lambda1": 0.018363218900529277,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.8273373246192932,
+          "cosine_rank": 35,
+          "cosine_sim": 0.746505618095398
+        },
+        {
+          "text": "from Portsmouth, England, on 13 May 1787 to found the penal colony that became the first European se",
+          "title": "First Fleet",
+          "lambda1": 0.022825486414427033,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.092850923538208,
+          "cosine_rank": 11,
+          "cosine_sim": 0.6182601451873779
+        }
+      ],
+      "expected_answer": "Seeking to pre-empt the French colonial empire from expanding into the region",
+      "expected_title": "Convicts in Australia",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who sang the song you were always on my mind",
+      "verified_text": "and Wayne Carson, recorded first by Gwen McCrae (as `` You Were Always On My Mind '') and Brenda Lee in 1972. AllMusic lists over 300 recorded releases of the",
+      "verified_title": "Always on My Mind",
+      "lambda1": 0.012392514121535149,
+      "kernel_dim": 0,
+      "archetype_id": 5,
+      "archetype_dist": 1.4405467510223389,
+      "cosine_rank": 3,
+      "elapsed": 0.847470760345459,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "and Wayne Carson, recorded first by Gwen McCrae (as `` You Were Always On My Mind '') and Brenda Lee",
+          "title": "Always on My Mind",
+          "lambda1": 0.012392514121535149,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.4405467510223389,
+          "cosine_rank": 3,
+          "cosine_sim": 0.5779125094413757
+        },
+        {
+          "text": "on My Mind '' is an American country music song by Johnny Christopher, Mark James and Wayne Carson, ",
+          "title": "Always on My Mind",
+          "lambda1": 0.017127065640796427,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.4405467510223389,
+          "cosine_rank": 1,
+          "cosine_sim": 0.49174508452415466
+        },
+        {
+          "text": "other uses, see Always on My Mind (disambiguation). `` Always on My Mind '' Song by Gwen McCrae Publ",
+          "title": "Always on My Mind",
+          "lambda1": 0.018379261918779914,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.4405467510223389,
+          "cosine_rank": 2,
+          "cosine_sim": 0.5051292777061462
+        },
+        {
+          "text": "1976 Greatest Hits but, as with `` Carolina in My Mind, '' also from James Taylor, he had to re-reco",
+          "title": "Something in the Way She Moves",
+          "lambda1": 0.02435321683865341,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.187764048576355,
+          "cosine_rank": 44,
+          "cosine_sim": 0.9224797487258911
+        },
+        {
+          "text": "Always on My Mind - wikipedia Always on My Mind Jump to: navigation, search For other uses, see Alwa",
+          "title": "Always on My Mind",
+          "lambda1": 0.030329493024049872,
+          "kernel_dim": 0,
+          "archetype_id": 5,
+          "archetype_dist": 1.4405467510223389,
+          "cosine_rank": 0,
+          "cosine_sim": 0.4800170063972473
+        }
+      ],
+      "expected_answer": "Gwen McCrae",
+      "expected_title": "Always on My Mind",
+      "answer_found": true,
+      "title_match": true
+    },
+    {
+      "query": "where did the idea of pirates of the caribbean come from",
+      "verified_text": "of approximately 1650 to 1680, characterized by Anglo - French seamen based on Jamaica and Tortuga attacking Spanish colonies and shipping in the Caribbean and eastern Pacific The Pirate Round",
+      "verified_title": "Golden Age of Piracy",
+      "lambda1": 0.010058213910045945,
+      "kernel_dim": 0,
+      "archetype_id": 6,
+      "archetype_dist": 1.243578553199768,
+      "cosine_rank": 34,
+      "elapsed": 0.9448325634002686,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "of approximately 1650 to 1680, characterized by Anglo - French seamen based on Jamaica and Tortuga a",
+          "title": "Golden Age of Piracy",
+          "lambda1": 0.010058213910045945,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.243578553199768,
+          "cosine_rank": 34,
+          "cosine_sim": 0.8521856069564819
+        },
+        {
+          "text": "most include at least some portion of the third. The modern conception of pirates as depicted in pop",
+          "title": "Golden Age of Piracy",
+          "lambda1": 0.010333453260988307,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.243578553199768,
+          "cosine_rank": 35,
+          "cosine_sim": 0.8561521768569946
+        },
+        {
+          "text": "(edit) Main article: Piracy in the Caribbean Piracy arose out of, and mirrored on a smaller scale, t",
+          "title": "Golden Age of Piracy",
+          "lambda1": 0.013886789144452832,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.243578553199768,
+          "cosine_rank": 9,
+          "cosine_sim": 0.7123994827270508
+        },
+        {
+          "text": "time, including the empires of Britain, Spain, the Netherlands, Portugal and France. Most of these p",
+          "title": "Golden Age of Piracy",
+          "lambda1": 0.02106159757652528,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.243578553199768,
+          "cosine_rank": 21,
+          "cosine_sim": 0.8139482736587524
+        },
+        {
+          "text": "Ocean pirates of the 1690s, and the pirates of the years 1716 -- 1726. Origins (edit) Main article: ",
+          "title": "Golden Age of Piracy",
+          "lambda1": 0.022070954570032636,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.243578553199768,
+          "cosine_rank": 12,
+          "cosine_sim": 0.7326214909553528
+        }
+      ],
+      "expected_answer": "pirate legends and folklore",
+      "expected_title": "Pirates of the Caribbean",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "when did the olympics start every 2 years",
+      "verified_text": "Olympics appearances (overview) 1896 1900 1904 1908 1912 1920 1924 1928 1932 1936 1948 1952 1956 1960 1964 1968 1972 1976 1980 1984 1988 1992 2000 2008 2012 2016 Other",
+      "verified_title": "Australia at the 1956 Summer Olympics",
+      "lambda1": 0.00881487292375443,
+      "kernel_dim": 0,
+      "archetype_id": 1,
+      "archetype_dist": 0.8958645462989807,
+      "cosine_rank": 9,
+      "elapsed": 0.9544715881347656,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "Olympics appearances (overview) 1896 1900 1904 1908 1912 1920 1924 1928 1932 1936 1948 1952 1956 196",
+          "title": "Australia at the 1956 Summer Olympics",
+          "lambda1": 0.00881487292375443,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.8958645462989807,
+          "cosine_rank": 9,
+          "cosine_sim": 0.6906653046607971
+        },
+        {
+          "text": "the 1908 Summer Olympics. Since 1924, the sport has been a part of the Winter Olympic Games. Men's s",
+          "title": "Figure skating at the Olympic Games",
+          "lambda1": 0.012667967860442254,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 0.9777359366416931,
+          "cosine_rank": 45,
+          "cosine_sim": 0.8136618137359619
+        },
+        {
+          "text": "of the worldwide modern Olympic movement. The IOC organises the modern Olympic Games and Youth Olymp",
+          "title": "International Olympic Committee",
+          "lambda1": 0.01930698166331404,
+          "kernel_dim": 0,
+          "archetype_id": 3,
+          "archetype_dist": 1.0372471809387207,
+          "cosine_rank": 16,
+          "cosine_sim": 0.7392312288284302
+        },
+        {
+          "text": "Olympic Games, held in summer and winter, every four years. The first Summer Olympics organised by t",
+          "title": "International Olympic Committee",
+          "lambda1": 0.025742858988308616,
+          "kernel_dim": 0,
+          "archetype_id": 3,
+          "archetype_dist": 1.0372471809387207,
+          "cosine_rank": 4,
+          "cosine_sim": 0.645972490310669
+        },
+        {
+          "text": "the same year. After that year, however, the IOC shifted the Winter Olympics to the even years betwe",
+          "title": "International Olympic Committee",
+          "lambda1": 0.029997517268186908,
+          "kernel_dim": 0,
+          "archetype_id": 3,
+          "archetype_dist": 1.0372471809387207,
+          "cosine_rank": 13,
+          "cosine_sim": 0.7240140438079834
+        }
+      ],
+      "expected_answer": "1994",
+      "expected_title": "Winter Olympic Games",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "who is allowed to print money in the us",
+      "verified_text": "Printing (BEP) and are not worth anything more than face value on the collectors ' market. Certain conventions and tourism / convention bureaus capitalize on the rarity of $2 bills",
+      "verified_title": "United States two-dollar bill",
+      "lambda1": 0.011401183061589428,
+      "kernel_dim": 0,
+      "archetype_id": 1,
+      "archetype_dist": 1.0595998764038086,
+      "cosine_rank": 7,
+      "elapsed": 1.0531730651855469,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "Printing (BEP) and are not worth anything more than face value on the collectors ' market. Certain c",
+          "title": "United States two-dollar bill",
+          "lambda1": 0.011401183061589428,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.0595998764038086,
+          "cosine_rank": 7,
+          "cosine_sim": 0.828862190246582
+        },
+        {
+          "text": "using computer printers. However, these bills are not authorized by the Bureau of Engraving and Prin",
+          "title": "United States two-dollar bill",
+          "lambda1": 0.018045815995717522,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.0595998764038086,
+          "cosine_rank": 1,
+          "cosine_sim": 0.7092443704605103
+        },
+        {
+          "text": "in recent years merely by adding colors and special graphics to regular issue bills by using compute",
+          "title": "United States two-dollar bill",
+          "lambda1": 0.020827246785294636,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.0595998764038086,
+          "cosine_rank": 5,
+          "cosine_sim": 0.8045399188995361
+        },
+        {
+          "text": "owned by De La Rue, which prints Bank of England banknotes. Banknotes (edit) De La Rue sells high - ",
+          "title": "De La Rue",
+          "lambda1": 0.02176475593073275,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.7310954928398132,
+          "cosine_rank": 8,
+          "cosine_sim": 0.8487280607223511
+        },
+        {
+          "text": "Rue sells high - security paper and printing technology for over 150 national currencies. Security p",
+          "title": "De La Rue",
+          "lambda1": 0.02659447499184429,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.7310954928398132,
+          "cosine_rank": 29,
+          "cosine_sim": 0.9263325929641724
+        }
+      ],
+      "expected_answer": "the US Treasury Department",
+      "expected_title": "Monetary policy of the United States",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "when was countrywide bought by bank of america",
+      "verified_text": "processing and loan servicing. On January 11, 2008, Bank of America announced that it planned to purchase Countrywide Financial for $4.1 billion in stock. On June 5, 2008, Bank of",
+      "verified_title": "Bank of America Home Loans",
+      "lambda1": 0.008356745903705831,
+      "kernel_dim": 0,
+      "archetype_id": 4,
+      "archetype_dist": 1.4412645101547241,
+      "cosine_rank": 2,
+      "elapsed": 0.874133825302124,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "processing and loan servicing. On January 11, 2008, Bank of America announced that it planned to pur",
+          "title": "Bank of America Home Loans",
+          "lambda1": 0.008356745903705831,
+          "kernel_dim": 0,
+          "archetype_id": 4,
+          "archetype_dist": 1.4412645101547241,
+          "cosine_rank": 2,
+          "cosine_sim": 0.4392906427383423
+        },
+        {
+          "text": "It followed the Bank of North America, the nation's first de facto central bank. Establishment of th",
+          "title": "First Bank of the United States",
+          "lambda1": 0.020104298758856283,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.337781548500061,
+          "cosine_rank": 44,
+          "cosine_sim": 1.0819721221923828
+        },
+        {
+          "text": "Bank of America. On July 1, 2008, Bank of America Corporation completed its purchase of Countrywide ",
+          "title": "Bank of America Home Loans",
+          "lambda1": 0.02048420651408482,
+          "kernel_dim": 0,
+          "archetype_id": 4,
+          "archetype_dist": 1.4412645101547241,
+          "cosine_rank": 0,
+          "cosine_sim": 0.22947239875793457
+        },
+        {
+          "text": "First bank of the United States - wikipedia First bank of the United States Jump to: navigation, sea",
+          "title": "First Bank of the United States",
+          "lambda1": 0.02134520577985943,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.337781548500061,
+          "cosine_rank": 40,
+          "cosine_sim": 1.0756480693817139
+        },
+        {
+          "text": "2008, Bank of America purchased the failing Countrywide Financial for $4.1 billion. In 2006, Country",
+          "title": "Bank of America Home Loans",
+          "lambda1": 0.05330973537824152,
+          "kernel_dim": 0,
+          "archetype_id": 4,
+          "archetype_dist": 1.4412645101547241,
+          "cosine_rank": 1,
+          "cosine_sim": 0.4095672369003296
+        }
+      ],
+      "expected_answer": "July 1, 2008",
+      "expected_title": "Bank of America Home Loans",
+      "answer_found": false,
+      "title_match": true
+    },
+    {
+      "query": "where did the trail of tears ended in what current state",
+      "verified_text": "and half came overland on the California Trail and the Gila River trail; forty - niners often faced substantial hardships on the trip. While most of the newly arrived were",
+      "verified_title": "California Gold Rush",
+      "lambda1": 0.016733661209022428,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 0.9839162230491638,
+      "cosine_rank": 37,
+      "elapsed": 1.1196951866149902,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "and half came overland on the California Trail and the Gila River trail; forty - niners often faced ",
+          "title": "California Gold Rush",
+          "lambda1": 0.016733661209022428,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 0.9839162230491638,
+          "cosine_rank": 37,
+          "cosine_sim": 1.0562376976013184
+        },
+        {
+          "text": "state of Oklahoma. Their journey west became known as the `` Trail of Tears '' for their exile and f",
+          "title": "Chattanooga, Tennessee",
+          "lambda1": 0.02350249150694705,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.15436589717865,
+          "cosine_rank": 8,
+          "cosine_sim": 0.7588377594947815
+        },
+        {
+          "text": "Native Americans were held prior to the journey on the Trail of Tears. One of the internment camps w",
+          "title": "Chattanooga, Tennessee",
+          "lambda1": 0.024893021347819132,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.15436589717865,
+          "cosine_rank": 11,
+          "cosine_sim": 0.8271116614341736
+        },
+        {
+          "text": "Trail of Tears - wikipedia Trail of Tears Jump to: navigation, search For other uses, see Trail of T",
+          "title": "Trail of Tears",
+          "lambda1": 0.02657914993492904,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.2519114017486572,
+          "cosine_rank": 0,
+          "cosine_sim": 0.5360664129257202
+        },
+        {
+          "text": "states, to relocate to the area designated as Indian Territory, in what is now the state of Oklahoma",
+          "title": "Chattanooga, Tennessee",
+          "lambda1": 0.029307334092517952,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.15436589717865,
+          "cosine_rank": 2,
+          "cosine_sim": 0.64732426404953
+        }
+      ],
+      "expected_answer": "present-day Oklahoma",
+      "expected_title": "Trail of Tears",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "where is the majority of phosphorus stored on earth",
+      "verified_text": "have shown a relationship between the addition of phosphorus and the rate of eutrophication. Humankind has increased the rate of phosphorus cycling on Earth by four times, mainly due to",
+      "verified_title": "Eutrophication",
+      "lambda1": 0.014512850389156385,
+      "kernel_dim": 0,
+      "archetype_id": 6,
+      "archetype_dist": 1.5939033031463623,
+      "cosine_rank": 14,
+      "elapsed": 1.0850472450256348,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "have shown a relationship between the addition of phosphorus and the rate of eutrophication. Humanki",
+          "title": "Eutrophication",
+          "lambda1": 0.014512850389156385,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.5939033031463623,
+          "cosine_rank": 14,
+          "cosine_sim": 0.768667459487915
+        },
+        {
+          "text": "and is the limiting factor for plant growth in many freshwater ecosystems. Phosphate adheres tightly",
+          "title": "Eutrophication",
+          "lambda1": 0.016785364000910078,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.5939033031463623,
+          "cosine_rank": 35,
+          "cosine_sim": 0.8717437982559204
+        },
+        {
+          "text": "See also 7 References Soil fertilization (edit) Bioavailable phosphorus is the element in soil that ",
+          "title": "Soil fertility",
+          "lambda1": 0.020643085122122606,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.4343624114990234,
+          "cosine_rank": 29,
+          "cosine_sim": 0.8650964498519897
+        },
+        {
+          "text": "has increased the rate of phosphorus cycling on Earth by four times, mainly due to agricultural fert",
+          "title": "Eutrophication",
+          "lambda1": 0.02185793021916726,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.5939033031463623,
+          "cosine_rank": 8,
+          "cosine_sim": 0.7336032390594482
+        },
+        {
+          "text": "as base commodity rose eight-fold. Recently the term peak phosphorus has been coined, due to the lim",
+          "title": "Soil fertility",
+          "lambda1": 0.030869230499716245,
+          "kernel_dim": 0,
+          "archetype_id": 6,
+          "archetype_dist": 1.4343624114990234,
+          "cosine_rank": 48,
+          "cosine_sim": 0.9041256904602051
+        }
+      ],
+      "expected_answer": "rocks and minerals",
+      "expected_title": "Phosphorus cycle",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "when does lana come back in season 7",
+      "verified_text": "as the decisions made by Clark and Lex change the character over the course of the show. As Gough explains, by the end of the sixth season, Lana has shown",
+      "verified_title": "Lana Lang (Smallville)",
+      "lambda1": 0.00796274609852434,
+      "kernel_dim": 0,
+      "archetype_id": 1,
+      "archetype_dist": 1.104055404663086,
+      "cosine_rank": 5,
+      "elapsed": 1.1370422840118408,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "as the decisions made by Clark and Lex change the character over the course of the show. As Gough ex",
+          "title": "Lana Lang (Smallville)",
+          "lambda1": 0.00796274609852434,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.104055404663086,
+          "cosine_rank": 5,
+          "cosine_sim": 0.636615514755249
+        },
+        {
+          "text": "at the start of season seven that her effort fails, but as part of the `` settlement '' of their div",
+          "title": "Lana Lang (Smallville)",
+          "lambda1": 0.012918128149135781,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.104055404663086,
+          "cosine_rank": 2,
+          "cosine_sim": 0.49444496631622314
+        },
+        {
+          "text": "control her abilities, so she does not expose their secrets, but gets frustrated with her lack of co",
+          "title": "Smallville (season 7)",
+          "lambda1": 0.022943903947179056,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.045843243598938,
+          "cosine_rank": 12,
+          "cosine_sim": 0.7200904488563538
+        },
+        {
+          "text": "Smallville in the season two finale. At the start of season three, it is shown that Lana, alongside ",
+          "title": "Lana Lang (Smallville)",
+          "lambda1": 0.02668043609449079,
+          "kernel_dim": 0,
+          "archetype_id": 1,
+          "archetype_dist": 1.104055404663086,
+          "cosine_rank": 4,
+          "cosine_sim": 0.6129839420318604
+        },
+        {
+          "text": "lack of concentration. Lana returns to Smallville, with all legal charges dropped against her, and r",
+          "title": "Smallville (season 7)",
+          "lambda1": 0.028397121476332072,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.045843243598938,
+          "cosine_rank": 15,
+          "cosine_sim": 0.7290782332420349
+        }
+      ],
+      "expected_answer": "\"Fierce\"",
+      "expected_title": "Smallville (season 7)",
+      "answer_found": false,
+      "title_match": false
+    },
+    {
+      "query": "where is late night with stephen colbert filmed",
+      "verified_text": "Tonight Show Starring Jimmy Fallon, Late Night with Seth Meyers, Jimmy Kimmel Live!, The Ellen DeGeneres Show and Good Morning America. Contents (hide) 1 Background 2 Composition 3 Critical reception",
+      "verified_title": "Shut Up and Dance (Walk the Moon song)",
+      "lambda1": 0.010033357910668153,
+      "kernel_dim": 0,
+      "archetype_id": 7,
+      "archetype_dist": 1.157622218132019,
+      "cosine_rank": 29,
+      "elapsed": 0.8345527648925781,
+      "candidates_evaluated": 5,
+      "sheaf_results": [
+        {
+          "text": "Tonight Show Starring Jimmy Fallon, Late Night with Seth Meyers, Jimmy Kimmel Live!, The Ellen DeGen",
+          "title": "Shut Up and Dance (Walk the Moon song)",
+          "lambda1": 0.010033357910668153,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.157622218132019,
+          "cosine_rank": 29,
+          "cosine_sim": 1.022068977355957
+        },
+        {
+          "text": "host in 2013 and Stephen Colbert has hosted since 2014. Ricky Kirshner and Glenn Weiss of White Cher",
+          "title": "Kennedy Center Honors",
+          "lambda1": 0.01956395079337932,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.0063843727111816,
+          "cosine_rank": 40,
+          "cosine_sim": 1.0569052696228027
+        },
+        {
+          "text": "cast in a 2002 pilot for NBC alongside Stephen Colbert, Untitled Ken Finkleman Project (Imagine Ente",
+          "title": "Judy Greer",
+          "lambda1": 0.022921247133441097,
+          "kernel_dim": 0,
+          "archetype_id": 7,
+          "archetype_dist": 1.1227952241897583,
+          "cosine_rank": 25,
+          "cosine_sim": 1.0028120279312134
+        },
+        {
+          "text": "- night talk show hosted by Stephen Colbert, which premiered on September 8, 2015. Produced by Spart",
+          "title": "The Late Show with Stephen Colbert",
+          "lambda1": 0.025521887091232813,
+          "kernel_dim": 0,
+          "archetype_id": 3,
+          "archetype_dist": 1.2581888437271118,
+          "cosine_rank": 0,
+          "cosine_sim": 0.626329779624939
+        },
+        {
+          "text": "Daily Show External links Website The Late Show with Stephen Colbert is an American late - night tal",
+          "title": "The Late Show with Stephen Colbert",
+          "lambda1": 0.03022208753360028,
+          "kernel_dim": 0,
+          "archetype_id": 3,
+          "archetype_dist": 1.2581888437271118,
+          "cosine_rank": 1,
+          "cosine_sim": 0.6269075870513916
+        }
+      ],
+      "expected_answer": "Ed Sullivan Theater in New York City",
+      "expected_title": "The Late Show with Stephen Colbert",
+      "answer_found": false,
+      "title_match": false
+    }
+  ]
+}
