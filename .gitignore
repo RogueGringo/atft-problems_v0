@@ -6,3 +6,15 @@ __pycache__/
 *.bin
 *.pt
 *.faiss
+
+# Large JSON data files (chunk texts, metadata, QA pairs)
+products/TreeTrunk/results/v5_base_map/chunks.json
+products/TreeTrunk/results/v5_base_map/contexts.json
+products/TreeTrunk/results/v5_base_map/qa_pairs.json
+products/TreeTrunk/results/v5_nq_base_map/chunk_texts.json
+products/TreeTrunk/results/v5_nq_base_map/chunk_meta.json
+products/TreeTrunk/results/v5_nq_base_map/articles.json
+products/TreeTrunk/results/v5_nq_base_map/qa_pairs.json
+products/TreeTrunk/results/v5_nq_base_map/run.log
+products/TreeTrunk/results/v6_checkpoints/hard_negatives.json
+products/TreeTrunk/results/v6_base_map/
