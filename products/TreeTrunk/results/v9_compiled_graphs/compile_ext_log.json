@@ -1,0 +1,13 @@
+{
+  "experiment": "v9_compile_extension",
+  "timestamp": "2026-04-04 17:17:29",
+  "mbpp_triplets": 120,
+  "telemetry_triplets": 500,
+  "total_edge_types": 122,
+  "breakdown": {
+    "text": 44,
+    "math": 8,
+    "code": 68,
+    "physics": 2
+  }
+}
