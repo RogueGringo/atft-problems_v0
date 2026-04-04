@@ -1,0 +1,384 @@
+{
+  "baseline": {
+    "mean_cosine": 0.944675259590149,
+    "std_cosine": 0.07560152645893792,
+    "mean_frob": 0.28357144933193923,
+    "std_frob": 0.173887057108922
+  },
+  "clusters": {
+    "conditional": {
+      "cluster": "CONDITIONAL LOGIC (if/else/compare across notations)",
+      "concepts": [
+        "advcl",
+        "mark",
+        "code_If_test",
+        "code_If_body",
+        "code_Compare_ops"
+      ],
+      "pairs": [
+        {
+          "a": "advcl",
+          "b": "mark",
+          "cosine": 0.904204249382019,
+          "frobenius_dist": 0.43771159648895264,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "advcl",
+          "b": "code_If_test",
+          "cosine": 0.981235146522522,
+          "frobenius_dist": 0.1937258243560791,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "advcl",
+          "b": "code_If_body",
+          "cosine": 0.9597648978233337,
+          "frobenius_dist": 0.28367266058921814,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "advcl",
+          "b": "code_Compare_ops",
+          "cosine": 0.9856981635093689,
+          "frobenius_dist": 0.16912604868412018,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "mark",
+          "b": "code_If_test",
+          "cosine": 0.9116832613945007,
+          "frobenius_dist": 0.42027801275253296,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "mark",
+          "b": "code_If_body",
+          "cosine": 0.9511746168136597,
+          "frobenius_dist": 0.31249091029167175,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "mark",
+          "b": "code_Compare_ops",
+          "cosine": 0.8988329172134399,
+          "frobenius_dist": 0.449815571308136,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_If_test",
+          "b": "code_If_body",
+          "cosine": 0.9820714592933655,
+          "frobenius_dist": 0.1893593966960907,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_If_test",
+          "b": "code_Compare_ops",
+          "cosine": 0.9966370463371277,
+          "frobenius_dist": 0.08201181888580322,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_If_body",
+          "b": "code_Compare_ops",
+          "cosine": 0.9758277535438538,
+          "frobenius_dist": 0.21987386047840118,
+          "principal_angle_deg": 0.0
+        }
+      ],
+      "missing": []
+    },
+    "sequential": {
+      "cluster": "SEQUENTIAL/TEMPORAL (progression across notations)",
+      "concepts": [
+        "conj",
+        "step_next",
+        "t_next",
+        "code_Module_body"
+      ],
+      "pairs": [
+        {
+          "a": "conj",
+          "b": "step_next",
+          "cosine": 0.9694036841392517,
+          "frobenius_dist": 0.24737174808979034,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "conj",
+          "b": "t_next",
+          "cosine": 0.9698418378829956,
+          "frobenius_dist": 0.24559424817562103,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "conj",
+          "b": "code_Module_body",
+          "cosine": 0.9479764699935913,
+          "frobenius_dist": 0.32256317138671875,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "step_next",
+          "b": "t_next",
+          "cosine": 0.9972971081733704,
+          "frobenius_dist": 0.07352811843156815,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "step_next",
+          "b": "code_Module_body",
+          "cosine": 0.978176474571228,
+          "frobenius_dist": 0.20891855657100677,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "t_next",
+          "b": "code_Module_body",
+          "cosine": 0.9789776802062988,
+          "frobenius_dist": 0.20504789054393768,
+          "principal_angle_deg": 0.0
+        }
+      ],
+      "missing": []
+    },
+    "containment": {
+      "cluster": "CONTAINMENT/BODY (nested structures)",
+      "concepts": [
+        "code_FunctionDef_body",
+        "code_For_body",
+        "code_If_body",
+        "code_While_body",
+        "acl"
+      ],
+      "pairs": [
+        {
+          "a": "code_FunctionDef_body",
+          "b": "code_For_body",
+          "cosine": 0.9639805555343628,
+          "frobenius_dist": 0.2684009075164795,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_FunctionDef_body",
+          "b": "code_If_body",
+          "cosine": 0.9427565336227417,
+          "frobenius_dist": 0.33835914731025696,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_FunctionDef_body",
+          "b": "code_While_body",
+          "cosine": 0.963203489780426,
+          "frobenius_dist": 0.271280437707901,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_FunctionDef_body",
+          "b": "acl",
+          "cosine": 0.9655787348747253,
+          "frobenius_dist": 0.26237884163856506,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_For_body",
+          "b": "code_If_body",
+          "cosine": 0.9687904715538025,
+          "frobenius_dist": 0.2498384714126587,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_For_body",
+          "b": "code_While_body",
+          "cosine": 0.9874740242958069,
+          "frobenius_dist": 0.15827862918376923,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_For_body",
+          "b": "acl",
+          "cosine": 0.9823338985443115,
+          "frobenius_dist": 0.18796922266483307,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_If_body",
+          "b": "code_While_body",
+          "cosine": 0.9826436638832092,
+          "frobenius_dist": 0.18631350994110107,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_If_body",
+          "b": "acl",
+          "cosine": 0.9708986282348633,
+          "frobenius_dist": 0.2412528544664383,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_While_body",
+          "b": "acl",
+          "cosine": 0.9927215576171875,
+          "frobenius_dist": 0.12065296620130539,
+          "principal_angle_deg": 0.0
+        }
+      ],
+      "missing": []
+    },
+    "operands": {
+      "cluster": "OPERANDS (inputs to operations)",
+      "concepts": [
+        "dobj",
+        "operand_left",
+        "operand_right",
+        "code_Call_args",
+        "code_BinOp_left",
+        "code_BinOp_right"
+      ],
+      "pairs": [
+        {
+          "a": "dobj",
+          "b": "operand_left",
+          "cosine": 0.9804677367210388,
+          "frobenius_dist": 0.19764754176139832,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "dobj",
+          "b": "operand_right",
+          "cosine": 0.9809228181838989,
+          "frobenius_dist": 0.19533157348632812,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "dobj",
+          "b": "code_Call_args",
+          "cosine": 0.9470055103302002,
+          "frobenius_dist": 0.3255595266819,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "dobj",
+          "b": "code_BinOp_left",
+          "cosine": 0.9875019192695618,
+          "frobenius_dist": 0.15810133516788483,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "dobj",
+          "b": "code_BinOp_right",
+          "cosine": 0.9772167801856995,
+          "frobenius_dist": 0.21346323192119598,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "operand_left",
+          "b": "operand_right",
+          "cosine": 0.9934241771697998,
+          "frobenius_dist": 0.11467957496643066,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "operand_left",
+          "b": "code_Call_args",
+          "cosine": 0.9089833498001099,
+          "frobenius_dist": 0.42665356397628784,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "operand_left",
+          "b": "code_BinOp_left",
+          "cosine": 0.965782880783081,
+          "frobenius_dist": 0.261599063873291,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "operand_left",
+          "b": "code_BinOp_right",
+          "cosine": 0.9580181241035461,
+          "frobenius_dist": 0.28976500034332275,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "operand_right",
+          "b": "code_Call_args",
+          "cosine": 0.9028621912002563,
+          "frobenius_dist": 0.4407670199871063,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "operand_right",
+          "b": "code_BinOp_left",
+          "cosine": 0.9647828936576843,
+          "frobenius_dist": 0.2653942406177521,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "operand_right",
+          "b": "code_BinOp_right",
+          "cosine": 0.9478626847267151,
+          "frobenius_dist": 0.32291582226753235,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_Call_args",
+          "b": "code_BinOp_left",
+          "cosine": 0.9317664504051208,
+          "frobenius_dist": 0.3694145679473877,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_Call_args",
+          "b": "code_BinOp_right",
+          "cosine": 0.9382787942886353,
+          "frobenius_dist": 0.35134395956993103,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "code_BinOp_left",
+          "b": "code_BinOp_right",
+          "cosine": 0.981860339641571,
+          "frobenius_dist": 0.19047118723392487,
+          "principal_angle_deg": 0.0
+        }
+      ],
+      "missing": []
+    },
+    "causal": {
+      "cluster": "CAUSAL/RELATIONAL (cause and effect)",
+      "concepts": [
+        "prep",
+        "computes",
+        "causal_correlation"
+      ],
+      "pairs": [
+        {
+          "a": "prep",
+          "b": "computes",
+          "cosine": 0.915395200252533,
+          "frobenius_dist": 0.4113508462905884,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "prep",
+          "b": "causal_correlation",
+          "cosine": 0.8955761790275574,
+          "frobenius_dist": 0.4569985270500183,
+          "principal_angle_deg": 0.0
+        },
+        {
+          "a": "computes",
+          "b": "causal_correlation",
+          "cosine": 0.9482631683349609,
+          "frobenius_dist": 0.32167309522628784,
+          "principal_angle_deg": 0.0
+        }
+      ],
+      "missing": [
+        "state_transition"
+      ]
+    }
+  },
+  "n_restriction_maps": 123
+}
