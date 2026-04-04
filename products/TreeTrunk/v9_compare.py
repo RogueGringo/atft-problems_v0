@@ -27,7 +27,7 @@ V7_CKPT = Path(__file__).parent / "results" / "v7_checkpoints" / "v7_trainer_fin
 V9_CKPT = Path(__file__).parent / "results" / "v9_checkpoints" / "v9_final.pt"
 
 from v6_topological_trainer import TextFeatureMap, DifferentiableSheafLaplacian
-from v9_causal_graph import TextCausalGrapher, DependencyGraphSheafLaplacian, TypedSheafTopologyLoss, EdgeRegistry
+from v9_causal_graph import TextCausalGrapher, DependencyGraphSheafLaplacian, TypedSheafTopologyLoss
 
 
 def run_comparison(n_test=200):
@@ -70,7 +70,13 @@ def run_comparison(n_test=200):
     # ── v9 sheaf (typed dependency graph) ─────────────────────────────
     print("Loading v9 sheaf (typed, 52 maps)...")
     v9_loss = TypedSheafTopologyLoss(d_in=384, stalk_dim=8, margin=0.5).to(device)
-    v9_loss.load_state_dict(torch.load(V9_CKPT, map_location=device, weights_only=False))
+    v9_state = torch.load(V9_CKPT, map_location=device, weights_only=False)
+    # Pre-create restriction maps that exist in the checkpoint
+    for key in v9_state:
+        if key.startswith("sheaf.restriction_maps."):
+            map_id = key.split(".")[2]
+            v9_loss.sheaf._get_restriction(map_id)
+    v9_loss.load_state_dict(v9_state)
     v9_loss.eval()
 
     grapher = TextCausalGrapher("en_core_web_sm")
