@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-04 11:23:11",
+  "elapsed_seconds": 114.8,
+  "nq": {
+    "domain": "nq",
+    "n_test": 1000,
+    "recall_at_50": 317,
+    "recall_at_50_pct": 31.7,
+    "sheaf_top1": 42,
+    "sheaf_top1_pct": 4.2,
+    "sheaf_top1_when_in_haystack": 42,
+    "sheaf_top1_given_haystack_pct": 13.2,
+    "mean_delta": -0.002033,
+    "median_delta": -0.000881,
+    "delta_positive_pct": 25.6,
+    "avg_latency_ms": 80.6,
+    "top_saves": [
+      {
+        "question": "where were the disciples going when they saw jesus walking on water",
+        "sheaf_promoted_from": 4,
+        "lambda1_truth": 0.001240172074176371,
+        "lambda1_impostor": 0.0013387241633608937
+      },
+      {
+        "question": "what is the role of the president's chief of staff",
+        "sheaf_promoted_from": 4,
+        "lambda1_truth": 0.0005995185347273946,
+        "lambda1_impostor": 0.0008103694417513907
+      },
+      {
+        "question": "what is the current version of ie 11",
+        "sheaf_promoted_from": 4,
+        "lambda1_truth": 0.00039125437615439296,
+        "lambda1_impostor": 0.0007966648554429412
+      },
+      {
+        "question": "why was virginia capital moved from williamsburg to richmond",
+        "sheaf_promoted_from": 4,
+        "lambda1_truth": 0.00010682538413675502,
+        "lambda1_impostor": 0.00013545782712753862
+      },
+      {
+        "question": "where is the sa node located in the heart",
+        "sheaf_promoted_from": 4,
+        "lambda1_truth": 0.0005778040504083037,
+        "lambda1_impostor": 0.0006209161365404725
+      }
+    ]
+  },
+  "gsm8k": {
+    "domain": "gsm8k",
+    "n_test": 500,
+    "sheaf_accuracy": 285,
+    "sheaf_accuracy_pct": 57.0,
+    "mean_delta": 0.002628,
+    "median_delta": 0.003523,
+    "delta_positive_pct": 57.0,
+    "avg_latency_ms": 51.5
+  }
+}
