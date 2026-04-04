@@ -1,0 +1,10 @@
+{
+  "experiment": "v9_compile_graphs",
+  "timestamp": "2026-04-04 12:47:13",
+  "elapsed_seconds": 77.0,
+  "nq_triplets": 5000,
+  "gsm8k_triplets": 5000,
+  "total_edge_types": 52,
+  "nq_size_mb": 89.2,
+  "gsm8k_size_mb": 25.9
+}
