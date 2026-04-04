@@ -1,0 +1,412 @@
+[
+  {
+    "archetype_id": 0,
+    "count": 513,
+    "fraction": 0.103,
+    "onset_scale": {
+      "mean": 1.1073,
+      "std": 0.092,
+      "min": 0.9341,
+      "max": 1.4173
+    },
+    "mean_persistence": 0.7861,
+    "max_persistence": 1.1367,
+    "mean_derivative_0": 10.33,
+    "top_domains": [
+      {
+        "title": "Middle_Ages",
+        "count": 7
+      },
+      {
+        "title": "Antenna_(radio)",
+        "count": 7
+      },
+      {
+        "title": "Seven_Years%27_War",
+        "count": 6
+      },
+      {
+        "title": "Roman_Republic",
+        "count": 5
+      },
+      {
+        "title": "Philadelphia",
+        "count": 5
+      }
+    ],
+    "example_questions": [
+      "When was Detroit incorporated?",
+      "What is the name of a magazine published at KU?",
+      "On what date was John Spenkelink executed?"
+    ]
+  },
+  {
+    "archetype_id": 1,
+    "count": 239,
+    "fraction": 0.048,
+    "onset_scale": {
+      "mean": 0.9503,
+      "std": 0.1232,
+      "min": 0.6505,
+      "max": 1.35
+    },
+    "mean_persistence": 0.7659,
+    "max_persistence": 1.0318,
+    "mean_derivative_0": 10.96,
+    "top_domains": [
+      {
+        "title": "Guinea-Bissau",
+        "count": 7
+      },
+      {
+        "title": "Buddhism",
+        "count": 6
+      },
+      {
+        "title": "Catalan_language",
+        "count": 6
+      },
+      {
+        "title": "Russian_Soviet_Federative_Socialist_Republic",
+        "count": 5
+      },
+      {
+        "title": "American_Idol",
+        "count": 5
+      }
+    ],
+    "example_questions": [
+      "What are areoles?",
+      "What has replaced the term Near East?",
+      "In what part of the RSFSR did tundra mainly exist?"
+    ]
+  },
+  {
+    "archetype_id": 2,
+    "count": 888,
+    "fraction": 0.178,
+    "onset_scale": {
+      "mean": 0.8663,
+      "std": 0.0953,
+      "min": 0.563,
+      "max": 1.0622
+    },
+    "mean_persistence": 0.74,
+    "max_persistence": 0.9849,
+    "mean_derivative_0": 12.98,
+    "top_domains": [
+      {
+        "title": "Switzerland",
+        "count": 11
+      },
+      {
+        "title": "New_York_City",
+        "count": 10
+      },
+      {
+        "title": "Hunting",
+        "count": 10
+      },
+      {
+        "title": "Greece",
+        "count": 9
+      },
+      {
+        "title": "Portugal",
+        "count": 8
+      }
+    ],
+    "example_questions": [
+      "What can the public and private sector offer employers that NPOs usually cannot?",
+      "What amount is spent annualoy on pesticides?",
+      "What is anting?"
+    ]
+  },
+  {
+    "archetype_id": 3,
+    "count": 330,
+    "fraction": 0.066,
+    "onset_scale": {
+      "mean": 0.8262,
+      "std": 0.0836,
+      "min": 0.5954,
+      "max": 1.0247
+    },
+    "mean_persistence": 0.7503,
+    "max_persistence": 0.8938,
+    "mean_derivative_0": 34.85,
+    "top_domains": [
+      {
+        "title": "Fr\u00e9d\u00e9ric_Chopin",
+        "count": 5
+      },
+      {
+        "title": "Queen_Victoria",
+        "count": 5
+      },
+      {
+        "title": "Anti-aircraft_warfare",
+        "count": 4
+      },
+      {
+        "title": "Beyonc\u00e9",
+        "count": 4
+      },
+      {
+        "title": "Sino-Tibetan_relations_during_the_Ming_dynasty",
+        "count": 4
+      }
+    ],
+    "example_questions": [
+      "How many freshman class applications did Washington University receive in 2013?",
+      "What kind of aircraft is used to intercept and destroy other aircraft?",
+      "Which Melbourne rail station was the world's busiest passenger station in 1926?"
+    ]
+  },
+  {
+    "archetype_id": 4,
+    "count": 592,
+    "fraction": 0.118,
+    "onset_scale": {
+      "mean": 0.946,
+      "std": 0.0883,
+      "min": 0.5411,
+      "max": 1.1395
+    },
+    "mean_persistence": 0.821,
+    "max_persistence": 1.0368,
+    "mean_derivative_0": 21.52,
+    "top_domains": [
+      {
+        "title": "Fr\u00e9d\u00e9ric_Chopin",
+        "count": 10
+      },
+      {
+        "title": "Beyonc\u00e9",
+        "count": 9
+      },
+      {
+        "title": "Dwight_D._Eisenhower",
+        "count": 8
+      },
+      {
+        "title": "Steven_Spielberg",
+        "count": 7
+      },
+      {
+        "title": "John_von_Neumann",
+        "count": 6
+      }
+    ],
+    "example_questions": [
+      "What plan was also administered by the ECA?",
+      "Were other mathematicians amazed by von Neumann?",
+      "Route 128 and Greater Boston are centers for what type of investment?"
+    ]
+  },
+  {
+    "archetype_id": 5,
+    "count": 577,
+    "fraction": 0.115,
+    "onset_scale": {
+      "mean": 0.8683,
+      "std": 0.1039,
+      "min": 0.5547,
+      "max": 1.2425
+    },
+    "mean_persistence": 0.7652,
+    "max_persistence": 1.0105,
+    "mean_derivative_0": 11.75,
+    "top_domains": [
+      {
+        "title": "Beyonc\u00e9",
+        "count": 10
+      },
+      {
+        "title": "Religion_in_ancient_Rome",
+        "count": 7
+      },
+      {
+        "title": "Super_Bowl_50",
+        "count": 7
+      },
+      {
+        "title": "Financial_crisis_of_2007%E2%80%9308",
+        "count": 6
+      },
+      {
+        "title": "Queen_(band)",
+        "count": 6
+      }
+    ],
+    "example_questions": [
+      "How does burrowers' loosening help the soil?",
+      "Strasbourg has an official seat in what parliament?",
+      "What famous composer used a Lutheran hymn in his work?"
+    ]
+  },
+  {
+    "archetype_id": 6,
+    "count": 662,
+    "fraction": 0.132,
+    "onset_scale": {
+      "mean": 0.8092,
+      "std": 0.0939,
+      "min": 0.4456,
+      "max": 1.0025
+    },
+    "mean_persistence": 0.7756,
+    "max_persistence": 1.1615,
+    "mean_derivative_0": 10.33,
+    "top_domains": [
+      {
+        "title": "Adolescence",
+        "count": 12
+      },
+      {
+        "title": "Richmond,_Virginia",
+        "count": 8
+      },
+      {
+        "title": "New_Haven,_Connecticut",
+        "count": 7
+      },
+      {
+        "title": "Insect",
+        "count": 7
+      },
+      {
+        "title": "Classical_music",
+        "count": 6
+      }
+    ],
+    "example_questions": [
+      "When was the 'education through recreation\" applied to childhood?",
+      "Difficulty in establishing a framework for complexity classes can be caused by what variable?",
+      "How many units are in the Nehemiah Homes?"
+    ]
+  },
+  {
+    "archetype_id": 7,
+    "count": 487,
+    "fraction": 0.097,
+    "onset_scale": {
+      "mean": 0.7663,
+      "std": 0.0983,
+      "min": 0.4652,
+      "max": 0.9734
+    },
+    "mean_persistence": 0.674,
+    "max_persistence": 0.8646,
+    "mean_derivative_0": 14.17,
+    "top_domains": [
+      {
+        "title": "Modern_history",
+        "count": 8
+      },
+      {
+        "title": "Greece",
+        "count": 7
+      },
+      {
+        "title": "Bacteria",
+        "count": 7
+      },
+      {
+        "title": "Buddhism",
+        "count": 7
+      },
+      {
+        "title": "The_Bronx",
+        "count": 5
+      }
+    ],
+    "example_questions": [
+      "What was the average household size?",
+      "What does Heer Ranjha sing about?",
+      "When was West Farms created?"
+    ]
+  },
+  {
+    "archetype_id": 8,
+    "count": 66,
+    "fraction": 0.013,
+    "onset_scale": {
+      "mean": 0.9343,
+      "std": 0.1524,
+      "min": 0.48,
+      "max": 1.3239
+    },
+    "mean_persistence": 0.8329,
+    "max_persistence": 0.9633,
+    "mean_derivative_0": 11.06,
+    "top_domains": [
+      {
+        "title": "Catalan_language",
+        "count": 4
+      },
+      {
+        "title": "National_Archives_and_Records_Administration",
+        "count": 3
+      },
+      {
+        "title": "Nikola_Tesla",
+        "count": 3
+      },
+      {
+        "title": "Super_Bowl_50",
+        "count": 3
+      },
+      {
+        "title": "Saint_Helena",
+        "count": 3
+      }
+    ],
+    "example_questions": [
+      "Where did Beyonc\u00e9 exclusively release her single, Formation?",
+      "Where is the National Archives Building located?",
+      "In what city was Tree International Publishing located?"
+    ]
+  },
+  {
+    "archetype_id": 9,
+    "count": 646,
+    "fraction": 0.129,
+    "onset_scale": {
+      "mean": 0.9962,
+      "std": 0.1212,
+      "min": 0.7075,
+      "max": 1.4343
+    },
+    "mean_persistence": 0.8573,
+    "max_persistence": 1.1893,
+    "mean_derivative_0": 12.31,
+    "top_domains": [
+      {
+        "title": "Muammar_Gaddafi",
+        "count": 12
+      },
+      {
+        "title": "New_York_City",
+        "count": 10
+      },
+      {
+        "title": "New_Haven,_Connecticut",
+        "count": 10
+      },
+      {
+        "title": "Madonna_(entertainer)",
+        "count": 9
+      },
+      {
+        "title": "2008_Summer_Olympics_torch_relay",
+        "count": 9
+      }
+    ],
+    "example_questions": [
+      "The academic body of the university is made up of how many divisions of graduate?",
+      "What major health risk do people who oppose DST say it increases?",
+      "What is the term used to describe the \"Right to collect revenue\"?"
+    ]
+  }
+]
