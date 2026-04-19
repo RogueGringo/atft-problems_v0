@@ -19,7 +19,7 @@ def test_edge_types_are_ordered_pair_of_environments():
     from problems.hubble_tension_web.graph import edge_type_for_pair
     from problems.hubble_tension_web.types import Environment
     t = edge_type_for_pair(Environment.WALL, Environment.VOID)
-    assert t == "void-wall" or t == "wall-void"
+    assert t == "void-wall"   # canonicalized to alphabetical ordering
     t2 = edge_type_for_pair(Environment.VOID, Environment.WALL)
     assert t == t2   # deterministic, symmetric
 
