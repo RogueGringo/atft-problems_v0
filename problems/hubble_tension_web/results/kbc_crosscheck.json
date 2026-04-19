@@ -1,13 +1,13 @@
 {
   "delta": -0.2,
   "R_mpc": 300.0,
-  "alpha_star": 0.00471977224288115,
-  "delta_H0": -2.6166162135172426,
-  "kinematic_term": -4.493333333333334,
-  "topological_term": 1.8767171198160917,
+  "alpha_star": -0.18508468360074726,
+  "delta_H0": -3.420338543078816,
+  "kinematic_term": 4.493333333333334,
+  "topological_term": -7.91367187641215,
   "literature_band": [
     1.0,
     3.0
   ],
-  "verdict": "WITHIN band \u2014 consistent with literature"
+  "verdict": "ABOVE band \u2014 topology implies a larger tension contribution than perturbative theory captures"
 }
