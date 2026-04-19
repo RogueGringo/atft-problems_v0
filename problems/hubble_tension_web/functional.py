@@ -1,15 +1,22 @@
 """The 𝒦 operator and the (β0, β1, δ, R) functional wrapper.
 
-Ansatz:
+Ansatz (phase-1 rework with corrected sign):
   ΔH0 = c1 * delta + alpha * f_topo(beta0, beta1, lambda_min, R)
-  c1  = H0_GLOBAL / 3.0                  # LTB kinematic coefficient
+  c1  = -H0_GLOBAL / 3.0                 # phase-1: sign corrected from +H0/3
   f_topo(beta0, beta1, lambda_min, R) =
       (beta1 / max(beta0, 1)) * (1.0 / max(lambda_min, 1e-6)) * (1.0 / R)
 
+Sign convention: a local void (delta < 0) has less mass and therefore less
+gravitational retardation, so the locally-inferred expansion rate is biased
+UPWARD relative to the global (CMB) inference — ΔH0 > 0 for delta < 0.
+The kinematic coefficient c1 = -H0/3 enforces this at leading order.
+
 By construction:
-  - f_topo vanishes when beta1 = 0 (smooth limit).
+  - f_topo vanishes when beta1 = 0 (smooth limit — not yet enforced by
+    filtration; the full Opus rework introduces persistent beta1).
   - Kinematic term reduces to LTB for small delta.
-  - alpha is the one free coefficient, fit by sim calibration.
+  - alpha remains the one free coefficient; in phase-1 it is still fit
+    against a circular reference curve (fixed in the full rework).
 """
 from __future__ import annotations
 
@@ -39,7 +46,7 @@ def kappa_operator(
     R: float,
     alpha: float,
 ) -> HubbleShift:
-    c1 = H0_GLOBAL / 3.0
+    c1 = -H0_GLOBAL / 3.0
     kin = c1 * delta
     topo = alpha * f_topo(summary.beta0, summary.beta1, summary.lambda_min, R)
     return HubbleShift(delta_H0=kin + topo, kinematic_term=kin, topological_term=topo)
