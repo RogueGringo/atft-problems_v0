@@ -1,27 +1,109 @@
-"""Typed sheaf Laplacian on the environment-typed cosmic-web k-NN graph.
+"""Typed sheaf Laplacian with density-gradient stalks.
 
-Phase-1 rework: introduces asymmetric per-edge-type restriction matrices to
-break the symmetric cancellation flaw (R_src = -R_dst = orthogonal) that
-made v1 provably a graph-Laplacian no-op.
+Stalk layout (stalk_dim=8):
+  coords 0-2 : unit density-gradient direction ĝ_v
+  coords 3-6 : environment one-hot (void, wall, filament, node)
+  coord  7   : pad (fixed at 0)
 
-  R_src^t = I
-  R_dst^t = lambda^t * Q^t
+Edge restriction maps (oriented edge src→dst, edge type t = (env_src, env_dst)):
+  R_src^t = I_8
+  R_dst^t = λ^t · (Rot_3(ĝ_src → ĝ_dst) ⊕ P^t_4 ⊕ I_1)
 
-where Q^t is a deterministically-seeded orthogonal matrix per edge type and
-lambda^t = dst_env_weight / src_env_weight is an ordinal transition prefactor
-reflecting the physical distinctness of environment transitions.
+where:
+  Rot_3(a → b) is the Rodrigues rotation sending unit vector a to unit vector b,
+  with parallel/antiparallel edge-case handling.
+  P^t_4 is the 4x4 permutation swapping env_src one-hot with env_dst one-hot
+  (identity when env_src == env_dst).
+  λ^t is the EDGE_TYPE_LAMBDA prefactor (ordinal physical prior).
 
-Known limitations vs the full Opus rework spec:
-  - Stalks remain random-orthogonal, not structured 3-grad + 4-env + 1-pad.
-  - Edge types are now ordered pairs via graph.oriented_edge_type_for_pair,
-    so void->wall and wall->void are distinct etype strings. The Laplacian
-    rewrite in Task 6 consumes this ordering for structured R_dst.
+L_F = δ^T δ for the coboundary δ. PSD and symmetric by construction.
+
+This module currently holds:
+  - Task-5 additions: STALK_DIM, _ENV_INDEX, EDGE_TYPE_LAMBDA, build_stalk_init.
+  - Phase-1 legacy: _stable_orthogonal, _seed_from_etype, _ENV_WEIGHTS, and a
+    typed_sheaf_laplacian that uses random-orthogonal R_dst. Task 6 replaces
+    that legacy Laplacian with the structured (Rot_3 ⊕ P^t_4 ⊕ I_1) form.
 """
 from __future__ import annotations
 
 from typing import Dict, List, Tuple
 
 import numpy as np
+from scipy.spatial import KDTree
+
+from problems.hubble_tension_web.types import Environment, LocalCosmicWeb
+
+STALK_DIM: int = 8
+GRADIENT_FLOOR: float = 1e-9
+_ENV_INDEX: Dict[str, int] = {e.value: i for i, e in enumerate(Environment)}
+# _ENV_INDEX: {"void":0, "wall":1, "filament":2, "node":3}
+
+EDGE_TYPE_LAMBDA: Dict[Tuple[str, str], float] = {
+    ("void", "void"):         1.0,
+    ("wall", "wall"):         1.0,
+    ("filament", "filament"): 1.0,
+    ("node", "node"):         1.0,
+    ("void", "wall"):         1.5, ("wall", "void"):         1.5,
+    ("void", "filament"):     1.8, ("filament", "void"):     1.8,
+    ("void", "node"):         2.2, ("node", "void"):         2.2,
+    ("wall", "filament"):     1.2, ("filament", "wall"):     1.2,
+    ("wall", "node"):         1.5, ("node", "wall"):         1.5,
+    ("filament", "node"):     1.1, ("node", "filament"):     1.1,
+}
+# Ordinal physical prior, not calibrated. See REWORK spec §3.3.
+
+
+def _lambda_for_etype(etype: str) -> float:
+    """etype is 'env_src-env_dst'; look up in EDGE_TYPE_LAMBDA."""
+    src, dst = etype.split("-", 1)
+    return EDGE_TYPE_LAMBDA[(src, dst)]
+
+
+def build_stalk_init(
+    web: LocalCosmicWeb,
+    *,
+    h_mpc: float | None = None,
+    k_density: int = 8,
+) -> Tuple[np.ndarray, List[bool]]:
+    """Construct initial stalks: (N, STALK_DIM) array + per-node degeneracy flags.
+
+    Density estimate: simple k-NN distance inverse (like the v1 synthetic typing).
+    Gradient: finite-difference weighted by 1/|Δx|² over the same k-NN neighborhood.
+    If |∇ρ| < GRADIENT_FLOOR, stalk coords 0-2 default to ê_z and the node is flagged.
+
+    h_mpc is accepted for future smoothing-length use; currently ignored in favor
+    of the KDTree k_density-neighbor estimate. Left in the signature so callers
+    can pass it once we revisit kernel density estimation.
+    """
+    N = web.positions.shape[0]
+    stalks = np.zeros((N, STALK_DIM), dtype=np.float64)
+    flags: List[bool] = [False] * N
+
+    tree = KDTree(web.positions)
+    dists, nbr_idx = tree.query(web.positions, k=k_density + 1)
+    dists = dists[:, 1:]
+    nbr_idx = nbr_idx[:, 1:]
+
+    mean_d = dists.mean(axis=1)
+    rho = 1.0 / (mean_d + 1e-12)
+
+    for v in range(N):
+        dx = web.positions[nbr_idx[v]] - web.positions[v]
+        d_sq = np.sum(dx * dx, axis=1)
+        d_sq = np.maximum(d_sq, 1e-12)
+        d_rho = rho[nbr_idx[v]] - rho[v]
+        grad = (d_rho[:, None] * dx / d_sq[:, None]).sum(axis=0)
+        g_norm = float(np.linalg.norm(grad))
+        if g_norm < GRADIENT_FLOOR:
+            stalks[v, 0:3] = np.array([0.0, 0.0, 1.0])
+            flags[v] = True
+        else:
+            stalks[v, 0:3] = grad / g_norm
+
+        env_val = web.environments[v].value
+        stalks[v, 3 + _ENV_INDEX[env_val]] = 1.0
+
+    return stalks, flags
 
 
 def _stable_orthogonal(seed: int, dim: int) -> np.ndarray:

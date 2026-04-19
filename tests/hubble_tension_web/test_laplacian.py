@@ -101,3 +101,37 @@ def test_nullity_drops_under_typing():
         f"nullity(L_F_typed)={nullity} did not drop below stalk_dim={stalk_dim}; "
         f"typing is not producing nontrivial restriction maps."
     )
+
+
+def test_gradient_stalk_construction_is_unit_and_deterministic():
+    """Stalk coords 1-3 have unit norm; repeated builds with same seed agree exactly."""
+    import numpy as np
+    from problems.hubble_tension_web.types import LocalCosmicWeb, Environment
+    from problems.hubble_tension_web.laplacian import build_stalk_init, STALK_DIM
+
+    rng = np.random.default_rng(3)
+    positions = rng.uniform(0, 10, size=(50, 3))
+    envs = rng.choice(list(Environment), size=50).tolist()
+    web = LocalCosmicWeb(positions=positions, environments=envs)
+
+    stalks_a, flags_a = build_stalk_init(web, h_mpc=None, k_density=8)
+    stalks_b, flags_b = build_stalk_init(web, h_mpc=None, k_density=8)
+
+    assert stalks_a.shape == (50, STALK_DIM)
+    assert STALK_DIM == 8
+    # Determinism (no rng usage — stalk init is purely a function of positions & envs).
+    assert np.array_equal(stalks_a, stalks_b)
+    assert flags_a == flags_b
+
+    # Gradient coords: unit norm on non-degenerate nodes.
+    grad_block = stalks_a[:, 0:3]
+    norms = np.linalg.norm(grad_block, axis=1)
+    not_degenerate = np.array([not flags_a[i] for i in range(50)])
+    assert np.allclose(norms[not_degenerate], 1.0, atol=1e-8)
+
+    # Env one-hot: exactly one "1.0" in coords 3:7 per row.
+    env_block = stalks_a[:, 3:7]
+    assert np.all(env_block.sum(axis=1) == 1.0)
+
+    # Pad: coord 7 fixed at 0.
+    assert np.all(stalks_a[:, 7] == 0.0)
