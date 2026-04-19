@@ -1,4 +1,4 @@
-"""Aggregate the three experiment outputs into REPORT.md."""
+"""Aggregate the three experiment outputs into REPORT.md (REWORK version)."""
 from __future__ import annotations
 
 import json
@@ -13,57 +13,69 @@ def main() -> None:
     kbc = json.loads((OUTPUT / "kbc_crosscheck.json").read_text())
 
     lines: list[str] = [
-        "# Hubble-Tension-Web: Results Report",
+        "# Hubble-Tension-Web: Results Report (REWORK, v2)",
         "",
-        "## Leg 1: Analytical Reduction",
+        "**Sign convention:** c1 = -H0/3. delta_H0 > 0 for delta < 0 (voids).",
+        "**alpha units:** km/s.",
+        "**beta1:** persistent (VR filtration, lifetime > tau*ell_bar, tau=1.5).",
         "",
-        "Kinematic term vs published LTB coefficient H0/3 across delta in [0, -0.3] at R = 300 Mpc.",
+        "v1 results (no-op Laplacian, single-scale beta1, wrong sign) archived in `v1_superseded/`.",
         "",
-        "| delta | kinematic term | expected LTB | topological term (alpha=1) |",
+        "## Leg 1: Analytical Reduction (consistency check)",
+        "",
+        analytical["primary_assertion"],
+        "",
+        analytical["secondary_assertion"],
+        "",
+        analytical["tertiary_assertion"],
+        "",
+        "| delta | kinematic | topological (alpha=1) | kin tautology residual |",
         "|---|---|---|---|",
     ]
     for r in analytical["records"]:
         lines.append(
-            f"| {r['delta']:.3f} | {r['kinematic_term']:.4g} | {r['expected_LTB']:.4g} | {r['topological_term']:.4g} |"
+            f"| {r['delta']:.4f} | {r['kinematic_term']:.4g} | {r['topological_term']:.4g} | "
+            f"{r['kin_tautology_residual']:.2e} |"
         )
 
     lines.extend([
         "",
-        "Pass criterion: kinematic term matches LTB exactly (c1 = H0/3 by construction).",
+        "## Leg 2: Sim Calibration (non-circular)",
         "",
-        "## Leg 2: Sim Calibration",
-        "",
-        f"- Fitted alpha\\* = **{calib['alpha_star']:.4g}**",
-        f"- Residual loss = {calib['loss']:.4g}",
-        f"- Reference curve = {calib['reference_form']}",
+        f"- Reference source: {calib['reference_source']}",
+        f"- Fitted alpha\\* = **{calib['alpha_star']:.4g} {calib['alpha_units']}**",
+        f"- MSE = {calib['mse']:.4g}, R^2 = {calib['r_squared']:.3f}",
         f"- Scan size = {len(calib['scan'])} (delta, R) combinations",
+        "",
+        f"Note: {calib['note']}",
         "",
         "See `sim_calibration.png` for predicted-vs-reference scatter.",
         "",
-        "## Leg 3: KBC Cross-Check",
+        "## Leg 3: KBC Cross-Check (signed band)",
         "",
         f"- delta = {kbc['delta']}, R = {kbc['R_mpc']} Mpc",
         f"- Kinematic term: **{kbc['kinematic_term']:.3f} km/s/Mpc**",
         f"- Topological term (alpha\\* = {kbc['alpha_star']:.4g}): **{kbc['topological_term']:.3f} km/s/Mpc**",
-        f"- Total ΔH0: **{kbc['delta_H0']:.3f} km/s/Mpc**",
-        f"- Literature band (magnitude): {kbc['literature_band']} km/s/Mpc",
+        f"- Total delta_H0: **{kbc['delta_H0']:.3f} km/s/Mpc**",
+        f"- Literature band (signed): {kbc['literature_band_signed']} km/s/Mpc",
         f"- Verdict: **{kbc['verdict']}**",
         "",
         "## Interpretation",
         "",
-        "The functional K reduces exactly to LTB in the analytical leg (kinematic coefficient is",
-        "structurally c1 = H0/3, no free parameter). The sim-calibration leg fits a single coefficient",
-        "alpha against a literature-grounded reference. The KBC cross-check is the first external test of",
-        "the calibrated functional. A WITHIN-band result is a successful reproduction of the perturbative",
-        "estimate by a topological route; an ABOVE-band result would indicate that multi-scale structure",
-        "captured by the sheaf Laplacian contributes beyond perturbation theory and merits attention.",
+        "The functional reduces to LTB in the analytical leg (tautology guard against the v1 sign bug).",
+        "Sim calibration fits alpha against the LTB-reference RESIDUAL (not leading term), making the fit",
+        "non-circular. KBC cross-check is the first external signed test of the calibrated functional.",
+        "",
+        "A WITHIN-band result is a successful reproduction of the perturbative KBC estimate by a",
+        "topological route. An ABOVE-band result indicates that the sheaf Laplacian picks up structure",
+        "perturbation theory omits. A SIGN ERROR result is a regression bug and must block release.",
         "",
         "## Scope limits",
         "",
-        "- All voids are LTB-family synthetic. Real N-body snapshot ingestion (IllustrisTNG / MDPL2) is",
-        "  the sequel task.",
-        "- beta1 here is the graph-level cycle-space count, not a full persistent-homology beta1 from a",
-        "  filtration. Multi-scale persistence is a future refinement.",
+        "- All voids are LTB-family synthetic. Real N-body snapshot ingestion remains deferred.",
+        "- The LTB reference uses closed-form delta^3 + finite-R Gaussian weights; if algebra does not",
+        "  match Garcia-Bellido 2008 at pivot points within 5%, fall back to numerical LTB integration.",
+        "- c1 is ASSERTED from LTB linear theory, not DERIVED from spec(L_F). See REWORK spec 5.",
     ])
 
     (OUTPUT / "REPORT.md").write_text("\n".join(lines), encoding="utf-8")
