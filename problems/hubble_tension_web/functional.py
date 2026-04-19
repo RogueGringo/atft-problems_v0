@@ -1,22 +1,19 @@
 """The 𝒦 operator and the (β0, β1, δ, R) functional wrapper.
 
-Ansatz (phase-1 rework with corrected sign):
+Ansatz:
   ΔH0 = c1 * delta + alpha * f_topo(beta0, beta1, lambda_min, R)
-  c1  = -H0_GLOBAL / 3.0                 # phase-1: sign corrected from +H0/3
-  f_topo(beta0, beta1, lambda_min, R) =
-      (beta1 / max(beta0, 1)) * (1.0 / max(lambda_min, 1e-6)) * (1.0 / R)
+  c1  = -H0_GLOBAL / 3.0       [km/s/Mpc]   # LTB kinematic coefficient, corrected sign
+  alpha has units of km/s      (not dimensionless; see ALPHA_UNITS).
+  f_topo has units of 1/Mpc.
+  Product alpha * f_topo has units of km/s/Mpc, matching ΔH0.
 
-Sign convention: a local void (delta < 0) has less mass and therefore less
-gravitational retardation, so the locally-inferred expansion rate is biased
-UPWARD relative to the global (CMB) inference — ΔH0 > 0 for delta < 0.
-The kinematic coefficient c1 = -H0/3 enforces this at leading order.
+Sign convention:
+  For a void (delta<0), c1*delta > 0, so ΔH0 > 0 when topological term is small.
+  This matches the observed tension direction: local H0 exceeds global H0 inside a void.
+  See REWORK spec §5.2 and §5.4.
 
-By construction:
-  - f_topo vanishes when beta1 = 0 (smooth limit — not yet enforced by
-    filtration; the full Opus rework introduces persistent beta1).
-  - Kinematic term reduces to LTB for small delta.
-  - alpha remains the one free coefficient; in phase-1 it is still fit
-    against a circular reference curve (fixed in the full rework).
+beta1 consumed here is BETA_1_PERSISTENT (lifetime-thresholded via VR filtration).
+See spectrum.persistent_beta1.
 """
 from __future__ import annotations
 

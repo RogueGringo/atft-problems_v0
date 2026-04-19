@@ -46,3 +46,19 @@ def test_sign_convention_delta_negative_implies_kinematic_positive():
         f"This is the v1 sign-bug regression guard."
     )
     assert h.delta_H0 > 0
+
+
+def test_alpha_units_documented():
+    """α must carry explicit 'km/s' units in the module. See REWORK spec §5.4 and I7."""
+    from problems.hubble_tension_web import functional
+    assert hasattr(functional, "ALPHA_UNITS")
+    assert functional.ALPHA_UNITS == "km/s"
+    doc = functional.__doc__ or ""
+    assert "km/s" in doc, "functional.py docstring must document alpha's units"
+
+
+def test_c1_is_negative_third_of_H0():
+    """Sign convention regression: C1 = -H0_GLOBAL/3 exactly."""
+    from problems.hubble_tension_web.functional import C1, H0_GLOBAL
+    assert C1 == pytest.approx(-H0_GLOBAL / 3.0)
+    assert C1 < 0
