@@ -15,13 +15,22 @@ def test_build_typed_graph_produces_typed_edges():
         assert etype in EDGE_TYPES
 
 
-def test_edge_types_are_ordered_pair_of_environments():
-    from problems.hubble_tension_web.graph import edge_type_for_pair
+def test_oriented_edge_type_is_order_sensitive():
+    from problems.hubble_tension_web.graph import oriented_edge_type_for_pair
     from problems.hubble_tension_web.types import Environment
-    t = edge_type_for_pair(Environment.WALL, Environment.VOID)
-    assert t == "void-wall"   # canonicalized to alphabetical ordering
-    t2 = edge_type_for_pair(Environment.VOID, Environment.WALL)
-    assert t == t2   # deterministic, symmetric
+    t_vw = oriented_edge_type_for_pair(Environment.VOID, Environment.WALL)
+    t_wv = oriented_edge_type_for_pair(Environment.WALL, Environment.VOID)
+    assert t_vw == "void-wall"
+    assert t_wv == "wall-void"
+    assert t_vw != t_wv   # asymmetry is the point
+
+
+def test_edge_types_constant_covers_all_ordered_pairs():
+    from problems.hubble_tension_web.graph import EDGE_TYPES
+    from problems.hubble_tension_web.types import Environment
+    n_envs = len(list(Environment))
+    assert len(EDGE_TYPES) == n_envs * n_envs   # 16 for 4 envs
+    assert "void-wall" in EDGE_TYPES and "wall-void" in EDGE_TYPES
 
 
 def test_graph_is_connected_for_large_k():

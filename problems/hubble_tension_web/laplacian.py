@@ -13,9 +13,9 @@ reflecting the physical distinctness of environment transitions.
 
 Known limitations vs the full Opus rework spec:
   - Stalks remain random-orthogonal, not structured 3-grad + 4-env + 1-pad.
-  - Edge types are still canonicalized by graph.edge_type_for_pair (alphabetical),
-    so void->wall and wall->void collapse to the same type. Ordered types arrive
-    in the full rework.
+  - Edge types are now ordered pairs via graph.oriented_edge_type_for_pair,
+    so void->wall and wall->void are distinct etype strings. The Laplacian
+    rewrite in Task 6 consumes this ordering for structured R_dst.
 """
 from __future__ import annotations
 
