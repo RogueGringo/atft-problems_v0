@@ -19,10 +19,9 @@ where:
 L_F = δ^T δ for the coboundary δ. PSD and symmetric by construction.
 
 This module currently holds:
-  - Task-5 additions: STALK_DIM, _ENV_INDEX, EDGE_TYPE_LAMBDA, build_stalk_init.
-  - Phase-1 legacy: _stable_orthogonal, _seed_from_etype, _ENV_WEIGHTS, and a
-    typed_sheaf_laplacian that uses random-orthogonal R_dst. Task 6 replaces
-    that legacy Laplacian with the structured (Rot_3 ⊕ P^t_4 ⊕ I_1) form.
+  - Task-6 (landed): STALK_DIM, _ENV_INDEX, EDGE_TYPE_LAMBDA, build_stalk_init,
+    _rodrigues_rotation, _env_permutation_4x4, _R_dst_for_edge, and the
+    structured typed_sheaf_laplacian with R_dst^t = λ^t · (Rot_3 ⊕ P^t_4 ⊕ I_1).
 """
 from __future__ import annotations
 
@@ -76,6 +75,7 @@ def build_stalk_init(
     can pass it once we revisit kernel density estimation.
     """
     N = web.positions.shape[0]
+    k_density = min(k_density, N - 1)
     stalks = np.zeros((N, STALK_DIM), dtype=np.float64)
     flags: List[bool] = [False] * N
 
@@ -106,67 +106,128 @@ def build_stalk_init(
     return stalks, flags
 
 
-def _stable_orthogonal(seed: int, dim: int) -> np.ndarray:
-    rng = np.random.default_rng(seed)
-    M = rng.standard_normal((dim, dim))
-    Q, _ = np.linalg.qr(M)
-    return Q
+def _rodrigues_rotation(a: np.ndarray, b: np.ndarray) -> np.ndarray:
+    """3x3 rotation matrix sending unit vector a to unit vector b.
+
+    Edge cases:
+      parallel   (a ≈ b):              return I_3
+      antiparallel (a ≈ -b):           π-rotation about a deterministic perpendicular axis
+      generic:                         standard Rodrigues formula.
+    """
+    dot = float(np.dot(a, b))
+    if dot > 1.0 - 1e-9:
+        return np.eye(3)
+    if dot < -1.0 + 1e-9:
+        ez = np.array([0.0, 0.0, 1.0])
+        ex = np.array([1.0, 0.0, 0.0])
+        axis = np.cross(ez, a)
+        if np.linalg.norm(axis) < 1e-9:
+            axis = np.cross(ex, a)
+        axis /= np.linalg.norm(axis)
+        return 2.0 * np.outer(axis, axis) - np.eye(3)
+    v = np.cross(a, b)
+    s = float(np.linalg.norm(v))
+    c = dot
+    K = np.array([
+        [0.0, -v[2], v[1]],
+        [v[2], 0.0, -v[0]],
+        [-v[1], v[0], 0.0],
+    ])
+    return np.eye(3) + K + K @ K * ((1.0 - c) / (s * s))
 
 
-def _seed_from_etype(etype: str) -> int:
-    h = 0
-    for c in etype:
-        h = (h * 131 + ord(c)) & 0xFFFFFFFF
-    return h
+def _env_permutation_4x4(env_src: str, env_dst: str) -> np.ndarray:
+    """4x4 permutation swapping env_src one-hot with env_dst one-hot.
+
+    Identity when env_src == env_dst. Otherwise, swaps the two corresponding
+    one-hot coordinates; leaves the other two coordinates as identity.
+    """
+    P = np.eye(4)
+    i = _ENV_INDEX[env_src]
+    j = _ENV_INDEX[env_dst]
+    if i == j:
+        return P
+    P[i, i] = 0.0
+    P[j, j] = 0.0
+    P[i, j] = 1.0
+    P[j, i] = 1.0
+    return P
 
 
-# Ordinal environment weights for the lambda prefactor.
-_ENV_WEIGHTS = {"void": 1.0, "wall": 2.0, "filament": 3.0, "node": 4.0}
+def _R_dst_for_edge(
+    g_src: np.ndarray,
+    g_dst: np.ndarray,
+    env_src: str,
+    env_dst: str,
+) -> np.ndarray:
+    """Construct R_dst^t = λ^t · (Rot ⊕ P ⊕ I_1) as an (8,8) block-diagonal matrix."""
+    lam = EDGE_TYPE_LAMBDA[(env_src, env_dst)]
+    rot = _rodrigues_rotation(g_src, g_dst)
+    perm = _env_permutation_4x4(env_src, env_dst)
+    R = np.zeros((STALK_DIM, STALK_DIM))
+    R[0:3, 0:3] = rot
+    R[3:7, 3:7] = perm
+    R[7, 7] = 1.0
+    return lam * R
 
 
 def typed_sheaf_laplacian(
+    *,
     positions: np.ndarray,
     n: int,
     edges: List[Tuple[int, int, str]],
-    stalk_dim: int = 8,
-    rng_seed: int = 0,
+    stalk_dim: int = STALK_DIM,
+    rng_seed: int = 0,              # unused; kept for signature compatibility
+    environments: List[Environment] | None = None,
 ) -> np.ndarray:
-    # 1. Asymmetric per-edge-type restriction matrices.
-    R_src_cache: Dict[str, np.ndarray] = {}
-    R_dst_cache: Dict[str, np.ndarray] = {}
+    """Assemble L_F = δ^T δ with density-gradient typed restriction maps.
 
-    for _, _, etype in edges:
-        if etype not in R_src_cache:
-            R_src_cache[etype] = np.eye(stalk_dim)
+    R_src^t = I_8, R_dst^t = λ^t · (Rot_3(ĝ_s→ĝ_d) ⊕ P^t_4 ⊕ I_1).
 
-            seed = _seed_from_etype(etype) ^ rng_seed
-            Q = _stable_orthogonal(seed, stalk_dim)
+    `environments` is optional: if omitted, per-node environments are reconstructed
+    from the edge-type strings (each edge carries 'env_src-env_dst' in src<dst index
+    order, so env_of[s] = parts[0], env_of[d] = parts[1] is unambiguous).
 
-            lam = 1.0
-            if "-" in etype:
-                parts = etype.split("-")
-                if len(parts) == 2:
-                    src_w = _ENV_WEIGHTS.get(parts[0], 1.0)
-                    dst_w = _ENV_WEIGHTS.get(parts[1], 1.0)
-                    lam = dst_w / src_w
+    Requires stalk_dim == STALK_DIM == 8. The gradient/env layout is not adjustable.
+    """
+    if stalk_dim != STALK_DIM:
+        raise ValueError(
+            f"typed_sheaf_laplacian requires stalk_dim={STALK_DIM}; got {stalk_dim}. "
+            "The gradient/env layout is not adjustable."
+        )
 
-            R_dst_cache[etype] = lam * Q
+    if environments is None:
+        env_of: List[str | None] = [None] * n
+        for s, d, etype in edges:
+            e_s, e_d = etype.split("-", 1)
+            env_of[s] = e_s
+            env_of[d] = e_d
+        if any(e is None for e in env_of):
+            raise ValueError(
+                "Could not infer environments for all nodes from edges; "
+                "pass environments=web.environments explicitly."
+            )
+        env_values = env_of                                          # type: ignore[assignment]
+    else:
+        env_values = [e.value for e in environments]
 
-    # 2. Coboundary delta: (m*stalk_dim, n*stalk_dim)
+    from problems.hubble_tension_web.types import LocalCosmicWeb as _LCW
+    envs_enum = [Environment(v) for v in env_values]
+    web = _LCW(positions=positions, environments=envs_enum)
+    stalks, _flags = build_stalk_init(web)
+    g = stalks[:, 0:3]
+
     m = len(edges)
-    delta = np.zeros((m * stalk_dim, n * stalk_dim))
-    for eidx, (s, d, etype) in enumerate(edges):
-        R_src = R_src_cache[etype]
-        R_dst = R_dst_cache[etype]
-
-        row = slice(eidx * stalk_dim, (eidx + 1) * stalk_dim)
-        col_s = slice(s * stalk_dim, (s + 1) * stalk_dim)
-        col_d = slice(d * stalk_dim, (d + 1) * stalk_dim)
-
-        delta[row, col_s] = -R_src
+    delta = np.zeros((m * STALK_DIM, n * STALK_DIM), dtype=np.float64)
+    for e_idx, (s, d, etype) in enumerate(edges):
+        env_s, env_d = etype.split("-", 1)
+        R_dst = _R_dst_for_edge(g[s], g[d], env_s, env_d)
+        row = slice(e_idx * STALK_DIM, (e_idx + 1) * STALK_DIM)
+        col_s = slice(s * STALK_DIM, (s + 1) * STALK_DIM)
+        col_d = slice(d * STALK_DIM, (d + 1) * STALK_DIM)
+        delta[row, col_s] = -np.eye(STALK_DIM)
         delta[row, col_d] = R_dst
 
-    # 3. L = delta^T delta, symmetrized to kill float asymmetry.
     L = delta.T @ delta
     L = 0.5 * (L + L.T)
     return L

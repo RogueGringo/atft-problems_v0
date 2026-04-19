@@ -53,10 +53,10 @@ def main() -> None:
             )
             # alpha=0 gives kinematic-only; alpha=1 reveals the raw f_topo contribution
             h0 = predict_from_cosmic_web(
-                web=web, params=params, alpha=0.0, k=8, stalk_dim=4, k_spec=16
+                web=web, params=params, alpha=0.0, k=8, stalk_dim=8, k_spec=16
             )
             h1 = predict_from_cosmic_web(
-                web=web, params=params, alpha=1.0, k=8, stalk_dim=4, k_spec=16
+                web=web, params=params, alpha=1.0, k=8, stalk_dim=8, k_spec=16
             )
             f_topo_val = h1.topological_term   # alpha=1 => f_topo_val is raw f_topo
             scan.append(dict(

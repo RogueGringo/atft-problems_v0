@@ -11,7 +11,7 @@ def test_typed_sheaf_laplacian_is_symmetric_psd():
     envs = rng.choice(list(Environment), size=40).tolist()
     web = LocalCosmicWeb(positions=positions, environments=envs)
     n, edges = build_typed_graph(web, k=6)
-    L = typed_sheaf_laplacian(positions=positions, n=n, edges=edges, stalk_dim=4, rng_seed=0)
+    L = typed_sheaf_laplacian(positions=positions, n=n, edges=edges, stalk_dim=8, rng_seed=0)
     assert np.allclose(L, L.T, atol=1e-8)
     w = np.linalg.eigvalsh(L)
     assert w.min() > -1e-8
@@ -26,8 +26,8 @@ def test_laplacian_dimension_is_n_times_stalk_dim():
     envs = [Environment.VOID] * 12
     web = LocalCosmicWeb(positions=positions, environments=envs)
     n, edges = build_typed_graph(web, k=3)
-    L = typed_sheaf_laplacian(positions=positions, n=n, edges=edges, stalk_dim=5, rng_seed=0)
-    assert L.shape == (12 * 5, 12 * 5)
+    L = typed_sheaf_laplacian(positions=positions, n=n, edges=edges, stalk_dim=8, rng_seed=0)
+    assert L.shape == (12 * 8, 12 * 8)
 
 
 def test_typed_vs_untyped_spectrum_differs():

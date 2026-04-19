@@ -33,7 +33,7 @@ def main() -> None:
     for d in deltas:
         params = VoidParameters(delta=float(d), R_mpc=R)
         web = generate_synthetic_void(params, n_points=1500, box_mpc=800.0, rng_seed=42)
-        h = predict_from_cosmic_web(web=web, params=params, alpha=1.0, k=8, stalk_dim=4, k_spec=16)
+        h = predict_from_cosmic_web(web=web, params=params, alpha=1.0, k=8, stalk_dim=8, k_spec=16)
         records.append(dict(
             delta=float(d),
             R_mpc=R,

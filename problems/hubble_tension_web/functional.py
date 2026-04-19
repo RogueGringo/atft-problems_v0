@@ -89,13 +89,14 @@ def predict_from_cosmic_web(
     params: VoidParameters,
     alpha: float,
     k: int = 8,
-    stalk_dim: int = 4,
+    stalk_dim: int = 8,
     k_spec: int = 16,
     rng_seed: int = 0,
 ) -> HubbleShift:
     n, edges = build_typed_graph(web, k=k)
     L = typed_sheaf_laplacian(
-        positions=web.positions, n=n, edges=edges, stalk_dim=stalk_dim, rng_seed=rng_seed
+        positions=web.positions, n=n, edges=edges, stalk_dim=stalk_dim, rng_seed=rng_seed,
+        environments=web.environments,
     )
     summary = summarize_spectrum(L=L, n_nodes=n, edges=edges, k_spec=k_spec)
     return kappa_operator(summary=summary, delta=params.delta, R=params.R_mpc, alpha=alpha)

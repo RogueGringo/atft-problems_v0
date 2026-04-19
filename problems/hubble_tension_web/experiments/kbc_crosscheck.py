@@ -42,7 +42,7 @@ def main() -> None:
     params = VoidParameters(delta=KBC_DELTA, R_mpc=KBC_R_MPC)
     web = generate_synthetic_void(params, n_points=2500, box_mpc=900.0, rng_seed=2025)
     h = predict_from_cosmic_web(
-        web=web, params=params, alpha=alpha_star, k=8, stalk_dim=4, k_spec=16
+        web=web, params=params, alpha=alpha_star, k=8, stalk_dim=8, k_spec=16
     )
 
     mag = abs(h.delta_H0)

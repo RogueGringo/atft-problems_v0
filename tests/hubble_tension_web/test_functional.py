@@ -24,7 +24,7 @@ def test_predict_from_cosmic_web_returns_hubble_shift():
     from problems.hubble_tension_web.functional import predict_from_cosmic_web
     params = VoidParameters(delta=-0.2, R_mpc=300.0)
     web = generate_synthetic_void(params, n_points=500, box_mpc=800.0, rng_seed=7)
-    h = predict_from_cosmic_web(web=web, params=params, alpha=1.0, k=6, stalk_dim=4, k_spec=12)
+    h = predict_from_cosmic_web(web=web, params=params, alpha=1.0, k=6, stalk_dim=8, k_spec=12)
     assert isinstance(h.delta_H0, float)
     # phase-1 sign: void (delta<0) with c1=-H0/3 means kinematic term > 0
     # (local universe in a void expands faster than global — matches observed tension direction)
