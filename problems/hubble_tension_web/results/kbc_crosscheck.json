@@ -1,0 +1,13 @@
+{
+  "delta": -0.2,
+  "R_mpc": 300.0,
+  "alpha_star": 0.00471977224288115,
+  "delta_H0": -2.6166162135172426,
+  "kinematic_term": -4.493333333333334,
+  "topological_term": 1.8767171198160917,
+  "literature_band": [
+    1.0,
+    3.0
+  ],
+  "verdict": "WITHIN band \u2014 consistent with literature"
+}
