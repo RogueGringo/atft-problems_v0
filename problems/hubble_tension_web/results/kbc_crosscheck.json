@@ -1,0 +1,14 @@
+{
+  "delta": -0.2,
+  "R_mpc": 300.0,
+  "alpha_star": 0.0,
+  "alpha_units": "km/s",
+  "delta_H0": 4.493333333333334,
+  "kinematic_term": 4.493333333333334,
+  "topological_term": 0.0,
+  "literature_band_signed": [
+    1.0,
+    3.0
+  ],
+  "verdict": "ABOVE band - topology implies a larger tension contribution than perturbative theory captures"
+}

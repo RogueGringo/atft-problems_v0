@@ -1,0 +1,97 @@
+{
+  "primary_assertion": "topological_term shrinks relative to kinematic_term as delta -> 0 (beta1 noise-floor only)",
+  "secondary_assertion": "max |kinematic_term - C1*delta| = 0.00e+00 (should be ~0)",
+  "tertiary_assertion": "delta_H0 monotone non-decreasing in |delta|: True",
+  "records": [
+    {
+      "delta": -0.001,
+      "R_mpc": 300.0,
+      "delta_H0": 0.02246666666666667,
+      "kinematic_term": 0.02246666666666667,
+      "topological_term": 0.0,
+      "expected_kin": 0.02246666666666667,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.038375,
+      "R_mpc": 300.0,
+      "delta_H0": 0.8621583333333334,
+      "kinematic_term": 0.8621583333333334,
+      "topological_term": 0.0,
+      "expected_kin": 0.8621583333333334,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.07575,
+      "R_mpc": 300.0,
+      "delta_H0": 1.70185,
+      "kinematic_term": 1.70185,
+      "topological_term": 0.0,
+      "expected_kin": 1.70185,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.113125,
+      "R_mpc": 300.0,
+      "delta_H0": 2.541541666666667,
+      "kinematic_term": 2.541541666666667,
+      "topological_term": 0.0,
+      "expected_kin": 2.541541666666667,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.1505,
+      "R_mpc": 300.0,
+      "delta_H0": 3.3812333333333333,
+      "kinematic_term": 3.3812333333333333,
+      "topological_term": 0.0,
+      "expected_kin": 3.3812333333333333,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.187875,
+      "R_mpc": 300.0,
+      "delta_H0": 4.220925,
+      "kinematic_term": 4.220925,
+      "topological_term": 0.0,
+      "expected_kin": 4.220925,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.22525,
+      "R_mpc": 300.0,
+      "delta_H0": 5.060616666666667,
+      "kinematic_term": 5.060616666666667,
+      "topological_term": 0.0,
+      "expected_kin": 5.060616666666667,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.262625,
+      "R_mpc": 300.0,
+      "delta_H0": 5.900308333333334,
+      "kinematic_term": 5.900308333333334,
+      "topological_term": 0.0,
+      "expected_kin": 5.900308333333334,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    },
+    {
+      "delta": -0.3,
+      "R_mpc": 300.0,
+      "delta_H0": 6.74,
+      "kinematic_term": 6.74,
+      "topological_term": 0.0,
+      "expected_kin": 6.74,
+      "kin_tautology_residual": 0.0,
+      "ratio_topo_over_kin": 0.0
+    }
+  ]
+}
