@@ -98,5 +98,7 @@ def predict_from_cosmic_web(
         positions=web.positions, n=n, edges=edges, stalk_dim=stalk_dim, rng_seed=rng_seed,
         environments=web.environments,
     )
-    summary = summarize_spectrum(L=L, n_nodes=n, edges=edges, k_spec=k_spec)
+    summary = summarize_spectrum(
+        L=L, n_nodes=n, edges=edges, positions=web.positions, k_spec=k_spec,
+    )
     return kappa_operator(summary=summary, delta=params.delta, R=params.R_mpc, alpha=alpha)
