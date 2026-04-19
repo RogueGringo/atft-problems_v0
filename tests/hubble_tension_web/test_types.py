@@ -27,3 +27,31 @@ def test_hubble_shift_carries_value_and_units():
     h = HubbleShift(delta_H0=5.2, kinematic_term=2.5, topological_term=2.7)
     assert h.delta_H0 == pytest.approx(5.2)
     assert h.kinematic_term + h.topological_term == pytest.approx(h.delta_H0)
+
+
+def test_hubble_shift_rejects_inverted_sign_for_void():
+    """If δ < 0 and kinematic_term < 0 and |topo| ≈ 0, HubbleShift must raise.
+
+    This is the sign-bug regression guard: v1 produced exactly this combination,
+    and the rework must make it unconstructable.
+    """
+    from problems.hubble_tension_web.types import HubbleShift
+    with pytest.raises(ValueError, match="sign convention"):
+        HubbleShift(
+            delta_H0=-4.49,
+            kinematic_term=-4.49,
+            topological_term=0.0,
+            delta=-0.2,          # void
+        )
+
+
+def test_hubble_shift_accepts_corrected_void():
+    from problems.hubble_tension_web.types import HubbleShift
+    # Corrected sign: δ = -0.2, c1·δ = +4.49 for c1 = -H0/3 with H0 = 67.4.
+    h = HubbleShift(
+        delta_H0=4.49,
+        kinematic_term=4.49,
+        topological_term=0.0,
+        delta=-0.2,
+    )
+    assert h.delta_H0 > 0

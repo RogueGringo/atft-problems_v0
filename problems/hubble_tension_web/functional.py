@@ -32,7 +32,15 @@ from problems.hubble_tension_web.graph import build_typed_graph
 from problems.hubble_tension_web.laplacian import typed_sheaf_laplacian
 from problems.hubble_tension_web.spectrum import summarize_spectrum
 
-H0_GLOBAL: float = 67.4   # km/s/Mpc (Planck)
+H0_GLOBAL: float = 67.4   # km/s/Mpc (Planck 2018)
+
+# Sign convention: c1 = -H0/3. For a void (delta<0), c1*delta > 0, matching
+# the observed tension direction (local H0 exceeds global H0). See REWORK spec §5.2.
+C1: float = -H0_GLOBAL / 3.0
+
+# alpha has units of km/s. f_topo has units of 1/Mpc.
+# Product alpha * f_topo has units of km/s/Mpc, matching ΔH₀.
+ALPHA_UNITS: str = "km/s"
 
 
 def f_topo(beta0: int, beta1: int, lambda_min: float, R: float) -> float:
@@ -46,10 +54,14 @@ def kappa_operator(
     R: float,
     alpha: float,
 ) -> HubbleShift:
-    c1 = -H0_GLOBAL / 3.0
-    kin = c1 * delta
+    kin = C1 * delta
     topo = alpha * f_topo(summary.beta0, summary.beta1, summary.lambda_min, R)
-    return HubbleShift(delta_H0=kin + topo, kinematic_term=kin, topological_term=topo)
+    return HubbleShift(
+        delta_H0=kin + topo,
+        kinematic_term=kin,
+        topological_term=topo,
+        delta=delta,
+    )
 
 
 def delta_H0(
