@@ -8,11 +8,11 @@ v1 results (no-op Laplacian, single-scale beta1, wrong sign) archived in `v1_sup
 
 ## Leg 1: Analytical Reduction (consistency check)
 
-topological_term shrinks relative to kinematic_term as delta -> 0 (beta1 noise-floor only)
+beta1_persistent = 0 at every scan point (smooth-void regime); topological_term = 0 identically by arithmetic; kinematic_term alone carries delta_H0
 
 max |kinematic_term - C1*delta| = 0.00e+00 (should be ~0)
 
-delta_H0 monotone non-decreasing in |delta|: True
+delta_H0 monotone non-decreasing in |delta|: True (trivially so since topo=0, kin linear in delta)
 
 | delta | kinematic | topological (alpha=1) | kin tautology residual |
 |---|---|---|---|

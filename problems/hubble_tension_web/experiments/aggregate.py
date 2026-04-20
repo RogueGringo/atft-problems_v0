@@ -23,7 +23,7 @@ def main() -> None:
         "",
         "## Leg 1: Analytical Reduction (consistency check)",
         "",
-        analytical["primary_assertion"],
+        analytical["primary_observation"],
         "",
         analytical["secondary_assertion"],
         "",

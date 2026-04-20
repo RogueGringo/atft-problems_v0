@@ -29,7 +29,9 @@ from problems.hubble_tension_web.graph import build_typed_graph
 from problems.hubble_tension_web.laplacian import typed_sheaf_laplacian
 from problems.hubble_tension_web.spectrum import summarize_spectrum
 
-H0_GLOBAL: float = 67.4   # km/s/Mpc (Planck 2018)
+H0_GLOBAL: float = 67.4   # km/s/Mpc (Planck 2018). NOTE: duplicated in
+                          # ltb_reference.py to keep that module ansatz-independent;
+                          # if you change this value, change it there too.
 
 # Sign convention: c1 = -H0/3. For a void (delta<0), c1*delta > 0, matching
 # the observed tension direction (local H0 exceeds global H0). See REWORK spec §5.2.

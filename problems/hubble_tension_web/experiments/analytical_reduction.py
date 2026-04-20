@@ -1,11 +1,18 @@
 """Analytical reduction: verify the functional reduces to LTB kinematic in the smooth limit.
 
-Primary assertion:
-  As beta_1_persistent -> 0 (homogenization), topological_term / |kinematic_term| -> 0.
+Primary observation (honest reading):
+  Across this smooth-void scan (LTB-family synthetics), beta_1_persistent sits at
+  the noise floor (= 0) for every delta, so topological_term = alpha * 0 = 0
+  identically by arithmetic. The kinematic term alone carries delta_H0 throughout
+  this scan. To contrast "beta_1 = 0 regime" vs "beta_1 > 0 regime" a separate
+  fixture with real persistent 1-cycles (e.g. ring or torus-perturbed void) is
+  needed; not included in this experiment.
 Secondary (tautology / sign guard):
   kinematic_term = C1 * delta = -(H0/3) * delta to machine precision.
 Tertiary:
-  d(delta_H0)/d(-delta) > 0 at fixed R for delta < 0 (monotonicity).
+  d(delta_H0)/d(-delta) > 0 at fixed R for delta < 0 (monotonicity). Trivially
+  satisfied here because topological_term = 0 and kinematic_term is linear in
+  delta with negative coefficient; documented for completeness.
 
 This experiment no longer claims to DERIVE c1 from spec(L_F). See REWORK spec 5.1.
 """
@@ -63,9 +70,9 @@ def main() -> None:
     max_taut = max(abs(r["kin_tautology_residual"]) for r in records)
 
     out = dict(
-        primary_assertion="topological_term shrinks relative to kinematic_term as delta -> 0 (beta1 noise-floor only)",
+        primary_observation="beta1_persistent = 0 at every scan point (smooth-void regime); topological_term = 0 identically by arithmetic; kinematic_term alone carries delta_H0",
         secondary_assertion=f"max |kinematic_term - C1*delta| = {max_taut:.2e} (should be ~0)",
-        tertiary_assertion=f"delta_H0 monotone non-decreasing in |delta|: {monotone_nondec}",
+        tertiary_assertion=f"delta_H0 monotone non-decreasing in |delta|: {monotone_nondec} (trivially so since topo=0, kin linear in delta)",
         records=records,
     )
     (OUTPUT / "analytical_reduction.json").write_text(json.dumps(out, indent=2))

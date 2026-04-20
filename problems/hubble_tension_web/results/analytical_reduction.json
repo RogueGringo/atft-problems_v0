@@ -1,7 +1,7 @@
 {
-  "primary_assertion": "topological_term shrinks relative to kinematic_term as delta -> 0 (beta1 noise-floor only)",
+  "primary_observation": "beta1_persistent = 0 at every scan point (smooth-void regime); topological_term = 0 identically by arithmetic; kinematic_term alone carries delta_H0",
   "secondary_assertion": "max |kinematic_term - C1*delta| = 0.00e+00 (should be ~0)",
-  "tertiary_assertion": "delta_H0 monotone non-decreasing in |delta|: True",
+  "tertiary_assertion": "delta_H0 monotone non-decreasing in |delta|: True (trivially so since topo=0, kin linear in delta)",
   "records": [
     {
       "delta": -0.001,
