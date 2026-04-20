@@ -36,7 +36,34 @@ Baseline numbers captured during the REWORK closeout run (commit `9aab0a8`). Bet
 
 ## After Step 2 (Arnoldi eigensolver)
 
-<populated in Task 2>
+| Experiment              | Wall time       | Δ vs T=0   | Δ vs Step 1 |
+|-------------------------|-----------------|------------|-------------|
+| analytical_reduction.py |   29.03s        | -96.82%    | -94.66%     |
+| sim_calibration.py      |   (deferred)    | —          | —           |
+| kbc_crosscheck.py       |   4.34s         | -97.37%    | -93.21%     |
+
+`eigsh(L, k=k_spec+4, sigma=-1e-6, which='LM', tol=1e-8, ncv=60)` — shift-invert
+Arnoldi solves only 20 smallest eigenvalues instead of the full spectrum. At
+N=1500 with stalk_dim=8 that is 20 of ~12000 modes — a ~600x reduction in
+solved modes.
+
+**Deviation from spec §Step 2:** Plan called for `which='SA'` with default `ncv`.
+Empirically, typed sheaf Laplacians have many triple-degenerate eigenvalues
+from the stalk structure, and plain Lanczos with default `ncv = 2k+1 = 41`
+collapses those degeneracies (~8-27% rel error on bottom-k). Switched to
+shift-invert (`sigma=-1e-6, which='LM'`) with widened Krylov subspace
+(`ncv = max(3*k_arnoldi, 40) = 60`). Shift-invert is also ARPACK-canonical for
+smallest eigenvalues of PSD matrices. Result: rel < 1e-13 on both bulk and
+lambda_min across 3 seeds, far exceeding the rel<1e-6 / rel<1e-9 contract.
+At N=600 shift-invert is 13x faster than dense eigvalsh; the gap widens with
+N.
+
+Fallback to dense eigvalsh on `ArpackNoConvergence` exercised by
+`test_eigsh_fallback_to_dense_on_arpack_failure`. No production workload has
+tripped the fallback; the guard is defensive.
+
+`sim_calibration` re-measurement deferred — Task 3's multiprocessing pool
+dominates its wall-time change; re-measure once that lands.
 
 ## After Step 3 (parallel scan)
 
