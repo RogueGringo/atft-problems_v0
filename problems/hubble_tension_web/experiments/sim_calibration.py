@@ -10,10 +10,18 @@ Procedure (non-circular, spec 6.3):
   Least-squares fit:  alpha* = argmin sum (alpha * f_topo - y)^2  = <f_topo, y> / <f_topo, f_topo>.
 
 Output: results/sim_calibration.json, results/sim_calibration.png.
+
+Parallel execution (perf pass, 2026-04-20):
+  The (delta, R) configurations are independent — no shared state. We dispatch
+  through multiprocessing.Pool.imap_unordered with a module-level _scan_one
+  worker (Windows spawn requires module-level picklable callable). Results are
+  sorted by (delta, R) before the LSQ fit so the dot-product is deterministic.
 """
 from __future__ import annotations
 
 import json
+import multiprocessing as mp
+import os
 from pathlib import Path
 
 import matplotlib
@@ -29,33 +37,71 @@ from problems.hubble_tension_web.types import VoidParameters
 OUTPUT = Path(__file__).parent.parent / "results"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
+# If the scan has fewer than this many configs, skip the pool (spawn cost
+# dominates). The full production scan has 30; mini-scans in tests may have 4.
+_POOL_MIN_CONFIGS = 6
+
+# Production point count per config; tests may override via the 3-tuple form.
+_PRODUCTION_N_POINTS = 1500
+
+
+def _scan_one(delta_R_n: tuple) -> dict:
+    """Compute one (delta, R) sim-calibration row. Module-level for pool spawn.
+
+    Accepts either a 2-tuple (delta, R) — uses _PRODUCTION_N_POINTS — or a
+    3-tuple (delta, R, n_points) for tests.
+
+    Returns a dict with keys: delta, R, ltb_full, kinematic, y, f_topo.
+    """
+    if len(delta_R_n) == 3:
+        d, R, n_points = delta_R_n
+    else:
+        d, R = delta_R_n
+        n_points = _PRODUCTION_N_POINTS
+
+    params = VoidParameters(delta=float(d), R_mpc=float(R))
+    box = max(2.5 * R, 800.0)
+    web = generate_synthetic_void(
+        params, n_points=int(n_points), box_mpc=box,
+        rng_seed=abs(int(1000 * d + R)) + 1,
+    )
+    h1 = predict_from_cosmic_web(
+        web=web, params=params, alpha=1.0, k=8, stalk_dim=8, k_spec=16,
+    )
+    f_topo_val = h1.topological_term
+    ltb_full = delta_H0_ltb(delta=float(d), R_mpc=float(R))
+    kin = C1 * float(d)
+    y = ltb_full - kin
+    return dict(
+        delta=float(d), R=float(R),
+        ltb_full=float(ltb_full),
+        kinematic=float(kin),
+        y=float(y),
+        f_topo=float(f_topo_val),
+    )
+
+
+def _run_scan(configs: list) -> list:
+    """Dispatch the scan. Pool if we have enough configs to amortize spawn cost."""
+    if len(configs) < _POOL_MIN_CONFIGS:
+        return [_scan_one(c) for c in configs]
+
+    n_workers = min(os.cpu_count() or 1, len(configs))
+    ctx = mp.get_context("spawn")
+    with ctx.Pool(processes=n_workers) as pool:
+        results = list(pool.imap_unordered(_scan_one, configs))
+    return results
+
 
 def main() -> None:
     deltas = np.array([-0.05, -0.10, -0.15, -0.20, -0.25, -0.30])
     radii = np.array([150.0, 250.0, 300.0, 400.0, 500.0])
+    configs = [(float(d), float(R)) for d in deltas for R in radii]
 
-    scan: list[dict] = []
-    for d in deltas:
-        for R in radii:
-            params = VoidParameters(delta=float(d), R_mpc=float(R))
-            box = max(2.5 * R, 800.0)
-            web = generate_synthetic_void(
-                params, n_points=1500, box_mpc=box, rng_seed=abs(int(1000 * d + R)) + 1
-            )
-            h1 = predict_from_cosmic_web(
-                web=web, params=params, alpha=1.0, k=8, stalk_dim=8, k_spec=16,
-            )
-            f_topo_val = h1.topological_term
-            ltb_full = delta_H0_ltb(delta=float(d), R_mpc=float(R))
-            kin = C1 * float(d)
-            y = ltb_full - kin
-            scan.append(dict(
-                delta=float(d), R=float(R),
-                ltb_full=float(ltb_full),
-                kinematic=float(kin),
-                y=float(y),
-                f_topo=float(f_topo_val),
-            ))
+    raw = _run_scan(configs)
+    # Sort by (delta, R) — determinism for the LSQ fit regardless of worker
+    # scheduling.
+    scan = sorted(raw, key=lambda r: (r["delta"], r["R"]))
 
     f = np.array([s["f_topo"] for s in scan])
     y = np.array([s["y"] for s in scan])

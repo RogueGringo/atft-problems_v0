@@ -12,8 +12,9 @@ def test_typed_sheaf_laplacian_is_symmetric_psd():
     web = LocalCosmicWeb(positions=positions, environments=envs)
     n, edges = build_typed_graph(web, k=6)
     L = typed_sheaf_laplacian(positions=positions, n=n, edges=edges, stalk_dim=8, rng_seed=0)
-    assert np.allclose(L, L.T, atol=1e-8)
-    w = np.linalg.eigvalsh(L)
+    L_arr = L.toarray() if hasattr(L, "toarray") else L
+    assert np.allclose(L_arr, L_arr.T, atol=1e-8)
+    w = np.linalg.eigvalsh(L_arr)
     assert w.min() > -1e-8
 
 
@@ -56,8 +57,11 @@ def test_typed_vs_untyped_spectrum_differs():
     L_typed   = typed_sheaf_laplacian(positions=positions, n=n_t, edges=edges_t, stalk_dim=8, rng_seed=0)
     L_untyped = typed_sheaf_laplacian(positions=positions, n=n_u, edges=edges_u, stalk_dim=8, rng_seed=0)
 
-    w_t = np.sort(np.linalg.eigvalsh(L_typed))
-    w_u = np.sort(np.linalg.eigvalsh(L_untyped))
+    L_typed_arr   = L_typed.toarray()   if hasattr(L_typed,   "toarray") else L_typed
+    L_untyped_arr = L_untyped.toarray() if hasattr(L_untyped, "toarray") else L_untyped
+
+    w_t = np.sort(np.linalg.eigvalsh(L_typed_arr))
+    w_u = np.sort(np.linalg.eigvalsh(L_untyped_arr))
 
     med_t = float(np.median(w_t))
     med_u = float(np.median(w_u))
@@ -92,7 +96,8 @@ def test_nullity_drops_under_typing():
     n, edges = build_typed_graph(web, k=6)
     L = typed_sheaf_laplacian(positions=positions, n=n, edges=edges, stalk_dim=stalk_dim, rng_seed=0)
 
-    w = np.linalg.eigvalsh(L)
+    L_arr = L.toarray() if hasattr(L, "toarray") else L
+    w = np.linalg.eigvalsh(L_arr)
     # Graph is almost certainly connected at k=6, N=40, so β₀ = 1.
     # Untyped expectation: nullity = stalk_dim * 1 = 8.
     # Typed expectation: nullity < 8.

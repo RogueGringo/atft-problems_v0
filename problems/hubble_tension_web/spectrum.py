@@ -11,6 +11,10 @@ from __future__ import annotations
 from typing import List, Tuple
 
 import numpy as np
+import warnings
+
+from scipy.sparse.linalg import eigsh, ArpackNoConvergence
+from scipy import sparse as _sparse
 
 try:
     from ripser import ripser as _ripser
@@ -99,7 +103,7 @@ def persistent_beta1(
 
 def summarize_spectrum(
     *,
-    L: np.ndarray,
+    L,
     n_nodes: int,
     edges: List[Tuple[int, int, str]],
     positions: np.ndarray,
@@ -108,9 +112,43 @@ def summarize_spectrum(
     tau_persist: float = TAU_PERSIST,
     tau_max: float = TAU_MAX,
 ) -> SpectralSummary:
-    w = np.linalg.eigvalsh(L)
-    w = np.sort(w)
-    spectrum = w[:k_spec].copy()
+    # Accept dense ndarray or scipy.sparse matrix.
+    k_arnoldi = k_spec + 4
+    # Typed sheaf Laplacians have triple-degenerate eigenvalues from the
+    # stalk structure; default ARPACK Krylov subspace (ncv = 2k+1) is too
+    # narrow to resolve them reliably. ncv = 3*k_arnoldi covers the clusters.
+    ncv = max(3 * k_arnoldi, 40)
+
+    w_all: np.ndarray
+    if _sparse.issparse(L):
+        # eigsh requires k < n; if the matrix is tiny and k_spec+4 >= n,
+        # just do a dense solve. Also guard ncv >= n.
+        n_dim = L.shape[0]
+        if k_arnoldi >= n_dim or ncv >= n_dim:
+            w_all = np.sort(np.linalg.eigvalsh(L.toarray()))
+        else:
+            try:
+                # Shift-invert at small negative sigma: L is PSD (singular),
+                # so sigma=0 would blow up the LU factor; sigma=-1e-6 is
+                # below the kernel but still concentrates convergence on
+                # the bottom of the spectrum.
+                w, _ = eigsh(
+                    L, k=k_arnoldi, sigma=-1e-6, which="LM", tol=1e-8, ncv=ncv,
+                )
+                w_all = np.sort(w)
+            except ArpackNoConvergence:
+                warnings.warn(
+                    "eigsh failed to converge (likely degenerate kernel); "
+                    "falling back to dense eigvalsh. This is slow for large L.",
+                    UserWarning,
+                    stacklevel=2,
+                )
+                w_all = np.sort(np.linalg.eigvalsh(L.toarray()))
+    else:
+        # Dense input — preserve the exact old behavior for legacy callers.
+        w_all = np.sort(np.linalg.eigvalsh(L))
+
+    spectrum = w_all[:k_spec].copy()
 
     beta0 = _connected_components(n_nodes, edges)
     beta1 = persistent_beta1(
@@ -120,7 +158,7 @@ def summarize_spectrum(
         edges_for_ell=edges,
     )
 
-    nonzero = w[w > zero_tol]
+    nonzero = w_all[w_all > zero_tol]
     lambda_min = float(nonzero[0]) if nonzero.size > 0 else float(zero_tol)
 
     return SpectralSummary(
