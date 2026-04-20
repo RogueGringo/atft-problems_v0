@@ -19,6 +19,8 @@ This experiment no longer claims to DERIVE c1 from spec(L_F). See REWORK spec 5.
 from __future__ import annotations
 
 import json
+import multiprocessing as mp
+import os
 from pathlib import Path
 
 import matplotlib
@@ -33,32 +35,51 @@ from problems.hubble_tension_web.types import VoidParameters
 OUTPUT = Path(__file__).parent.parent / "results"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
+_POOL_MIN_CONFIGS = 4   # analytical has 9 configs; paying spawn cost amortizes well.
+
+
+def _reduce_one(d: float) -> dict:
+    """Compute one analytical-reduction row. Module-level for pool spawn."""
+    R = 300.0
+    params = VoidParameters(delta=float(d), R_mpc=R)
+    web = generate_synthetic_void(
+        params, n_points=1500, box_mpc=800.0, rng_seed=42,
+    )
+    h = predict_from_cosmic_web(
+        web=web, params=params, alpha=1.0, k=8, stalk_dim=8, k_spec=16,
+    )
+    expected_kin = C1 * float(d)
+    return dict(
+        delta=float(d),
+        R_mpc=R,
+        delta_H0=h.delta_H0,
+        kinematic_term=h.kinematic_term,
+        topological_term=h.topological_term,
+        expected_kin=float(expected_kin),
+        kin_tautology_residual=float(h.kinematic_term - expected_kin),
+        ratio_topo_over_kin=float(
+            h.topological_term / h.kinematic_term if abs(h.kinematic_term) > 1e-12 else np.nan
+        ),
+    )
+
 
 def main() -> None:
     deltas = np.linspace(-1e-3, -0.3, 9)   # skip exact 0 to avoid VoidParameters guard
-    R = 300.0
-    records = []
-    for d in deltas:
-        params = VoidParameters(delta=float(d), R_mpc=R)
-        web = generate_synthetic_void(
-            params, n_points=1500, box_mpc=800.0, rng_seed=42,
-        )
-        h = predict_from_cosmic_web(
-            web=web, params=params, alpha=1.0, k=8, stalk_dim=8, k_spec=16,
-        )
-        expected_kin = C1 * float(d)
-        records.append(dict(
-            delta=float(d),
-            R_mpc=R,
-            delta_H0=h.delta_H0,
-            kinematic_term=h.kinematic_term,
-            topological_term=h.topological_term,
-            expected_kin=float(expected_kin),
-            kin_tautology_residual=float(h.kinematic_term - expected_kin),
-            ratio_topo_over_kin=float(
-                h.topological_term / h.kinematic_term if abs(h.kinematic_term) > 1e-12 else np.nan
-            ),
-        ))
+    configs = [float(d) for d in deltas]
+
+    if len(configs) < _POOL_MIN_CONFIGS:
+        records = [_reduce_one(d) for d in configs]
+    else:
+        env_override = os.environ.get("HUBBLE_POOL_WORKERS")
+        if env_override and env_override.isdigit() and int(env_override) > 0:
+            cap = int(env_override)
+        else:
+            cap = os.cpu_count() or 1
+        n_workers = min(cap, len(configs))
+        with mp.get_context("spawn").Pool(processes=n_workers) as pool:
+            records = list(pool.imap_unordered(_reduce_one, configs))
+    # Deterministic sort by |delta| (which equals negated delta since delta < 0).
+    records = sorted(records, key=lambda r: r["delta"], reverse=True)
 
     by_absd = sorted(records, key=lambda r: abs(r["delta"]))
     deltaH0_sorted = [r["delta_H0"] for r in by_absd]

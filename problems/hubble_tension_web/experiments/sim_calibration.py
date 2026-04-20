@@ -86,7 +86,15 @@ def _run_scan(configs: list) -> list:
     if len(configs) < _POOL_MIN_CONFIGS:
         return [_scan_one(c) for c in configs]
 
-    n_workers = min(os.cpu_count() or 1, len(configs))
+    # Optional override via HUBBLE_POOL_WORKERS — used by run_all.py when
+    # launching sim_calibration concurrently with other experiments, so the
+    # inner pool does not oversubscribe all physical cores.
+    env_override = os.environ.get("HUBBLE_POOL_WORKERS")
+    if env_override and env_override.isdigit() and int(env_override) > 0:
+        cap = int(env_override)
+    else:
+        cap = os.cpu_count() or 1
+    n_workers = min(cap, len(configs))
     ctx = mp.get_context("spawn")
     with ctx.Pool(processes=n_workers) as pool:
         results = list(pool.imap_unordered(_scan_one, configs))
