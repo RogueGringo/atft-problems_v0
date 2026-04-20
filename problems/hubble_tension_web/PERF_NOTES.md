@@ -24,7 +24,15 @@ Baseline numbers captured during the REWORK closeout run (commit `9aab0a8`). Bet
 
 ## After Step 1 (sparse coboundary)
 
-<populated in Task 1>
+| Experiment              | Wall time       | Δ vs T=0   |
+|-------------------------|-----------------|------------|
+| analytical_reduction.py |   543.11s       | -40.51%    |
+| sim_calibration.py      |   (deferred)    | —          |
+| kbc_crosscheck.py       |   63.89s        | -61.28%    |
+
+**Memory impact (primary win):** at N=1500 the dense `delta` would be ~4.6 GB fp64; the sparse CSR form uses ~10 MB (500× reduction). At the design target N=1e5 the dense form (~2.6 EB) is physically impossible; sparse is feasible.
+
+**Wall-time note:** sim_calibration re-measurement deferred — sparse lil_matrix row-assembly is Python-loop-y and likely a small regression at N=1500 (per spec). Steps 2 (Arnoldi) and 3 (parallel pool) dominate the wall-time change; re-measure sim_calibration after Task 3 lands.
 
 ## After Step 2 (Arnoldi eigensolver)
 

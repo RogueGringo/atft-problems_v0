@@ -99,7 +99,7 @@ def persistent_beta1(
 
 def summarize_spectrum(
     *,
-    L: np.ndarray,
+    L,
     n_nodes: int,
     edges: List[Tuple[int, int, str]],
     positions: np.ndarray,
@@ -108,7 +108,15 @@ def summarize_spectrum(
     tau_persist: float = TAU_PERSIST,
     tau_max: float = TAU_MAX,
 ) -> SpectralSummary:
-    w = np.linalg.eigvalsh(L)
+    # Accept either dense ndarray or scipy.sparse matrix. Task 1 lands sparse
+    # output from typed_sheaf_laplacian; Task 2 replaces this dense solve with
+    # eigsh(L) directly on the sparse form.
+    from scipy import sparse as _sparse
+    if _sparse.issparse(L):
+        L_dense = L.toarray()
+    else:
+        L_dense = L
+    w = np.linalg.eigvalsh(L_dense)
     w = np.sort(w)
     spectrum = w[:k_spec].copy()
 

@@ -28,6 +28,7 @@ from __future__ import annotations
 from typing import Dict, List, Tuple
 
 import numpy as np
+from scipy import sparse as _sparse
 from scipy.spatial import KDTree
 
 from problems.hubble_tension_web.types import Environment, LocalCosmicWeb
@@ -179,7 +180,7 @@ def typed_sheaf_laplacian(
     stalk_dim: int = STALK_DIM,
     rng_seed: int = 0,              # unused; kept for signature compatibility
     environments: List[Environment] | None = None,
-) -> np.ndarray:
+) -> "_sparse.csr_matrix":
     """Assemble L_F = δ^T δ with density-gradient typed restriction maps.
 
     R_src^t = I_8, R_dst^t = λ^t · (Rot_3(ĝ_s→ĝ_d) ⊕ P^t_4 ⊕ I_1).
@@ -218,16 +219,24 @@ def typed_sheaf_laplacian(
     g = stalks[:, 0:3]
 
     m = len(edges)
-    delta = np.zeros((m * STALK_DIM, n * STALK_DIM), dtype=np.float64)
+    # Sparse coboundary assembly: each delta row has exactly 2*STALK_DIM=16
+    # nonzeros (the -I block on col_s and the R_dst block on col_d). lil_matrix
+    # allows efficient row-slice assignment during construction; we convert to
+    # csr before the transpose/matmul.
+    delta = _sparse.lil_matrix(
+        (m * STALK_DIM, n * STALK_DIM), dtype=np.float64,
+    )
+    neg_I = -np.eye(STALK_DIM)
     for e_idx, (s, d, etype) in enumerate(edges):
         env_s, env_d = etype.split("-", 1)
         R_dst = _R_dst_for_edge(g[s], g[d], env_s, env_d)
-        row = slice(e_idx * STALK_DIM, (e_idx + 1) * STALK_DIM)
-        col_s = slice(s * STALK_DIM, (s + 1) * STALK_DIM)
-        col_d = slice(d * STALK_DIM, (d + 1) * STALK_DIM)
-        delta[row, col_s] = -np.eye(STALK_DIM)
-        delta[row, col_d] = R_dst
+        row0 = e_idx * STALK_DIM
+        col_s0 = s * STALK_DIM
+        col_d0 = d * STALK_DIM
+        delta[row0:row0 + STALK_DIM, col_s0:col_s0 + STALK_DIM] = neg_I
+        delta[row0:row0 + STALK_DIM, col_d0:col_d0 + STALK_DIM] = R_dst
 
-    L = delta.T @ delta
-    L = 0.5 * (L + L.T)
+    delta_csr = delta.tocsr()
+    L = (delta_csr.T @ delta_csr).tocsr()
+    L = (0.5 * (L + L.T)).tocsr()
     return L
