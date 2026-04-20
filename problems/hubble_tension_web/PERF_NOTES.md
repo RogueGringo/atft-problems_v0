@@ -93,7 +93,52 @@ Step-3 delta.
 
 ## After Step 4 (int8 quantized sidecar)
 
-<populated in Task 4; note int8 is a sidecar — no wall-time change to fp64 path expected>
+| Experiment              | Wall time           | Δ vs T=0   | Δ vs Step 3 |
+|-------------------------|---------------------|------------|-------------|
+| analytical_reduction.py |   unchanged (~29s)  | -96.8%     | unchanged   |
+| sim_calibration.py      |   unchanged (~20s)  | -99.6%     | unchanged   |
+| kbc_crosscheck.py       |   unchanged (~7s)   | -95.7%     | unchanged   |
+
+Step 4 is a sidecar: `laplacian_quantized.py` is not imported by `functional.py`,
+so the fp64 production path is bit-equivalent to Task 3. Wall time is
+expected unchanged; no re-measurement required.
+
+Accuracy achieved (`test_laplacian_quantized.py`):
+- int8  `lambda_min` rel error: `1.32e-02` on 30-node fixtures (above bound 1e-3).
+- int16 `lambda_min` rel error: `9.36e-06` on 30-node fixtures (well under bound 1e-3;
+  asserted at the tighter 1e-4 in the test to catch regressions).
+
+**Bit-width floor finding (spec §Risks fallback path triggered).** int8 with
+uniform per-tensor scale and `LAMBDA_UPPER = 2.2` cannot meet the 1e-3
+spec contract. The per-entry rms quantization error at scale
+`127 / 2.2 ≈ 58` is `~1 / (2·58) ≈ 0.87%`; propagated through
+`L = δ^T δ` this reaches ~1.3% on λ_min — inherent to the uniform-scale
+scheme, not a code bug. Per-tensor uniform scale is what Hexagon QNN
+expects on the NPU, so we keep that scheme and bump the module default
+to **`bits=16`** per the spec's Risks clause. int16 clears the spec
+bound by ~100x (rel ~1e-5 vs 1e-3) with int64 accumulation.
+
+The int8 spec-bound test (3 seeds) is marked `xfail(strict=True)` to keep the
+floor finding visible and regression-guarded; a companion non-xfail
+`test_int8_quantized_lambda_min_floor_observed` pins the floor at rel < 5e-2
+so catastrophic regressions (like the int16 int32-accumulator-overflow bug
+caught during Task 4 implementation) still fail the suite.
+
+**Implementation note:** accumulator dtype depends on bit width. int8 uses
+int32 (max per-entry after sum-over-incident-edges ≈ `127² · 12 ≈ 2e5`,
+well under int32's 2.1e9). int16 must use int64 — per-entry sums reach
+`32767² · 12 ≈ 1.3e10`, past int32. The initial Task 4 implementation
+hard-coded int32 and produced rel ≈ 94% on int16; the test_int16 case
+caught this immediately.
+
+Memory / throughput win for NPU deployment: int16 delta at N=1500, k=8
+occupies `m · 32` bytes = `6000 · 32 ≈ 192 KB` vs the fp64 sparse delta's
+384 KB — factor 2 on memory and matmul throughput on Hexagon (which has
+dedicated int16 MAC units; int8 gives factor 4 but exceeds accuracy budget).
+
+Out of scope for this pass: actual Hexagon execution. Expected follow-up:
+export `delta_int` as ONNX, consume via `onnxruntime-qnn` on the NPU, measure
+end-to-end `lambda_min` wall time.
 
 ## Target (spec §Acceptance gate)
 
