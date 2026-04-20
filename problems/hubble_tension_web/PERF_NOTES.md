@@ -67,7 +67,29 @@ dominates its wall-time change; re-measure once that lands.
 
 ## After Step 3 (parallel scan)
 
-<populated in Task 3>
+| Experiment              | Wall time | Δ vs T=0   | Δ vs Step 2       |
+|-------------------------|-----------|------------|-------------------|
+| analytical_reduction.py |   29.00s  | -96.82%    | unchanged (was 29.03s) |
+| sim_calibration.py      |   20.39s  | -99.60%    | (deferred pre-Task 3) |
+| kbc_crosscheck.py       |   7.16s   | -95.66%    | unchanged (was 4.34s, jitter) |
+
+multiprocessing.Pool with imap_unordered across `min(os.cpu_count(), 30)` workers.
+Spawn context explicit for cross-platform determinism. Deterministic output
+preserved by sorting results by (delta, R) before the LSQ fit.
+
+Spawn overhead: ~2-3s per worker on Windows (scipy re-import + module load).
+Amortized over the 30-config scan. Threshold guard `_POOL_MIN_CONFIGS=6` keeps
+tiny scans sequential.
+
+**alpha_star = 0.0 unchanged** (f_topo identically zero across the smooth-void
+scan, same observation as the REWORK pipeline — β₁_persistent noise floor).
+Scan is sorted ascending by (delta, R): most negative delta first (-0.30, ...,
+-0.05) — deterministic regardless of worker scheduling.
+
+sim_calibration compound speedup vs T=0: 5045s → 20.39s ≈ 247× (combined
+effect of Task 1 sparse coboundary, Task 2 Arnoldi eigsh, and Task 3 parallel
+scan). On the 8-core Snapdragon X Plus the parallel lever dominates the
+Step-3 delta.
 
 ## After Step 4 (int8 quantized sidecar)
 
