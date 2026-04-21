@@ -54,3 +54,33 @@ def test_schema_violation_raises(tmp_path):
 def test_network_fetch_is_stubbed():
     with pytest.raises(NotImplementedError, match="CosmoSim"):
         mdpl2_fetch.fetch_from_network(url="https://cosmosim.example/mdpl2/z0_500Mpc.dat")
+
+
+from unittest.mock import patch
+
+
+def test_network_fetch_delegates_when_enabled(tmp_path, monkeypatch):
+    """With ATFT_MDPL2_DOWNLOAD_ENABLED='1', fetch_from_network defers to
+    mdpl2_download.fetch_sub_box rather than raising NotImplementedError."""
+    monkeypatch.setenv("ATFT_MDPL2_DOWNLOAD_ENABLED", "1")
+
+    dest = tmp_path / "deleg.parquet"
+    with patch(
+        "problems.hubble_tension_web.nbody.mdpl2_download.fetch_sub_box",
+        return_value=dest,
+    ) as mock_fetch:
+        result = mdpl2_fetch.fetch_from_network(
+            url="https://cosmosim.example/mdpl2/z0_500Mpc.dat",
+            dest=dest,
+        )
+    assert result == dest
+    mock_fetch.assert_called_once()
+    _, kwargs = mock_fetch.call_args
+    assert kwargs.get("dest") == dest
+
+
+def test_network_fetch_still_stubbed_when_disabled(monkeypatch):
+    """Redundant with test_network_fetch_is_stubbed but pins the env-off branch."""
+    monkeypatch.delenv("ATFT_MDPL2_DOWNLOAD_ENABLED", raising=False)
+    with pytest.raises(NotImplementedError, match="CosmoSim"):
+        mdpl2_fetch.fetch_from_network(url="https://cosmosim.example/mdpl2/z0_500Mpc.dat")
