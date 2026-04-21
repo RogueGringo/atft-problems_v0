@@ -66,6 +66,24 @@ def _env_for(mod: str) -> dict:
     return env
 
 
+def _nbody_cache_path() -> Path | None:
+    """Return the path of a real MDPL2 halo cache if one exists, else None.
+
+    Explicit ATFT_NBODY_CACHE_FILE wins. Otherwise look under
+    $ATFT_DATA_CACHE/mdpl2/*.parquet (or ~/.cache/atft/mdpl2/).
+    """
+    explicit = os.environ.get("ATFT_NBODY_CACHE_FILE")
+    if explicit and Path(explicit).exists():
+        return Path(explicit)
+    cache_root = Path(os.environ.get("ATFT_DATA_CACHE", str(Path.home() / ".cache" / "atft")))
+    mdpl2_dir = cache_root / "mdpl2"
+    if mdpl2_dir.exists():
+        parquets = sorted(mdpl2_dir.glob("*.parquet"))
+        if parquets:
+            return parquets[0]
+    return None
+
+
 def main() -> None:
     t0 = time.perf_counter()
 
@@ -92,6 +110,21 @@ def main() -> None:
             print(f"=== {mod} FAILED rc={rc} ===", file=sys.stderr)
             print(out, file=sys.stderr)
         sys.exit(1)
+
+    # Optional nbody_kbc step — skipped cleanly if cache absent.
+    nbody_cache = _nbody_cache_path()
+    if nbody_cache is not None:
+        print(f"nbody_kbc: launching with cache {nbody_cache}")
+        nbody_env = os.environ.copy()
+        nbody_env["ATFT_NBODY_CACHE_FILE"] = str(nbody_cache)
+        rc = subprocess.run(
+            [sys.executable, "-m", "problems.hubble_tension_web.experiments.nbody_kbc"],
+            env=nbody_env,
+        ).returncode
+        if rc != 0:
+            print(f"nbody_kbc failed rc={rc}; continuing with aggregate.", file=sys.stderr)
+    else:
+        print("nbody_kbc: no MDPL2 cache found, skipping (see nbody/README.md).")
 
     agg_t0 = time.perf_counter()
     rc = subprocess.run([sys.executable, "-m", AGGREGATE]).returncode
