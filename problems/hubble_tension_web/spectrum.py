@@ -132,8 +132,22 @@ def summarize_spectrum(
                 # so sigma=0 would blow up the LU factor; sigma=-1e-6 is
                 # below the kernel but still concentrates convergence on
                 # the bottom of the spectrum.
+                #
+                # Deterministic starting vector for ARPACK. A uniform
+                # ones-vector would be orthogonal to many of the degenerate
+                # eigenmodes of Rot_3+P_4+I_1 and cause eigsh to converge
+                # to the wrong bottom-k. Instead we draw a generic
+                # standard-normal vector from a fixed-seed PRNG so every
+                # eigenmode has a nonzero projection onto v0, exactly like
+                # ARPACK's default random v0 — but reproducible across runs.
+                # Fixes the flaky fail on
+                # test_eigsh_bottom_k_matches_dense[seed=7].
+                _v0_rng = np.random.default_rng(0xA7CE1D)
+                v0 = _v0_rng.standard_normal(L.shape[0])
+                v0 /= np.linalg.norm(v0)
                 w, _ = eigsh(
                     L, k=k_arnoldi, sigma=-1e-6, which="LM", tol=1e-8, ncv=ncv,
+                    v0=v0,
                 )
                 w_all = np.sort(w)
             except ArpackNoConvergence:
