@@ -198,6 +198,7 @@ Following one `predict_from_cosmic_web(web, params, alpha=…, k=8, k_spec=16)` 
 | LTB reference at KBC params | +5.28 km/s/Mpc | Gaussian-profile heuristic; matches the kinematic neighborhood |
 | Analytical tautology residual | **0.0 exactly** | `kinematic_term - C1·δ` at every scan point |
 | N-body fixture β₁ distribution | `count_nonzero=0, count_total=2, max=0` | Expected null on a toy Poisson-background plus one planted smooth void |
+| Real-void α* (calibration leg) | **pending first `_ENABLED=1` run** | Computed by `experiments/nbody_calibration.py` from `nbody_kbc.json`; null on the toy fixture (K<3 or f_topo=0). Once a real 500 Mpc MDPL2 sub-box is ingested, α* and its 68% bootstrap CI populate here. |
 
 **Reading of the null result.** The full chain is mechanically correct (sign, assembly, eigensolver, persistence filter), but synthetic LTB voids have no sub-structure. `β₁_persistent` stays at the VR noise floor, so `f_topo` is identically 0, α* is undetermined, and the honest result is that **topology contributes nothing** for this input class. The physics test of the ATFT thesis — "do real voids have β₁ > 0?" — requires real MDPL2 halos. The pipeline is now wired to accept them.
 
@@ -355,6 +356,16 @@ Cell `(i,j,k)` has its **center** at position `((i+0.5)·cell, ...)`, not at `(i
 
 **Patch.** Renamed `primary_assertion` to `primary_observation`; honestly states "smooth-void regime; β₁ at noise floor; kinematic dominates; sub-void fixture needed for a real limit test." Tautology residual test (secondary) is still a meaningful sign-regression guard.
 
+### 9.7 The MDPL2 little-h unit trap (`feat(nbody): CosmoSim MDPL2 SQL download + h-conversion`, forward-ops)
+
+**Trap.** CosmoSim returns MDPL2 Rockstar columns in `h⁻¹ Mpc` and `h⁻¹ M_sun` with Planck cosmology `h = 0.6777`. Our existing Parquet schema contract (`EXPECTED_COLUMNS = ("x","y","z","mvir")` in `mdpl2_fetch.py:18`) expects pure Mpc / M_sun. Shipping the raw CSV into the cache shrinks distances by ~32% and silently wrecks void-radius comparisons downstream.
+
+**Fix.** `mdpl2_download._apply_h_conversion` divides the four columns by `MDPL2_H = 0.6777` at write-time; `load_halo_catalog` stays ignorant of `h`. The test anchor `x = 677.7 h⁻¹ Mpc → 1000.0 Mpc` + `mvir = 6.777e11 h⁻¹ M_sun → 1e12 M_sun` is asserted to 1e-9 in `test_mdpl2_download::test_fetch_sub_box_applies_h_conversion`.
+
+**Lesson.** Unit conversions should live at the boundary where foreign units enter — not in the calculations that consume them. The schema contract is then invariant.
+
+**Also UNVERIFIED as of first _ENABLED=1 run:** the CosmoSim TAP async HTTP shape (`/async` POST with `Authorization: Bearer`, 303 Location redirect, `/phase` polling, `/results/result` CSV). Both endpoint and SQL are env-overridable (`ATFT_MDPL2_URL`, `ATFT_MDPL2_SQL`) so the maintainer can patch without a code change.
+
 ---
 
 ## 10. Extension points
@@ -403,6 +414,8 @@ All under `docs/superpowers/`:
 | `plans/2026-04-20-hubble-perf-rework.md` | Perf rework plan. |
 | `specs/2026-04-20-nbody-ingestion-design.md` | MDPL2 plus T-web plus real-void β₁ test. |
 | `plans/2026-04-20-nbody-ingestion.md` | N-body ingestion plan (7 tasks including scaffold). |
+| `specs/2026-04-21-forward-ops-design.md` | Real MDPL2 ingest + α recalibration (forward-ops bundle). |
+| `plans/2026-04-21-forward-ops.md` | Forward-ops implementation plan (8 tasks). |
 
 ---
 
@@ -410,7 +423,7 @@ All under `docs/superpowers/`:
 
 Explicitly-punted work, all documented with rationale in their respective specs:
 
-- **α recalibration against real voids.** v1 uses α from the smooth-void fit (which lands at 0). Meaningful recalibration requires β₁ > 0 on real data; deferred until N-body runs confirm that.
+- ~~α recalibration against real voids.~~ **Delivered** by the forward-ops bundle (`experiments/nbody_calibration.py`). α* is computed via closed-form 1D LSQ + bootstrap 68% CI + F-test vs α=0 whenever `nbody_kbc.json` has ≥ `ATFT_NBODY_CAL_MIN_VOIDS` (default 3) voids. Numerical LTB integrator gate (spec §6.2.a) still deferred unless α* comes out pathological.
 - **VIDE / ZOBOV watershed void finders.** v1 uses a simple Gaussian-smoothed local-min plus sphere-growth finder. Fine for ~10⁴-point catalogs; may need upgrading for 10⁶+.
 - **IllustrisTNG baryonic catalogs.** v1 targets MDPL2 (DM-only halos). IllustrisTNG adds galaxy catalogs and gas physics; different ingest path, richer sub-structure.
 - **SDSS / 2MRS observational ingestion, including RSD.** Real sky data, with redshift-space distortions plus survey masks. Would need a dedicated ingest plus observational-systematics pass. v1 uses real-space positions from MDPL2 directly.
