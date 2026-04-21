@@ -126,6 +126,36 @@ def main() -> None:
     else:
         print("nbody_kbc: no MDPL2 cache found, skipping (see nbody/README.md).")
 
+    # Optional nbody_calibration step — gated on nbody_kbc.json with K >= min.
+    import json as _json
+    results_dir = Path(__file__).parent.parent / "results"
+    nbody_kbc_json = results_dir / "nbody_kbc.json"
+    if nbody_kbc_json.exists():
+        try:
+            _kbc_data = _json.loads(nbody_kbc_json.read_text())
+            n_voids = len(_kbc_data.get("voids", []))
+        except (ValueError, _json.JSONDecodeError):
+            n_voids = 0
+        min_voids = int(os.environ.get("ATFT_NBODY_CAL_MIN_VOIDS", "3"))
+        if n_voids >= min_voids:
+            print(f"nbody_calibration: launching with K={n_voids} voids (min {min_voids}).")
+            cal_env = os.environ.copy()
+            rc = subprocess.run(
+                [sys.executable, "-m", "problems.hubble_tension_web.experiments.nbody_calibration"],
+                env=cal_env,
+            ).returncode
+            if rc != 0:
+                print(
+                    f"nbody_calibration failed rc={rc}; continuing with aggregate.",
+                    file=sys.stderr,
+                )
+        else:
+            print(
+                f"nbody_calibration: only {n_voids} voids (< {min_voids}); skipping."
+            )
+    else:
+        print("nbody_calibration: no nbody_kbc.json; skipping.")
+
     agg_t0 = time.perf_counter()
     rc = subprocess.run([sys.executable, "-m", AGGREGATE]).returncode
     t_aggregate = time.perf_counter() - agg_t0
@@ -139,7 +169,7 @@ def main() -> None:
     print(f"aggregate:                                  {t_aggregate:.2f}s")
     print(f"total wall time:                            {t_total:.2f}s")
 
-    results_dir = Path(__file__).parent.parent / "results"
+    # results_dir already defined above; re-use.
     for name in ("analytical_reduction.json", "sim_calibration.json",
                  "kbc_crosscheck.json", "REPORT.md"):
         path = results_dir / name
