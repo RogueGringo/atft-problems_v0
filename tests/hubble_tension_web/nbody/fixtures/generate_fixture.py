@@ -15,7 +15,14 @@ import pyarrow  # noqa: F401 - ensures the parquet engine is available
 
 # Fixture parameters — freeze these; downstream tests depend on them.
 BOX_MPC: float = 50.0
-N_HALOS_TOTAL: int = 200
+# Bumped from 200 -> 3000: the T-web tidal-tensor classifier needs enough
+# halos per grid cell that a planted void's underdensity signal dominates
+# Poisson shot noise. With N=32^3 = 32768 cells, 200 halos yields <<1 halo
+# per cell almost everywhere and the Hessian of phi at the void center is
+# shot-noise-dominated. 3000 halos puts roughly 0.1 halos/cell average,
+# enough contrast for the planted void's interior cells to cleanly invert
+# into three positive eigenvalues (VOID). See test_tidal_tensor.py.
+N_HALOS_TOTAL: int = 3000
 VOID_CENTER_MPC: tuple[float, float, float] = (25.0, 25.0, 25.0)
 VOID_RADIUS_MPC: float = 15.0
 # Remove ~85% of halos inside the void sphere to produce a clear under-density.
