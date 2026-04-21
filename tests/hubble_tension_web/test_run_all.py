@@ -65,3 +65,30 @@ def test_run_all_preserves_signed_contract():
     assert "SIGN ERROR" not in kbc["verdict"], (
         f"verdict contains SIGN ERROR: {kbc['verdict']}"
     )
+
+
+def test_run_all_skips_nbody_when_cache_absent(tmp_path):
+    """run_all must exit 0 and run the three synthetic experiments even when
+    no nbody cache exists. The nbody step is opt-in, not load-bearing."""
+    import os
+    env = os.environ.copy()
+    # Ensure the cache lookup points at a definitely-empty dir.
+    env["ATFT_DATA_CACHE"] = str(tmp_path / "nonexistent")
+    env.pop("ATFT_NBODY_CACHE_FILE", None)  # defensively clear
+    result = subprocess.run(
+        [sys.executable, "-m", "problems.hubble_tension_web.experiments.run_all"],
+        capture_output=True, env=env, timeout=180,
+    )
+    assert result.returncode == 0, (
+        f"run_all must survive a missing nbody cache. stderr:\n"
+        f"{result.stderr.decode(errors='replace')}"
+    )
+    combined = result.stdout.decode(errors="replace") + result.stderr.decode(errors="replace")
+    assert "nbody" in combined.lower(), (
+        "run_all should mention nbody in output when skipping it"
+    )
+    # All three synthetic outputs must still exist.
+    results = Path("problems/hubble_tension_web/results")
+    for name in ("analytical_reduction.json", "sim_calibration.json",
+                 "kbc_crosscheck.json", "REPORT.md"):
+        assert (results / name).exists(), f"synthetic artifact missing: {name}"
