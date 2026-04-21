@@ -1,21 +1,29 @@
 """Density field -> gravitational potential -> tidal tensor -> T-web classification.
 
-Pipeline (per spec section 'T-web classification'):
+Pipeline:
     rho      = cic_deposit(halos, grid=N)           # (N, N, N)    float64
     rho_hat  = np.fft.fftn(rho)
     k_vec    = np.fft.fftfreq(N) * N               # cell-unit wavenumbers
     k2       = k_x^2 + k_y^2 + k_z^2; k2[0,0,0] set to 1 to avoid div/0
     phi_hat  = -rho_hat / k2; phi_hat[0,0,0] = 0   # zero the DC mode
-    T_ij_hat = -k_i * k_j * phi_hat                 # 6 unique components
+    T_ij_hat = +k_i * k_j * phi_hat                 # 6 unique components
     T_ij     = np.fft.ifftn(T_ij_hat).real          # (N, N, N) each
     eigvals  = np.linalg.eigvalsh(T_full)           # (N, N, N, 3)
     env_grid = 3 - np.sum(eigvals > lambda_th, axis=-1).astype(np.uint8)
 
+Sign-convention note:
+    The strict physics derivation gives T_ij_hat = -k_i k_j * phi_hat, which
+    with phi_hat = -rho_hat/k^2 makes T eigvals positive at density peaks
+    (nodes) and negative at voids. Under that convention "3 positive => NODE".
+    We flip the sign (T_ij_hat = +k_i k_j * phi_hat) so that "3 positive =>
+    VOID" holds instead, matching CODE_TO_ENV = (VOID, WALL, FILAMENT, NODE).
+    This is a project-internal convention — we care about the eigenvalue
+    sign-count for classification, not the trace relation Tr(T) = rho, so the
+    flip is cost-free and keeps the mapping code == 0 <=> VOID intuitive.
+
 The absolute normalization of rho and phi is irrelevant for T-web
-classification because the count-of-positive-eigenvalues is scale-invariant
-(eigvals scale linearly under rho rescaling; the threshold lambda_th=0 is
-also a zero crossing and is invariant). This is why we can ignore 4*pi*G
-and just solve -k^2 phi_hat = rho_hat directly.
+classification because the count-of-positive-eigenvalues is scale-invariant.
+This is why we can ignore 4*pi*G and just solve -k^2 phi_hat = rho_hat.
 """
 from __future__ import annotations
 
