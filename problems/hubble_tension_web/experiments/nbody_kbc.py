@@ -31,7 +31,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from problems.hubble_tension_web.functional import predict_from_cosmic_web
+from problems.hubble_tension_web.functional import C1, f_topo, predict_from_cosmic_web
+from problems.hubble_tension_web.ltb_reference import delta_H0_ltb
 from problems.hubble_tension_web.nbody import (
     DEFAULT_LAMBDA_TH,
     DEFAULT_MASS_CUT,
@@ -119,6 +120,15 @@ def _run() -> dict:
             L=L, n_nodes=n, edges=edges, positions=web.positions,
             k_spec=min(16, web.positions.shape[0] - 1),
         )
+        f_topo_at_alpha_1 = float(f_topo(
+            int(summary.beta0), int(summary.beta1),
+            float(summary.lambda_min), float(cand.radius_mpc),
+        ))
+        ltb_anchor = float(delta_H0_ltb(
+            delta=float(cand.delta_eff), R_mpc=float(cand.radius_mpc),
+        ))
+        y_residual = float(ltb_anchor - C1 * float(cand.delta_eff))
+
         per_void.append(dict(
             idx=idx,
             center_mpc=list(cand.center_mpc),
@@ -131,6 +141,10 @@ def _run() -> dict:
             delta_H0_total=float(h.delta_H0),
             kinematic_term=float(h.kinematic_term),
             topological_term=float(h.topological_term),
+            # New in forward-ops: per-void primitives the calibration leg reuses.
+            f_topo_at_alpha_1=f_topo_at_alpha_1,
+            ltb_anchor_at_delta_R=ltb_anchor,
+            y_residual=y_residual,
         ))
 
     beta1s = [v["beta1_persistent"] for v in per_void]
