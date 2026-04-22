@@ -92,3 +92,73 @@ def test_run_all_skips_nbody_when_cache_absent(tmp_path):
     for name in ("analytical_reduction.json", "sim_calibration.json",
                  "kbc_crosscheck.json", "REPORT.md"):
         assert (results / name).exists(), f"synthetic artifact missing: {name}"
+
+
+def test_run_all_triggers_nbody_calibration_when_voids_exist(tmp_path):
+    """With a real nbody cache fixture, run_all must produce nbody_calibration.json."""
+    import os
+    from pathlib import Path as _P
+    fixture = _P("tests/hubble_tension_web/nbody/fixtures/mini_mdpl2.parquet").resolve()
+    assert fixture.exists(), f"nbody fixture missing: {fixture}"
+
+    env = os.environ.copy()
+    env["ATFT_NBODY_CACHE_FILE"] = str(fixture)
+    env["ATFT_NBODY_GRID"] = "32"
+    env["ATFT_NBODY_K_VOIDS"] = "3"
+    env["ATFT_NBODY_CAL_MIN_VOIDS"] = "1"   # force the fit to attempt even on tiny K
+    env["ATFT_NBODY_CAL_BOOTSTRAP_B"] = "100"  # small B for test speed
+
+    result = subprocess.run(
+        [sys.executable, "-m", "problems.hubble_tension_web.experiments.run_all"],
+        capture_output=True, env=env, timeout=180,
+    )
+    assert result.returncode == 0, (
+        f"run_all rc={result.returncode}\nstdout:\n"
+        f"{result.stdout.decode(errors='replace')}\nstderr:\n"
+        f"{result.stderr.decode(errors='replace')}"
+    )
+
+    results = Path("problems/hubble_tension_web/results")
+    assert (results / "nbody_kbc.json").exists()
+    assert (results / "nbody_calibration.json").exists(), (
+        "run_all did not trigger nbody_calibration even though nbody_kbc "
+        "produced voids and min_voids=1"
+    )
+    cal = json.loads((results / "nbody_calibration.json").read_text())
+    for key in ("alpha_star", "K", "reason", "per_void"):
+        assert key in cal
+
+
+def test_run_all_skips_calibration_when_voids_below_min(tmp_path):
+    """With a real cache but ATFT_NBODY_CAL_MIN_VOIDS=99, calibration must skip cleanly."""
+    import os
+    from pathlib import Path as _P
+    fixture = _P("tests/hubble_tension_web/nbody/fixtures/mini_mdpl2.parquet").resolve()
+    assert fixture.exists()
+
+    canonical_cal = Path("problems/hubble_tension_web/results/nbody_calibration.json")
+    if canonical_cal.exists():
+        canonical_cal.unlink()
+
+    env = os.environ.copy()
+    env["ATFT_NBODY_CACHE_FILE"] = str(fixture)
+    env["ATFT_NBODY_GRID"] = "32"
+    env["ATFT_NBODY_K_VOIDS"] = "3"
+    env["ATFT_NBODY_CAL_MIN_VOIDS"] = "99"  # unattainably high -> must skip
+
+    result = subprocess.run(
+        [sys.executable, "-m", "problems.hubble_tension_web.experiments.run_all"],
+        capture_output=True, env=env, timeout=180,
+    )
+    assert result.returncode == 0, (
+        f"run_all rc={result.returncode}\nstdout:\n"
+        f"{result.stdout.decode(errors='replace')}\nstderr:\n"
+        f"{result.stderr.decode(errors='replace')}"
+    )
+    combined = result.stdout.decode(errors="replace") + result.stderr.decode(errors="replace")
+    assert "nbody_calibration" in combined.lower(), (
+        "run_all should mention nbody_calibration in output (skip or run)"
+    )
+    assert not canonical_cal.exists(), (
+        "nbody_calibration.json should NOT be re-created when min_voids unreachable"
+    )

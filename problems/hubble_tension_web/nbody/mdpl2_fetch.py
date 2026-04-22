@@ -76,13 +76,29 @@ def load_halo_catalog(
 def fetch_from_network(*, url: str, dest: str | Path | None = None) -> Path:
     """Download an MDPL2 halo catalog from CosmoSim.
 
-    v1: NOT IMPLEMENTED. CosmoSim does not expose a stable no-auth URL for
-    Rockstar catalogs; users must obtain the file manually via SciServer
-    and place it in the cache. See the README.
+    When ATFT_MDPL2_DOWNLOAD_ENABLED == "1": delegates to
+    problems.hubble_tension_web.nbody.mdpl2_download.fetch_sub_box, which
+    performs the TAP SQL pull + h-conversion + Parquet write.
+
+    Otherwise (default, including CI): raises NotImplementedError with the
+    same historical message, preserving the `test_network_fetch_is_stubbed`
+    regression test and the "no network in CI" guarantee.
     """
+    import os
+    if os.environ.get("ATFT_MDPL2_DOWNLOAD_ENABLED", "0") == "1":
+        # Import inside the function to avoid a top-level cycle risk and to
+        # keep import-time surface minimal when the download path is off.
+        from problems.hubble_tension_web.nbody import mdpl2_download
+        if dest is None:
+            cache_root = Path(os.environ.get(
+                "ATFT_DATA_CACHE", str(Path.home() / ".cache" / "atft")
+            ))
+            dest = cache_root / "mdpl2" / "mdpl2_z0_500Mpc.parquet"
+        return mdpl2_download.fetch_sub_box(dest=dest, sub_box_mpc=500.0)
+
     raise NotImplementedError(
-        "CosmoSim MDPL2 download requires SciServer credentials in v1. "
-        "Manually download the halo catalog and place it at "
-        "~/.cache/atft/mdpl2/ (or $ATFT_DATA_CACHE). "
-        "See problems/hubble_tension_web/nbody/README.md."
+        "CosmoSim MDPL2 download is gated. Set ATFT_MDPL2_DOWNLOAD_ENABLED=1 "
+        "and ATFT_SCISERVER_TOKEN=<token> to enable. Otherwise manually "
+        "download a halo catalog and place it at ~/.cache/atft/mdpl2/ "
+        "(or $ATFT_DATA_CACHE). See problems/hubble_tension_web/nbody/README.md."
     )

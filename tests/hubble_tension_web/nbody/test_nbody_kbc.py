@@ -48,7 +48,11 @@ def test_nbody_kbc_runs_on_fixture(tmp_path, monkeypatch):
         v0 = data["voids"][0]
         for field in ("idx", "center_mpc", "N_halos", "delta_eff", "R_eff_mpc",
                       "beta0", "beta1_persistent", "lambda_min",
-                      "delta_H0_total", "kinematic_term", "topological_term"):
+                      "delta_H0_total", "kinematic_term", "topological_term",
+                      "f_topo_at_alpha_1", "ltb_anchor_at_delta_R", "y_residual"):
             assert field in v0, f"missing per-void field: {field}"
         assert isinstance(v0["beta1_persistent"], int)
         assert v0["beta1_persistent"] >= 0  # 0 is a valid outcome per spec
+        assert isinstance(v0["f_topo_at_alpha_1"], float)
+        assert isinstance(v0["ltb_anchor_at_delta_R"], float)
+        assert isinstance(v0["y_residual"], float)

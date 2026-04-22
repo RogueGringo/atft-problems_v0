@@ -78,6 +78,38 @@ def main() -> None:
         "- c1 is ASSERTED from LTB linear theory, not DERIVED from spec(L_F). See REWORK spec 5.",
     ])
 
+    # --- Leg 4 (conditional) ---
+    nbody_cal_path = OUTPUT / "nbody_calibration.json"
+    if nbody_cal_path.exists():
+        cal = json.loads(nbody_cal_path.read_text())
+        lines.extend([
+            "",
+            "## Leg 4: Real-Void alpha Calibration",
+            "",
+            f"- K real voids: {cal['K']}",
+            f"- Bootstrap resamples B: {cal['bootstrap_B']}",
+            f"- Reason: {cal['reason']}",
+        ])
+        if cal["alpha_star"] is not None:
+            ci = cal.get("alpha_ci_68") or ["n/a", "n/a"]
+            ci_str = (
+                f"[{ci[0]:.4g}, {ci[1]:.4g}]"
+                if isinstance(ci[0], (int, float)) else "n/a"
+            )
+            lines.extend([
+                f"- alpha\\* = **{cal['alpha_star']:.4g} {cal['alpha_units']}** (68% CI: {ci_str})",
+                f"- alpha bootstrap median: {cal['alpha_bootstrap_median']:.4g} "
+                f"{cal['alpha_units']}",
+                f"- F-test p-value (alpha vs 0): {cal['p_F_alpha_vs_zero']:.3g}",
+                f"- chi2_reduced: {cal['chi2_reduced']:.3g}, Pearson r(f, y): "
+                f"{cal['pearson_r_f_y']:.3g}",
+            ])
+        else:
+            lines.extend([
+                f"- alpha\\*: **undetermined** ({cal['reason']})",
+            ])
+        lines.append("")
+
     (OUTPUT / "REPORT.md").write_text("\n".join(lines), encoding="utf-8")
 
 
